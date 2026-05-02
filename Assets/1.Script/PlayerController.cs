@@ -14,16 +14,12 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         mBody = GetComponent<Rigidbody2D>();
-        mBody.gravityScale = 0.0f;
+       
     }
 
     void FixedUpdate()
     {
-        Vector2 moveVector = new Vector2(mMoveInput.x, mMoveInput.y)*mMoveSpeed*Time.fixedDeltaTime;
-        Vector2 currPos = mBody.position;
-        Vector2 deltaPosition = currPos + moveVector;
-
-        mBody.MovePosition(deltaPosition);
+        PlayerMove();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -37,9 +33,19 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
+
     private void Jump()
     {
         Debug.Log("Jump");
+    }
+
+    private void PlayerMove()
+    {
+        Vector2 moveVector = new Vector2(mMoveInput.x, mMoveInput.y) * mMoveSpeed * Time.fixedDeltaTime;
+        Vector2 currPos = mBody.position;
+        Vector2 deltaPosition = currPos + moveVector;
+
+        mBody.MovePosition(deltaPosition);
     }
 
 }
