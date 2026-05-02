@@ -2,7 +2,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
-public class PlayerMoveController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Move Setting")]
     [SerializeField] private float mMoveSpeed = 5.0f;
@@ -10,7 +10,6 @@ public class PlayerMoveController : MonoBehaviour
     private Vector2 mMoveInput;
     private Rigidbody2D mBody;
 
-    
 
     void Awake()
     {
