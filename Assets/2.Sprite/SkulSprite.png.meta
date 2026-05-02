@@ -1,0 +1,1677 @@
+fileFormatVersion: 2
+guid: 52149bf93c3c7354f9cef11f601a5c5c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2586566535107483422
+    second: SkulSprite_0
+  - first:
+      213: -7991744495722230092
+    second: SkulSprite_1
+  - first:
+      213: 5599309391493163046
+    second: SkulSprite_2
+  - first:
+      213: 3268827472488046429
+    second: SkulSprite_3
+  - first:
+      213: -8110484340259079172
+    second: SkulSprite_4
+  - first:
+      213: -4121500110512935519
+    second: SkulSprite_5
+  - first:
+      213: 5103980255146218283
+    second: SkulSprite_6
+  - first:
+      213: 4493162441554296127
+    second: SkulSprite_7
+  - first:
+      213: 4748782656788599115
+    second: SkulSprite_8
+  - first:
+      213: 619080453607042323
+    second: SkulSprite_9
+  - first:
+      213: -7700863758987458084
+    second: SkulSprite_10
+  - first:
+      213: -5705674624156270479
+    second: SkulSprite_11
+  - first:
+      213: 4732209300123694282
+    second: SkulSprite_12
+  - first:
+      213: -1944564926648560697
+    second: SkulSprite_13
+  - first:
+      213: -6107257129061901849
+    second: SkulSprite_14
+  - first:
+      213: -1346415108600097329
+    second: SkulSprite_15
+  - first:
+      213: 5110095886259344641
+    second: SkulSprite_16
+  - first:
+      213: -510327936308520424
+    second: SkulSprite_17
+  - first:
+      213: 4798728914040731933
+    second: SkulSprite_18
+  - first:
+      213: 8433063281277903005
+    second: SkulSprite_19
+  - first:
+      213: 351002961659088817
+    second: SkulSprite_20
+  - first:
+      213: -1441901445168036667
+    second: SkulSprite_21
+  - first:
+      213: -4682961173966736225
+    second: SkulSprite_22
+  - first:
+      213: -7245853401048609875
+    second: SkulSprite_23
+  - first:
+      213: -6140322089703550749
+    second: SkulSprite_24
+  - first:
+      213: -2029118621321725498
+    second: SkulSprite_25
+  - first:
+      213: -7900956819586358078
+    second: SkulSprite_26
+  - first:
+      213: 735099701474280551
+    second: SkulSprite_27
+  - first:
+      213: 3689015567228125353
+    second: SkulSprite_28
+  - first:
+      213: -5975843426012290216
+    second: SkulSprite_29
+  - first:
+      213: -1827001735327142725
+    second: SkulSprite_30
+  - first:
+      213: 6275565291166524561
+    second: SkulSprite_31
+  - first:
+      213: 625259390719400198
+    second: SkulSprite_32
+  - first:
+      213: 7983412134320788026
+    second: SkulSprite_33
+  - first:
+      213: 3878694265636976268
+    second: SkulSprite_34
+  - first:
+      213: -6005688120885355817
+    second: SkulSprite_35
+  - first:
+      213: -8623663953856616530
+    second: SkulSprite_36
+  - first:
+      213: -4509934188763874946
+    second: SkulSprite_37
+  - first:
+      213: 2124409946230482257
+    second: SkulSprite_38
+  - first:
+      213: 1484074151043013109
+    second: SkulSprite_39
+  - first:
+      213: -6174906319348899006
+    second: SkulSprite_40
+  - first:
+      213: 4681118746804450048
+    second: SkulSprite_41
+  - first:
+      213: -2738312930486693579
+    second: SkulSprite_42
+  - first:
+      213: -482788662046926450
+    second: SkulSprite_43
+  - first:
+      213: 1942431043783771027
+    second: SkulSprite_44
+  - first:
+      213: -1749026551719302394
+    second: SkulSprite_45
+  - first:
+      213: 2245785165644409023
+    second: SkulSprite_46
+  - first:
+      213: -2501029301656501249
+    second: SkulSprite_47
+  - first:
+      213: -8665745398549956103
+    second: SkulSprite_48
+  - first:
+      213: 2070881588502070820
+    second: SkulSprite_49
+  - first:
+      213: -493952200783053006
+    second: SkulSprite_50
+  - first:
+      213: -8617303608658709357
+    second: SkulSprite_51
+  - first:
+      213: 6918034188741463613
+    second: SkulSprite_52
+  - first:
+      213: -6725030348022444815
+    second: SkulSprite_53
+  - first:
+      213: -2120963421340312044
+    second: SkulSprite_54
+  - first:
+      213: -1077038401875816802
+    second: SkulSprite_55
+  - first:
+      213: 6281991044162385610
+    second: SkulSprite_56
+  - first:
+      213: 1924265105533658663
+    second: SkulSprite_57
+  - first:
+      213: 1261519258951925785
+    second: SkulSprite_58
+  - first:
+      213: -3142585726180526309
+    second: SkulSprite_59
+  - first:
+      213: -732509992167373840
+    second: SkulSprite_60
+  - first:
+      213: 1068868437916708488
+    second: SkulSprite_61
+  - first:
+      213: -7513266427724128759
+    second: SkulSprite_62
+  - first:
+      213: 6300575416827381154
+    second: SkulSprite_63
+  - first:
+      213: -8187992474521026758
+    second: SkulSprite_64
+  - first:
+      213: -4172367178624376863
+    second: SkulSprite_65
+  - first:
+      213: -7960721376150568272
+    second: SkulSprite_66
+  - first:
+      213: -7083642442741246815
+    second: SkulSprite_67
+  - first:
+      213: -8303234417876346464
+    second: SkulSprite_68
+  - first:
+      213: 1954587147733713202
+    second: SkulSprite_69
+  - first:
+      213: -7563924454227238799
+    second: SkulSprite_70
+  - first:
+      213: -7478440764797770494
+    second: SkulSprite_71
+  - first:
+      213: -8062786348103062039
+    second: SkulSprite_72
+  - first:
+      213: 3295961212505013466
+    second: SkulSprite_73
+  - first:
+      213: 2686760575708340647
+    second: SkulSprite_74
+  - first:
+      213: -1342877093606670714
+    second: SkulSprite_75
+  - first:
+      213: -8438957269278764262
+    second: SkulSprite_76
+  - first:
+      213: -6967501968937842021
+    second: SkulSprite_77
+  - first:
+      213: -1582527652797137090
+    second: SkulSprite_78
+  - first:
+      213: -4627275758837027585
+    second: SkulSprite_79
+  - first:
+      213: 2145504701945243562
+    second: SkulSprite_80
+  - first:
+      213: 785167783368063443
+    second: SkulSprite_81
+  - first:
+      213: 8316922584213726314
+    second: SkulSprite_82
+  - first:
+      213: -4540726980014113773
+    second: SkulSprite_83
+  - first:
+      213: -2829743391898854164
+    second: SkulSprite_84
+  - first:
+      213: -3090540362231501772
+    second: SkulSprite_85
+  - first:
+      213: -6750115925707412135
+    second: SkulSprite_86
+  - first:
+      213: -3700785754993139714
+    second: SkulSprite_87
+  - first:
+      213: -8746468359154922658
+    second: SkulSprite_88
+  - first:
+      213: 5490347345131064625
+    second: SkulSprite_89
+  - first:
+      213: -7358251419225818884
+    second: SkulSprite_90
+  - first:
+      213: 7578743749662697037
+    second: SkulSprite_91
+  - first:
+      213: -4967347926648896760
+    second: SkulSprite_92
+  - first:
+      213: -5499506761704463412
+    second: SkulSprite_93
+  - first:
+      213: -5486153650986829437
+    second: SkulSprite_94
+  - first:
+      213: -4819373662448656347
+    second: SkulSprite_95
+  - first:
+      213: -3353465425112448485
+    second: SkulSprite_96
+  - first:
+      213: -8639829351933662516
+    second: SkulSprite_97
+  - first:
+      213: 335782439548923102
+    second: SkulSprite_98
+  - first:
+      213: -8738708546091267687
+    second: SkulSprite_99
+  - first:
+      213: 1796497943811259990
+    second: SkulSprite_100
+  - first:
+      213: 8760752731480553112
+    second: SkulSprite_101
+  - first:
+      213: 3358919724942460594
+    second: SkulSprite_102
+  - first:
+      213: 9197860040800686025
+    second: SkulSprite_103
+  - first:
+      213: 5421385197417722212
+    second: SkulSprite_104
+  - first:
+      213: -1415375575133658277
+    second: SkulSprite_105
+  - first:
+      213: -6624412093096140918
+    second: SkulSprite_106
+  - first:
+      213: -5387534922443510594
+    second: SkulSprite_107
+  - first:
+      213: -5420340600818237546
+    second: SkulSprite_108
+  - first:
+      213: -7262758407952323683
+    second: SkulSprite_109
+  - first:
+      213: -6746528489824258530
+    second: SkulSprite_110
+  - first:
+      213: -4109617702115517254
+    second: SkulSprite_111
+  - first:
+      213: 28196491062502780
+    second: SkulSprite_112
+  - first:
+      213: 3744022985597834127
+    second: SkulSprite_113
+  - first:
+      213: -6634597470036728945
+    second: SkulSprite_114
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkulSprite_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 632
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6286573a93eb4bd40800000000000000
+      internalID: 5599309391493163046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 631
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f10b964453d5d20800000000000000
+      internalID: 3268827472488046429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 632
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb3d76b675c17f80800000000000000
+      internalID: -8110484340259079172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 634
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ada4237c7d7dc6c0800000000000000
+      internalID: -4121500110512935519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 587
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31da2ac746a679800800000000000000
+      internalID: 619080453607042323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_10
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 584
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd98fdd4639012590800000000000000
+      internalID: -7700863758987458084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_12
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 584
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac43ca0494f2ca140800000000000000
+      internalID: 4732209300123694282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_13
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 584
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3dd6080848305e0800000000000000
+      internalID: -1944564926648560697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_14
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 585
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e91b4eaff9ae3ba0800000000000000
+      internalID: -6107257129061901849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_15
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 582
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc51ca3a792905de0800000000000000
+      internalID: -1346415108600097329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_16
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 584
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1055ca45225bae640800000000000000
+      internalID: 5110095886259344641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_17
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 584
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a5f5d1273fae8f0800000000000000
+      internalID: -510327936308520424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_22
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 541
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9434c8af97c20fb0800000000000000
+      internalID: -4682961173966736225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_27
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 492
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764ced4a849933a00800000000000000
+      internalID: 735099701474280551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 492
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0c487fc14023330800000000000000
+      internalID: 3689015567228125353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_31
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 443
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19460c80269471750800000000000000
+      internalID: 6275565291166524561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_32
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 444
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6099e446a1e5da800800000000000000
+      internalID: 625259390719400198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_39
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 390
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f91241d39d789410800000000000000
+      internalID: 1484074151043013109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_40
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 391
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243e4e92b635e4aa0800000000000000
+      internalID: -6174906319348899006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_41
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 391
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00373b6d2bca6f040800000000000000
+      internalID: 4681118746804450048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_46
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 331
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb8a310a5b1aa2f10800000000000000
+      internalID: 2245785165644409023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_47
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 332
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3cbe5e91f8a4dd0800000000000000
+      internalID: -2501029301656501249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_48
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 320
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9347d19761db780800000000000000
+      internalID: -8665745398549956103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_49
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 337
+        width: 59
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426009e25df3dbc10800000000000000
+      internalID: 2070881588502070820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_50
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 342
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23fbd4827112529f0800000000000000
+      internalID: -493952200783053006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_55
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 274
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9eccb6a7479d01f0800000000000000
+      internalID: -1077038401875816802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_56
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 248
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac6fb7d329d1e2750800000000000000
+      internalID: 6281991044162385610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_57
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 255
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72663051bec54ba10800000000000000
+      internalID: 1924265105533658663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_58
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 263
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910c42b0511d18110800000000000000
+      internalID: 1261519258951925785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_67
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 193
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a41784aab8d1bd90800000000000000
+      internalID: -7083642442741246815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_68
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 178
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9dea31a4cf4cc80800000000000000
+      internalID: -8303234417876346464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_69
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 191
+        width: 55
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231463fa7a6102b10800000000000000
+      internalID: 1954587147733713202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_70
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 198
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17025e5c8ca870790800000000000000
+      internalID: -7563924454227238799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_73
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 132
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adcb3d0924b9dbd20800000000000000
+      internalID: 3295961212505013466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_74
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 125
+        width: 63
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1ae9f228a494520800000000000000
+      internalID: 2686760575708340647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_75
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 126
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68eb092f5642d5de0800000000000000
+      internalID: -1342877093606670714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_77
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 138
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a00a9efd57e4f90800000000000000
+      internalID: -6967501968937842021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_86
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 84
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95da0874455c252a0800000000000000
+      internalID: -6750115925707412135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_87
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 88
+        width: 39
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effdec3a6fa24acc0800000000000000
+      internalID: -3700785754993139714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_88
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 91
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b806d3e5d4e9680800000000000000
+      internalID: -8746468359154922658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_98
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 50
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edca0278950f8a400800000000000000
+      internalID: 335782439548923102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_106
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8fd3398c4c5114a0800000000000000
+      internalID: -6624412093096140918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_107
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc2ebc4881ab35b0800000000000000
+      internalID: -5387534922443510594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_108
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 16
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ff99611f417c4b0800000000000000
+      internalID: -5420340600818237546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_109
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b258c25bf753b90800000000000000
+      internalID: -7262758407952323683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_110
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 13
+        width: 39
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16f8f845148f52a0800000000000000
+      internalID: -6746528489824258530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_111
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 9
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc5fbe3974b7f6c0800000000000000
+      internalID: -4109617702115517254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_112
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 7
+        width: 41
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7561b92f8c246000800000000000000
+      internalID: 28196491062502780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_113
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 5
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83d477911175f330800000000000000
+      internalID: 3744022985597834127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkulSprite_114
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 4
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8361caa0cc2de3a0800000000000000
+      internalID: -6634597470036728945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bd79edcf077440446ab60c801df494b9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SkulSprite_0: 2586566535107483422
+      SkulSprite_1: -7991744495722230092
+      SkulSprite_10: -7700863758987458084
+      SkulSprite_100: 1796497943811259990
+      SkulSprite_101: 8760752731480553112
+      SkulSprite_102: 3358919724942460594
+      SkulSprite_103: 9197860040800686025
+      SkulSprite_104: 5421385197417722212
+      SkulSprite_105: -1415375575133658277
+      SkulSprite_106: -6624412093096140918
+      SkulSprite_107: -5387534922443510594
+      SkulSprite_108: -5420340600818237546
+      SkulSprite_109: -7262758407952323683
+      SkulSprite_11: -5705674624156270479
+      SkulSprite_110: -6746528489824258530
+      SkulSprite_111: -4109617702115517254
+      SkulSprite_112: 28196491062502780
+      SkulSprite_113: 3744022985597834127
+      SkulSprite_114: -6634597470036728945
+      SkulSprite_12: 4732209300123694282
+      SkulSprite_13: -1944564926648560697
+      SkulSprite_14: -6107257129061901849
+      SkulSprite_15: -1346415108600097329
+      SkulSprite_16: 5110095886259344641
+      SkulSprite_17: -510327936308520424
+      SkulSprite_18: 4798728914040731933
+      SkulSprite_19: 8433063281277903005
+      SkulSprite_2: 5599309391493163046
+      SkulSprite_20: 351002961659088817
+      SkulSprite_21: -1441901445168036667
+      SkulSprite_22: -4682961173966736225
+      SkulSprite_23: -7245853401048609875
+      SkulSprite_24: -6140322089703550749
+      SkulSprite_25: -2029118621321725498
+      SkulSprite_26: -7900956819586358078
+      SkulSprite_27: 735099701474280551
+      SkulSprite_28: 3689015567228125353
+      SkulSprite_29: -5975843426012290216
+      SkulSprite_3: 3268827472488046429
+      SkulSprite_30: -1827001735327142725
+      SkulSprite_31: 6275565291166524561
+      SkulSprite_32: 625259390719400198
+      SkulSprite_33: 7983412134320788026
+      SkulSprite_34: 3878694265636976268
+      SkulSprite_35: -6005688120885355817
+      SkulSprite_36: -8623663953856616530
+      SkulSprite_37: -4509934188763874946
+      SkulSprite_38: 2124409946230482257
+      SkulSprite_39: 1484074151043013109
+      SkulSprite_4: -8110484340259079172
+      SkulSprite_40: -6174906319348899006
+      SkulSprite_41: 4681118746804450048
+      SkulSprite_42: -2738312930486693579
+      SkulSprite_43: -482788662046926450
+      SkulSprite_44: 1942431043783771027
+      SkulSprite_45: -1749026551719302394
+      SkulSprite_46: 2245785165644409023
+      SkulSprite_47: -2501029301656501249
+      SkulSprite_48: -8665745398549956103
+      SkulSprite_49: 2070881588502070820
+      SkulSprite_5: -4121500110512935519
+      SkulSprite_50: -493952200783053006
+      SkulSprite_51: -8617303608658709357
+      SkulSprite_52: 6918034188741463613
+      SkulSprite_53: -6725030348022444815
+      SkulSprite_54: -2120963421340312044
+      SkulSprite_55: -1077038401875816802
+      SkulSprite_56: 6281991044162385610
+      SkulSprite_57: 1924265105533658663
+      SkulSprite_58: 1261519258951925785
+      SkulSprite_59: -3142585726180526309
+      SkulSprite_6: 5103980255146218283
+      SkulSprite_60: -732509992167373840
+      SkulSprite_61: 1068868437916708488
+      SkulSprite_62: -7513266427724128759
+      SkulSprite_63: 6300575416827381154
+      SkulSprite_64: -8187992474521026758
+      SkulSprite_65: -4172367178624376863
+      SkulSprite_66: -7960721376150568272
+      SkulSprite_67: -7083642442741246815
+      SkulSprite_68: -8303234417876346464
+      SkulSprite_69: 1954587147733713202
+      SkulSprite_7: 4493162441554296127
+      SkulSprite_70: -7563924454227238799
+      SkulSprite_71: -7478440764797770494
+      SkulSprite_72: -8062786348103062039
+      SkulSprite_73: 3295961212505013466
+      SkulSprite_74: 2686760575708340647
+      SkulSprite_75: -1342877093606670714
+      SkulSprite_76: -8438957269278764262
+      SkulSprite_77: -6967501968937842021
+      SkulSprite_78: -1582527652797137090
+      SkulSprite_79: -4627275758837027585
+      SkulSprite_8: 4748782656788599115
+      SkulSprite_80: 2145504701945243562
+      SkulSprite_81: 785167783368063443
+      SkulSprite_82: 8316922584213726314
+      SkulSprite_83: -4540726980014113773
+      SkulSprite_84: -2829743391898854164
+      SkulSprite_85: -3090540362231501772
+      SkulSprite_86: -6750115925707412135
+      SkulSprite_87: -3700785754993139714
+      SkulSprite_88: -8746468359154922658
+      SkulSprite_89: 5490347345131064625
+      SkulSprite_9: 619080453607042323
+      SkulSprite_90: -7358251419225818884
+      SkulSprite_91: 7578743749662697037
+      SkulSprite_92: -4967347926648896760
+      SkulSprite_93: -5499506761704463412
+      SkulSprite_94: -5486153650986829437
+      SkulSprite_95: -4819373662448656347
+      SkulSprite_96: -3353465425112448485
+      SkulSprite_97: -8639829351933662516
+      SkulSprite_98: 335782439548923102
+      SkulSprite_99: -8738708546091267687
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
