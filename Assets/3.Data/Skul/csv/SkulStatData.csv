@@ -1,1 +1,2 @@
 ﻿name,type,rarity,hp,takeDamageMultiply,physicalAttack,magicAttack,attackSpeed,moveSpeed,concentrationSpeed,skillCoolDownSpeed,swapCoolDownSpeed,quintessenceCoolDownSpeed,criticalProbablility,criticalDamageMultiply
+LittleBorn,Balance,Common,150,1,1.6,1.6,1,1,1,1.6,1.4,1.4,0.1,1.5
