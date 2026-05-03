@@ -6,15 +6,15 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     [Header("Move Setting")]
-    [SerializeField] private float mMoveSpeed = 5.0f;
-
-    private Vector2 mMoveInput;
-    private Rigidbody2D mBody;
+    [SerializeField] private float moveSpeed = 5.0f;
+    private DataManager dataManager;
+    private Vector2 moveInput;
+    private Rigidbody2D body;
 
 
     void Awake()
     {
-        mBody = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
        
     }
 
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        mMoveInput = context.ReadValue<Vector2>();
+        moveInput = context.ReadValue<Vector2>();
     }
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -48,14 +48,18 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMove()
     {
-        Vector2 moveVector = new Vector2(mMoveInput.x, mMoveInput.y) * mMoveSpeed * Time.fixedDeltaTime;
-        Vector2 currPos = mBody.position;
+        Vector2 moveVector = new Vector2(moveInput.x, moveInput.y) * moveSpeed * Time.fixedDeltaTime;
+        Vector2 currPos = body.position;
         Vector2 deltaPosition = currPos + moveVector;
 
-        mBody.MovePosition(deltaPosition);
+        body.MovePosition(deltaPosition);
     }
     private void Dash()
     {
         Debug.Log("Dash Call");
+    }
+    private void ApplyMoveSpeed()
+    {
+
     }
 }
