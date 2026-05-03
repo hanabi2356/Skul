@@ -35,6 +35,9 @@ public class PlayerBase : MonoBehaviour
     }
     public void ChangeState(IPlayerState newState)
     {
+        if (currentPlayerState == newState)
+            return;
+
         currentPlayerState?.Exit();
         currentPlayerState = newState;
         currentPlayerState?.Enter();
