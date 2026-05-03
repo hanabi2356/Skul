@@ -43,6 +43,7 @@ public class SkulStatDataImporter : EditorWindow
         //lines[0]은 헤더이기 때문에 i=1부터 시작해야 한다
         for (int i = 1; i < lines.Length; i++)
         {
+            //값 자르기
             string []values = lines[i].Trim().Split(",");
             if (values.Length < headers.Length)
                 continue;
