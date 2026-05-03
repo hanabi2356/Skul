@@ -1,22 +1,23 @@
 using UnityEngine;
 
+
 public class PlayerBase : MonoBehaviour
 {
 
     private IPlayerState currentPlayerState;
-
+    public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
     public PlayerAttackState attackState { get; private set; }
     public PlayerDashState dashState { get; private set; }
-    public PlayerJumpState jumpState { get; private set; }
+
     public PlayerHitState hitState { get; private set; }
     public PlayerDeadState deadState { get; private set; }
 
 
     private void Start()
     {
-        ChangeState(idleState);
+        ChangeState(idleState, currentPlayerStateEnum);
     }
     void Awake()
     {
@@ -24,7 +25,6 @@ public class PlayerBase : MonoBehaviour
         moveState = new PlayerMoveState(this);
         attackState = new PlayerAttackState(this);
         dashState = new PlayerDashState(this);
-        jumpState = new PlayerJumpState(this);
         hitState = new PlayerHitState(this);
         deadState = new PlayerDeadState(this);
     }
@@ -33,13 +33,14 @@ public class PlayerBase : MonoBehaviour
     {
         currentPlayerState?.Excute();
     }
-    public void ChangeState(IPlayerState newState)
+    public void ChangeState(IPlayerState newState, EPlayerState newStateEnum)
     {
         if (currentPlayerState == newState)
             return;
 
         currentPlayerState?.Exit();
         currentPlayerState = newState;
+        currentPlayerStateEnum = newStateEnum;
         currentPlayerState?.Enter();
     }
 

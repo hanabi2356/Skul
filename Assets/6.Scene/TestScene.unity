@@ -124,7 +124,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1504335955653474628, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
   m_PrefabInstance: {fileID: 8852654875469036369}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217708059}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cae1954976c4cc4286b1f998ef0b721, type: 3}
@@ -442,23 +442,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1217708059 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1382966956508622651, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
-  m_PrefabInstance: {fileID: 8852654875469036369}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1217708063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217708059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bf0320bc188c6948b6682fc9576df34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBase
 --- !u!1 &2000916024
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,10 +634,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1382966956508622651, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1217708063}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

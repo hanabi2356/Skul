@@ -1,4 +1,13 @@
 using UnityEngine;
+public enum EPlayerState
+{
+    Idle,
+    Move,
+    Attack,
+    Dash,
+    Hit,
+    Dead
+}
 
 public interface IPlayerState 
 {
