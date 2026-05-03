@@ -24,3 +24,6 @@ EditorUtility.SetDirty를 사용하여 물리적 디스크에 저장<br>
 AssetDatabase를 사용하여 에셋을 코드를 사용하여 자동 생성<br>
 ***공용 Singleton***<br>
 DataManager, SoundManager등을 만들 때 Singleton을 적용하여 만들거기 때문데 코드의 중복을 막기 위해 공용 스크립트 제작<br>
+***FSM패턴***<br>
+FSM패턴을 상태별 스크립트를 만들어 상태별 스크립트 내부에서 상태를 전환하는 로직을 구성하여 PlayerBase의 코드가 비대해지고 GodClass가 되는것을 방지함<br>
+PlayerBase Awake에서 상태 스크립트들을 미리 캐싱하여 매번 new를 하여 생기는 메모리 부담을 줄인다
