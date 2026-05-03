@@ -19,4 +19,6 @@
 ***InputSystem***<br>
 PlayerInput을 GlobalInputManager라는 빈 오브젝트에 넣어 관심사를 분리<br>
 ***DataManagement***<br>
-Data파일은 csv파일을 파싱하여 관리
+Data파일은 csv파일을 파싱하여 관리<br>
+EditorUtility.SetDirty를 사용하여 물리적 디스크에 저장<br>
+AssetDatabase를 사용하여 에셋을 코드를 사용하여 자동 생성<br>
