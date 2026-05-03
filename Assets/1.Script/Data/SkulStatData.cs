@@ -24,6 +24,8 @@ public enum SkulRarity
 [CreateAssetMenu(fileName = "SkulStatData", menuName = "Create Data File/SkulStatData")]
 public class SkulStatData : ScriptableObject
 {
+    [Header("***직접 수정 금지***")]
+
     [Header("Skul Data")]
     [SerializeField] private string _name; //이름
     [SerializeField] private SkulType _type; //타입

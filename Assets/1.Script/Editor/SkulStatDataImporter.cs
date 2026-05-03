@@ -40,6 +40,7 @@ public class SkulStatDataImporter : EditorWindow
         //header 자르기
         string[] headers = lines[0].Trim().Split(',');
 
+        //lines[0]은 헤더이기 때문에 i=1부터 시작해야 한다
         for (int i = 1; i < lines.Length; i++)
         {
             string []values = lines[i].Trim().Split(",");
@@ -75,6 +76,7 @@ public class SkulStatDataImporter : EditorWindow
                     field.SetValue(asset,convertedValue);
                 }
             }
+            //변경된 데이터를 디스크에 물리적으로 기록
             EditorUtility.SetDirty(asset);
         }
         AssetDatabase.SaveAssets();

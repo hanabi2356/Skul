@@ -2,6 +2,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
+using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     [Header("Move Setting")]
@@ -33,7 +34,13 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
-
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            Dash();
+        }
+    }
     private void Jump()
     {
         Debug.Log("Jump");
@@ -47,5 +54,8 @@ public class PlayerController : MonoBehaviour
 
         mBody.MovePosition(deltaPosition);
     }
-
+    private void Dash()
+    {
+        Debug.Log("Dash Call");
+    }
 }
