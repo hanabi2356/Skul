@@ -1,6 +1,14 @@
 using UnityEngine;
 
-
+public enum EPlayerState
+{
+    Idle,
+    Move,
+    Attack,
+    Dash,
+    Hit,
+    Dead
+}
 public class PlayerBase : MonoBehaviour
 {
 
@@ -10,7 +18,6 @@ public class PlayerBase : MonoBehaviour
     public PlayerMoveState moveState { get; private set; }
     public PlayerAttackState attackState { get; private set; }
     public PlayerDashState dashState { get; private set; }
-
     public PlayerHitState hitState { get; private set; }
     public PlayerDeadState deadState { get; private set; }
 
