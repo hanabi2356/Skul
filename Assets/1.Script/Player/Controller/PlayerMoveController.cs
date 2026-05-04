@@ -3,19 +3,20 @@ using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
 using System.Collections;
-public class PlayerController : MonoBehaviour
+public class PlayerMoveController : MonoBehaviour
 {
     [Header("Move Setting")]
     [SerializeField] private float moveSpeed = 5.0f;
-    private DataManager dataManager;
-    private Vector2 moveInput;
+    public Vector2 moveInput { get; private set; }
+
     private Rigidbody2D body;
 
 
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-       
+        
+
     }
 
     void FixedUpdate()
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
     }
     private void ApplyMoveSpeed()
     {
-
+        
     }
+   
 }
