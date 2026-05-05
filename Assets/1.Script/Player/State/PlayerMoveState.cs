@@ -18,6 +18,11 @@ public class PlayerMoveState : IPlayerState
         {
             playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
         }
+
+        if(!playerBase.physicsHandler.IsGround())
+        {
+            playerBase.ChangeState(playerBase.jumpState, EPlayerState.Jump);
+        }
     }
 
     public void Exit()

@@ -15,7 +15,10 @@ public class PlayerJumpState : IPlayerState
 
     public void Excute()
     {
-
+        if(playerBase.physicsHandler.IsGround())
+        {
+            playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
+        }
     }
 
     public void Exit()

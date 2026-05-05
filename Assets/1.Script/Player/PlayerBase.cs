@@ -28,6 +28,8 @@ public class PlayerBase : MonoBehaviour
     public PlayerInputController inputController { get; private set; }
     public PlayerAnimController animController { get; private set; }
 
+    public PhysicsHandler physicsHandler { get; private set; }
+
     public Animator animator { get; private set; }
     public Rigidbody2D body { get; private set; }
 
@@ -60,6 +62,8 @@ public class PlayerBase : MonoBehaviour
             animator = GetComponentInChildren<Animator>();
         if (body == null)
             body = GetComponent<Rigidbody2D>();
+        if(physicsHandler == null)
+            physicsHandler = GetComponent<PhysicsHandler>();
     }
     void Update()
     {

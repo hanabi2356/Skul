@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using UnityEngine;
 
 public class PlayerIdleState : IPlayerState
@@ -16,9 +17,13 @@ public class PlayerIdleState : IPlayerState
 
     public void Excute()
     {
-        if(playerBase.moveController.moveInput != Vector2.zero)
+        if(playerBase.moveController.moveInput != Vector2.zero && playerBase.physicsHandler.IsGround())
         {
             playerBase.ChangeState(playerBase.moveState, EPlayerState.Move);
+        }
+        if(!playerBase.physicsHandler.IsGround())
+        {
+            playerBase.ChangeState(playerBase.jumpState, EPlayerState.Jump);    
         }
     }
 
