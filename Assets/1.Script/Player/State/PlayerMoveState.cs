@@ -9,17 +9,20 @@ public class PlayerMoveState : IPlayerState
     }
     public void Enter()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Excute()
     {
-        throw new System.NotImplementedException();
+        if(playerBase.moveController.moveInput == Vector2.zero)
+        {
+            playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
+        }
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        
     }
 
    

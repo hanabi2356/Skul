@@ -7,21 +7,24 @@ public class PlayerMoveController : MonoBehaviour
 {
     [Header("Move Setting")]
     [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float jumpForce = 5.0f;
     public Vector2 moveInput { get; private set; }
 
-    private Rigidbody2D body;
+    private PlayerBase playerBase;
 
 
     void Awake()
     {
-        body = GetComponent<Rigidbody2D>();
-        
+        playerBase = GetComponent<PlayerBase>();
 
     }
+
+    
 
     void FixedUpdate()
     {
         PlayerMove();
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -45,21 +48,20 @@ public class PlayerMoveController : MonoBehaviour
     private void Jump()
     {
         Debug.Log("Jump");
+        playerBase.body.linearVelocity = new Vector2(playerBase.body.linearVelocity.x, 0.0f);
+        playerBase.body.AddForce(Vector2.up* jumpForce, ForceMode2D.Impulse);
     }
 
     private void PlayerMove()
     {
-        Vector2 moveVector = new Vector2(moveInput.x, moveInput.y) * moveSpeed * Time.fixedDeltaTime;
-        Vector2 currPos = body.position;
-        Vector2 deltaPosition = currPos + moveVector;
-
-        body.MovePosition(deltaPosition);
+        float targetX = moveInput.x*moveSpeed;
+        playerBase.body.linearVelocity = new Vector2(targetX, playerBase.body.linearVelocity.y);
     }
     private void Dash()
     {
         Debug.Log("Dash Call");
     }
-    private void ApplyMoveSpeed()
+    private void ApplyInputValue()
     {
         
     }
