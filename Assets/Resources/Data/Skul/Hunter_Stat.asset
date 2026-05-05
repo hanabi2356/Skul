@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5309fa3853a5304d9fd8abefa4455e4, type: 3}
+  m_Name: Hunter_Stat
+  m_EditorClassIdentifier: Assembly-CSharp::SkulStatData
+  _name: Hunter
+  _type: 1
+  _rarity: 1
+  _hp: 150
+  _takeDamageMultiply: 1
+  _physicalAttack: 1.6
+  _magicAttack: 1.6
+  _attackSpeed: 1
+  _moveSpeed: 1
+  _concentrationSpeed: 1
+  _skillCoolDownSpeed: 1.6
+  _swapCoolDownSpeed: 1.4
+  _quintessenceCoolDownSpeed: 1.4
+  _criticalProbablility: 0.1
+  _criticalDamageMultiply: 1.5
