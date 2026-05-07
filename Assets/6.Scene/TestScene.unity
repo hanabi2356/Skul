@@ -119,47 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &241434770 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1612465102408967150, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
-  m_PrefabInstance: {fileID: 8852654875469036369}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &241434772
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241434770}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.2
 --- !u!1 &553287399
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,21 +628,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4279934088627117348, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.21
+    - target: {fileID: 3022688532683476649, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
+      propertyPath: m_GravityScale
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5699612994171222841, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
-      propertyPath: jumpMaxCount
-      value: 1
+      propertyPath: dashTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699612994171222841, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
+      propertyPath: dashForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699612994171222841, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699612994171222841, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
+      propertyPath: dashCoolDown
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1612465102408967150, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 241434772}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
 --- !u!114 &8852654875469036370 stripped
 MonoBehaviour:
