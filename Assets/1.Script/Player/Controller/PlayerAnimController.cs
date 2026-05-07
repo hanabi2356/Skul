@@ -8,7 +8,7 @@ public class PlayerAnimController : MonoBehaviour
         playerBase = GetComponent<PlayerBase>();
     }
 
-    void LateUpdate()
+    void Update()
     {
         ChangeAnim(playerBase.currentPlayerStateEnum);
     }
