@@ -3,22 +3,32 @@ using UnityEngine;
 public class PlayerDashState : IPlayerState
 {
     private PlayerBase playerBase;
+    private float originGravityScale;
     public PlayerDashState(PlayerBase playerBase)
     {
         this.playerBase = playerBase;
     }
     public void Enter()
     {
-        throw new System.NotImplementedException();
+        originGravityScale = playerBase.body.gravityScale;
+        playerBase.body.gravityScale = 0.0f;
     }
 
     public void Excute()
     {
-        throw new System.NotImplementedException();
+        if(!playerBase.moveController.isDashing && playerBase.physicsHandler.IsGround())
+        {
+            playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
+        }
+        if (!playerBase.moveController.isDashing && !playerBase.physicsHandler.IsGround())
+        {
+            playerBase.ChangeState(playerBase.jumpState, EPlayerState.Jump);
+        }
+
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        playerBase.body.gravityScale= originGravityScale;
     }
 }

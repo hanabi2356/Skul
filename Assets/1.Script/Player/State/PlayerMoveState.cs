@@ -23,6 +23,10 @@ public class PlayerMoveState : IPlayerState
         {
             playerBase.ChangeState(playerBase.jumpState, EPlayerState.Jump);
         }
+        if (playerBase.moveController.isDashing)
+        {
+            playerBase.ChangeState(playerBase.dashState, EPlayerState.Dash);
+        }
     }
 
     public void Exit()

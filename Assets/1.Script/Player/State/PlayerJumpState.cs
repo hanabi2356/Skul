@@ -15,9 +15,14 @@ public class PlayerJumpState : IPlayerState
 
     public void Excute()
     {
-        if(playerBase.physicsHandler.IsGround())
+        if (playerBase.physicsHandler.IsGround())
         {
             playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
+        }
+
+        if (playerBase.moveController.isDashing)
+        {
+            playerBase.ChangeState(playerBase.dashState, EPlayerState.Dash);
         }
     }
 

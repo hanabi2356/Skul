@@ -7,11 +7,17 @@ public class PlayerMoveController : MonoBehaviour
 {
     [Header("Move Setting")]
     [SerializeField] private float moveSpeed = 5.0f;
+
+    [Header("Jump Setting")]
     [SerializeField] private float jumpForce = 10.0f;
-    [SerializeField] private float dashForce = 5.0f;
     [SerializeField] private int jumpMaxCount = 2;
-    [SerializeField] private float dashCoolDown = 1.0f;
     [SerializeField] private float fallMultiply = 2.5f;
+
+    [Header("Dash Setting")]
+    [SerializeField] private float dashForce = 5.0f;
+    [SerializeField] private float dashCoolDown = 1.0f;
+    [SerializeField] private float dashTime = 0.2f;
+
     [Header("Debug Value(수정 X)")]
     [SerializeField]private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
@@ -21,6 +27,9 @@ public class PlayerMoveController : MonoBehaviour
 
     private Vector2 gazeVector = new Vector2(1.0f, 0.0f); //시선 백터
     private bool isDash = true;
+    public bool isDashing { get; private set; } = false;
+    
+    
 
     void Awake()
     {
@@ -32,6 +41,9 @@ public class PlayerMoveController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDashing)
+            return;
+
         PlayerMove();
         JumpCounter();
         MultiplyGravity();
@@ -71,6 +83,9 @@ public class PlayerMoveController : MonoBehaviour
         
         jumpCount++;
     }
+    /// <summary>
+    /// 점프 후 낙하 시 중력을 추가로 주는 함수
+    /// </summary>
     private void MultiplyGravity()
     {
         if(playerBase.body.linearVelocity.y <0.0f)
@@ -89,13 +104,16 @@ public class PlayerMoveController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        
         Debug.Log("Dash");
         isDash = false;
-        playerBase.body.linearVelocity = new Vector2(gazeVector.x*dashForce, playerBase.body.linearVelocity.y);
-
+        isDashing = true;
+        playerBase.body.linearVelocity = new Vector2(gazeVector.x*dashForce, 0.0f);
+        yield return new WaitForSeconds(dashTime);
+        isDashing = false;
+        
         yield return new WaitForSeconds(dashCoolDown);
         isDash = true;
-        
     }
     private void JumpCounter()
     {

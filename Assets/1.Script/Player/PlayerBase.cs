@@ -40,6 +40,7 @@ public class PlayerBase : MonoBehaviour
     void Awake()
     {
         SkulInit();
+        body.gravityScale = 2.5f;
     }
 
     private void SkulInit()
