@@ -17,16 +17,19 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float dashForce = 5.0f;
     [SerializeField] private float dashCoolDown = 1.0f;
     [SerializeField] private float dashTime = 0.2f;
+    [SerializeField] private int dashMaxCount = 2;
 
     [Header("Debug Value(수정 X)")]
-    [SerializeField]private int jumpCount = 0;
+    [SerializeField] private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
+    [SerializeField] private int dashCount = 0;
+    [SerializeField] private bool isDash = true;
     public Vector2 moveInput { get; private set; }
 
     private PlayerBase playerBase;
 
     private Vector2 gazeVector = new Vector2(1.0f, 0.0f); //시선 백터
-    private bool isDash = true;
+    
     public bool isDashing { get; private set; } = false;
     
     
@@ -68,7 +71,7 @@ public class PlayerMoveController : MonoBehaviour
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        if(context.started && isDash)
+        if(context.started && dashCount < dashMaxCount)
         {
             StartCoroutine(Dash());
         }
@@ -101,19 +104,23 @@ public class PlayerMoveController : MonoBehaviour
         
         transform.rotation = gazeVector.x > 0.0f ? new Quaternion(0.0f, 0.0f, 0.0f, 0.0f) : new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
     }
-
+    /// <summary>
+    /// 대쉬 코루틴
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Dash()
     {
-        
-        Debug.Log("Dash");
-        isDash = false;
+        dashCount++;
+        //isDash = false;
         isDashing = true;
         playerBase.body.linearVelocity = new Vector2(gazeVector.x*dashForce, 0.0f);
+
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         
         yield return new WaitForSeconds(dashCoolDown);
-        isDash = true;
+        dashCount = 0;
+        //isDash = true;
     }
     private void JumpCounter()
     {
