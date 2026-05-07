@@ -32,3 +32,4 @@ Enum형도 같이 선언하여 Boolean형식 대신 사용하여 불필요한 Bo
 # 할 일
 PlayerPhysicsHandler 만들기
 SkulStatData 주입 로직
+공중에서 점프 시 두 번째 점프로 나가는 로직 구현
