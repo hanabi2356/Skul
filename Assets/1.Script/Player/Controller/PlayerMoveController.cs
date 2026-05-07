@@ -11,7 +11,7 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float dashForce = 5.0f;
     [SerializeField] private int jumpMaxCount = 2;
     [SerializeField] private float dashCoolDown = 1.0f;
-
+    [SerializeField] private float fallMultiply = 2.5f;
     [Header("Debug Value(수정 X)")]
     [SerializeField]private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
@@ -20,6 +20,7 @@ public class PlayerMoveController : MonoBehaviour
     private PlayerBase playerBase;
 
     private Vector2 gazeVector = new Vector2(1.0f, 0.0f); //시선 백터
+    private bool isDash = true;
 
     void Awake()
     {
@@ -33,7 +34,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         PlayerMove();
         JumpCounter();
-        Debug.Log(gazeVector);
+        MultiplyGravity();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -55,20 +56,29 @@ public class PlayerMoveController : MonoBehaviour
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if(context.started && isDash)
         {
             StartCoroutine(Dash());
         }
     }
-
+    /// <summary>
+    /// 점프
+    /// </summary>
     private void Jump()
     {
-        Debug.Log("Jump");
-        playerBase.body.linearVelocity = new Vector2(playerBase.body.linearVelocity.x, 0.0f);
-        playerBase.body.AddForce(Vector2.up* jumpForce, ForceMode2D.Impulse);
+        
+        playerBase.body.linearVelocity = new Vector2(playerBase.body.linearVelocity.x, jumpForce);
+        
         jumpCount++;
     }
-
+    private void MultiplyGravity()
+    {
+        if(playerBase.body.linearVelocity.y <0.0f)
+        {
+            //기존 중력에 1이여서 원하는 값을 정확히 계산하기 위해 fallMultiply-1을 함
+            playerBase.body.linearVelocity += Vector2.up * Physics2D.gravity * (fallMultiply - 1) * Time.fixedDeltaTime;
+        }
+    }
     private void PlayerMove()
     {
         float targetX = moveInput.x*moveSpeed;
@@ -80,10 +90,11 @@ public class PlayerMoveController : MonoBehaviour
     private IEnumerator Dash()
     {
         Debug.Log("Dash");
-        playerBase.body.linearVelocity = new Vector2(playerBase.body.linearVelocity.x, playerBase.body.linearVelocity.y);
-        playerBase.body.AddForce(transform.right*dashForce, ForceMode2D.Impulse);
+        isDash = false;
+        playerBase.body.linearVelocity = new Vector2(gazeVector.x*dashForce, playerBase.body.linearVelocity.y);
 
         yield return new WaitForSeconds(dashCoolDown);
+        isDash = true;
         
     }
     private void JumpCounter()
