@@ -12,22 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf70bf95a449e94bbda8a5324fa57e3, type: 3}
   m_Name: DefaultStatData
   m_EditorClassIdentifier: Assembly-CSharp::DefaultStatData
-  HP: 0
-  takeDamageMultyply: 0
-  physicsAttack: 0
-  magicAttack: 0
-  attackSpeed: 0
-  moveSpeed: 0
-  concentrationSpeed: 0
-  skillCoolDown: 0
-  swapCoolDown: 0
-  quintessenceCoolDown: 0
-  criticalProbablility: 0
-  criticalDamageMultiply: 0
-  jumpForce: 0
-  fallMultiply: 0
-  jumpMaxCount: 0
-  dashForce: 0
-  dashCoolTime: 0
-  dashDuration: 0
-  dashMaxCount: 0
+  HP: 150
+  takeDamageMultyply: 1
+  physicsAttack: 15
+  magicAttack: 15
+  attackSpeed: 1
+  moveSpeed: 5
+  concentrationSpeed: 1
+  skillCoolDown: 1
+  swapCoolDown: 1
+  quintessenceCoolDown: 1
+  criticalProbablility: 1
+  criticalDamageMultiply: 1
+  jumpForce: 10
+  fallMultiply: 2.5
+  dashForce: 10
+  dashCoolTime: 0.5
+  dashDuration: 0.5
