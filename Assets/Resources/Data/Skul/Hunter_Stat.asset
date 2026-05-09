@@ -15,7 +15,6 @@ MonoBehaviour:
   _name: Hunter
   _type: 1
   _rarity: 1
-  _hp: 150
   _takeDamageMultiply: 1
   _physicalAttack: 1.6
   _magicAttack: 1.6
@@ -27,3 +26,5 @@ MonoBehaviour:
   _quintessenceCoolDownSpeed: 1.4
   _criticalProbablility: 0.1
   _criticalDamageMultiply: 1.5
+  _jumpMaxCount: 2
+  _dashMaxCount: 2

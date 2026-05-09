@@ -52,6 +52,10 @@ public class SkulStatData : ScriptableObject
     [SerializeField] private float _criticalProbablility; //크리티컬 확률
     [SerializeField] private float _criticalDamageMultiply; //크리티컬 데미지 배수
 
+    [Header("Jump & Dash")]
+    [SerializeField] private int _jumpMaxCount; //최대 점프 횟수
+    [SerializeField] private int _dashMaxCount; //최대 대쉬 횟수
+
     public string GetName => _name;
     public SkulType GetSkulType => _type;
     public SkulRarity GetRarity => _rarity;
@@ -66,5 +70,7 @@ public class SkulStatData : ScriptableObject
     public float GetQuintessenceCoolDownSpeed => _quintessenceCoolDownSpeed;
     public float GetCriticalProbablility => _criticalProbablility;
     public float GetCriticalDamageMultiply => _criticalDamageMultiply;
+    public int GetJumpMaxCount => _jumpMaxCount;
+    public int GetDashMaxCount => _dashMaxCount;
 
 }

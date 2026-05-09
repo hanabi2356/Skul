@@ -1,9 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DefaultStatData", menuName = "Create Default Stat Data/DefaultStatData")]
 public class DefaultStatData : ScriptableObject
 {
-    [Header("기본 스탯 수치")]
+    
     [SerializeField] private int HP;
     [SerializeField] private float takeDamageMultyply;
 
@@ -23,12 +24,12 @@ public class DefaultStatData : ScriptableObject
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float fallMultiply;
-    [SerializeField] private float jumpMaxCount;
+    
 
     [SerializeField] private float dashForce;
     [SerializeField] private float dashCoolTime;
     [SerializeField] private float dashDuration;
-    [SerializeField] private float dashMaxCount;
+    
 
     public int GetHP => HP;
     public float GetTakeDamageMultyply => takeDamageMultyply;
@@ -42,4 +43,11 @@ public class DefaultStatData : ScriptableObject
     public float GetQuitessenceCoolDown => quintessenceCoolDown;
     public float GetCriticalProbablility => criticalProbablility;
     public float GetCriticalDamageMultiply => criticalDamageMultiply;
+    public float GetJumpForce => jumpForce;
+    public float GetFallMultiply => fallMultiply;
+    
+    public float GetDashForce => dashForce;
+    public float GetDashCoolTime => dashCoolTime;
+    public float GetDashDuration => dashDuration;
+
 }
