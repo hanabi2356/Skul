@@ -1,35 +1,45 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DefaultStateData", menuName = "Scriptable Objects/DefaultStateData")]
+[CreateAssetMenu(fileName = "DefaultStatData", menuName = "Create Default Stat Data/DefaultStatData")]
 public class DefaultStatData : ScriptableObject
 {
-    [SerializeField] private int defHP;
-    [SerializeField] private float defTakeDamageMultyply;
+    [Header("기본 스탯 수치")]
+    [SerializeField] private int HP;
+    [SerializeField] private float takeDamageMultyply;
 
-    [SerializeField] private float defPhysicsAttack;
-    [SerializeField] private float defMagicAttack;
+    [SerializeField] private float physicsAttack;
+    [SerializeField] private float magicAttack;
 
-    [SerializeField] private float defAttackSpeed;
-    [SerializeField] private float defMoveSpeed;
-    [SerializeField] private float defConcentrationSpeed;
+    [SerializeField] private float attackSpeed;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float concentrationSpeed;
 
-    [SerializeField] private float defSkillCoolDown;
-    [SerializeField] private float defSwapCoolDown;
-    [SerializeField] private float defQuintessenceCoolDown; 
+    [SerializeField] private float skillCoolDown;
+    [SerializeField] private float swapCoolDown;
+    [SerializeField] private float quintessenceCoolDown; 
 
-    [SerializeField] private float defCriticalProbablility;
-    [SerializeField] private float defCriticalDamageMultiply;
+    [SerializeField] private float criticalProbablility;
+    [SerializeField] private float criticalDamageMultiply;
 
-    public int GetDefHP => defHP;
-    public float GetDefTakeDamageMultyply => defTakeDamageMultyply;
-    public float GetDefPhysicsAttack => defPhysicsAttack;
-    public float GetDefMagicAttack => defMagicAttack;
-    public float GetDefAttackSpeed => defAttackSpeed;
-    public float GetDefMoveSpeed => defMoveSpeed;
-    public float GetDefConcentrationSpeed => defConcentrationSpeed;
-    public float GetDefSkillCoolDown => defSkillCoolDown;
-    public float GetDefSwpaCoolDown => defSwapCoolDown;
-    public float GetDefQuitessenceCoolDown => defQuintessenceCoolDown;
-    public float GetDefCriticalProbablility => defCriticalProbablility;
-    public float GetDefCriticalDamageMultiply => defCriticalDamageMultiply;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float fallMultiply;
+    [SerializeField] private float jumpMaxCount;
+
+    [SerializeField] private float dashForce;
+    [SerializeField] private float dashCoolTime;
+    [SerializeField] private float dashDuration;
+    [SerializeField] private float dashMaxCount;
+
+    public int GetHP => HP;
+    public float GetTakeDamageMultyply => takeDamageMultyply;
+    public float GetPhysicsAttack => physicsAttack;
+    public float GetMagicAttack => magicAttack;
+    public float GetAttackSpeed => attackSpeed;
+    public float GetMoveSpeed => moveSpeed;
+    public float GetConcentrationSpeed => concentrationSpeed;
+    public float GetSkillCoolDown => skillCoolDown;
+    public float GetSwpaCoolDown => swapCoolDown;
+    public float GetQuitessenceCoolDown => quintessenceCoolDown;
+    public float GetCriticalProbablility => criticalProbablility;
+    public float GetCriticalDamageMultiply => criticalDamageMultiply;
 }

@@ -32,7 +32,6 @@ public class SkulStatData : ScriptableObject
     [SerializeField] private SkulRarity _rarity; //등급
 
     [Header("Basic Data")]
-    [SerializeField] private int _hp; //체력
     [SerializeField] private float _takeDamageMultiply; //받는 데미지 배수
 
     [Header("Damage Data")]
@@ -56,7 +55,6 @@ public class SkulStatData : ScriptableObject
     public string GetName => _name;
     public SkulType GetSkulType => _type;
     public SkulRarity GetRarity => _rarity;
-    public int GetHP => _hp;
     public float GetTakeDamageMultiply => _takeDamageMultiply;
     public float GetPhysicalAttack => _physicalAttack;
     public float GetMagicAttack => _magicAttack;  
