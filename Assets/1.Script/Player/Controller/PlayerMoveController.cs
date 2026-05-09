@@ -23,14 +23,14 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
     [SerializeField] private int dashCount = 0;
-    [SerializeField] private bool isDash = true;
+    [field : SerializeField]public bool isDashing { get; private set; } = false;
+    
     public Vector2 moveInput { get; private set; }
 
     private PlayerBase playerBase;
 
     private Vector2 gazeVector = new Vector2(1.0f, 0.0f); //시선 백터
     
-    public bool isDashing { get; private set; } = false;
     
     
 
