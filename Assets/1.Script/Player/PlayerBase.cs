@@ -17,7 +17,7 @@ public class PlayerBase : MonoBehaviour
     
     private IPlayerState currentPlayerState;
 
-    [SerializeField] private SkulStatData currentStatData;
+    [SerializeField] private SkulStatData currentSkulStatData;
     [SerializeField] private DefaultStatData defaultStatData;
     [field : SerializeField]public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
     public PlayerIdleState idleState { get; private set; }
@@ -36,18 +36,48 @@ public class PlayerBase : MonoBehaviour
     public Animator animator { get; private set; }
     public Rigidbody2D body { get; private set; }
 
+    //기본 정보
+    [HideInInspector] public int currentHP;
+    [HideInInspector] public float finalTakeDamageMultiply;
+    //공격력
+    [HideInInspector] public float finalPhysicsAttack;
+    [HideInInspector] public float finalMagicAttack;
+    //공격, 이동, 정신집중 속도
+    [HideInInspector] public float finalAttackSpeed;
+    [HideInInspector] public float finalMoveSpeed;
+    [HideInInspector] public float finalConcentrationSpeed;
+    //쿨다운 속도
+    [HideInInspector] public float finalSkillCoolDownSpeed;
+    [HideInInspector] public float finalSwapCoolDownSpeed;
+    [HideInInspector] public float finalQuintessenceCoolDownSpeed;
+    //치명타 확률 및 치명타 데미지 배수
+    [HideInInspector] public float finalCriticalProbablility;
+    [HideInInspector] public float finalCriticalDamageMultiply;
+    //점프
+    [HideInInspector] public float finalJumpForce;
+    [HideInInspector] public float finalFallMultiply;
+    [HideInInspector] public int finalJumpMaxCount;
+    //대쉬
+    [HideInInspector] public float finalDashForce;
+    [HideInInspector] public float finalDashCoolTime;
+    [HideInInspector] public float finalDashDuration;
+    [HideInInspector] public int finalDashMaxCount;
+    
+
     private void Start()
     {
     }
     void Awake()
     {
-        SkulInit();
+        Init();
         ChangeState(idleState, currentPlayerStateEnum);
-        ChangeSkul(currentStatData);
-
+        SkulStatDataLoader("LittleBorn");
+        InitFinalStat();
     }
-
-    private void SkulInit()
+    /// <summary>
+    /// 스크립트 및 컴포넌트 초기화
+    /// </summary>
+    private void Init()
     {
         idleState = new PlayerIdleState(this);
         moveState = new PlayerMoveState(this);
@@ -85,7 +115,51 @@ public class PlayerBase : MonoBehaviour
     }
     public void ChangeSkul(SkulStatData newData)
     {
-        currentStatData = newData;
+        currentSkulStatData = newData;
     }
+    public void SkulStatDataLoader(string name)
+    {
+        string path = "Data/Skul/"+name+"_Stat";
+        currentSkulStatData = Resources.Load<SkulStatData>(path);
+        if(currentSkulStatData == null)
+        {
+            Debug.LogError($"SkulStat 로딩 실패 [경로 : {path}]");
+        }
+        else
+        {
+            Debug.Log("Load 성공");
+        }
+    }
+    /// <summary>
+    /// defaultStatData와 currentSkulStatData를 가지고 최종 스탯을 결정하는 함수
+    /// </summary>
+    public void InitFinalStat()
+    {
+        currentHP = defaultStatData.GetHP;
+        finalTakeDamageMultiply = defaultStatData.GetTakeDamageMultyply * currentSkulStatData.GetTakeDamageMultiply;
 
+        finalPhysicsAttack = defaultStatData.GetPhysicsAttack * currentSkulStatData.GetPhysicalAttack;
+        finalMagicAttack = defaultStatData.GetMagicAttack * currentSkulStatData.GetMagicAttack;
+
+        finalAttackSpeed = defaultStatData.GetAttackSpeed * currentSkulStatData.GetAttackSpeed;
+        finalMoveSpeed = defaultStatData.GetMoveSpeed * currentSkulStatData.GetMoveSpeed;
+        finalConcentrationSpeed = defaultStatData.GetConcentrationSpeed *currentSkulStatData.GetConcentrationSpeed;
+
+        finalSkillCoolDownSpeed = defaultStatData.GetSkillCoolDown * currentSkulStatData.GetSkillCoolDownSpeed;
+        finalSwapCoolDownSpeed = defaultStatData.GetSwpaCoolDown * currentSkulStatData.GetSwapCoolDownSpeed;
+        finalQuintessenceCoolDownSpeed = defaultStatData.GetQuitessenceCoolDown * currentSkulStatData.GetQuintessenceCoolDownSpeed;
+
+        finalCriticalProbablility = defaultStatData.GetCriticalProbablility * currentSkulStatData.GetCriticalProbablility;
+        finalCriticalDamageMultiply = defaultStatData.GetCriticalDamageMultiply * currentSkulStatData.GetCriticalDamageMultiply;
+
+        finalJumpForce = defaultStatData.GetJumpForce;
+        finalFallMultiply = defaultStatData.GetFallMultiply;
+        finalJumpMaxCount = currentSkulStatData.GetJumpMaxCount;
+
+        finalDashForce = defaultStatData.GetDashForce;
+        finalDashCoolTime = defaultStatData.GetDashCoolTime;
+        finalDashDuration = defaultStatData.GetDashDuration;
+        finalDashMaxCount = currentSkulStatData.GetDashMaxCount;
+
+    }
 }
