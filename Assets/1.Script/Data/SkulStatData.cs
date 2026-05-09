@@ -53,20 +53,20 @@ public class SkulStatData : ScriptableObject
     [SerializeField] private float _criticalProbablility; //크리티컬 확률
     [SerializeField] private float _criticalDamageMultiply; //크리티컬 데미지 배수
 
-    public string Name => _name;
-    public SkulType Type => _type;
-    public SkulRarity Rarity => _rarity;
-    public int HP => _hp;
-    public float TakeDamageMultiply => _takeDamageMultiply;
-    public float PhysicalAttack => _physicalAttack;
-    public float MagicAttack => _magicAttack;  
-    public float AttackSpeed => _attackSpeed;
-    public float MoveSpeed => _moveSpeed;
-    public float ConcentrationSpeed => _concentrationSpeed;
-    public float SkillCoolDownSpeed => _skillCoolDownSpeed;
-    public float SwapCoolDownSpeed => _swapCoolDownSpeed;
-    public float QuintessenceCoolDownSpeed => _quintessenceCoolDownSpeed;
-    public float CriticalProbablility => _criticalProbablility;
-    public float CriticalDamageMultiply => _criticalDamageMultiply;
+    public string GetName => _name;
+    public SkulType GetSkulType => _type;
+    public SkulRarity GetRarity => _rarity;
+    public int GetHP => _hp;
+    public float GetTakeDamageMultiply => _takeDamageMultiply;
+    public float GetPhysicalAttack => _physicalAttack;
+    public float GetMagicAttack => _magicAttack;  
+    public float GetAttackSpeed => _attackSpeed;
+    public float GetMoveSpeed => _moveSpeed;
+    public float GetConcentrationSpeed => _concentrationSpeed;
+    public float GetSkillCoolDownSpeed => _skillCoolDownSpeed;
+    public float GetSwapCoolDownSpeed => _swapCoolDownSpeed;
+    public float GetQuintessenceCoolDownSpeed => _quintessenceCoolDownSpeed;
+    public float GetCriticalProbablility => _criticalProbablility;
+    public float GetCriticalDamageMultiply => _criticalDamageMultiply;
 
 }

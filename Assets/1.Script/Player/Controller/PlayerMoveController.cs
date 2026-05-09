@@ -110,13 +110,13 @@ public class PlayerMoveController : MonoBehaviour
     /// <returns></returns>
     private IEnumerator Dash()
     {
-        dashCount++;
         //isDash = false;
         isDashing = true;
         playerBase.body.linearVelocity = new Vector2(gazeVector.x*dashForce, 0.0f);
 
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
+        dashCount++;
         
         yield return new WaitForSeconds(dashCoolDown);
         dashCount = 0;

@@ -1,20 +1,22 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum EPlayerState
 {
-    Idle,
-    Move,
-    Jump,
-    Attack,
-    Dash,
-    Hit,
-    Dead
+    Idle=0,
+    Move=1,
+    Jump=2,
+    Attack=3,
+    Dash=4,
+    Hit=5,
+    Dead=6
 }
 public class PlayerBase : MonoBehaviour
 {
 
     private IPlayerState currentPlayerState;
+    
     [field : SerializeField]public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
@@ -25,7 +27,6 @@ public class PlayerBase : MonoBehaviour
     public PlayerJumpState jumpState { get; private set; }
 
     public PlayerMoveController moveController { get; private set; }
-    public PlayerInputController inputController { get; private set; }
     public PlayerAnimController animController { get; private set; }
 
     public PhysicsHandler physicsHandler { get; private set; }
@@ -55,8 +56,7 @@ public class PlayerBase : MonoBehaviour
 
         if (moveController == null)
             moveController = GetComponent<PlayerMoveController>();
-        if (inputController == null)
-            inputController = GetComponent<PlayerInputController>();
+        
         if (animController == null)
             animController = GetComponent<PlayerAnimController>();
         if (animator == null)

@@ -3,7 +3,7 @@ using UnityEngine;
 using Util;
 public class DataManager : Singleton<DataManager>
 {
-    Dictionary<string, SkulStatData> skulStatTable = new Dictionary<string, SkulStatData>();
+    private Dictionary<string, SkulStatData> skulStatTable = new Dictionary<string, SkulStatData>();
 
     private const string SkulStatDataPath = "Data/Skul";
 
