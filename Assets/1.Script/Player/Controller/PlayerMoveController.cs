@@ -37,7 +37,7 @@ public class PlayerMoveController : MonoBehaviour
     void Awake()
     {
         playerBase = GetComponent<PlayerBase>();
-        
+        playerBase.body.gravityScale = 2.5f;
     }
 
     

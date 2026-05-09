@@ -14,9 +14,11 @@ public enum EPlayerState
 }
 public class PlayerBase : MonoBehaviour
 {
-
-    private IPlayerState currentPlayerState;
     
+    private IPlayerState currentPlayerState;
+
+    [SerializeField] private SkulStatData currentStatData;
+    [SerializeField] private DefaultStatData defaultStatData;
     [field : SerializeField]public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
@@ -36,12 +38,13 @@ public class PlayerBase : MonoBehaviour
 
     private void Start()
     {
-        ChangeState(idleState, currentPlayerStateEnum);
     }
     void Awake()
     {
         SkulInit();
-        body.gravityScale = 2.5f;
+        ChangeState(idleState, currentPlayerStateEnum);
+        ChangeSkul(currentStatData);
+
     }
 
     private void SkulInit()
@@ -80,6 +83,9 @@ public class PlayerBase : MonoBehaviour
         currentPlayerStateEnum = newStateEnum;
         currentPlayerState?.Enter();
     }
-
+    public void ChangeSkul(SkulStatData newData)
+    {
+        currentStatData = newData;
+    }
 
 }
