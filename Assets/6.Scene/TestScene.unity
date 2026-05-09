@@ -648,6 +648,10 @@ PrefabInstance:
       propertyPath: dashCoolDown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8492785257481660018, guid: 6eb9804f04847534e9403b3899fcde58, type: 3}
+      propertyPath: defaultStatData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c04aa58c8a635147a038bfb7b62a2d7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
