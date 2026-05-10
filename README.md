@@ -13,6 +13,8 @@
 상호작용 : F<br>
 인벤토리 : TAB<br>
 교체 : Space<br>
+***LabelAttribute***<br>
+변수 명은 개인적인 견해가 많이 들어가기 때문에 LabelAttribute를 이용하여 한글로 인스펙터에 노출시켜 어떤 거에 대한 변수인지 기획자에게 명확히 인지 시킨다<br>
 
 
 # Architecture<br>
