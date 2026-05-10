@@ -28,4 +28,4 @@ MonoBehaviour:
   fallMultiply: 2.5
   dashForce: 10
   dashCoolTime: 0.5
-  dashDuration: 0.5
+  dashDuration: 0.2

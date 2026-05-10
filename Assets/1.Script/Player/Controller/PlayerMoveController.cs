@@ -5,25 +5,25 @@ using UnityEngine.InputSystem;
 using System.Collections;
 public class PlayerMoveController : MonoBehaviour
 {
-    [Header("Move Setting")]
-    [SerializeField] private float moveSpeed = 5.0f;
+    
+    private float moveSpeed;
+    
+    private float jumpForce;
+    private int jumpMaxCount;
+    private float fallMultiply;
 
-    [Header("Jump Setting")]
-    [SerializeField] private float jumpForce = 10.0f;
-    [SerializeField] private int jumpMaxCount = 2;
-    [SerializeField] private float fallMultiply = 2.5f;
-
-    [Header("Dash Setting")]
-    [SerializeField] private float dashForce = 5.0f;
-    [SerializeField] private float dashCoolDown = 1.0f;
-    [SerializeField] private float dashTime = 0.2f;
-    [SerializeField] private int dashMaxCount = 2;
+    private float dashForce;
+    private float dashCoolTime;
+    private float dashDuration;
+    private int dashMaxCount;
 
     [Header("Debug Value(수정 X)")]
     [SerializeField] private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
     [SerializeField] private int dashCount = 0;
     [field : SerializeField]public bool isDashing { get; private set; } = false;
+
+    private bool isDashCoolDown = false;
     
     public Vector2 moveInput { get; private set; }
 
@@ -38,6 +38,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         playerBase = GetComponent<PlayerBase>();
         playerBase.body.gravityScale = 2.5f;
+        InitStat();
     }
 
     
@@ -51,7 +52,19 @@ public class PlayerMoveController : MonoBehaviour
         JumpCounter();
         MultiplyGravity();
     }
+    private void InitStat()
+    {
+        moveSpeed = playerBase.finalMoveSpeed;
 
+        jumpForce=playerBase.finalJumpForce;
+        jumpMaxCount = playerBase.finalJumpMaxCount;
+        fallMultiply = playerBase.finalFallMultiply;
+
+        dashForce = playerBase.finalDashForce;
+        dashCoolTime = playerBase.finalDashCoolTime;
+        dashDuration = playerBase.finalDashDuration;
+        dashMaxCount = playerBase.finalDashMaxCount;
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
@@ -73,7 +86,8 @@ public class PlayerMoveController : MonoBehaviour
     {
         if(context.started && dashCount < dashMaxCount)
         {
-            StartCoroutine(Dash());
+           if(!isDashing)
+                StartCoroutine(IEDash());
         }
     }
     /// <summary>
@@ -104,23 +118,36 @@ public class PlayerMoveController : MonoBehaviour
         
         transform.rotation = gazeVector.x > 0.0f ? new Quaternion(0.0f, 0.0f, 0.0f, 0.0f) : new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
     }
+   
     /// <summary>
-    /// 대쉬 코루틴
+    /// 대쉬 코루틴(이동만 처리)
     /// </summary>
     /// <returns></returns>
-    private IEnumerator Dash()
+    private IEnumerator IEDash()
     {
         //isDash = false;
         isDashing = true;
-        playerBase.body.linearVelocity = new Vector2(gazeVector.x*dashForce, 0.0f);
-
-        yield return new WaitForSeconds(dashTime);
-        isDashing = false;
         dashCount++;
+
+        playerBase.body.linearVelocity = new Vector2(gazeVector.x*(dashForce+moveInput.x), 0.0f);
         
-        yield return new WaitForSeconds(dashCoolDown);
-        dashCount = 0;
-        //isDash = true;
+        yield return new WaitForSeconds(dashDuration); //키를 누르지 못하는 시간
+        isDashing = false;
+        
+        if(!isDashCoolDown)
+        {
+            StartCoroutine(IEDashCoolDown());
+        }
+    }
+    private IEnumerator IEDashCoolDown()
+    {
+        isDashCoolDown = true;
+        while(dashCount > 0)
+        {
+            yield return new WaitForSeconds(dashCoolTime);
+            dashCount--;
+        }
+        isDashCoolDown = false;
     }
     private void JumpCounter()
     {
@@ -129,12 +156,12 @@ public class PlayerMoveController : MonoBehaviour
             isJump = false;
         }
 
-        if(playerBase.physicsHandler.IsGround())
+        if(playerBase.physicsHandler.IsGround()&&playerBase.body.linearVelocity.y<=0.1f)
         {
             jumpCount = 0;
             isJump = true;
         }
-       
+        
     }
     
 }
