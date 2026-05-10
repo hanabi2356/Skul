@@ -6,6 +6,7 @@ public class PhysicsHandler : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private Transform groundCheckObject;
+    
 
     private float checkRadius = 0.2f;
     void Awake()

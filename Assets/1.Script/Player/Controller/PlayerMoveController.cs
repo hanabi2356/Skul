@@ -20,7 +20,7 @@ public class PlayerMoveController : MonoBehaviour
 
     [SerializeField, Label("코요테 타임")] private float coyoteTime=0.3f;
 
-    [Header("Debug Value(수정 X)")]
+    [Header("확인용 변수(수정 X)")]
     [SerializeField] private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
     [SerializeField] private int dashCount = 0;
@@ -54,7 +54,7 @@ public class PlayerMoveController : MonoBehaviour
         PlayerMove();
         JumpCounter();
         MultiplyGravity();
-        CoyoteTime();
+        HandleCoyoteTime();
 
 
     }
@@ -159,17 +159,17 @@ public class PlayerMoveController : MonoBehaviour
     /// 공중에 있을 때 점프 횟 수를 1회 증가 시키는 
     /// </summary>
     /// <returns></returns>
-    private IEnumerator StartCoyoteTime()
+    private IEnumerator IEStartCoyoteTime()
     {
         
         yield return new WaitForSeconds(coyoteTime);
         isCoyoteTimeEnd = true;
         
     }
-    private void CoyoteTime()
+    private void HandleCoyoteTime()
     {
         if (!playerBase.physicsHandler.IsGround() && !isCoyoteTimeEnd)
-            StartCoroutine(StartCoyoteTime());
+            StartCoroutine(IEStartCoyoteTime());
 
         if (playerBase.physicsHandler.IsGround() && isCoyoteTimeEnd)
             isCoyoteTimeEnd = false;

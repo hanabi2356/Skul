@@ -1,10 +1,8 @@
 #if UNITY_EDITOR
-using Codice.Client.Common.GameUI;
 using System;
 using System.IO;
 using System.Reflection;
 using UnityEditor;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class SkulStatDataImporter : EditorWindow
