@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
 using System.Collections;
+using Unity.VisualScripting;
 public class PlayerMoveController : MonoBehaviour
 {
     
@@ -17,14 +18,16 @@ public class PlayerMoveController : MonoBehaviour
     private float dashDuration;
     private int dashMaxCount;
 
+    [SerializeField, Label("코요테 타임")] private float coyoteTime=0.3f;
+
     [Header("Debug Value(수정 X)")]
     [SerializeField] private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
     [SerializeField] private int dashCount = 0;
     [field : SerializeField]public bool isDashing { get; private set; } = false;
+    [SerializeField]private bool isCoyoteTimeEnd = false;
 
     private bool isDashCoolDown = false;
-    
     public Vector2 moveInput { get; private set; }
 
     private PlayerBase playerBase;
@@ -51,6 +54,9 @@ public class PlayerMoveController : MonoBehaviour
         PlayerMove();
         JumpCounter();
         MultiplyGravity();
+        CoyoteTime();
+
+
     }
     private void InitStat()
     {
@@ -149,6 +155,25 @@ public class PlayerMoveController : MonoBehaviour
         }
         isDashCoolDown = false;
     }
+    /// <summary>
+    /// 공중에 있을 때 점프 횟 수를 1회 증가 시키는 
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator StartCoyoteTime()
+    {
+        
+        yield return new WaitForSeconds(coyoteTime);
+        isCoyoteTimeEnd = true;
+        
+    }
+    private void CoyoteTime()
+    {
+        if (!playerBase.physicsHandler.IsGround() && !isCoyoteTimeEnd)
+            StartCoroutine(StartCoyoteTime());
+
+        if (playerBase.physicsHandler.IsGround() && isCoyoteTimeEnd)
+            isCoyoteTimeEnd = false;
+    }
     private void JumpCounter()
     {
         if(jumpCount >= jumpMaxCount)
@@ -161,7 +186,10 @@ public class PlayerMoveController : MonoBehaviour
             jumpCount = 0;
             isJump = true;
         }
-        
+        if (isCoyoteTimeEnd)
+        {
+            jumpCount = 1;
+        }
     }
     
 }
