@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5699612994171222841}
   - component: {fileID: 797854002812779159}
   - component: {fileID: 7863272423271079887}
+  - component: {fileID: 2653455961098605479}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -115,7 +116,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf0320bc188c6948b6682fc9576df34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBase
+  currentSkulStatData: {fileID: 0}
+  defaultStatData: {fileID: 11400000, guid: 6c04aa58c8a635147a038bfb7b62a2d7, type: 2}
   <currentPlayerStateEnum>k__BackingField: 0
+  currentHP: 0
+  finalTakeDamageMultiply: 0
+  finalPhysicsAttack: 0
+  finalMagicAttack: 0
+  finalAttackSpeed: 0
+  finalMoveSpeed: 0
+  finalConcentrationSpeed: 0
+  finalSkillCoolDownSpeed: 0
+  finalSwapCoolDownSpeed: 0
+  finalQuintessenceCoolDownSpeed: 0
+  finalCriticalProbablility: 0
+  finalCriticalDamageMultiply: 0
+  finalJumpForce: 0
+  finalFallMultiply: 0
+  finalJumpMaxCount: 0
+  finalDashForce: 0
+  finalDashCoolTime: 0
+  finalDashDuration: 0
+  finalDashMaxCount: 0
 --- !u!114 &5699612994171222841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,14 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cae1954976c4cc4286b1f998ef0b721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
-  jumpForce: 10
-  dashForce: 5
-  jumpMaxCount: 1
-  dashCoolDown: 1
-  fallMultiply: 2.5
+  coyoteTime: 0.1
   jumpCount: 0
   isJump: 1
+  dashCount: 0
+  <isDashing>k__BackingField: 0
+  isCoyoteTimeEnd: 0
 --- !u!114 &797854002812779159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +187,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   groundCheckObject: {fileID: 4279934088627117348}
+--- !u!114 &2653455961098605479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382966956508622651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c73a52c188296c43af2c4d1690d09f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackController
+  attackDelay: 0.2
 --- !u!1 &1612465102408967150
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +317,7 @@ GameObject:
   - component: {fileID: 51457496806495326}
   - component: {fileID: 4436895403569278416}
   m_Layer: 0
-  m_Name: SkulSprite_2
+  m_Name: Little_Born
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
