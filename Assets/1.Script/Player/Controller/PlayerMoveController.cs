@@ -151,7 +151,7 @@ public class PlayerMoveController : MonoBehaviour
         while(dashCount > 0)
         {
             yield return new WaitForSeconds(dashCoolTime);
-            dashCount--;
+            dashCount = 0;
         }
         isDashCoolDown = false;
     }
