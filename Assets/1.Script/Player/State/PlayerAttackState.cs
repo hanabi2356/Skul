@@ -9,17 +9,17 @@ public class PlayerAttackState : IPlayerState
     }
     public void Enter()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Excute()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     
