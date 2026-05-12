@@ -20,6 +20,9 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private SkulStatData currentSkulStatData;
     [SerializeField] private DefaultStatData defaultStatData;
     [field : SerializeField]public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
+
+    //State
+    
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
     public PlayerAttackState attackState { get; private set; }
@@ -28,8 +31,10 @@ public class PlayerBase : MonoBehaviour
     public PlayerDeadState deadState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
 
+    //Controller
     public PlayerMoveController moveController { get; private set; }
     public PlayerAnimController animController { get; private set; }
+    public PlayerAttackController attackController { get; private set; }
 
     public PhysicsHandler physicsHandler { get; private set; }
 
@@ -92,10 +97,16 @@ public class PlayerBase : MonoBehaviour
         
         if (animController == null)
             animController = GetComponent<PlayerAnimController>();
+
+        if(attackController == null)
+            attackController = GetComponent<PlayerAttackController>();
+
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
+
         if (body == null)
             body = GetComponent<Rigidbody2D>();
+
         if(physicsHandler == null)
             physicsHandler = GetComponent<PhysicsHandler>();
     }
