@@ -10,6 +10,8 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField, Label("공격 간 딜레이")] private float attackDelay = 0.2f;
     [SerializeField, Label("공격 초기화 달레이")] private float attackCountResetDelay = 0.5f;
     private float lastAttackTime=0.0f;
+
+    [Header("확인용 변수(조작 X)")]
     [field : SerializeField]public int attackCount { get; private set; } = 0;
     [field : SerializeField] public bool isAttacking { get; private set; } =  false;
     private Coroutine attackCoroutine;
@@ -27,11 +29,10 @@ public class PlayerAttackController : MonoBehaviour
             if(Time.time - lastAttackTime > attackCountResetDelay)
                 ComboReset();
         }
-        Debug.Log($"Attack Count : {attackCount} ");
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.started && !isAttacking)
+        if (context.started && !isAttacking && playerBase.moveController.isDashing)
         {
             AttackStarted();
         }
@@ -45,7 +46,7 @@ public class PlayerAttackController : MonoBehaviour
         lastAttackTime = Time.time;
         isAttacking = false;
 
-        if (attackCount >= 2)
+        if (attackCount >= 1)
         {
             yield return new WaitForSeconds(attackDelay);
             attackCount = 0;
@@ -55,7 +56,7 @@ public class PlayerAttackController : MonoBehaviour
     }
     private void AttackStarted()
     {
-        if (attackCount >= 2 && isAttacking)
+        if (attackCount >= 1 && isAttacking)
             return;
 
 
@@ -74,7 +75,6 @@ public class PlayerAttackController : MonoBehaviour
     private void ComboReset()
     {
         attackCount = 0;
-        //onAttackFinished.Invoke();
     }
     private void OnDisable()
     {
