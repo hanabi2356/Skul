@@ -32,7 +32,7 @@ public class PlayerAttackController : MonoBehaviour
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.started && !isAttacking && playerBase.moveController.isDashing)
+        if (context.started && !isAttacking && !playerBase.moveController.isDashing)
         {
             AttackStarted();
         }
@@ -41,15 +41,16 @@ public class PlayerAttackController : MonoBehaviour
     private IEnumerator IEAttack()
     {
         isAttacking = true;
-        attackCount++;
-        yield return new WaitForSeconds(attackDelay);
+        if(attackCount < 2)
+            attackCount++;
+        yield return new WaitUntil(()=>!playerBase.animController.isAttackAnimPlaying);
         lastAttackTime = Time.time;
         isAttacking = false;
-
-        if (attackCount >= 1)
+        onAttackFinished.Invoke();
+        if (attackCount > 2)
         {
-            yield return new WaitForSeconds(attackDelay);
-            attackCount = 0;
+            //yield return new WaitForSeconds(attackDelay);
+            ComboReset();
         }
         
 

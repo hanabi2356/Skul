@@ -20,7 +20,7 @@ public class PlayerMoveController : MonoBehaviour
 
     [SerializeField, Label("코요테 타임")] private float coyoteTime=0.3f;
 
-    [Header("확인용 변수(수정 X)")]
+    [Header("확인용 변수(조작 X)")]
     [SerializeField] private int jumpCount = 0;
     [SerializeField] private bool isJump = true;
     [SerializeField] private int dashCount = 0;
