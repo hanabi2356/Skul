@@ -29,7 +29,7 @@ public class PlayerIdleState : IPlayerState
         {
             playerBase.ChangeState(playerBase.dashState, EPlayerState.Dash);
         }
-        if(playerBase.attackController.attackCount>0)
+        if(playerBase.attackController.attackCount>0 && playerBase.animController.isAttackAnimPlaying)
         {
             playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
         }
