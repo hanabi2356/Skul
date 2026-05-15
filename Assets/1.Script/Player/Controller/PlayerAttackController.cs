@@ -9,7 +9,10 @@ public class PlayerAttackController : MonoBehaviour
     PlayerBase playerBase;
     [SerializeField, Label("공격 간 딜레이")] private float attackDelay = 0.2f;
     [SerializeField, Label("공격 초기화 달레이")] private float attackCountResetDelay = 0.5f;
+    [SerializeField, Label("공격 최대 횟 수")] private int maxAttackCount = 2;
     private float lastAttackTime=0.0f;
+    [SerializeField] private float inputBufferTime = 0.2f;
+    private float lastInputTime = -1.0f;
 
     [Header("확인용 변수(조작 X)")]
     [field : SerializeField]public int attackCount { get; private set; } = 0;
@@ -24,45 +27,58 @@ public class PlayerAttackController : MonoBehaviour
 
     void Update()
     {
-        if(!isAttacking && attackCount > 0)
+        if(!isAttacking && (attackCount > 0 || attackCount <= maxAttackCount))
         {
-            if(Time.time - lastAttackTime > attackCountResetDelay)
+            if(Time.time - lastAttackTime > attackCountResetDelay )
+            {
                 ComboReset();
+            }
+        }
+        if(!isAttacking && (Time.time - lastInputTime <= inputBufferTime))
+        {
+            AttackStarted();
+
         }
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.started && !isAttacking && !playerBase.moveController.isDashing)
+        if (context.started)
         {
-            AttackStarted();
+            if(!playerBase.moveController.isDashing)
+            {
+                if(attackCount < maxAttackCount || !isAttacking)
+                    lastInputTime = Time.time;
+            }
         }
     }
 
     private IEnumerator IEAttack()
     {
         isAttacking = true;
-        if(attackCount < 2)
-            attackCount++;
+        lastInputTime = -1.0f;
+
+        if(attackCount < maxAttackCount)
+        attackCount++;
         yield return new WaitUntil(()=>!playerBase.animController.isAttackAnimPlaying);
+
+        yield return null;
+
         lastAttackTime = Time.time;
         isAttacking = false;
+
         onAttackFinished.Invoke();
-        if (attackCount > 2)
-        {
-            //yield return new WaitForSeconds(attackDelay);
-            ComboReset();
-        }
-        
+
+        AttackFinished();
 
     }
     private void AttackStarted()
     {
-        if (attackCount >= 1 && isAttacking)
-            return;
+        /*if (attackCount >= 1 && isAttacking)
+            return;*/
 
 
-        if (!isAttacking)
-            StopCoroutine(IEAttack());
+        if (attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
 
         attackCoroutine = StartCoroutine(IEAttack());
 
@@ -70,8 +86,8 @@ public class PlayerAttackController : MonoBehaviour
     }
     private void AttackFinished()
     {
-        Debug.Log("AttackFinished Call");
-        
+        isAttacking = false;
+        onAttackFinished?.Invoke();
     }
     private void ComboReset()
     {
@@ -79,7 +95,11 @@ public class PlayerAttackController : MonoBehaviour
     }
     private void OnDisable()
     {
+        if(attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
+
         attackCoroutine = null;
+        isAttacking = false;
     }
 
 }
