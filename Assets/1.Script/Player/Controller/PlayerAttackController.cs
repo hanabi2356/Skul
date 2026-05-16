@@ -17,6 +17,7 @@ public class PlayerAttackController : MonoBehaviour
     [Header("확인용 변수(조작 X)")]
     [field : SerializeField]public int attackCount { get; private set; } = 0;
     [field : SerializeField] public bool isAttacking { get; private set; } =  false;
+    [field : SerializeField] public bool isReset {  get; private set; } = false;
     private Coroutine attackCoroutine;
 
     void Awake()
@@ -36,9 +37,13 @@ public class PlayerAttackController : MonoBehaviour
         }
         if(!isAttacking && (Time.time - lastInputTime <= inputBufferTime))
         {
+            if (attackCount >= maxAttackCount)
+                return;
+
             AttackStarted();
 
         }
+        
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -80,6 +85,8 @@ public class PlayerAttackController : MonoBehaviour
         if (attackCoroutine != null)
             StopCoroutine(attackCoroutine);
 
+        isReset=false;
+
         attackCoroutine = StartCoroutine(IEAttack());
 
         onAttackStarted.Invoke();
@@ -87,11 +94,14 @@ public class PlayerAttackController : MonoBehaviour
     private void AttackFinished()
     {
         isAttacking = false;
-        onAttackFinished?.Invoke();
+
+        if(onAttackFinished !=null)
+            onAttackFinished?.Invoke();
     }
     private void ComboReset()
     {
         attackCount = 0;
+        isReset = true;
     }
     private void OnDisable()
     {
