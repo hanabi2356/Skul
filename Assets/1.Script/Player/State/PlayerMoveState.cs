@@ -29,7 +29,7 @@ public class PlayerMoveState : IPlayerState
             playerBase.ChangeState(playerBase.dashState, EPlayerState.Dash);
         }
 
-        if (playerBase.attackController.attackCount > 0 && playerBase.animController.isAttackAnimPlaying)
+        if (playerBase.attackController.attackCount > 0 && !playerBase.attackController.isReset)
         {
             playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
         }
