@@ -7,7 +7,6 @@ public class PlayerAttackController : MonoBehaviour
     public event Action onAttackStarted;
     public event Action onAttackFinished;
     PlayerBase playerBase;
-    [SerializeField, Label("공격 간 딜레이")] private float attackDelay = 0.2f;
     [SerializeField, Label("공격 초기화 달레이")] private float attackCountResetDelay = 0.5f;
     [SerializeField, Label("공격 최대 횟 수")] private int maxAttackCount = 2;
     private float lastAttackTime=0.0f;
@@ -23,12 +22,12 @@ public class PlayerAttackController : MonoBehaviour
     void Awake()
     {
         playerBase = GetComponent<PlayerBase>();
-  
-    }
+        
+    }   
 
     void Update()
     {
-        if(!isAttacking && (attackCount > 0 || attackCount <= maxAttackCount))
+        if(!isAttacking && attackCount > 0 )
         {
             if(Time.time - lastAttackTime > attackCountResetDelay )
             {
@@ -59,19 +58,9 @@ public class PlayerAttackController : MonoBehaviour
 
     private IEnumerator IEAttack()
     {
-        isAttacking = true;
         lastInputTime = -1.0f;
 
-        if(attackCount < maxAttackCount)
-        attackCount++;
         yield return new WaitUntil(()=>!playerBase.animController.isAttackAnimPlaying);
-
-        yield return null;
-
-        lastAttackTime = Time.time;
-        isAttacking = false;
-
-        onAttackFinished.Invoke();
 
         AttackFinished();
 
@@ -86,6 +75,9 @@ public class PlayerAttackController : MonoBehaviour
             StopCoroutine(attackCoroutine);
 
         isReset=false;
+        isAttacking = true;
+
+        attackCount++;
 
         attackCoroutine = StartCoroutine(IEAttack());
 
@@ -93,7 +85,9 @@ public class PlayerAttackController : MonoBehaviour
     }
     private void AttackFinished()
     {
+        lastAttackTime = Time.time;
         isAttacking = false;
+        attackCoroutine = null;
 
         if(onAttackFinished !=null)
             onAttackFinished?.Invoke();
