@@ -14,19 +14,19 @@ public class PlayerAttackState : IPlayerState
 
     public void Excute()
     {
-        if (playerBase.moveController.moveInput == Vector2.zero && playerBase.attackController.isReset
+        if (playerBase.moveController.moveInput == Vector2.zero && playerBase.attackController.attackCount==0
             && playerBase.physicsHandler.IsGround() )
         {
             playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
         }
 
-        if (!playerBase.physicsHandler.IsGround() && playerBase.attackController.isReset)
+        if (!playerBase.physicsHandler.IsGround() && playerBase.attackController.attackCount == 0)
         {
             playerBase.ChangeState(playerBase.jumpState, EPlayerState.Jump);
         }
 
         if (playerBase.moveController.moveInput != Vector2.zero && playerBase.physicsHandler.IsGround()
-            && playerBase.attackController.isReset)
+            && playerBase.attackController.attackCount == 0)
         {
             playerBase.ChangeState(playerBase.moveState, EPlayerState.Move);
         }
