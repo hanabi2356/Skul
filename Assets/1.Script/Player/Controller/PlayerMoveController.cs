@@ -26,14 +26,14 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private int dashCount = 0;
     [field : SerializeField]public bool isDashing { get; private set; } = false;
     [SerializeField]private bool isCoyoteTimeEnd = false;
+    [SerializeField]private bool canMove = false;
 
     private bool isDashCoolDown = false;
     public Vector2 moveInput { get; private set; }
 
     private PlayerBase playerBase;
 
-    private Vector2 gazeVector = new Vector2(1.0f, 0.0f); //시선 백터
-    
+    public Vector2 gazeVector { get; private set; } = new Vector2(1.0f, 0.0f); //시선 백터
     
     
 
@@ -44,19 +44,24 @@ public class PlayerMoveController : MonoBehaviour
         InitStat();
     }
 
-    
-
     void FixedUpdate()
     {
-        if (isDashing)
+        if (playerBase.attackController.attackCount == 0 && !canMove)
+            canMove = true;
+
+        if (isDashing || !canMove)
             return;
 
         PlayerMove();
+        if (playerBase.attackController.attackCount > 0)
+        {
+            LockMovement();
+        }
+        
         JumpCounter();
         MultiplyGravity();
         HandleCoyoteTime();
-
-
+        Debug.Log(playerBase.physicsHandler.IsWallCheck());
     }
     private void InitStat()
     {
@@ -70,6 +75,8 @@ public class PlayerMoveController : MonoBehaviour
         dashCoolTime = playerBase.finalDashCoolTime;
         dashDuration = playerBase.finalDashDuration;
         dashMaxCount = playerBase.finalDashMaxCount;
+
+        canMove = true;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -119,12 +126,20 @@ public class PlayerMoveController : MonoBehaviour
     }
     private void PlayerMove()
     {
-        float targetX = moveInput.x*moveSpeed;
-        playerBase.body.linearVelocity = new Vector2(targetX, playerBase.body.linearVelocity.y);
+        if(!playerBase.physicsHandler.IsWallCheck())
+        {
+            float targetX = moveInput.x*moveSpeed;
+            playerBase.body.linearVelocity = new Vector2(targetX, playerBase.body.linearVelocity.y);
+
+        }
         
         transform.rotation = gazeVector.x > 0.0f ? new Quaternion(0.0f, 0.0f, 0.0f, 0.0f) : new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
     }
-   
+    private void LockMovement()
+    {
+        playerBase.body.linearVelocity=Vector2.zero;
+        canMove = false;
+    }
     /// <summary>
     /// 대쉬 코루틴(이동만 처리)
     /// </summary>
