@@ -61,7 +61,6 @@ public class PlayerMoveController : MonoBehaviour
         JumpCounter();
         MultiplyGravity();
         HandleCoyoteTime();
-        Debug.Log(playerBase.physicsHandler.IsWallCheck());
     }
     private void InitStat()
     {
