@@ -1,23 +1,25 @@
 using UnityEngine;
 
-public class PlayerHitState : IPlayerState
+public class PlayerHitState : BaseState
 {
-    private PlayerBase playerBase;
-    public PlayerHitState(PlayerBase playerBase)
+
+    public PlayerHitState(PlayerBase playerBase) : base(playerBase)
     {
         this.playerBase = playerBase;
     }
-    public void Enter()
+
+    
+    public override void Enter()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Excute()
+    public override void Execute()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Exit()
+    public override void Exit()
     {
         throw new System.NotImplementedException();
     }

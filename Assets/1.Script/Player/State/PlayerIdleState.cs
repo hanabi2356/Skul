@@ -1,23 +1,35 @@
 using Mono.Cecil.Cil;
 using UnityEngine;
 
-public class PlayerIdleState : IPlayerState
+public class PlayerIdleState : BaseState
 {
-    private PlayerBase playerBase;
     
-    
-    public PlayerIdleState(PlayerBase playerBase)
+
+    public PlayerIdleState(PlayerBase playerBase) : base(playerBase)
     {
         this.playerBase = playerBase;
-    }
-    public void Enter()
-    {
-        playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
+
+        transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move, () =>
+            playerBase.moveController.moveInput != Vector2.zero &&
+            playerBase.physicsHandler.IsGround()));
+
+        transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump, () =>
+            !playerBase.physicsHandler.IsGround()));
+
+        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack, () =>
+            playerBase.attackController.attackCount > 0 &&
+            !playerBase.attackController.isReset));
     }
 
-    public void Excute()
+
+    public override void Enter()
     {
-        if(playerBase.moveController.moveInput != Vector2.zero && playerBase.physicsHandler.IsGround())
+
+    }
+
+    public override void Execute()
+    {
+        /*if(playerBase.moveController.moveInput != Vector2.zero && playerBase.physicsHandler.IsGround())
         {
             playerBase.ChangeState(playerBase.moveState, EPlayerState.Move);
         }
@@ -32,10 +44,18 @@ public class PlayerIdleState : IPlayerState
         if(playerBase.attackController.attackCount>0 && !playerBase.attackController.isReset)
         {
             playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
+        }*/
+        foreach (var transition in transitions)
+        {
+            if (transition.InConditionMet())
+            {
+                Debug.Log("InConditionMet Call");
+                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
+            }
         }
     }
 
-    public void Exit()
+    public override void Exit()
     {
 
     }

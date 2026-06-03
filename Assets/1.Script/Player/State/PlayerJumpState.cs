@@ -1,21 +1,32 @@
 using UnityEngine;
 
-public class PlayerJumpState : IPlayerState
+public class PlayerJumpState : BaseState
 {
-    private PlayerBase playerBase;
-    public PlayerJumpState(PlayerBase playerBase)
+
+    public PlayerJumpState(PlayerBase playerBase) : base(playerBase)
     {
         this.playerBase = playerBase;
+
+        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle, 
+            () => playerBase.physicsHandler.IsGround()));
+
+        transitions.Add(new Transition(playerBase.dashState, EPlayerState.Dash, 
+            () => playerBase.moveController.isDashing));
+
+        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack, 
+            () => playerBase.attackController.attackCount > 0 
+            && !playerBase.attackController.isReset));
     }
 
-    public void Enter()
+
+    public override void Enter()
     {
        
     }
 
-    public void Excute()
+    public override void Execute()
     {
-        if (playerBase.physicsHandler.IsGround())
+        /*if (playerBase.physicsHandler.IsGround())
         {
             playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
         }
@@ -28,10 +39,17 @@ public class PlayerJumpState : IPlayerState
         if (playerBase.attackController.attackCount > 0 && !playerBase.attackController.isReset)
         {
             playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
+        }*/
+        foreach (var transition in transitions)
+        {
+            if (transition.InConditionMet())
+            {
+                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
+            }
         }
     }
 
-    public void Exit()
+    public override void Exit()
     {
     }
 

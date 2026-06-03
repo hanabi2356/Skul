@@ -1,23 +1,25 @@
 using UnityEngine;
 
-public class PlayerDeadState : IPlayerState
+public class PlayerDeadState : BaseState
 {
-    private PlayerBase playerBase;
-    public PlayerDeadState(PlayerBase playerBase)
+
+    public PlayerDeadState(PlayerBase playerBase) : base(playerBase)
     {
         this.playerBase = playerBase;
     }
-    public void Enter()
+
+
+    public override void Enter()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Excute()
+    public override void Execute()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Exit()
+    public override void Exit()
     {
         throw new System.NotImplementedException();
     }

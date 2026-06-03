@@ -22,14 +22,14 @@ public class PlayerBase : MonoBehaviour
     [field : SerializeField]public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
 
     //State
-    
-    public PlayerIdleState idleState { get; private set; }
-    public PlayerMoveState moveState { get; private set; }
-    public PlayerAttackState attackState { get; private set; }
-    public PlayerDashState dashState { get; private set; }
-    public PlayerHitState hitState { get; private set; }
-    public PlayerDeadState deadState { get; private set; }
-    public PlayerJumpState jumpState { get; private set; }
+    public IPlayerState baseState { get; private set; }
+    public IPlayerState idleState { get; private set; }
+    public IPlayerState moveState { get; private set; }
+    public IPlayerState attackState { get; private set; }
+    public IPlayerState dashState { get; private set; }
+    public IPlayerState hitState { get; private set; }
+    public IPlayerState deadState { get; private set; }
+    public IPlayerState jumpState { get; private set; }
 
     //Controller
     public PlayerMoveController moveController { get; private set; }
@@ -71,19 +71,22 @@ public class PlayerBase : MonoBehaviour
 
     private void Start()
     {
+        InitStates();
+        ChangeState(idleState, EPlayerState.Idle);
+
     }
     void Awake()
     {
-        Init();
-        ChangeState(idleState, currentPlayerStateEnum);
         SkulStatDataLoader("LittleBorn");
         InitFinalStat();
+        InitComponents();
     }
     /// <summary>
-    /// 스크립트 및 컴포넌트 초기화
+    /// 상태 초기화
     /// </summary>
-    private void Init()
+    private void InitStates()
     {
+        
         idleState = new PlayerIdleState(this);
         moveState = new PlayerMoveState(this);
         attackState = new PlayerAttackState(this);
@@ -92,13 +95,17 @@ public class PlayerBase : MonoBehaviour
         deadState = new PlayerDeadState(this);
         jumpState = new PlayerJumpState(this);
 
+       
+    }
+    private void InitComponents()
+    {
         if (moveController == null)
             moveController = GetComponent<PlayerMoveController>();
-        
+
         if (animController == null)
             animController = GetComponent<PlayerAnimController>();
 
-        if(attackController == null)
+        if (attackController == null)
             attackController = GetComponent<PlayerAttackController>();
 
         if (animator == null)
@@ -107,12 +114,13 @@ public class PlayerBase : MonoBehaviour
         if (body == null)
             body = GetComponent<Rigidbody2D>();
 
-        if(physicsHandler == null)
+        if (physicsHandler == null)
             physicsHandler = GetComponent<PhysicsHandler>();
     }
     void Update()
     {
-        currentPlayerState?.Excute();
+        currentPlayerState?.Execute();
+
     }
     public void ChangeState(IPlayerState newState, EPlayerState newStateEnum)
     {
@@ -122,6 +130,7 @@ public class PlayerBase : MonoBehaviour
         currentPlayerState?.Exit();
         currentPlayerState = newState;
         currentPlayerStateEnum = newStateEnum;
+
         currentPlayerState?.Enter();
     }
     public void ChangeSkul(SkulStatData newData)
