@@ -1,12 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseState : IPlayerState
+public class BaseState : IPlayerState
 {
     protected PlayerBase playerBase;
     protected List<ITransition> transitions = new List<ITransition>();
-
-    
 
     protected BaseState(PlayerBase playerBase)
     {
@@ -15,11 +13,24 @@ public abstract class BaseState : IPlayerState
 
 
 
-    public abstract void Enter();
-
-    public abstract void Execute();
+    public virtual void Enter() { }
 
 
-    public abstract void Exit();
+    public virtual void Execute()
+    {
+        foreach (var transition in transitions)
+        {
+            if (transition.InConditionMet())
+            {
+                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
+                return;
+            }
+        }
+    }
+    
+
+    public virtual void Exit() { }
+
+    public virtual void SetupTransitions() { }
     
 }

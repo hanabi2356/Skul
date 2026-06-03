@@ -86,7 +86,6 @@ public class PlayerBase : MonoBehaviour
     /// </summary>
     private void InitStates()
     {
-        
         idleState = new PlayerIdleState(this);
         moveState = new PlayerMoveState(this);
         attackState = new PlayerAttackState(this);
@@ -95,7 +94,14 @@ public class PlayerBase : MonoBehaviour
         deadState = new PlayerDeadState(this);
         jumpState = new PlayerJumpState(this);
 
-       
+        (idleState as BaseState)?.SetupTransitions();
+        (moveState as BaseState)?.SetupTransitions();
+        (attackState as BaseState)?.SetupTransitions();
+        (dashState as BaseState)?.SetupTransitions();
+        (jumpState as BaseState)?.SetupTransitions();
+        //hit
+        //dead
+
     }
     private void InitComponents()
     {

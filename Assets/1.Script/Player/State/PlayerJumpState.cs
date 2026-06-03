@@ -5,17 +5,8 @@ public class PlayerJumpState : BaseState
 
     public PlayerJumpState(PlayerBase playerBase) : base(playerBase)
     {
-        this.playerBase = playerBase;
 
-        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle, 
-            () => playerBase.physicsHandler.IsGround()));
-
-        transitions.Add(new Transition(playerBase.dashState, EPlayerState.Dash, 
-            () => playerBase.moveController.isDashing));
-
-        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack, 
-            () => playerBase.attackController.attackCount > 0 
-            && !playerBase.attackController.isReset));
+        
     }
 
 
@@ -40,18 +31,24 @@ public class PlayerJumpState : BaseState
         {
             playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
         }*/
-        foreach (var transition in transitions)
-        {
-            if (transition.InConditionMet())
-            {
-                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
-            }
-        }
+        base.Execute();
     }
 
     public override void Exit()
     {
     }
 
+    public override void SetupTransitions()
+    {
+        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle,
+            () => playerBase.physicsHandler.IsGround()));
+
+        transitions.Add(new Transition(playerBase.dashState, EPlayerState.Dash,
+            () => playerBase.moveController.isDashing));
+
+        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack,
+            () => playerBase.attackController.attackCount > 0
+            && !playerBase.attackController.isReset));
+    }
  
 }

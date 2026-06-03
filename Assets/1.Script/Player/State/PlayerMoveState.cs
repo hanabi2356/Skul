@@ -6,22 +6,6 @@ public class PlayerMoveState : BaseState
 
     public PlayerMoveState(PlayerBase playerBase) : base(playerBase)
     {
-        this.playerBase = playerBase;
-
-
-        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle,
-            () => playerBase.moveController.moveInput == Vector2.zero));
-
-        transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump,
-            () => !playerBase.physicsHandler.IsGround()));
-
-        transitions.Add(new Transition(playerBase.dashState, EPlayerState.Dash,
-            () => playerBase.moveController.isDashing));
-
-        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack,
-            () => playerBase.attackController.attackCount > 0 && !playerBase.attackController.isReset));
-
-
 
     }
 
@@ -52,19 +36,34 @@ public class PlayerMoveState : BaseState
          {
              playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
          }*/
-        foreach (var transition in transitions)
+        /*foreach (var transition in transitions)
         {
             if (transition.InConditionMet())
             {
                 playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
             }
-        }
+        }*/
+    
+        base.Execute();
     }
 
     public override void Exit()
     {
         
     }
+    public override void SetupTransitions()
+    {
+        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle,
+            () => playerBase.moveController.moveInput == Vector2.zero));
 
+        transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump,
+            () => !playerBase.physicsHandler.IsGround()));
+
+        transitions.Add(new Transition(playerBase.dashState, EPlayerState.Dash,
+            () => playerBase.moveController.isDashing));
+
+        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack,
+            () => playerBase.attackController.attackCount > 0 && !playerBase.attackController.isReset));
+    }
    
 }

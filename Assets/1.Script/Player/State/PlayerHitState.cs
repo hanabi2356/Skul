@@ -5,7 +5,6 @@ public class PlayerHitState : BaseState
 
     public PlayerHitState(PlayerBase playerBase) : base(playerBase)
     {
-        this.playerBase = playerBase;
     }
 
     

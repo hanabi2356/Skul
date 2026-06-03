@@ -5,7 +5,6 @@ public class PlayerDeadState : BaseState
 
     public PlayerDeadState(PlayerBase playerBase) : base(playerBase)
     {
-        this.playerBase = playerBase;
     }
 
 

@@ -7,19 +7,6 @@ public class PlayerAttackState : BaseState
     public PlayerAttackState( PlayerBase playerBase ) : base( playerBase )
     {
 
-        transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move, () =>
-            playerBase.moveController.moveInput != Vector2.zero &&
-            playerBase.physicsHandler.IsGround() &&
-            playerBase.attackController.attackCount == 0));
-
-        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle, () =>
-            playerBase.moveController.moveInput == Vector2.zero &&
-            playerBase.attackController.attackCount == 0 &&
-            playerBase.physicsHandler.IsGround()));
-
-        transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump, () =>
-            !playerBase.physicsHandler.IsGround() &&
-            playerBase.attackController.attackCount == 0));
     }
 
 
@@ -46,14 +33,8 @@ public class PlayerAttackState : BaseState
         {
             playerBase.ChangeState(playerBase.moveState, EPlayerState.Move);
         }*/
-
-        foreach (var transition in transitions)
-        {
-            if (transition.InConditionMet())
-            {
-                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
-            }
-        }
+        base.Execute();
+        
     }
 
     public override void Exit()
@@ -61,5 +42,21 @@ public class PlayerAttackState : BaseState
         
     }
 
-    
+    public override void SetupTransitions()
+    {
+
+        transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move, () =>
+            playerBase.moveController.moveInput != Vector2.zero &&
+            playerBase.physicsHandler.IsGround() &&
+            playerBase.attackController.attackCount == 0));
+
+        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle, () =>
+            playerBase.moveController.moveInput == Vector2.zero &&
+            playerBase.attackController.attackCount == 0 &&
+            playerBase.physicsHandler.IsGround()));
+
+        transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump, () =>
+            !playerBase.physicsHandler.IsGround() &&
+            playerBase.attackController.attackCount == 0));
+    }
 }
