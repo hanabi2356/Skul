@@ -1,7 +1,7 @@
 using Mono.Cecil.Cil;
 using UnityEngine;
 
-public class PlayerIdleState : BaseState
+public class PlayerIdleState : PlayerBaseState
 {
     
  

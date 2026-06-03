@@ -94,11 +94,11 @@ public class PlayerBase : MonoBehaviour
         deadState = new PlayerDeadState(this);
         jumpState = new PlayerJumpState(this);
 
-        (idleState as BaseState)?.SetupTransitions();
-        (moveState as BaseState)?.SetupTransitions();
-        (attackState as BaseState)?.SetupTransitions();
-        (dashState as BaseState)?.SetupTransitions();
-        (jumpState as BaseState)?.SetupTransitions();
+        (idleState as PlayerBaseState)?.SetupTransitions();
+        (moveState as PlayerBaseState)?.SetupTransitions();
+        (attackState as PlayerBaseState)?.SetupTransitions();
+        (dashState as PlayerBaseState)?.SetupTransitions();
+        (jumpState as PlayerBaseState)?.SetupTransitions();
         //hit
         //dead
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerHitState : BaseState
+public class PlayerHitState : PlayerBaseState
 {
 
     public PlayerHitState(PlayerBase playerBase) : base(playerBase)
@@ -21,5 +21,10 @@ public class PlayerHitState : BaseState
     public override void Exit()
     {
         throw new System.NotImplementedException();
+    }
+
+    public override void SetupTransitions()
+    {
+        
     }
 }

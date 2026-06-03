@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMoveState : BaseState
+public class PlayerMoveState : PlayerBaseState
 {
 
     public PlayerMoveState(PlayerBase playerBase) : base(playerBase)

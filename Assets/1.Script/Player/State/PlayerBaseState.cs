@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseState : IPlayerState
+public abstract class PlayerBaseState : IPlayerState
 {
     protected PlayerBase playerBase;
     protected List<ITransition> transitions = new List<ITransition>();
 
-    protected BaseState(PlayerBase playerBase)
+    protected PlayerBaseState(PlayerBase playerBase)
     {
         this.playerBase = playerBase;
     }
 
 
 
-    public virtual void Enter() { }
+    public abstract void Enter();
 
 
     public virtual void Execute()
@@ -27,10 +27,10 @@ public class BaseState : IPlayerState
             }
         }
     }
-    
 
-    public virtual void Exit() { }
 
-    public virtual void SetupTransitions() { }
+    public abstract void Exit();
+
+    public abstract void SetupTransitions();
     
 }

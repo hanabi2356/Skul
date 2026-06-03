@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackState : BaseState
+public class PlayerAttackState : PlayerBaseState
 {
 
     public PlayerAttackState( PlayerBase playerBase ) : base( playerBase )

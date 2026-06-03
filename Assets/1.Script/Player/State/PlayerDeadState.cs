@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerDeadState : BaseState
+public class PlayerDeadState : PlayerBaseState
 {
 
     public PlayerDeadState(PlayerBase playerBase) : base(playerBase)
@@ -19,6 +19,11 @@ public class PlayerDeadState : BaseState
     }
 
     public override void Exit()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetupTransitions()
     {
         throw new System.NotImplementedException();
     }

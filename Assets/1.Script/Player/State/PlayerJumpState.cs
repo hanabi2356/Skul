@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerJumpState : BaseState
+public class PlayerJumpState : PlayerBaseState
 {
 
     public PlayerJumpState(PlayerBase playerBase) : base(playerBase)
