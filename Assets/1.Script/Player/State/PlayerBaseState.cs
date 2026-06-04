@@ -4,8 +4,14 @@ using UnityEngine;
 public abstract class PlayerBaseState : IPlayerState
 {
     protected PlayerBase playerBase;
+
+    //전이 조건을 담는 List
     protected List<ITransition> transitions = new List<ITransition>();
 
+    /// <summary>
+    /// PlayerBase 의존성 주입
+    /// </summary>
+    /// <param name="playerBase"></param>
     protected PlayerBaseState(PlayerBase playerBase)
     {
         this.playerBase = playerBase;
@@ -18,6 +24,7 @@ public abstract class PlayerBaseState : IPlayerState
 
     public virtual void Execute()
     {
+        //transitions List를 순회 하면서 상태 변경 조건이 충족 되었는지 확인 하고 맞다면 변경
         foreach (var transition in transitions)
         {
             if (transition.InConditionMet())

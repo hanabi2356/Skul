@@ -82,7 +82,7 @@ public class PlayerBase : MonoBehaviour
         InitComponents();
     }
     /// <summary>
-    /// 상태 초기화
+    /// 상태 초기화 및 전이 조건 List에 추가
     /// </summary>
     private void InitStates()
     {
@@ -99,8 +99,8 @@ public class PlayerBase : MonoBehaviour
         (attackState as PlayerBaseState)?.SetupTransitions();
         (dashState as PlayerBaseState)?.SetupTransitions();
         (jumpState as PlayerBaseState)?.SetupTransitions();
-        //hit
-        //dead
+        (hitState as PlayerBaseState)?.SetupTransitions();
+        (deadState as PlayerBaseState)?.SetupTransitions();
 
     }
     private void InitComponents()
