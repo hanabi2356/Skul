@@ -18,9 +18,27 @@ public class TraceCamera : MonoBehaviour
         if (target == null)
             return;
 
+        MovingCamera();
+
+    }
+    private void MovingCamera()
+    {
         Vector3 targetPos = target.position + offset;
         Vector3 smoothDamp = Vector3.SmoothDamp(transform.position, targetPos, ref currentVelocity, smoothTime);
 
         transform.position = smoothDamp;
+    }
+
+    /// <summary>
+    /// Editor에서 플레이 하지 않고 확인 하기위한 함수
+    /// </summary>
+    [ContextMenu("[Camera_Position_Check")]
+    private void EditorCameraPosCheck()
+    {
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag(targetName).transform;
+
+        Vector3 targetPos = target.position + offset;
+        transform.position = targetPos;
     }
 }
