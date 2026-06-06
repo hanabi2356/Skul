@@ -17,20 +17,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Execute()
     {
-        /*if (playerBase.physicsHandler.IsGround())
-        {
-            playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
-        }
-
-        if (playerBase.moveController.isDashing)
-        {
-            playerBase.ChangeState(playerBase.dashState, EPlayerState.Dash);
-        }
-
-        if (playerBase.attackController.attackCount > 0 && !playerBase.attackController.isReset)
-        {
-            playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
-        }*/
+       
         base.Execute();
     }
 

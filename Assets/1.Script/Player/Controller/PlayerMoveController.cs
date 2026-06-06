@@ -200,7 +200,7 @@ public class PlayerMoveController : MonoBehaviour
             jumpCount = 0;
             isJump = true;
         }
-        if (isCoyoteTimeEnd)
+        if (isCoyoteTimeEnd && !playerBase.physicsHandler.IsGround())
         {
             jumpCount = 1;
         }

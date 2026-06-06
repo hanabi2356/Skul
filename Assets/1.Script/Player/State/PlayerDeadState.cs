@@ -25,6 +25,6 @@ public class PlayerDeadState : PlayerBaseState
 
     public override void SetupTransitions()
     {
-        throw new System.NotImplementedException();
+        
     }
 }
