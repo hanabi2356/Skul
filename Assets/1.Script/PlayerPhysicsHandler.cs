@@ -15,10 +15,6 @@ public class PlayerPhysicsHandler : MonoBehaviour
     private int oneWayPlatformLayer;
     private int playerLayer;
 
-  
-
-
-
 
     void Awake()
     {
@@ -33,8 +29,14 @@ public class PlayerPhysicsHandler : MonoBehaviour
 
     void Update()
     {
-        IgnoreOneWayPlatform();
     }
+
+    private void FixedUpdate()
+    {
+        IgnoreOneWayPlatform();
+
+    }
+
     public bool IsWallCheck()
     {
         float lookDir = playerBase.moveController.gazeVector.x >= 0.0f ? 1.0f : -1.0f;
