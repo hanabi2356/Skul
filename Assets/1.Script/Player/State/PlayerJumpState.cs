@@ -36,6 +36,9 @@ public class PlayerJumpState : PlayerBaseState
         transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack,
             () => playerBase.attackController.attackCount > 0
             && !playerBase.attackController.isReset));
+
+        transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move,
+            () => playerBase.physicsHandler.IsGround() && playerBase.moveController.moveInput != Vector2.zero));
     }
  
 }

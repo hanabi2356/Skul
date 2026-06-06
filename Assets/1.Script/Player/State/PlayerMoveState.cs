@@ -17,32 +17,7 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void Execute()
     {
-        /* if(playerBase.moveController.moveInput == Vector2.zero)
-         {
-             playerBase.ChangeState(playerBase.idleState, EPlayerState.Idle);
-         }
-
-         if(!playerBase.physicsHandler.IsGround())
-         {
-             playerBase.ChangeState(playerBase.jumpState, EPlayerState.Jump);
-         }
-
-         if (playerBase.moveController.isDashing)
-         {
-             playerBase.ChangeState(playerBase.dashState, EPlayerState.Dash);
-         }
-
-         if (playerBase.attackController.attackCount > 0 && !playerBase.attackController.isReset)
-         {
-             playerBase.ChangeState(playerBase.attackState, EPlayerState.Attack);
-         }*/
-        /*foreach (var transition in transitions)
-        {
-            if (transition.InConditionMet())
-            {
-                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
-            }
-        }*/
+       
     
         base.Execute();
     }

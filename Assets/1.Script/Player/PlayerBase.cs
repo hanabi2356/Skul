@@ -36,7 +36,7 @@ public class PlayerBase : MonoBehaviour
     public PlayerAnimController animController { get; private set; }
     public PlayerAttackController attackController { get; private set; }
 
-    public PhysicsHandler physicsHandler { get; private set; }
+    public PlayerPhysicsHandler physicsHandler { get; private set; }
 
     public Animator animator { get; private set; }
     public Rigidbody2D body { get; private set; }
@@ -121,7 +121,7 @@ public class PlayerBase : MonoBehaviour
             body = GetComponent<Rigidbody2D>();
 
         if (physicsHandler == null)
-            physicsHandler = GetComponent<PhysicsHandler>();
+            physicsHandler = GetComponent<PlayerPhysicsHandler>();
     }
     void Update()
     {
