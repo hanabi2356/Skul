@@ -20,16 +20,26 @@
 # Architecture<br>
 ***InputSystem***<br>
 PlayerInput을 GlobalInputManager라는 빈 오브젝트에 넣어 관심사를 분리<br>
+
 ***DataManagement***<br>
 Data파일은 csv파일을 파싱하여 관리<br>
 EditorUtility.SetDirty를 사용하여 물리적 디스크에 저장<br>
 AssetDatabase를 사용하여 에셋을 코드를 사용하여 자동 생성<br>
+
 ***공용 Singleton***<br>
 DataManager, SoundManager등을 만들 때 Singleton을 적용하여 만들거기 때문데 코드의 중복을 막기 위해 공용 스크립트 제작<br>
+
 ***FSM패턴***<br>
 FSM패턴을 상태별 스크립트를 만들어 상태별 스크립트 내부에서 상태를 전환하는 로직을 구성하여 PlayerBase의 코드가 비대해지고 GodClass가 되는것을 방지함<br>
 PlayerBase Awake에서 상태 스크립트들을 미리 캐싱하여 매번 new를 하여 생기는 메모리 부담을 줄인다<br>
 Enum형도 같이 선언하여 Boolean형식 대신 사용하여 불필요한 Boolean형식 선언을 방지<br>
+
+***맵 정보 저장***<br>
+모든 맵 파일을 json으로 저장하여 용량을 최소화함<br>
+런타임 중 맵 로드 시에도 tilemap이 있는 prefab을 직접적으로 건들지 않고 json파일을 참조하여 가져 오기 때문에 로드 시 기존 prefab 파일 오염 방지<br>
+맵 정보를 추출하기 전에 맵의 유효성을 검사하는 코드를 추가하여 기획자가 tile을 설치 하고 실수를 하여 배치하지 않은 object_tile이 있으면 추출을 막아 잘못된 맵 파일이 추출되는 것을 방지함<br>
+원본 맵을 만드는 prefab의 레이어를 기능 별로 나누어서 맵에 대한 데이터가 한 개의 레이어로 묶이는 것을 방지함<br>
+맵의 정보를 파일로 들고 있기 때문에 개발 파트를 거치지 않고 기획 파트에서 바로 추가 및 수정을 지원한다<br>
 
 # 수정사항 or 버그<br>
 TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
