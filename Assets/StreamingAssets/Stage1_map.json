@@ -1,0 +1,1372 @@
+{
+    "tiles": [
+        {
+            "x": -14,
+            "y": -6,
+            "tileName": "TX Tileset Ground_6",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -13,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -12,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -11,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -10,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -9,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -8,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -7,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -6,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -5,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -4,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -3,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -2,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -1,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 0,
+            "y": -6,
+            "tileName": "TX Tileset Ground_8",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 1,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 2,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 3,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 4,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 5,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 6,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 7,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 8,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 9,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 10,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 11,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 12,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 13,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 14,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 17,
+            "y": -6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -14,
+            "y": -5,
+            "tileName": "TX Tileset Ground_3",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -13,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -12,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -11,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -10,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -9,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -8,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -7,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -6,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -5,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -4,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -3,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -2,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -1,
+            "y": -5,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 0,
+            "y": -5,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 1,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 2,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 3,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 4,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 5,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 6,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 7,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 8,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 9,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 10,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 11,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 12,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 13,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 14,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": -5,
+            "tileName": "TX Tileset Ground_3",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": -5,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 17,
+            "y": -5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -14,
+            "y": -4,
+            "tileName": "TX Tileset Ground_3",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -13,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -12,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -11,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -10,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -9,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -8,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -7,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -6,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -5,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -4,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -3,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -2,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -1,
+            "y": -4,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 0,
+            "y": -4,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": -4,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": -4,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -14,
+            "y": -3,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -13,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -12,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -11,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -10,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -9,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -8,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -7,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -6,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -5,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -4,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -3,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -2,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": -1,
+            "y": -3,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 0,
+            "y": -3,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 22,
+            "y": 6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 23,
+            "y": 6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 24,
+            "y": 6,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 25,
+            "y": 6,
+            "tileName": "TX Tileset Ground_8",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 20,
+            "y": 7,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 21,
+            "y": 7,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 22,
+            "y": 7,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 23,
+            "y": 7,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 24,
+            "y": 7,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 25,
+            "y": 7,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 14,
+            "y": 8,
+            "tileName": "TX Tileset Ground_6",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": 8,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": 8,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 17,
+            "y": 8,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 18,
+            "y": 8,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 19,
+            "y": 8,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 20,
+            "y": 8,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 21,
+            "y": 8,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 22,
+            "y": 8,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 23,
+            "y": 8,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 24,
+            "y": 8,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 25,
+            "y": 8,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 14,
+            "y": 9,
+            "tileName": "TX Tileset Ground_3",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 17,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 18,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 19,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 20,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 21,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 22,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 23,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 24,
+            "y": 9,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 25,
+            "y": 9,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 3,
+            "y": 10,
+            "tileName": "TX Tileset Ground_3",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 4,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 5,
+            "y": 10,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 6,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 7,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 8,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 9,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 10,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 11,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 12,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 13,
+            "y": 10,
+            "tileName": "TX Tileset Ground_7",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 14,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 17,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 18,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 19,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 20,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 21,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 22,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 23,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 24,
+            "y": 10,
+            "tileName": "TX Tileset Ground_4",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 25,
+            "y": 10,
+            "tileName": "TX Tileset Ground_5",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 3,
+            "y": 11,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 4,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 5,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 6,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 7,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 8,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 9,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 10,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 11,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 12,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 13,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 14,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 15,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 16,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 17,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 18,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 19,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 20,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 21,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 22,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 23,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 24,
+            "y": 11,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 25,
+            "y": 11,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "Environment"
+        },
+        {
+            "x": 9,
+            "y": -1,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 10,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 11,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 12,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 13,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 14,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 15,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 16,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 17,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 18,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 19,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 20,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 21,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 22,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 23,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 24,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 25,
+            "y": -1,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 26,
+            "y": -1,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 4,
+            "y": 2,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 5,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 6,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 7,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 8,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 9,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 10,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 11,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 12,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 13,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 14,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 15,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 16,
+            "y": 2,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 17,
+            "y": 2,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 4,
+            "y": 5,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 5,
+            "y": 5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 6,
+            "y": 5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 7,
+            "y": 5,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 8,
+            "y": 5,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -4,
+            "y": 6,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -3,
+            "y": 6,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -2,
+            "y": 6,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -1,
+            "y": 6,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 0,
+            "y": 6,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 1,
+            "y": 6,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -4,
+            "y": 10,
+            "tileName": "TX Tileset Ground_0",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -3,
+            "y": 10,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -2,
+            "y": 10,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -1,
+            "y": 10,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 0,
+            "y": 10,
+            "tileName": "TX Tileset Ground_1",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": 1,
+            "y": 10,
+            "tileName": "TX Tileset Ground_2",
+            "tileMapName": "OneWayPlatform"
+        },
+        {
+            "x": -11,
+            "y": -2,
+            "tileName": "SpawnPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 16,
+            "y": 12,
+            "tileName": "DoorPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 21,
+            "y": 12,
+            "tileName": "DoorPosition",
+            "tileMapName": "ObjectTile"
+        }
+    ]
+}
