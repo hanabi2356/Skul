@@ -55,7 +55,7 @@ public class MapExporter : EditorWindow
 
         if(map == null)
         {
-            Debug.LogError("Export 할 맵이 없음");
+            EditorUtility.DisplayDialog("맵 추출 실패", "Prefab 지정 안함", "확인");
             return;
         }
 
@@ -103,31 +103,34 @@ public class MapExporter : EditorWindow
         //맵에 배치된 타일이 있는지 검사
         if (totalTileCount == 0)
         {
-            Debug.Log("맵 추출 실패, 사유: Tile 배치 안함");
+            
+            EditorUtility.DisplayDialog("맵 추출 실패", "사유: Tile 배치 안함", "확인");
             return;
         }
 
         //문이 최대 개수 이하 0개 이상 배치 되어있는지 검사
         if(doorCount > _doorMaxCount)
         {
-            Debug.Log($"맵 추출 실패, 사유: Door 과배치, Door 배치 수: {doorCount}");
+            EditorUtility.DisplayDialog("맵 추출 실패", "사유: Door 과배치, Door 배치 수: {doorCount}", "확인");
             return;
         }
         else if(doorCount == 0)
         {
-            Debug.Log("맵 추출 실패, 사유: Door 배치 안함");
+      
+            EditorUtility.DisplayDialog("맵 추출 실패", "사유: Door 배치 안함", "확인");
             return;
         }
 
         //spawnPosition이 1개 인지 검사
         if(spawnPosCount >= 2)
         {
-            Debug.Log($"맵 추출 실패, 사유: SpawnPosition 1개 초과 배치, SpawnPosition 배치 수: {spawnPosCount}");
+            EditorUtility.DisplayDialog("맵 추출 실패", $"사유: SpawnPosition 1개 초과 배치, SpawnPosition 배치 수: {spawnPosCount}", "확인");
+            
             return;
         }
         else if(spawnPosCount == 0)
         {
-            Debug.Log("맵 추출 실패, 사유: SpawnPosition 배치 안함");
+            EditorUtility.DisplayDialog("맵 추출 실패", "사유: SpawnPosition 배치 안함", "확인");
             return;
         }
 
