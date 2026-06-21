@@ -17,7 +17,7 @@ public class SkulStatDataImporter : EditorWindow
     {
         GUILayout.Label("Skul Data Importer", EditorStyles.boldLabel);
         csvPath = EditorGUILayout.TextField("CSV Path", csvPath);
-        if (GUILayout.Button("Import and Generate Asset"))
+        if (GUILayout.Button("Import Skul Stat Data"))
         {
             ImportSkulStatCSV();
         }

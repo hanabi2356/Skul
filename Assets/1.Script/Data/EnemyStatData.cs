@@ -9,7 +9,7 @@ public enum EnemyRarity
 public enum AttackType
 {
     Melee,
-    Ranged,
+    Range,
 }
 
 [CreateAssetMenu(fileName = "EnemyStatData", menuName = "Create DataFile/EnemyStatData")]
@@ -51,7 +51,7 @@ public class EnemyStatData : ScriptableObject
     public float AttackCoolTime => _attackCoolTime;
     public float AttackRange => _attackRange;
     public float DetectedRange => _detectedRange;
-    
+
     //move data
     public float MoveSpeed => _moveSpeed;
 
