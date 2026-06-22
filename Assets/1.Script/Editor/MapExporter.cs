@@ -66,6 +66,7 @@ public class MapExporter : EditorWindow
         int totalTileCount = 0;
         int doorCount = 0;
         int spawnPosCount = 0;
+		int enemyCount = 0;
 
         for (int i = 0; i < tilemap.Length; i++)
         {
@@ -83,6 +84,8 @@ public class MapExporter : EditorWindow
                         doorCount++;
                     if(tile.name == "SpawnPosition")
                         spawnPosCount++;
+					if(tile.name == "EnemyPosition")
+						enemyCount++;
 
                     TileData data = new TileData();
 
@@ -133,6 +136,11 @@ public class MapExporter : EditorWindow
             return;
         }
 
+		if(enemyCount == 0)
+		{
+			EditorUtility.DisplayDialog("맵 추출 실패", "사유: Enemy 배치 안함", "확인");
+			return;
+		}
 
         string folderPath = Application.streamingAssetsPath;
         if (!Directory.Exists(folderPath))
