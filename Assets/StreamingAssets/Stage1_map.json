@@ -1351,9 +1351,69 @@
             "tileMapName": "OneWayPlatform"
         },
         {
+            "x": 4,
+            "y": -4,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 8,
+            "y": -4,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
             "x": -11,
             "y": -2,
             "tileName": "SpawnPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 13,
+            "y": 0,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 22,
+            "y": 0,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 14,
+            "y": 3,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 6,
+            "y": 6,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": -2,
+            "y": 7,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": -3,
+            "y": 11,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 0,
+            "y": 11,
+            "tileName": "EnemyPosition",
+            "tileMapName": "ObjectTile"
+        },
+        {
+            "x": 8,
+            "y": 12,
+            "tileName": "EnemyPosition",
             "tileMapName": "ObjectTile"
         },
         {
