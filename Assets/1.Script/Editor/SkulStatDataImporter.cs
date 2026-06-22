@@ -8,7 +8,7 @@ using UnityEngine;
 public class SkulStatDataImporter : EditorWindow
 {
     private string csvPath = "Assets/3.Data/Skul/csv/SkulStatData.csv";
-    [MenuItem("Tools/Skul Stat Import")]
+    [MenuItem("Tools/Stat Data Import/Skul Stat Import")]
     public static void ShowWindow()
     {
         GetWindow<SkulStatDataImporter>("Skul Data");

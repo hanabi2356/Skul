@@ -8,7 +8,7 @@ using System.Reflection;
 public class EnemyStatDataImporter : EditorWindow
 {
 	private string csvPath = "Assets/3.Data/Enemy/EnemyStatData.csv";
-	[MenuItem("Tools/Enemy Stat Import")]
+	[MenuItem("Tools/Stat Data Import/Enemy Stat Import")]
 	public static void ShowWindow()
 	{
 		GetWindow<EnemyStatDataImporter>("Enemy Data");
