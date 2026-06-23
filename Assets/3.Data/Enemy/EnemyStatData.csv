@@ -3,4 +3,4 @@
 102,Recruit,Common,50,Melee,10,1,2.5,3,3,5
 103,FlameWizard,Common,40,Range,12,1,2.5,20,20,0
 104,Ent,Common,60,Melee,7,1,2.5,5,5,3
-105,GiganticEnt,Elite,100,Melee,10,1,3,8,8,0
+111,EliteArcher,Elite,300,Range,5,1,3,25,25,5

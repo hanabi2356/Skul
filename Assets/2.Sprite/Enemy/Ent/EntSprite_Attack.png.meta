@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: fdefa4f7d67c25f4796a4aed42c89611
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8301003732779337949
+    second: EntSprite_Attack_0
+  - first:
+      213: 513253187731024672
+    second: EntSprite_Attack_1
+  - first:
+      213: -213328101590944025
+    second: EntSprite_Attack_2
+  - first:
+      213: -3020616378550411870
+    second: EntSprite_Attack_3
+  - first:
+      213: -6797113378145954961
+    second: EntSprite_Attack_4
+  - first:
+      213: 6772018846988033894
+    second: EntSprite_Attack_5
+  - first:
+      213: 2819554263852498028
+    second: EntSprite_Attack_6
+  - first:
+      213: -1947298987031311134
+    second: EntSprite_Attack_7
+  - first:
+      213: 5828797730195423573
+    second: EntSprite_Attack_8
+  - first:
+      213: -93043472785871571
+    second: EntSprite_Attack_9
+  - first:
+      213: -5909261980799921850
+    second: EntSprite_Attack_10
+  - first:
+      213: -1822940486941234721
+    second: EntSprite_Attack_11
+  - first:
+      213: -1352284271970030601
+    second: EntSprite_Attack_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EntSprite_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327fe7ce519eccc80800000000000000
+      internalID: -8301003732779337949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntSprite_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad96c9586d9416d0800000000000000
+      internalID: -3020616378550411870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntSprite_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 9
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f631e8d256dcba1a0800000000000000
+      internalID: -6797113378145954961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntSprite_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 13
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cbdd11aa1112720800000000000000
+      internalID: 2819554263852498028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntSprite_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 18
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 551c6ef37ac04e050800000000000000
+      internalID: 5828797730195423573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntSprite_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 19
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64113bd79851efda0800000000000000
+      internalID: -5909261980799921850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f9df339270752f84295ed729ed01f6d4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EntSprite_Attack_0: -8301003732779337949
+      EntSprite_Attack_1: 513253187731024672
+      EntSprite_Attack_10: -5909261980799921850
+      EntSprite_Attack_11: -1822940486941234721
+      EntSprite_Attack_12: -1352284271970030601
+      EntSprite_Attack_2: -213328101590944025
+      EntSprite_Attack_3: -3020616378550411870
+      EntSprite_Attack_4: -6797113378145954961
+      EntSprite_Attack_5: 6772018846988033894
+      EntSprite_Attack_6: 2819554263852498028
+      EntSprite_Attack_7: -1947298987031311134
+      EntSprite_Attack_8: 5828797730195423573
+      EntSprite_Attack_9: -93043472785871571
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

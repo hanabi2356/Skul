@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1db29ca1b3d58d447821f41a708640fa, type: 3}
-  m_Name: GiganticEnt_Stat
+  m_Name: EliteArcher_Stat
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatData
-  _enemyID: 105
-  _name: GiganticEnt
+  _enemyID: 111
+  _name: EliteArcher
   _enemyRarity: 1
-  _maxHP: 100
-  _attackType: 0
-  _attackPower: 10
+  _maxHP: 300
+  _attackType: 1
+  _attackPower: 5
   _attackSpeed: 1
   _attackCoolTime: 0
-  _attackRange: 8
-  _detectedRange: 8
-  _moveSpeed: 0
+  _attackRange: 25
+  _detectedRange: 25
+  _moveSpeed: 5
