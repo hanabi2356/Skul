@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5309fa3853a5304d9fd8abefa4455e4, type: 3}
   m_Name: Hunter_Stat
   m_EditorClassIdentifier: Assembly-CSharp::SkulStatData
+  _id: 1103
   _name: Hunter
   _type: 1
   _rarity: 1

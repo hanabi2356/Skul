@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class SkulStatDataImporter : EditorWindow
 {
-    private string csvPath = "Assets/3.Data/Skul/csv/SkulStatData.csv";
+    private string csvPath = "Assets/1.Player/Data/SkulStatData.csv";
     [MenuItem("Tools/Stat Data Import/Skul Stat Import")]
     public static void ShowWindow()
     {
@@ -47,7 +47,8 @@ public class SkulStatDataImporter : EditorWindow
                 continue;
 
             //csv의 이름 칸을 기반으로 파일을 찾거나 만든다
-            string skulName = values[0];
+            string skulName = values[1];
+			//저장위치 
             string assetPath = $"Assets/Resources/Data/Skul/{skulName}_Stat.asset";
 
             //폴더 자동 생성

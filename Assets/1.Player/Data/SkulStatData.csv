@@ -1,0 +1,4 @@
+﻿id,name,type,rarity,takeDamageMultiply,physicalAttack,magicAttack,attackSpeed,moveSpeed,concentrationSpeed,skillCoolDownSpeed,swapCoolDownSpeed,quintessenceCoolDownSpeed,criticalProbablility,criticalDamageMultiply,jumpMaxCount,dashMaxCount
+1001,LittleBorn,Balance,Common,1,1.6,1.6,1,1,1,1.6,1.4,1.4,0.1,1.5,2,2
+1002,WereWolf,Speed,Common,1,1.6,1.6,1.2,1.3,1,1,1.4,1.4,0.1,1.5,2,2
+1103,Hunter,Balance,Rare,1,1.6,1.6,1,1,1,1.6,1.4,1.4,0.1,1.5,2,2
