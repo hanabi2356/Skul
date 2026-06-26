@@ -15,21 +15,21 @@ public enum EPlayerState
 public class PlayerBase : MonoBehaviour
 {
 
-    private IPlayerState currentPlayerState;
+    private IState currentPlayerState;
 
     [SerializeField] private SkulStatData currentSkulStatData;
     [SerializeField] private DefaultStatData defaultStatData;
     [field: SerializeField] public EPlayerState currentPlayerStateEnum { get; private set; } = EPlayerState.Idle;
 
     //State
-    public IPlayerState baseState { get; private set; }
-    public IPlayerState idleState { get; private set; }
-    public IPlayerState moveState { get; private set; }
-    public IPlayerState attackState { get; private set; }
-    public IPlayerState dashState { get; private set; }
-    public IPlayerState hitState { get; private set; }
-    public IPlayerState deadState { get; private set; }
-    public IPlayerState jumpState { get; private set; }
+    public IState baseState { get; private set; }
+    public IState idleState { get; private set; }
+    public IState moveState { get; private set; }
+    public IState attackState { get; private set; }
+    public IState dashState { get; private set; }
+    public IState hitState { get; private set; }
+    public IState deadState { get; private set; }
+    public IState jumpState { get; private set; }
 
     //Controller
     public PlayerMoveController moveController { get; private set; }
@@ -71,22 +71,22 @@ public class PlayerBase : MonoBehaviour
 
 	private void Start()
     {
-        InitStates();
-        ChangeState(idleState, EPlayerState.Idle);
+        //InitStates();
+        //ChangeState(idleState, EPlayerState.Idle);
 
     }
     void Awake()
     {
-        SkulStatDataLoader("LittleBorn");
-        InitFinalStat();
-        InitComponents();
+        //SkulStatDataLoader("LittleBorn");
+        //InitFinalStat();
+        //InitComponents();
     }
     /// <summary>
     /// 상태 초기화 및 전이 조건 List에 추가
     /// </summary>
     private void InitStates()
     {
-        idleState = new PlayerIdleState(this);
+        /*idleState = new PlayerIdleState(this);
         moveState = new PlayerMoveState(this);
         attackState = new PlayerAttackState(this);
         dashState = new PlayerDashState(this);
@@ -100,12 +100,12 @@ public class PlayerBase : MonoBehaviour
         (dashState as PlayerBaseState)?.SetupTransitions();
         (jumpState as PlayerBaseState)?.SetupTransitions();
         (hitState as PlayerBaseState)?.SetupTransitions();
-        (deadState as PlayerBaseState)?.SetupTransitions();
+        (deadState as PlayerBaseState)?.SetupTransitions();*/
 
     }
     private void InitComponents()
     {
-        if (moveController == null)
+        /*if (moveController == null)
             moveController = GetComponent<PlayerMoveController>();
 
         if (animController == null)
@@ -121,14 +121,14 @@ public class PlayerBase : MonoBehaviour
             body = GetComponent<Rigidbody2D>();
 
         if (physicsHandler == null)
-            physicsHandler = GetComponent<PlayerPhysicsHandler>();
+            physicsHandler = GetComponent<PlayerPhysicsHandler>();*/
     }
     void Update()
     {
         currentPlayerState?.Execute();
 
     }
-    public void ChangeState(IPlayerState newState, EPlayerState newStateEnum)
+    public void ChangeState(IState newState, EPlayerState newStateEnum)
     {
         if (currentPlayerState == newState)
             return;

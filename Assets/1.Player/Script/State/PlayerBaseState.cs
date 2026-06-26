@@ -1,20 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerBaseState : IPlayerState
+public abstract class PlayerBaseState : IState
 {
     protected PlayerBase playerBase;
-
+	protected IPlayerView _view;
+	protected IPlayerStatModel _statModel;
+	protected IPlayerStateContext _stateContext;
     //전이 조건을 담는 List
     protected List<ITransition> transitions = new List<ITransition>();
 
-    /// <summary>
-    /// PlayerBase 의존성 주입
-    /// </summary>
-    /// <param name="playerBase"></param>
-    protected PlayerBaseState(PlayerBase playerBase)
+
+    protected PlayerBaseState(IPlayerView view,
+		IPlayerStatModel statModel,
+		IPlayerStateContext context)
     {
-        this.playerBase = playerBase;
+		_view = view;
+		_statModel = statModel;
+		_stateContext = context;
     }
 
 
@@ -29,7 +32,7 @@ public abstract class PlayerBaseState : IPlayerState
         {
             if (transition.InConditionMet())
             {
-                playerBase.ChangeState(transition.targteState, transition.targetStateEnum);
+                _stateContext.ChangeState(transition.targteState, transition.targetStateEnum);
                 return;
             }
         }

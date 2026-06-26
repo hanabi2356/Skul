@@ -5,7 +5,7 @@ public class Transition : ITransition
 {
     //bool 값을 반환하는 delegate
     private Func<bool> condition;
-    public IPlayerState targteState { get; }
+    public IState targteState { get; }
     public EPlayerState targetStateEnum { get; }
 
     /// <summary>
@@ -14,7 +14,7 @@ public class Transition : ITransition
     /// <param name="targetState">변환할 상태</param>
     /// <param name="targetStateEnum">변환할 상태에 대한 Enum</param>
     /// <param name="condition">전이 조건</param>
-    public Transition (IPlayerState targetState, EPlayerState targetStateEnum, Func<bool> condition)
+    public Transition (IState targetState, EPlayerState targetStateEnum, Func<bool> condition)
     {
         this.targteState = targetState;
         this.targetStateEnum = targetStateEnum;

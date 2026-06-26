@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerBaseState
 {
-
-    public PlayerJumpState(PlayerBase playerBase) : base(playerBase)
-    {
-
-        
+	private PlayerMoveController _moveController;
+	private PlayerAttackController _attackController;
+	
+    public PlayerJumpState(PlayerMoveController moveController,
+		PlayerAttackController attackController,
+		IPlayerView view,
+		IPlayerStatModel statModel,
+		IPlayerStateContext stateContext) : base(view, statModel, stateContext)
+	{
+		_moveController	= moveController;
+        _attackController = attackController;
     }
 
 
@@ -27,18 +33,19 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void SetupTransitions()
     {
-        transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle,
-            () => playerBase.physicsHandler.IsGround()));
+        transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle,
+            () => _view.PhysicsHandler.IsGround()));
 
-        transitions.Add(new Transition(playerBase.dashState, EPlayerState.Dash,
-            () => playerBase.moveController.isDashing));
+        transitions.Add(new Transition(_stateContext.DashState, EPlayerState.Dash,
+            () => _moveController.IsDashing));
 
-        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack,
-            () => playerBase.attackController.attackCount > 0
-            && !playerBase.attackController.isReset));
+        transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack,
+            () => _attackController.AttackCount > 0 && 
+			!_attackController.IsReset));
 
-        transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move,
-            () => playerBase.physicsHandler.IsGround() && playerBase.moveController.moveInput != Vector2.zero));
+        transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move,
+            () => _view.PhysicsHandler.IsGround() && 
+			_moveController.MoveInput != Vector2.zero));
     }
  
 }

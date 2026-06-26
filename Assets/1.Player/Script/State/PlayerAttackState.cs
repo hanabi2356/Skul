@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class PlayerAttackState : PlayerBaseState
 {
-
-	public PlayerAttackState( PlayerBase playerBase ) : base( playerBase )
+	private PlayerMoveController _moveController;
+	private PlayerAttackController _attackController;
+	public PlayerAttackState(PlayerMoveController moveController, 
+		PlayerAttackController attackController,
+		IPlayerView view, 
+		IPlayerStatModel statModel,
+		IPlayerStateContext stateContext) : base(view, statModel, stateContext)
 	{
-
+		_moveController = moveController;
+		_attackController = attackController;
 	}
 
 
@@ -17,22 +23,7 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Execute()
 	{
-		/*if (playerBase.MoveController.moveInput == Vector2.zero && playerBase.AttackController.attackCount==0
-			&& playerBase.PhysicsHandler.IsGround() )
-		{
-			playerBase.ChangeState(playerBase.IdleState, EPlayerState.Idle);
-		}
-
-		if (!playerBase.PhysicsHandler.IsGround() && playerBase.AttackController.attackCount == 0)
-		{
-			playerBase.ChangeState(playerBase.JumpState, EPlayerState.Jump);
-		}
-
-		if (playerBase.MoveController.moveInput != Vector2.zero && playerBase.PhysicsHandler.IsGround()
-			&& playerBase.AttackController.attackCount == 0)
-		{
-			playerBase.ChangeState(playerBase.MoveState, EPlayerState.Move);
-		}*/
+		
 		base.Execute();
 		
 	}
@@ -45,18 +36,18 @@ public class PlayerAttackState : PlayerBaseState
 	public override void SetupTransitions()
 	{
 
-		transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move, () =>
-			playerBase.moveController.moveInput != Vector2.zero &&
-			playerBase.physicsHandler.IsGround() &&
-			playerBase.attackController.attackCount == 0));
+		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
+			_moveController.MoveInput != Vector2.zero &&
+			_view.PhysicsHandler.IsGround() &&
+			_attackController.AttackCount == 0));
 
-		transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle, () =>
-			playerBase.moveController.moveInput == Vector2.zero &&
-			playerBase.attackController.attackCount == 0 &&
-			playerBase.physicsHandler.IsGround()));
+		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
+			_moveController.MoveInput == Vector2.zero &&
+			_attackController.AttackCount == 0 &&
+			_view.PhysicsHandler.IsGround()));
 
-		transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump, () =>
-			!playerBase.physicsHandler.IsGround() &&
-			playerBase.attackController.attackCount == 0));
+		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
+			!_view.PhysicsHandler.IsGround() &&
+			_attackController.AttackCount == 0));
 	}
 }

@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerBaseState
 {
-    
-    public PlayerIdleState(PlayerBase playerBase) : base(playerBase)
-    {
-
+	private PlayerMoveController _moveController;
+	private PlayerAttackController _attackController;
+    public PlayerIdleState(PlayerMoveController moveController,
+		PlayerAttackController attackController,
+		IPlayerView view,
+		IPlayerStatModel statModel,
+		IPlayerStateContext stateContext) : base(view, statModel, stateContext)
+	{
+		_moveController = moveController;
+		_attackController = attackController;
     }
 
 
@@ -28,15 +34,15 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void SetupTransitions()
     {
-        transitions.Add(new Transition(playerBase.moveState, EPlayerState.Move, () =>
-           playerBase.moveController.moveInput != Vector2.zero &&
-           playerBase.physicsHandler.IsGround()));
+        transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
+           _moveController.MoveInput != Vector2.zero &&
+           _view.PhysicsHandler.IsGround()));
 
-        transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump, () =>
-            !playerBase.physicsHandler.IsGround()));
+        transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
+            !_view.PhysicsHandler.IsGround()));
 
-        transitions.Add(new Transition(playerBase.attackState, EPlayerState.Attack, () =>
-            playerBase.attackController.attackCount > 0 &&
-            !playerBase.attackController.isReset));
+        transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack, () =>
+            _attackController.AttackCount > 0 &&
+            !_attackController.IsReset));
     }
 }

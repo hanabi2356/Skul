@@ -3,8 +3,11 @@ using UnityEngine;
 public class PlayerDeadState : PlayerBaseState
 {
 
-    public PlayerDeadState(PlayerBase playerBase) : base(playerBase)
-    {
+    public PlayerDeadState(PlayerMoveController moveController,
+		IPlayerView view,
+		IPlayerStatModel statModel,
+		IPlayerStateContext stateContext) : base(view, statModel, stateContext)
+	{
     }
 
 

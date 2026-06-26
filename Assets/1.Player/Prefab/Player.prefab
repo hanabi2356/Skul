@@ -9,13 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1130023644748097683}
+  - component: {fileID: 7125013549856098030}
   - component: {fileID: 3022688532683476649}
   - component: {fileID: 8492785257481660018}
-  - component: {fileID: 5699612994171222841}
   - component: {fileID: 797854002812779159}
   - component: {fileID: 7863272423271079887}
-  - component: {fileID: 2653455961098605479}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -39,6 +38,52 @@ Transform:
   - {fileID: 4279934088627117348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7125013549856098030
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382966956508622651}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.2, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.5, y: 1}
+  m_EdgeRadius: 0
 --- !u!50 &3022688532683476649
 Rigidbody2D:
   serializedVersion: 5
@@ -81,44 +126,6 @@ MonoBehaviour:
   currentSkulStatData: {fileID: 0}
   defaultStatData: {fileID: 11400000, guid: 6c04aa58c8a635147a038bfb7b62a2d7, type: 2}
   <currentPlayerStateEnum>k__BackingField: 0
-  currentHP: 0
-  finalTakeDamageMultiply: 0
-  finalPhysicsAttack: 0
-  finalMagicAttack: 0
-  finalAttackSpeed: 0
-  finalMoveSpeed: 0
-  finalConcentrationSpeed: 0
-  finalSkillCoolDownSpeed: 0
-  finalSwapCoolDownSpeed: 0
-  finalQuintessenceCoolDownSpeed: 0
-  finalCriticalProbablility: 0
-  finalCriticalDamageMultiply: 0
-  finalJumpForce: 0
-  finalFallMultiply: 0
-  finalJumpMaxCount: 0
-  finalDashForce: 0
-  finalDashCoolTime: 0
-  finalDashDuration: 0
-  finalDashMaxCount: 0
---- !u!114 &5699612994171222841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382966956508622651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cae1954976c4cc4286b1f998ef0b721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  coyoteTime: 0.1
-  jumpCount: 0
-  isJump: 1
-  dashCount: 0
-  <isDashing>k__BackingField: 0
-  isCoyoteTimeEnd: 0
-  canMove: 0
 --- !u!114 &797854002812779159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,28 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec8694a017acd445b6050af0a53f97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsHandler
-  environmentLayer:
+  groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   groundCheckObject: {fileID: 4279934088627117348}
---- !u!114 &2653455961098605479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382966956508622651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c73a52c188296c43af2c4d1690d09f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackController
-  attackCountResetDelay: 0.3
-  maxAttackCount: 2
-  inputBufferTime: 0.2
-  <attackCount>k__BackingField: 0
-  <isAttacking>k__BackingField: 0
-  <isReset>k__BackingField: 0
 --- !u!1 &1612465102408967150
 GameObject:
   m_ObjectHideFlags: 0

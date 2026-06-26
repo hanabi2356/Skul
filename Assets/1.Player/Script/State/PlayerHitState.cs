@@ -3,8 +3,11 @@ using UnityEngine;
 public class PlayerHitState : PlayerBaseState
 {
 
-    public PlayerHitState(PlayerBase playerBase) : base(playerBase)
-    {
+    public PlayerHitState(PlayerMoveController moveController,
+		IPlayerView view,
+		IPlayerStatModel statModel,
+		IPlayerStateContext stateContext) : base(view, statModel, stateContext)
+	{
     }
 
     

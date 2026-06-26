@@ -10,7 +10,7 @@ public interface ITransition
     /// <summary>
     /// 전환할 상태
     /// </summary>
-    public IPlayerState targteState { get; }
+    public IState targteState { get; }
     /// <summary>
     /// 전환할 상태에 맞춘 Enum
     /// Enum을 사용하는 이유는 Animation 모션을 상태와 맞추기 위해 사용함

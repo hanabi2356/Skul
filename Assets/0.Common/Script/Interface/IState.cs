@@ -4,7 +4,7 @@ using UnityEngine;
 /// 상태의 진입, 퇴장 및 현재 상태일 때에 대한 로직을 담는 인터페이스
 /// Enter, Exit는 상태 변환 시 한번 만 실행 됨
 /// </summary>
-public interface IPlayerState 
+public interface IState 
 {
     /// <summary>
     /// 상태 진입 시 실행할 로직 작성

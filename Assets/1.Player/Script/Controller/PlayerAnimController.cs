@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerAnimController : MonoBehaviour
 {
     private PlayerBase playerBase;
-
+	private IPlayerView _view;
     [Header("확인용 변수(조작 X)")]
     [field:SerializeField] public bool isAttackAnimPlaying { get; private set; } = false;
     void Awake()
@@ -15,11 +15,11 @@ public class PlayerAnimController : MonoBehaviour
 
     private void Start()
     {
-        if (playerBase != null)
+/*        if (playerBase != null)
         {
             playerBase.attackController.onAttackStarted += AttackAnimUpdate;
             playerBase.attackController.onAttackFinished += AttackAnimEnd;
-        }
+        }*/
 
 
     }
@@ -31,11 +31,11 @@ public class PlayerAnimController : MonoBehaviour
     }
     private void ChangeAnim(EPlayerState state)
     {
-        playerBase.animator.SetInteger("State", ((int)state));
+        //playerBase.animator.SetInteger("State", ((int)state));
     }
     private void AttackAnimUpdate()
     {
-        playerBase.animator.SetInteger("AttackCount", playerBase.attackController.attackCount);
+        //playerBase.animator.SetInteger("AttackCount", playerBase.attackController.attackCount);
         isAttackAnimPlaying = true;
     }
     private void AttackAnimEnd()
@@ -45,8 +45,8 @@ public class PlayerAnimController : MonoBehaviour
 
     private void OnDisable()
     {
-        if( playerBase != null )
-            playerBase.attackController.onAttackStarted -= AttackAnimUpdate;
+        /*if( playerBase != null )
+            playerBase.attackController.onAttackStarted -= AttackAnimUpdate;*/
     }
 
 }

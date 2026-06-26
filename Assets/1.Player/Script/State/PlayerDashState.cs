@@ -4,44 +4,40 @@ public class PlayerDashState : PlayerBaseState
 {
 
 	private float _originGravityScale;
-	public PlayerDashState(PlayerBase playerBase) : base(playerBase)
+	private PlayerMoveController _moveController;
+	public PlayerDashState(PlayerMoveController moveController,
+		IPlayerView view,
+		IPlayerStatModel statModel,
+		IPlayerStateContext stateContext) : base(view, statModel, stateContext)
 	{
-		
+		_moveController = moveController;
 	}
 
 
 	public override void Enter()
 	{
-		_originGravityScale = playerBase.body.gravityScale;
-		playerBase.body.gravityScale = 0.0f;
+		_originGravityScale = _view.Body.gravityScale;
+		_view.Body.gravityScale = 0.0f;
 	}
 
 	public override void Execute()
 	{
-		/*if(!playerBase.MoveController.isDashing && playerBase.PhysicsHandler.IsGround())
-		{
-			playerBase.ChangeState(playerBase.IdleState, EPlayerState.Idle);
-		}
-		if (!playerBase.MoveController.isDashing && !playerBase.PhysicsHandler.IsGround())
-		{
-			playerBase.ChangeState(playerBase.JumpState, EPlayerState.Jump);
-		}*/
-
 	   base.Execute();
-
 	}
 
 	public override void Exit()
 	{
-		playerBase.body.gravityScale= _originGravityScale;
+		_view.Body.gravityScale= _originGravityScale;
 	}
 
 	public override void SetupTransitions()
 	{
-		transitions.Add(new Transition(playerBase.idleState, EPlayerState.Idle, () =>
-			!playerBase.moveController.isDashing && playerBase.physicsHandler.IsGround()));
+		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
+			!_moveController.IsDashing && 
+			_view.PhysicsHandler.IsGround()));
 
-		transitions.Add(new Transition(playerBase.jumpState, EPlayerState.Jump, () =>
-		!playerBase.moveController.isDashing && !playerBase.physicsHandler.IsGround()));
+		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
+		!_moveController.IsDashing && 
+		!_view.PhysicsHandler.IsGround()));
 	}
 }

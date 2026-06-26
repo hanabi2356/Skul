@@ -3,43 +3,49 @@ using UnityEngine;
 
 public class PlayerStatModel : IPlayerStatModel
 {
-	public int currentHP { get; private set; }
+	public int CurrentHP { get; private set; }
 
-	public float finalTakeDamageMultiply { get; private set; }
+	public float FinalTakeDamageMultiply { get; private set; }
 
-	public float finalPhysicsAttack { get; private set; }
+	public float FinalPhysicsAttack { get; private set; }
 
-	public float finalMagicAttack { get; private set; }
+	public float FinalMagicAttack { get; private set; }
 
-	public float finalAttackSpeed { get; private set; }
+	public float FinalAttackSpeed { get; private set; }
 
-	public float finalMoveSpeed { get; private set; }
+	public float FinalMoveSpeed { get; private set; }
 
-	public float finalConcentrationSpeed { get; private set; }
+	public float FinalConcentrationSpeed { get; private set; }
 
-	public float finalSkillCoolDownSpeed { get; private set; }
+	public float FinalSkillCoolDownSpeed { get; private set; }
 
-	public float finalSwapCoolDownSpeed { get; private set; }
+	public float FinalSwapCoolDownSpeed { get; private set; }
 
-	public float finalQuintessenceCoolDownSpeed { get; private set; }
+	public float FinalQuintessenceCoolDownSpeed { get; private set; }
 
-	public float finalCriticalProbablility { get; private set; }
+	public float FinalCriticalProbablility { get; private set; }
 
-	public float finalCriticalDamageMultiply { get; private set; }
+	public float FinalCriticalDamageMultiply { get; private set; }
 
-	public float finalJumpForce { get; private set; }
+	public float FinalJumpForce { get; private set; }
 
-	public float finalFallMultiply { get; private set; }
+	public float FinalFallMultiply { get; private set; }
 
-	public int finalJumpMaxCount { get; private set; }
+	public int FinalJumpMaxCount { get; private set; }
 
-	public float finalDashForce { get; private set; }
+	public float FinalDashForce { get; private set; }
 
-	public float finalDashCoolTime { get; private set; }
+	public float FinalDashCoolTime { get; private set; }
 
-	public float finalDashDuration { get; private set; }
+	public float FinalDashDuration { get; private set; }
 
-	public int finalDashMaxCount { get; private set; }
+	public int FinalDashMaxCount { get; private set; }
+
+	public float FinalAttackCountResetDelay { get; private set; }
+
+	public int FinalMaxAttackCount { get; private set; }
+
+	public float FinalInputBufferTime { get; private set; }
 
 	public event Action<int> OnChangeHp;
 	public event Action OnStatCaculated;
@@ -53,42 +59,46 @@ public class PlayerStatModel : IPlayerStatModel
 	{
 		if (defaultStatData == null || currentSkulStatData == null) return;
 		
-		currentHP = defaultStatData.HP;
-		finalTakeDamageMultiply = defaultStatData.TakeDamageMultyply * currentSkulStatData.TakeDamageMultiply;
+		CurrentHP = defaultStatData.HP;
+		FinalTakeDamageMultiply = defaultStatData.TakeDamageMultyply * currentSkulStatData.TakeDamageMultiply;
 
-		finalPhysicsAttack = defaultStatData.PhysicsAttack * currentSkulStatData.PhysicalAttack;
-		finalMagicAttack = defaultStatData.MagicAttack * currentSkulStatData.MagicAttack;
+		FinalPhysicsAttack = defaultStatData.PhysicsAttack * currentSkulStatData.PhysicalAttack;
+		FinalMagicAttack = defaultStatData.MagicAttack * currentSkulStatData.MagicAttack;
 
-		finalAttackSpeed = defaultStatData.AttackSpeed * currentSkulStatData.AttackSpeed;
-		finalMoveSpeed = defaultStatData.MoveSpeed * currentSkulStatData.MoveSpeed;
-		finalConcentrationSpeed = defaultStatData.ConcentrationSpeed * currentSkulStatData.ConcentrationSpeed;
+		FinalAttackSpeed = defaultStatData.AttackSpeed * currentSkulStatData.AttackSpeed;
+		FinalMoveSpeed = defaultStatData.MoveSpeed * currentSkulStatData.MoveSpeed;
+		FinalConcentrationSpeed = defaultStatData.ConcentrationSpeed * currentSkulStatData.ConcentrationSpeed;
 
-		finalSkillCoolDownSpeed = defaultStatData.SkillCoolDown * currentSkulStatData.SkillCoolDownSpeed;
-		finalSwapCoolDownSpeed = defaultStatData.SwpaCoolDown * currentSkulStatData.SwapCoolDownSpeed;
-		finalQuintessenceCoolDownSpeed = defaultStatData.QuitessenceCoolDown * currentSkulStatData.QuintessenceCoolDownSpeed;
+		FinalSkillCoolDownSpeed = defaultStatData.SkillCoolDown * currentSkulStatData.SkillCoolDownSpeed;
+		FinalSwapCoolDownSpeed = defaultStatData.SwpaCoolDown * currentSkulStatData.SwapCoolDownSpeed;
+		FinalQuintessenceCoolDownSpeed = defaultStatData.QuitessenceCoolDown * currentSkulStatData.QuintessenceCoolDownSpeed;
 
-		finalCriticalProbablility = defaultStatData.CriticalProbablility * currentSkulStatData.CriticalProbablility;
-		finalCriticalDamageMultiply = defaultStatData.CriticalDamageMultiply * currentSkulStatData.CriticalDamageMultiply;
+		FinalCriticalProbablility = defaultStatData.CriticalProbablility * currentSkulStatData.CriticalProbablility;
+		FinalCriticalDamageMultiply = defaultStatData.CriticalDamageMultiply * currentSkulStatData.CriticalDamageMultiply;
 
-		finalJumpForce = defaultStatData.JumpForce;
-		finalFallMultiply = defaultStatData.FallMultiply;
-		finalJumpMaxCount = currentSkulStatData.JumpMaxCount;
+		FinalJumpForce = defaultStatData.JumpForce;
+		FinalFallMultiply = defaultStatData.FallMultiply;
+		FinalJumpMaxCount = currentSkulStatData.JumpMaxCount;
 
-		finalDashForce = defaultStatData.DashForce;
-		finalDashCoolTime = defaultStatData.DashCoolTime;
-		finalDashDuration = defaultStatData.DashDuration;
-		finalDashMaxCount = currentSkulStatData.DashMaxCount;
+		FinalDashForce = defaultStatData.DashForce;
+		FinalDashCoolTime = defaultStatData.DashCoolTime;
+		FinalDashDuration = defaultStatData.DashDuration;
+		FinalDashMaxCount = currentSkulStatData.DashMaxCount;
+
+		FinalAttackCountResetDelay = defaultStatData.AttackCountResetDelay;
+		FinalMaxAttackCount = defaultStatData.MaxAttackCount;
+		FinalInputBufferTime= defaultStatData.InputBufferTime;
 
 		OnStatCaculated?.Invoke();
 
 	}
 	public void TakeDamage(int damage)
 	{
-		if(currentHP != 0)
+		if(CurrentHP != 0)
 		{
-			currentHP -= damage;
+			CurrentHP -= damage;
 		}
-		OnChangeHp?.Invoke(currentHP);
+		OnChangeHp?.Invoke(CurrentHP);
 	}
 
 	public void SetSkulStatData(SkulStatData currentSkulStatData)

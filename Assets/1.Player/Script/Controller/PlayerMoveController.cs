@@ -1,209 +1,126 @@
-using System.Threading;
+using System;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
+using System.Threading.Tasks;
 using UnityEngine.InputSystem;
-using System.Collections;
-using Unity.VisualScripting;
-public class PlayerMoveController : MonoBehaviour
+
+
+public class PlayerMoveController 
 {
+    private IPlayerStatModel _statModel;
+	private IPlayerView _view;
+
+	public Vector2 MoveInput { get; private set; }
+	public Vector2 GazeVector { get; private set; } = new Vector2(1.0f, 0.0f); //시선 백터
+
+	private int _jumpCount;
+	private bool _isJump = true;
+	private int _dashCount=0;
+	public bool IsDashing { get; private set; } = false;
+	private bool _isCoyoteTimeEnd;
+	private bool _canMove = true;
+	private bool _isDashCoolDown;
     
-    private float moveSpeed;
+	public Func<int> GetAttackCount { get; set; }
     
-    private float jumpForce;
-    private int jumpMaxCount;
-    private float fallMultiply;
+    public PlayerMoveController(IPlayerStatModel statModel, IPlayerView view)
+	{
+		_statModel = statModel;
+		_view = view;
+	}
 
-    private float dashForce;
-    private float dashCoolTime;
-    private float dashDuration;
-    private int dashMaxCount;
+    public void TryJump()
+	{
+		if(_isJump && _jumpCount < _statModel.FinalJumpMaxCount)
+		{
+			_view.SetVelocityY(_statModel.FinalJumpForce);
+			_jumpCount++;
+		}
+	}
+	public void TryDash()
+	{
+		if(!IsDashing && _dashCount < _statModel.FinalDashMaxCount)
+		{
+			_ = StartDash();
+		}
+	}
 
-    [SerializeField, Label("코요테 타임")] private float coyoteTime=0.3f;
+	private async Task StartDash()
+	{
+		IsDashing = true;
+		_dashCount++;
 
-    [Header("확인용 변수(조작 X)")]
-    [SerializeField] private int jumpCount = 0;
-    [SerializeField] private bool isJump = true;
-    [SerializeField] private int dashCount = 0;
-    [field : SerializeField]public bool isDashing { get; private set; } = false;
-    [SerializeField]private bool isCoyoteTimeEnd = false;
-    [SerializeField]private bool canMove = false;
+		_view.SetGravityScale(true);
 
-    private bool isDashCoolDown = false;
-    public Vector2 moveInput { get; private set; }
+		float dashX = GazeVector.x * (_statModel.FinalDashForce + Mathf.Abs(MoveInput.x));
+		_view.SetVelocity(dashX, 0.0f);
 
-    private PlayerBase playerBase;
+		await Task.Delay((int)(_statModel.FinalDashDuration * 1000));
 
-    public Vector2 gazeVector { get; private set; } = new Vector2(1.0f, 0.0f); //시선 백터
-    
-    
+		IsDashing = false;
+		_view.SetGravityScale(false);
+		_view.SetVelocity(0.0f, 0.0f);
 
-    void Awake()
-    {
-        playerBase = GetComponent<PlayerBase>();
-        playerBase.body.gravityScale = 2.5f;
-        InitStat();
-    }
+		if(!_isDashCoolDown)
+		{
+			_ = StartDashCoolDown();
+		}
+	}
 
-    void FixedUpdate()
-    {
-        if (playerBase.attackController.attackCount == 0 && !canMove)
-            canMove = true;
+	private async Task StartDashCoolDown()
+	{
+		_isDashCoolDown = true;
 
-        if (isDashing || !canMove)
-            return;
+		while (_dashCount > 0)
+		{
+			await Task.Delay((int)(_statModel.FinalDashCoolTime * 1000));
+			_dashCount = 0;
+		}
 
-        PlayerMove();
-        if (playerBase.attackController.attackCount > 0)
-        {
-            LockMovement();
-        }
-        
-        JumpCounter();
-        MultiplyGravity();
-        HandleCoyoteTime();
-    }
-    private void InitStat()
-    {
-        moveSpeed = playerBase.finalMoveSpeed;
+		_isDashCoolDown = false;
+	}
 
-        jumpForce=playerBase.finalJumpForce;
-        jumpMaxCount = playerBase.finalJumpMaxCount;
-        fallMultiply = playerBase.finalFallMultiply;
+	public void SetMoveInput(Vector2 moveInput)
+	{
+		MoveInput = moveInput;
+		if (MoveInput != Vector2.zero)
+		{
+			GazeVector = MoveInput;
+		}
+	}
 
-        dashForce = playerBase.finalDashForce;
-        dashCoolTime = playerBase.finalDashCoolTime;
-        dashDuration = playerBase.finalDashDuration;
-        dashMaxCount = playerBase.finalDashMaxCount;
+	public void FixedTick()
+	{
+		if (_view == null) return;
 
-        canMove = true;
-    }
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
-        if (moveInput != Vector2.zero)
-        {
-            gazeVector = moveInput;
-        }
-    }
+		if (IsDashing) return;
 
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if(context.started && isJump)
-        {
-            Jump();
-        }
-    }
+		bool ignore = _view.CurrentVelocityY > 0.1f;
+		_view.SetOneWayPlatformCollision(ignore);
 
-    public void OnDash(InputAction.CallbackContext context)
-    {
-        if(context.started && dashCount < dashMaxCount)
-        {
-           if(!isDashing)
-                StartCoroutine(IEDash());
-        }
-    }
-    /// <summary>
-    /// 점프
-    /// </summary>
-    private void Jump()
-    {
-        
-        playerBase.body.linearVelocity = new Vector2(playerBase.body.linearVelocity.x, jumpForce);
-        
-        jumpCount++;
-    }
-    /// <summary>
-    /// 점프 후 낙하 시 중력을 추가로 주는 함수
-    /// </summary>
-    private void MultiplyGravity()
-    {
-        if(playerBase.body.linearVelocity.y <0.0f)
-        {
-            //기존 중력에 1이여서 원하는 값을 정확히 계산하기 위해 fallMultiply-1을 함
-            playerBase.body.linearVelocity += Vector2.up * Physics2D.gravity * (fallMultiply - 1) * Time.fixedDeltaTime;
-        }
-    }
-    private void PlayerMove()
-    {
-        if(!playerBase.physicsHandler.IsWallCheck())
-        {
-            float targetX = moveInput.x*moveSpeed;
-            playerBase.body.linearVelocity = new Vector2(targetX, playerBase.body.linearVelocity.y);
+		bool lookRight = GazeVector.x >= 0.0f;
+		bool isWall = _view.PhysicsHandler.IsWallCheck(lookRight);
 
-        }
-        
-        transform.rotation = gazeVector.x > 0.0f ? new Quaternion(0.0f, 0.0f, 0.0f, 0.0f) : new Quaternion(0.0f, 180.0f, 0.0f, 0.0f);
-    }
-    private void LockMovement()
-    {
-        playerBase.body.linearVelocity=Vector2.zero;
-        canMove = false;
-    }
-    /// <summary>
-    /// 대쉬 코루틴(이동만 처리)
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator IEDash()
-    {
-        //isDash = false;
-        isDashing = true;
-        dashCount++;
 
-        playerBase.body.linearVelocity = new Vector2(gazeVector.x*(dashForce+moveInput.x), 0.0f);
-        
-        yield return new WaitForSeconds(dashDuration); //키를 누르지 못하는 시간
-        isDashing = false;
-        
-        if(!isDashCoolDown)
-        {
-            StartCoroutine(IEDashCoolDown());
-        }
-    }
-    private IEnumerator IEDashCoolDown()
-    {
-        isDashCoolDown = true;
-        while(dashCount > 0)
-        {
-            yield return new WaitForSeconds(dashCoolTime);
-            dashCount = 0;
-        }
-        isDashCoolDown = false;
-    }
-    /// <summary>
-    /// 공중에 있을 때 점프 횟 수를 1회 증가 시키는 
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator IEStartCoyoteTime()
-    {
-        
-        yield return new WaitForSeconds(coyoteTime);
-        isCoyoteTimeEnd = true;
-        
-    }
-    private void HandleCoyoteTime()
-    {
-        if (!playerBase.physicsHandler.IsGround() && !isCoyoteTimeEnd)
-            StartCoroutine(IEStartCoyoteTime());
+		if (!isWall)
+		{
+			float targetX = MoveInput.x * _statModel.FinalMoveSpeed;
+			_view.SetVelocityX(targetX);
+		}
+		else
+		{
+			_view.SetVelocityX(0.0f);
+		}
 
-        if (playerBase.physicsHandler.IsGround() && isCoyoteTimeEnd)
-            isCoyoteTimeEnd = false;
-    }
-    private void JumpCounter()
-    {
-        if(jumpCount >= jumpMaxCount)
-        {
-            isJump = false;
-        }
+		_view.SetRotation(lookRight);
+		if (_view.PhysicsHandler.IsGround() && _view.CurrentVelocityY <= 0.1f)
+		{
+			_jumpCount = 0;
+			_isJump = true;
+		}
 
-        if(playerBase.physicsHandler.IsGround()&&playerBase.body.linearVelocity.y<=0.1f)
-        {
-            jumpCount = 0;
-            isJump = true;
-        }
-        if (isCoyoteTimeEnd && !playerBase.physicsHandler.IsGround())
-        {
-            jumpCount = 1;
-        }
-    }
-    
+		if (_jumpCount >= _statModel.FinalJumpMaxCount)
+		{
+			_isJump = false;
+		}
+	}
 }
