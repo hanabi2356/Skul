@@ -18,7 +18,7 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Enter()
 	{
-		
+		_attackController.OnAttackStateEnter();
 	}
 
 	public override void Execute()
@@ -30,7 +30,7 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Exit()
 	{
-		
+		_attackController.OnAttackStateExit();
 	}
 
 	public override void SetupTransitions()

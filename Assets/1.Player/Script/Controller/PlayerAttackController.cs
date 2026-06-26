@@ -2,8 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Threading.Tasks;
 using System;
+using System.Diagnostics;
+using Unity.VisualScripting;
 public class PlayerAttackController 
 {
+	public event Action<int> OnAttackStarted;
     public event Action OnAttackFinished;
     
 
@@ -23,11 +26,39 @@ public class PlayerAttackController
 	
 	public void TryAttack()
 	{
-
+		_lastAttackTime = Time.time;
+		IsReset = false;
 	}
-	private async Task StartAttack()
+	
+	public void OnAttackStateEnter()
 	{
+		IsAttacking = true;
+		_lastInputTime = -1.0f;
+		AttackCount++;
 
+		OnAttackStarted?.Invoke(AttackCount);
+	}
+	public void OnAttackStateExit()
+	{
+		_lastAttackTime = Time.time;
+		IsAttacking = false;
+
+		OnAttackFinished?.Invoke();
+	}
+	public void ComboCoolDown()
+	{
+		if(!IsAttacking && AttackCount>0)
+		{
+			if(Time.time-_lastAttackTime > _statModel.FinalAttackCountResetDelay)
+			{
+				ResetCombo();
+			}
+		}
+	}
+	private void ResetCombo()
+	{
+		AttackCount = 0;
+		IsReset = true;
 	}
     /*void Update()
     {

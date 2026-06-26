@@ -4,18 +4,21 @@ using UnityEngine.InputSystem;
 
 public class PlayerView : MonoBehaviour, IPlayerView
 {
-	public PlayerPhysicsHandler PhysicsHandler { get; private set; }
+	[SerializeField]private Transform _playerTransform;
+	[SerializeField] private Rigidbody2D _body;
+	[SerializeField] private PlayerPhysicsHandler _physicsHandler;
 
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
 	public event Action OnDash;
 	public event Action OnAttack;
-	public Rigidbody2D Body {get; private set;}
-	private Transform _playerTransform;
+	public Rigidbody2D Body => _body;
+	
 	private float _originalGravityScale;
 	public float CurrentVelocityY => Body.linearVelocity.y;
-	
-	
+	public PlayerPhysicsHandler PhysicsHandler => _physicsHandler;
+
+
 	void Start()
     {
         
@@ -23,9 +26,9 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	private void Awake()
 	{
 		_playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-		Body = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
+		_body = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
 		_originalGravityScale = Body.gravityScale;
-		PhysicsHandler = _playerTransform.GetComponent<PlayerPhysicsHandler>();
+		_physicsHandler = _playerTransform.GetComponent<PlayerPhysicsHandler>();
 	}
 	void Update()
     {

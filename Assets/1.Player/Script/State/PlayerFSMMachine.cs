@@ -26,6 +26,10 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 		IPlayerStatModel statModel)
 	{
 		InitState(moveController, attackController, view, statModel,this);
+		
+	}
+	public void BootUp()
+	{
 		SetupAllStateTrasitions();
 
 		CurrentState = IdleState;

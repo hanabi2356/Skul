@@ -12,6 +12,8 @@ public class PlayerPresenter : MonoBehaviour
 
 	private IFSMMachine _fsm;
 	[SerializeField] private DefaultStatData _defaultStatData;
+
+	private bool _isInitialized = false;
 	[Inject]
 	public void Initialize(IPlayerStatModel statModel, 
 		IPlayerView view, 
@@ -27,24 +29,36 @@ public class PlayerPresenter : MonoBehaviour
 		_moveController = moveController;
 		_attackController = attackController;
 		_fsm = fsm;
-		
-	}
-	private async void Awake()
-	{
+
 		SkulStatData loadData = _dataLoader.SkulStatDataLoad("LittleBorn");
 		SubscribeEvent();
 		_statModel.UpdateFinalStat(_defaultStatData, loadData);
+
+		if(_fsm is PlayerFSMMachine playerFSM)
+		{
+			playerFSM.BootUp();
+		}
+
+		_isInitialized = true;
+	}
+	private async void Awake()
+	{
+		
 	}
 	private void SubscribeEvent()
 	{
-		_view.OnMove += _moveController.SetMoveInput;
-		_view.OnJump += _moveController.TryJump;
-		_view.OnDash += _moveController.TryDash;
-		_view.OnAttack += _attackController.TryAttack;
+		if (_view != null && _moveController != null && _attackController != null)
+		{
+			_view.OnMove += _moveController.SetMoveInput;
+			_view.OnJump += _moveController.TryJump;
+			_view.OnDash += _moveController.TryDash;
+			_view.OnAttack += _attackController.TryAttack;
+		}
 		
 	}
 	private void FixedUpdate()
 	{
+		if (_isInitialized == false) return;
 		_moveController.FixedTick();
 		Debug.Log(_fsm.CurrentState.ToString());
 		_fsm.CurrentState?.Execute();

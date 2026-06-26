@@ -4,9 +4,9 @@ using UnityEngine;
 public class Transition : ITransition
 {
     //bool 값을 반환하는 delegate
-    private Func<bool> condition;
-    public IState targteState { get; }
-    public EPlayerState targetStateEnum { get; }
+    private Func<bool> _condition;
+    public IState TargteState { get; }
+    public EPlayerState TargetStateEnum { get; }
 
     /// <summary>
     /// IPlayerStatem EPlayerState 의존성 주입
@@ -16,13 +16,13 @@ public class Transition : ITransition
     /// <param name="condition">전이 조건</param>
     public Transition (IState targetState, EPlayerState targetStateEnum, Func<bool> condition)
     {
-        this.targteState = targetState;
-        this.targetStateEnum = targetStateEnum;
-        this.condition = condition;
+        this.TargteState = targetState;
+        this.TargetStateEnum = targetStateEnum;
+        this._condition = condition;
     }
     public bool InConditionMet()
     {
-        return condition.Invoke();
+        return _condition.Invoke();
     }
 
     

@@ -32,7 +32,7 @@ public abstract class PlayerBaseState : IState
         {
             if (transition.InConditionMet())
             {
-                _stateContext.ChangeState(transition.targteState, transition.targetStateEnum);
+                _stateContext.ChangeState(transition.TargteState, transition.TargetStateEnum);
                 return;
             }
         }
