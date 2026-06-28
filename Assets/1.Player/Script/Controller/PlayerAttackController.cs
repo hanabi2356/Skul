@@ -26,10 +26,14 @@ public class PlayerAttackController
 	
 	public void TryAttack()
 	{
+		
 		_lastAttackTime = Time.time;
 		IsReset = false;
+		
 	}
-	
+	/// <summary>
+	/// AnimEvent 사용
+	/// </summary>
 	public void OnAttackStateEnter()
 	{
 		IsAttacking = true;
@@ -38,6 +42,9 @@ public class PlayerAttackController
 
 		OnAttackStarted?.Invoke(AttackCount);
 	}
+	/// <summary>
+	/// AnimEvent 사용
+	/// </summary>
 	public void OnAttackStateExit()
 	{
 		_lastAttackTime = Time.time;
