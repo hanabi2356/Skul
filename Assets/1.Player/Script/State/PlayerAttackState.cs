@@ -18,7 +18,7 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Enter()
 	{
-		_attackController.OnAttackStateEnter();
+		_attackController.OnAttackEnter();
 	}
 
 	public override void Execute()
@@ -30,7 +30,7 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Exit()
 	{
-		_attackController.OnAttackStateExit();
+		_attackController.OnAttackExit();
 	}
 
 	public override void SetupTransitions()
@@ -39,15 +39,15 @@ public class PlayerAttackState : PlayerBaseState
 		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
 			_moveController.MoveInput != Vector2.zero &&
 			_view.PhysicsHandler.IsGround() &&
-			_attackController.AttackCount == 0));
+			_attackController.IsAttacking == false));
 
 		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
 			_moveController.MoveInput == Vector2.zero &&
-			_attackController.AttackCount == 0 &&
+			_attackController.IsAttacking == false &&
 			_view.PhysicsHandler.IsGround()));
 
 		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
 			!_view.PhysicsHandler.IsGround() &&
-			_attackController.AttackCount == 0));
+			_attackController.IsAttacking == false));
 	}
 }
