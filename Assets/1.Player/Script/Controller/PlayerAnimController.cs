@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class PlayerAnimController : MonoBehaviour
+public class PlayerAnimController 
 {
-    private PlayerBase playerBase;
 	private IPlayerView _view;
-    [Header("확인용 변수(조작 X)")]
-    [field:SerializeField] public bool isAttackAnimPlaying { get; private set; } = false;
+    
+    public bool isAttackAnimPlaying { get; private set; } = false;
     void Awake()
     {
-        if(playerBase == null)
-            playerBase = GetComponent<PlayerBase>();
-
+       
     }
 
     private void Start()
@@ -26,7 +23,7 @@ public class PlayerAnimController : MonoBehaviour
 
     void Update()
     {
-        ChangeAnim(playerBase.currentPlayerStateEnum);
+        //ChangeAnim(playerBase.currentPlayerStateEnum);
         
     }
     private void ChangeAnim(EPlayerState state)

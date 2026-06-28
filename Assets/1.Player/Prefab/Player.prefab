@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1130023644748097683}
   - component: {fileID: 7125013549856098030}
   - component: {fileID: 3022688532683476649}
-  - component: {fileID: 8492785257481660018}
-  - component: {fileID: 797854002812779159}
   - component: {fileID: 7863272423271079887}
   m_Layer: 9
   m_Name: Player
@@ -111,34 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8492785257481660018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382966956508622651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bf0320bc188c6948b6682fc9576df34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBase
-  currentSkulStatData: {fileID: 0}
-  defaultStatData: {fileID: 11400000, guid: 6c04aa58c8a635147a038bfb7b62a2d7, type: 2}
-  <currentPlayerStateEnum>k__BackingField: 0
---- !u!114 &797854002812779159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382966956508622651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7da9c15322447d4da2378df71b9a078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimController
-  <isAttackAnimPlaying>k__BackingField: 0
 --- !u!114 &7863272423271079887
 MonoBehaviour:
   m_ObjectHideFlags: 0
