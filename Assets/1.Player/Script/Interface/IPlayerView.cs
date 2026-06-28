@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public interface IPlayerView 
 {
+	/// <summary>
+	/// 물리 충돌 조건을 위한 물리 핸들러
+	/// </summary>
 	public PlayerPhysicsHandler PhysicsHandler { get; }
 
 	public event Action<Vector2> OnMove;
@@ -13,13 +16,39 @@ public interface IPlayerView
 	public Rigidbody2D Body { get; }
 	public float CurrentVelocityY { get; }
 
+	/// <summary>
+	/// player의 linearVelocity.x 값 변경
+	/// </summary>
+	/// <param name="x"></param>
 	public void SetVelocityX(float x);
+	/// <summary>
+	/// player의 linearVelocity.y 값 변경
+	/// </summary>
+	/// <param name="y"></param>
 	public void SetVelocityY(float y);
+	/// <summary>
+	/// player의 linearVelocity.x, y 값 변경
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
 	public void SetVelocity(float x, float y);
+	/// <summary>
+	/// player의 rotation값 변경
+	/// </summary>
+	/// <param name="lookRight">오른쪽을 보고 있는지에 대한 여부</param>
 	public void SetRotation(bool lookRight);
+	/// <summary>
+	/// 대시 상태에 따른 중력 수치 변경
+	/// </summary>
+	/// <param name="isDash">true: 0/ false: Rigidbody2D에 지정한 GravityScale</param>
 	public void SetGravityScale(bool isDash);
 	public void AddVelocity(Vector3 velocity);
+	/// <summary>
+	/// OneWayPlatform 무시 여부 결정
+	/// </summary>
+	/// <param name="ignore"></param>
 	public void SetOneWayPlatformCollision(bool ignore);
+
 	public void InputMoveVector(InputAction.CallbackContext context);
 	public void InputJump(InputAction.CallbackContext context);
 	public void InputDash(InputAction.CallbackContext context);
