@@ -16,8 +16,7 @@ public class PlayerDashState : PlayerBaseState
 
 	public override void Enter()
 	{
-		_originGravityScale = _view.Body.gravityScale;
-		_view.Body.gravityScale = 0.0f;
+		_view.SetGravityScale(true);
 	}
 
 	public override void Execute()
@@ -27,7 +26,7 @@ public class PlayerDashState : PlayerBaseState
 
 	public override void Exit()
 	{
-		_view.Body.gravityScale= _originGravityScale;
+		_view.SetGravityScale(false);
 	}
 
 	public override void SetupTransitions()
@@ -39,5 +38,9 @@ public class PlayerDashState : PlayerBaseState
 		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
 		!_moveController.IsDashing && 
 		!_view.PhysicsHandler.IsGround()));
+
+		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
+		_moveController.MoveInput != Vector2.zero &&
+		_view.PhysicsHandler.IsGround()));
 	}
 }

@@ -18,7 +18,10 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
-       
+       if(_stateContext.CurrentStateEnum == EPlayerState.Dash)
+		{
+			_moveController.SetIsDashing(false);
+		}
     }
 
     public override void Execute()

@@ -49,15 +49,14 @@ public class PlayerMoveController
 		IsDashing = true;
 		_dashCount++;
 
-		_view.SetGravityScale(true);
 
 		float dashX = GazeVector.x * (_statModel.FinalDashForce + Mathf.Abs(MoveInput.x));
 		_view.SetVelocity(dashX, 0.0f);
 
+		Debug.Log("Dash");
 		await Task.Delay((int)(_statModel.FinalDashDuration * 1000));
 
 		IsDashing = false;
-		_view.SetGravityScale(false);
 		_view.SetVelocity(0.0f, 0.0f);
 
 		if(!_isDashCoolDown)
@@ -123,4 +122,7 @@ public class PlayerMoveController
 			_isJump = false;
 		}
 	}
+
+	public void SetIsDashing(bool value) => IsDashing = value;
+	
 }
