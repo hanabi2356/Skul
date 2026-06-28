@@ -44,7 +44,7 @@ public class PlayerMoveState : PlayerBaseState
 			() => _moveController.IsDashing));
 
 		transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack,
-			() => _attackController.AttackCount > 0 && 
+			() => _attackController.IsAttacking == true || 
 			!_attackController.IsReset));
 
 

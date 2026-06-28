@@ -34,9 +34,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void SetupTransitions()
     {
-		/*Debug.Log($"_moveController is null : {_moveController == null}");
-		Debug.Log($"view is null : {_view == null}");
-		Debug.Log($"PhysicsHandler is null : {_view.PhysicsHandler == null}");*/
+		
         transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
            _moveController.MoveInput != Vector2.zero &&
            _view.PhysicsHandler.IsGround()));
@@ -45,7 +43,7 @@ public class PlayerIdleState : PlayerBaseState
             !_view.PhysicsHandler.IsGround()));
 
         transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack, () =>
-            _attackController.AttackCount > 0 &&
+            _attackController.IsAttacking == true ||
             !_attackController.IsReset));
     }
 }
