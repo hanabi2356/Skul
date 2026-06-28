@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerView : MonoBehaviour, IPlayerView
 {
-	[SerializeField]private Transform _playerTransform;
-	[SerializeField] private Rigidbody2D _body;
-	[SerializeField] private PlayerPhysicsHandler _physicsHandler;
+	private Transform _playerTransform;
+	private Rigidbody2D _body;
+	private PlayerPhysicsHandler _physicsHandler;
 
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;

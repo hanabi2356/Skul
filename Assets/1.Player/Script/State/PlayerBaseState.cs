@@ -3,7 +3,6 @@ using UnityEngine;
 
 public abstract class PlayerBaseState : IState
 {
-    protected PlayerBase playerBase;
 	protected IPlayerView _view;
 	protected IPlayerStatModel _statModel;
 	protected IPlayerStateContext _stateContext;
