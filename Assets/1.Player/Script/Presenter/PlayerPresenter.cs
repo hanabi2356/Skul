@@ -9,6 +9,7 @@ public class PlayerPresenter : MonoBehaviour
 	private SkulDataLoader _dataLoader;
 	private PlayerMoveController _moveController;
 	private PlayerAttackController _attackController;
+	private PlayerAnimController _animController;
 
 	private IFSMMachine _fsm;
 	[SerializeField] private DefaultStatData _defaultStatData;
@@ -20,6 +21,7 @@ public class PlayerPresenter : MonoBehaviour
 		SkulDataLoader dataLoader,
 		PlayerMoveController moveController,
 		PlayerAttackController attackController,
+		PlayerAnimController animController,
 		IFSMMachine fsm)
 	{
 		
@@ -28,6 +30,7 @@ public class PlayerPresenter : MonoBehaviour
 		_dataLoader = dataLoader;
 		_moveController = moveController;
 		_attackController = attackController;
+		_animController = animController;
 		_fsm = fsm;
 
 		SkulStatData loadData = _dataLoader.SkulStatDataLoad("LittleBorn");
