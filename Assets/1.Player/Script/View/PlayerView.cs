@@ -8,7 +8,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	private Rigidbody2D _body;
 	private PlayerPhysicsHandler _physicsHandler;
 	private Animator _animator;
-
+	private bool _canInput = true;
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
 	public event Action OnDash;
@@ -20,6 +20,8 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	public PlayerPhysicsHandler PhysicsHandler => _physicsHandler;
 
 	public Animator Animator => _animator;
+
+	public bool CanInput => _canInput;
 
 	void Start()
     {
@@ -42,22 +44,26 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	{
 		throw new System.NotImplementedException();
 	}
+	public void SetCanInput(bool value) => _canInput = value;
 
 	public void InputMoveVector(InputAction.CallbackContext context)
 	{
 		Vector2 input = context.ReadValue<Vector2>();
+		
 		OnMove?.Invoke(input);
+
+		
 	}
 	public void InputJump(InputAction.CallbackContext context)
 	{
-		if (context.started)
+		if (context.started )
 		{
 			OnJump?.Invoke();
 		}
 	}
 	public void InputDash(InputAction.CallbackContext context)
 	{
-		if (context.started)
+		if (context.started )
 		{
 			
 			OnDash?.Invoke();

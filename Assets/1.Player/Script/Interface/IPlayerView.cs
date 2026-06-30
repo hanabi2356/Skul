@@ -16,7 +16,7 @@ public interface IPlayerView
 	public event Action OnDash;
 	public event Action OnAttack;
 	public float CurrentVelocityY { get; }
-
+	public bool CanInput { get; }
 	/// <summary>
 	/// player의 linearVelocity.x 값 변경
 	/// </summary>
@@ -49,7 +49,7 @@ public interface IPlayerView
 	/// </summary>
 	/// <param name="ignore">무시 여부</param>
 	public void SetOneWayPlatformCollision(bool ignore);
-
+	public void SetCanInput(bool value);
 	public void InputMoveVector(InputAction.CallbackContext context);
 	public void InputJump(InputAction.CallbackContext context);
 	public void InputDash(InputAction.CallbackContext context);
