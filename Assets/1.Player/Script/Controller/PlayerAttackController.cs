@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using System;
 using System.Diagnostics;
 using Unity.VisualScripting;
+using System.Collections.Generic;
+using UnityEngine.Rendering.Universal.Internal;
 public class PlayerAttackController 
 {
 	public event Action<int> OnAttackStarted;
@@ -11,6 +13,7 @@ public class PlayerAttackController
     
 
     private IPlayerStatModel _statModel;
+	private IPlayerView _view;
 
 	private float _lastAttackTime = 0.0f;
     private float _lastInputTime = -1.0f;
@@ -19,24 +22,29 @@ public class PlayerAttackController
     public bool IsAttacking { get; private set; } =  false;
     public bool IsReset {  get; private set; } = false;
 
-	public PlayerAttackController(IPlayerStatModel statModel)
+
+	public PlayerAttackController(IPlayerStatModel statModel, 
+		IPlayerView view)
 	{
 		_statModel = statModel;
+		_view = view;
 	}
-	
+
 	public void TryAttack()
 	{
-		
+		if (AttackCount >= _statModel.FinalMaxAttackCount) return;
+
 		_lastAttackTime = Time.time;
 		IsReset = false;
 		IsAttacking = true;
 
+		AttackCount++;
 	}
 
 	public void OnAttackStart()
 	{
+		
 		_lastInputTime = -1.0f;
-		AttackCount++;
 
 		OnAttackStarted?.Invoke(AttackCount);
 	}
@@ -62,7 +70,6 @@ public class PlayerAttackController
 
 	private void ResetCombo()
 	{
-		UnityEngine.Debug.Log("Combo Reset");
 		AttackCount = 0;
 		IsReset = true;
 	}
