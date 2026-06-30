@@ -13,6 +13,7 @@ public class PlayerInstaller : MonoInstaller
 
 		Container.Bind<PlayerMoveController>().AsSingle();
 		Container.Bind<PlayerAttackController>().AsSingle();
+		Container.Bind<PlayerAnimController>().AsSingle();
 
 		Container.Bind<IFSMMachine>().To<PlayerFSMMachine>().AsSingle();
 

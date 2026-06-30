@@ -4,40 +4,27 @@ public class PlayerAnimController
 {
 	private IPlayerView _view;
     
-    public bool isAttackAnimPlaying { get; private set; } = false;
-    void Awake()
+    public bool IsAttackAnimPlaying { get; private set; } = false;
+    
+	public PlayerAnimController(IPlayerView view)
+	{
+		_view = view;
+	}
+
+    public void ChangeAnim(EPlayerState state, int attackCount)
     {
-       
+		_view.Animator.SetInteger("State", ((int)state));
+		_view.Animator.SetInteger("AttackCount", attackCount);
+	}
+
+	public void AttackAnimUpdate()
+    {
+        IsAttackAnimPlaying = true;
     }
 
-    private void Start()
+    public void AttackAnimEnd()
     {
-/*        if (playerBase != null)
-        {
-            playerBase.attackController.onAttackStarted += AttackAnimUpdate;
-            playerBase.attackController.onAttackFinished += AttackAnimEnd;
-        }*/
-
-
-    }
-
-    void Update()
-    {
-        //ChangeAnim(playerBase.currentPlayerStateEnum);
-        
-    }
-    private void ChangeAnim(EPlayerState state)
-    {
-        //playerBase.animator.SetInteger("State", ((int)state));
-    }
-    private void AttackAnimUpdate()
-    {
-        //playerBase.animator.SetInteger("AttackCount", playerBase.attackController.attackCount);
-        isAttackAnimPlaying = true;
-    }
-    private void AttackAnimEnd()
-    {
-        isAttackAnimPlaying = false;
+        IsAttackAnimPlaying = false;
     }
 
     private void OnDisable()

@@ -18,19 +18,18 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Enter()
 	{
-		_attackController.OnAttackEnter();
+		_attackController.OnAttackStart();
 	}
 
 	public override void Execute()
 	{
-		
 		base.Execute();
-		
+		_attackController.ComboCoolDown();
 	}
 
 	public override void Exit()
 	{
-		_attackController.OnAttackExit();
+		_attackController.OnAttackEnd();
 	}
 
 	public override void SetupTransitions()
@@ -39,15 +38,15 @@ public class PlayerAttackState : PlayerBaseState
 		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
 			_moveController.MoveInput != Vector2.zero &&
 			_view.PhysicsHandler.IsGround() &&
-			_attackController.IsAttacking == false));
+			_attackController.IsReset == true));
 
 		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
 			_moveController.MoveInput == Vector2.zero &&
-			_attackController.IsAttacking == false &&
+			_attackController.IsReset == true &&
 			_view.PhysicsHandler.IsGround()));
 
 		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
 			!_view.PhysicsHandler.IsGround() &&
-			_attackController.IsAttacking == false));
+			_attackController.IsReset == true));
 	}
 }

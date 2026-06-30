@@ -29,32 +29,29 @@ public class PlayerAttackController
 		
 		_lastAttackTime = Time.time;
 		IsReset = false;
-		
-	}
-	/// <summary>
-	/// AnimEvent 사용
-	/// </summary>
-	public void OnAttackStateEnter()
-	{
 		IsAttacking = true;
+
+	}
+
+	public void OnAttackStart()
+	{
 		_lastInputTime = -1.0f;
 		AttackCount++;
 
 		OnAttackStarted?.Invoke(AttackCount);
 	}
-	/// <summary>
-	/// AnimEvent 사용
-	/// </summary>
-	public void OnAttackStateExit()
+	
+	public void OnAttackEnd()
 	{
 		_lastAttackTime = Time.time;
 		IsAttacking = false;
 
 		OnAttackFinished?.Invoke();
 	}
+
 	public void ComboCoolDown()
 	{
-		if(!IsAttacking && AttackCount>0)
+		if(IsAttacking == true && AttackCount>0)
 		{
 			if(Time.time-_lastAttackTime > _statModel.FinalAttackCountResetDelay)
 			{
@@ -62,11 +59,14 @@ public class PlayerAttackController
 			}
 		}
 	}
+
 	private void ResetCombo()
 	{
+		UnityEngine.Debug.Log("Combo Reset");
 		AttackCount = 0;
 		IsReset = true;
 	}
+
     /*void Update()
     {
         *//*if(!isAttacking && attackCount > 0 )

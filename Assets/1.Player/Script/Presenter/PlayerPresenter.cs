@@ -63,8 +63,17 @@ public class PlayerPresenter : MonoBehaviour
 	{
 		if (_isInitialized == false) return;
 		_moveController.FixedTick();
+		
+	}
+
+	private void Update()
+	{
 		Debug.Log(_fsm.CurrentState.ToString());
 		_fsm.CurrentState?.Execute();
+		if(_fsm is PlayerFSMMachine playerFSM)
+		{
+			_animController.ChangeAnim(playerFSM.CurrentStateEnum, _attackController.AttackCount);
+		}	
 	}
 	private void OnDestroy()
 	{

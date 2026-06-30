@@ -7,6 +7,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	private Transform _playerTransform;
 	private Rigidbody2D _body;
 	private PlayerPhysicsHandler _physicsHandler;
+	private Animator _animator;
 
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
@@ -18,6 +19,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	public float CurrentVelocityY => Body.linearVelocity.y;
 	public PlayerPhysicsHandler PhysicsHandler => _physicsHandler;
 
+	public Animator Animator => _animator;
 
 	void Start()
     {
@@ -26,9 +28,10 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	private void Awake()
 	{
 		_playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-		_body = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
+		_body = _playerTransform.GetComponent<Rigidbody2D>();
 		_originalGravityScale = Body.gravityScale;
 		_physicsHandler = _playerTransform.GetComponent<PlayerPhysicsHandler>();
+		_animator = _playerTransform.GetComponentInChildren<Animator>();
 	}
 	void Update()
     {

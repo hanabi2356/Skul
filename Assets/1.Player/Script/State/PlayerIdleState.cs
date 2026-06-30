@@ -43,7 +43,7 @@ public class PlayerIdleState : PlayerBaseState
             !_view.PhysicsHandler.IsGround()));
 
         transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack, () =>
-            _attackController.IsAttacking == true ||
+            _attackController.IsAttacking == true &&
             !_attackController.IsReset));
     }
 }
