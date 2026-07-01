@@ -45,5 +45,8 @@ public class PlayerIdleState : PlayerBaseState
         transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack, () =>
             _attackController.IsAttacking == true &&
             !_attackController.IsReset));
+
+		transitions.Add(new Transition(_stateContext.DashState, EPlayerState.Dash, () =>
+		_moveController.IsDashing == true));
     }
 }
