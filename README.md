@@ -47,6 +47,7 @@
 - TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
 - 방향키를 안누르고 대시 실행 시 대시 애니메이션이 안나오는 버그<br>
 - 점프 후 OneWayPlatform에 걸쳤을 때 겹쳐져서 안내려 오는 현상<br>
+- Dash시 DashState로 변환이 안되는 현상 및 MoveState=>DashState로 갈 때 애니메이션 오작동<br>
   
 # 해야 할 일<br>
 **진행중:Player 리팩토링<br>**
