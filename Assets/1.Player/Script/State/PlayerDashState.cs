@@ -32,15 +32,17 @@ public class PlayerDashState : PlayerBaseState
 	public override void SetupTransitions()
 	{
 		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
-			!_moveController.IsDashing && 
-			_view.PhysicsHandler.IsGround()));
+			_moveController.IsDashing == false&& 
+			_view.PhysicsHandler.IsGround()&&
+			_moveController.MoveInput == Vector2.zero));
 
 		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
-		!_moveController.IsDashing && 
+		_moveController.IsDashing == false && 
 		!_view.PhysicsHandler.IsGround()));
 
 		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
 		_moveController.MoveInput != Vector2.zero &&
-		_view.PhysicsHandler.IsGround()));
+		_view.PhysicsHandler.IsGround()&&
+		_moveController.IsDashing == false));
 	}
 }

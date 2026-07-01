@@ -41,7 +41,7 @@ public class PlayerMoveState : PlayerBaseState
 			() => !_view.PhysicsHandler.IsGround()));
 
 		transitions.Add(new Transition(_stateContext.DashState, EPlayerState.Dash,
-			() => _moveController.IsDashing));
+			() => _moveController.IsDashing == true));
 
 		transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack,
 			() => _attackController.IsAttacking == true && 
