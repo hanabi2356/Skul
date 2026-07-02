@@ -8,7 +8,7 @@ public interface IPlayerView
 	/// 물리 충돌 조건을 위한 물리 핸들러
 	/// </summary>
 	public PlayerPhysicsHandler PhysicsHandler { get; }
-	public Rigidbody2D Body { get; }
+	public Rigidbody2D Rigidbody { get; }
 	public Animator Animator { get; }
 
 	public event Action<Vector2> OnMove;
@@ -16,7 +16,7 @@ public interface IPlayerView
 	public event Action OnDash;
 	public event Action OnAttack;
 	public float CurrentVelocityY { get; }
-	public bool CanInput { get; }
+	public bool IsAttacking { get; }
 	/// <summary>
 	/// player의 linearVelocity.x 값 변경
 	/// </summary>
@@ -43,15 +43,15 @@ public interface IPlayerView
 	/// </summary>
 	/// <param name="isDash">true: 0/ false: Rigidbody2D에 지정한 GravityScale</param>
 	public void SetGravityScale(bool isDash);
-	public void AddVelocity(Vector3 velocity);
+	public void AddImpulse(Vector2 impulse);
 	/// <summary>
 	/// OneWayPlatform 무시 여부 결정
 	/// </summary>
 	/// <param name="ignore">무시 여부</param>
 	public void SetOneWayPlatformCollision(bool ignore);
-	public void SetCanInput(bool value);
 	public void InputMoveVector(InputAction.CallbackContext context);
 	public void InputJump(InputAction.CallbackContext context);
 	public void InputDash(InputAction.CallbackContext context);
 	public void InputAttack(InputAction.CallbackContext context);
+	public void SetIsAttacking(bool value);
 }

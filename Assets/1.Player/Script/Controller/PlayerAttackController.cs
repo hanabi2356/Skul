@@ -16,7 +16,6 @@ public class PlayerAttackController
 	private IPlayerView _view;
 
 	private float _lastAttackTime = 0.0f;
-    private float _lastInputTime = -1.0f;
 
 	public int AttackCount { get; private set; } = 0;
     public bool IsAttacking { get; private set; } =  false;
@@ -37,15 +36,12 @@ public class PlayerAttackController
 		_lastAttackTime = Time.time;
 		IsReset = false;
 		IsAttacking = true;
-
 		AttackCount++;
 	}
 
 	public void OnAttackStart()
 	{
-		
-		_lastInputTime = -1.0f;
-
+		_view.SetIsAttacking(IsAttacking);
 		OnAttackStarted?.Invoke(AttackCount);
 	}
 	
@@ -53,6 +49,7 @@ public class PlayerAttackController
 	{
 		_lastAttackTime = Time.time;
 		IsAttacking = false;
+		_view.SetIsAttacking(IsAttacking);
 
 		OnAttackFinished?.Invoke();
 	}

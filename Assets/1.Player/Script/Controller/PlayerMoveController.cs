@@ -53,7 +53,6 @@ public class PlayerMoveController
 		float dashX = GazeVector.x * (_statModel.FinalDashForce + Mathf.Abs(MoveInput.x));
 		_view.SetVelocity(dashX, 0.0f);
 
-		Debug.Log("Dash");
 		await Task.Delay((int)(_statModel.FinalDashDuration * 1000));
 
 		IsDashing = false;
@@ -80,12 +79,15 @@ public class PlayerMoveController
 
 	public void SetMoveInput(Vector2 moveInput)
 	{
+		
 		MoveInput = moveInput;
+
 		if (MoveInput != Vector2.zero)
 		{
 			GazeVector = MoveInput;
 		}
 	}
+	public void SetIsDashing(bool value) => IsDashing = value;
 
 	public void FixedTick()
 	{
@@ -102,15 +104,20 @@ public class PlayerMoveController
 
 		if (!isWall)
 		{
-			float targetX = MoveInput.x * _statModel.FinalMoveSpeed;
+			
+			float targetX = (_view.IsAttacking && _view.PhysicsHandler.IsGround()) ? 0.0f : MoveInput.x * _statModel.FinalMoveSpeed;
 			_view.SetVelocityX(targetX);
+			
 		}
 		else
 		{
 			_view.SetVelocityX(0.0f);
 		}
 
+		
 		_view.SetRotation(lookRight);
+		
+
 		if (_view.PhysicsHandler.IsGround() && _view.CurrentVelocityY <= 0.1f)
 		{
 			_jumpCount = 0;
@@ -123,6 +130,5 @@ public class PlayerMoveController
 		}
 	}
 
-	public void SetIsDashing(bool value) => IsDashing = value;
 	
 }

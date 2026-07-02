@@ -44,7 +44,7 @@ public class PlayerPresenter : MonoBehaviour
 
 		_isInitialized = true;
 	}
-	private async void Awake()
+	private void Awake()
 	{
 		
 	}
@@ -73,7 +73,7 @@ public class PlayerPresenter : MonoBehaviour
 		if(_fsm is PlayerFSMMachine playerFSM)
 		{
 			_animController.ChangeAnim(playerFSM.CurrentStateEnum, _attackController.AttackCount);
-		}	
+		}
 	}
 	private void OnDestroy()
 	{

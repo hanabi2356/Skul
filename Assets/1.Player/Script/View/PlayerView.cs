@@ -5,23 +5,23 @@ using UnityEngine.InputSystem;
 public class PlayerView : MonoBehaviour, IPlayerView
 {
 	private Transform _playerTransform;
-	private Rigidbody2D _body;
+	private Rigidbody2D _rigidbody;
 	private PlayerPhysicsHandler _physicsHandler;
 	private Animator _animator;
-	private bool _canInput = true;
+	private bool _isAttacking;
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
 	public event Action OnDash;
 	public event Action OnAttack;
-	public Rigidbody2D Body => _body;
+	public Rigidbody2D Rigidbody => _rigidbody;
 	
 	private float _originalGravityScale;
-	public float CurrentVelocityY => Body.linearVelocity.y;
+	public float CurrentVelocityY => Rigidbody.linearVelocity.y;
 	public PlayerPhysicsHandler PhysicsHandler => _physicsHandler;
 
 	public Animator Animator => _animator;
 
-	public bool CanInput => _canInput;
+	public bool IsAttacking => _isAttacking;
 
 	void Start()
     {
@@ -30,8 +30,8 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	private void Awake()
 	{
 		_playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-		_body = _playerTransform.GetComponent<Rigidbody2D>();
-		_originalGravityScale = Body.gravityScale;
+		_rigidbody = _playerTransform.GetComponent<Rigidbody2D>();
+		_originalGravityScale = Rigidbody.gravityScale;
 		_physicsHandler = _playerTransform.GetComponent<PlayerPhysicsHandler>();
 		_animator = _playerTransform.GetComponentInChildren<Animator>();
 	}
@@ -40,19 +40,19 @@ public class PlayerView : MonoBehaviour, IPlayerView
         
 
     }
-	public void AddVelocity(Vector3 velocity)
+	public void AddImpulse(Vector2 impulse)
 	{
-		throw new System.NotImplementedException();
+		_rigidbody.AddForce(impulse, ForceMode2D.Impulse);
 	}
-	public void SetCanInput(bool value) => _canInput = value;
 
+	/// <summary>
+	/// 키를 누르거나 땔 때만 호출됨
+	/// </summary>
+	/// <param name="context"></param>
 	public void InputMoveVector(InputAction.CallbackContext context)
 	{
 		Vector2 input = context.ReadValue<Vector2>();
-		
 		OnMove?.Invoke(input);
-
-		
 	}
 	public void InputJump(InputAction.CallbackContext context)
 	{
@@ -63,7 +63,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	}
 	public void InputDash(InputAction.CallbackContext context)
 	{
-		if (context.started )
+		if (context.started)
 		{
 			
 			OnDash?.Invoke();
@@ -71,29 +71,31 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	}
 	public void InputAttack(InputAction.CallbackContext context)
 	{
-		if(context.started)
+		if(context.started )
 		{
 			OnAttack?.Invoke();
 		}
 	}
 	public void SetVelocityX(float x)
 	{
-		Body.linearVelocity = new Vector2(x, Body.linearVelocity.y);
+		Rigidbody.linearVelocity = new Vector2(x, Rigidbody.linearVelocity.y);
 	}
 	public void SetVelocityY(float y)
 	{
-		Body.linearVelocity = new Vector2(Body.linearVelocity.x, y);
+		Rigidbody.linearVelocity = new Vector2(Rigidbody.linearVelocity.x, y);
 	}
 	public void SetVelocity(float x, float y)
 	{
-		Body.linearVelocity = new Vector2(x, y);
+		Rigidbody.linearVelocity = new Vector2(x, y);
 	}
 	public void SetGravityScale(bool isDash)
 	{
-		Body.gravityScale = isDash ? 0.0f:_originalGravityScale;
+		Rigidbody.gravityScale = isDash ? 0.0f:_originalGravityScale;
 	}
 	public void SetRotation(bool lookRight)
 	{
+		if (IsAttacking) return;
+		
 		if (lookRight)
 		{
 			_playerTransform.rotation = Quaternion.identity;
@@ -102,11 +104,13 @@ public class PlayerView : MonoBehaviour, IPlayerView
 		{
 			_playerTransform.rotation = Quaternion.Euler(0f, 180f, 0f);
 		}
+		
+		
 	}
 	public void SetOneWayPlatformCollision(bool ignore)
 	{
 		PhysicsHandler.SetOneWayPlatformIgnore(ignore);
 	}
 
-	
+	public void SetIsAttacking(bool value) => _isAttacking = value;
 }
