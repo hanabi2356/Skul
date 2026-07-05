@@ -4,11 +4,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerView : MonoBehaviour, IPlayerView
 {
-	private Transform _playerTransform;
+	[SerializeField] private Transform _playerTransform;
 	private Rigidbody2D _rigidbody;
 	private PlayerPhysicsHandler _physicsHandler;
 	private Animator _animator;
+	private PlayerAnimEventListener _playerAnimEventListener;
+
 	private bool _isAttacking;
+	private bool _canAttackDash;
+
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
 	public event Action OnDash;
@@ -23,17 +27,43 @@ public class PlayerView : MonoBehaviour, IPlayerView
 
 	public bool IsAttacking => _isAttacking;
 
+	public bool CanAttackDash => _canAttackDash;
+
+	public PlayerAnimEventListener PlayerAnimEventListener
+	{
+		get
+		{
+			if(_playerAnimEventListener == null)
+			{
+				_playerAnimEventListener = _playerTransform.GetComponentInChildren<PlayerAnimEventListener>();
+			}
+			return _playerAnimEventListener;
+		}
+	}
+
+	
+
+	
+
 	void Start()
     {
         
     }
 	private void Awake()
 	{
-		_playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+		if(_playerTransform == null)
+		{
+			Debug.Log("인스펙터 할당 안함");
+			return;
+		}
+
 		_rigidbody = _playerTransform.GetComponent<Rigidbody2D>();
-		_originalGravityScale = Rigidbody.gravityScale;
 		_physicsHandler = _playerTransform.GetComponent<PlayerPhysicsHandler>();
 		_animator = _playerTransform.GetComponentInChildren<Animator>();
+		_playerAnimEventListener = _playerTransform.GetComponentInChildren<PlayerAnimEventListener>();
+
+		_originalGravityScale = _rigidbody.gravityScale;
+
 	}
 	void Update()
     {
@@ -42,6 +72,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
     }
 	public void AddImpulse(Vector2 impulse)
 	{
+
 		_rigidbody.AddForce(impulse, ForceMode2D.Impulse);
 	}
 
@@ -113,4 +144,11 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	}
 
 	public void SetIsAttacking(bool value) => _isAttacking = value;
+
+	public void AttackDash(float force)
+	{
+		_playerTransform.position += new Vector3(force, 0.0f, 0.0f);
+	}
+
+	public void SetCanAttackDash(bool value) => _canAttackDash = value;	
 }

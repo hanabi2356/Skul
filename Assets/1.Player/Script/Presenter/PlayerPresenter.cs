@@ -48,6 +48,9 @@ public class PlayerPresenter : MonoBehaviour
 	{
 		
 	}
+	/// <summary>
+	/// 이벤트 구독 함수
+	/// </summary>
 	private void SubscribeEvent()
 	{
 		if (_view != null && _moveController != null && _attackController != null)
@@ -56,9 +59,23 @@ public class PlayerPresenter : MonoBehaviour
 			_view.OnJump += _moveController.TryJump;
 			_view.OnDash += _moveController.TryDash;
 			_view.OnAttack += _attackController.TryAttack;
+
+			if(_view.PlayerAnimEventListener != null)
+			{
+				_view.PlayerAnimEventListener.OnAttackStart += _attackController.OnAttackStart;
+				_view.PlayerAnimEventListener.OnAttackEnd += _attackController.OnAttackEnd;
+
+			}
+			else
+			{
+				Debug.Log("PlayerAnimEventLitner null");
+			}
 		}
 		
 	}
+
+
+
 	private void FixedUpdate()
 	{
 		if (_isInitialized == false) return;
@@ -75,6 +92,7 @@ public class PlayerPresenter : MonoBehaviour
 			_animController.ChangeAnim(playerFSM.CurrentStateEnum, _attackController.AttackCount);
 		}
 	}
+
 	private void OnDestroy()
 	{
 		if (_view != null && _moveController != null && _attackController != null)
@@ -84,6 +102,8 @@ public class PlayerPresenter : MonoBehaviour
 			_view.OnDash -= _moveController.TryDash;
 			_view.OnAttack -= _attackController.TryAttack;
 
+			_view.PlayerAnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
+			_view.PlayerAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
 		}
 	}
 }
