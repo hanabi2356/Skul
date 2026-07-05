@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7125013549856098030}
   - component: {fileID: 3022688532683476649}
   - component: {fileID: 7863272423271079887}
-  - component: {fileID: 4661980705261648915}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -126,18 +125,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 264
   groundCheckObject: {fileID: 4279934088627117348}
---- !u!114 &4661980705261648915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382966956508622651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db57f142402da744a9991e4bb8979cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimEventListner
 --- !u!1 &1612465102408967150
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +241,7 @@ GameObject:
   - component: {fileID: 312008202745461906}
   - component: {fileID: 51457496806495326}
   - component: {fileID: 4436895403569278416}
+  - component: {fileID: 4269399074146444956}
   m_Layer: 0
   m_Name: Little_Born
   m_TagString: Untagged
@@ -357,3 +345,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4269399074146444956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525057981717165644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db57f142402da744a9991e4bb8979cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimEventListner

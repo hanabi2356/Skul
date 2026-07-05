@@ -10,15 +10,14 @@ public class PlayerAnimEventListner : MonoBehaviour, IAnimEventListener
 	public event Action OnAttackStart;
 	public event Action OnAttackEnd;
 
-	public void AnimEventAttackEnd()
+	public void AnimEventAttackStart()
 	{
 		OnAttackStart?.Invoke();
 	}
 
-	public void AnimEventAttackStart()
+	public void AnimEventAttackEnd()
 	{
 		OnAttackEnd?.Invoke();
 	}
-
 
 }
