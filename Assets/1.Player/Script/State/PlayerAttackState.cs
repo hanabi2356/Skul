@@ -38,15 +38,15 @@ public class PlayerAttackState : PlayerBaseState
 		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
 			_moveController.MoveInput != Vector2.zero &&
 			_view.PhysicsHandler.IsGround() &&
-			_attackController.IsReset == true));
+			_attackController.IsAttacking == false));
 
 		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
 			_moveController.MoveInput == Vector2.zero &&
-			_attackController.IsReset == true &&
+			_attackController.IsAttacking == false &&
 			_view.PhysicsHandler.IsGround()));
 
 		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
 			!_view.PhysicsHandler.IsGround() &&
-			_attackController.IsReset == true));
+			_attackController.IsAttacking == false));
 	}
 }
