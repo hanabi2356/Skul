@@ -18,18 +18,15 @@ public class PlayerAttackState : PlayerBaseState
 
 	public override void Enter()
 	{
-		_attackController.OnAttackStart();
 	}
 
 	public override void Execute()
 	{
 		base.Execute();
-		_attackController.ComboCoolDown();
 	}
 
 	public override void Exit()
 	{
-		_attackController.OnAttackEnd();
 	}
 
 	public override void SetupTransitions()

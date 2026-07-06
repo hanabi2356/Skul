@@ -19,7 +19,7 @@ public class PlayerMoveController
 	private bool _isCoyoteTimeEnd;
 	private bool _canMove = true;
 	private bool _isDashCoolDown;
-    
+	private bool _isAttackDashing = false;
 	public Func<int> GetAttackCount { get; set; }
     
     public PlayerMoveController(IPlayerStatModel statModel, IPlayerView view)
@@ -40,17 +40,17 @@ public class PlayerMoveController
 	{
 		if(!IsDashing && _dashCount < _statModel.FinalDashMaxCount)
 		{
-			_ = StartDash();
+			_ = AsyncStartDash();
 		}
 	}
 
-	private async Task StartDash()
+	private async Task AsyncStartDash()
 	{
 		IsDashing = true;
 		_dashCount++;
 
 
-		float dashX = GazeVector.x * (_statModel.FinalDashForce + Mathf.Abs(MoveInput.x));
+		float dashX = GazeVector.x * (_statModel.FinalDashForce);
 		_view.SetVelocity(dashX, 0.0f);
 
 		await Task.Delay((int)(_statModel.FinalDashDuration * 1000));
@@ -60,11 +60,20 @@ public class PlayerMoveController
 
 		if(!_isDashCoolDown)
 		{
-			_ = StartDashCoolDown();
+			_ = AsyncStartDashCoolDown();
 		}
 	}
 
-	private async Task StartDashCoolDown()
+	public void OnAttackDash()
+	{
+		if(MoveInput != Vector2.zero)
+		{
+			_view.SetVelocity(0.5f, 0.0f);
+
+		}
+	}
+
+	private async Task AsyncStartDashCoolDown()
 	{
 		_isDashCoolDown = true;
 
@@ -76,6 +85,8 @@ public class PlayerMoveController
 
 		_isDashCoolDown = false;
 	}
+
+
 
 	public void SetMoveInput(Vector2 moveInput)
 	{
@@ -104,10 +115,10 @@ public class PlayerMoveController
 
 		if (!isWall)
 		{
-			
 			float targetX = (_view.IsAttacking && _view.PhysicsHandler.IsGround()) ? 0.0f : MoveInput.x * _statModel.FinalMoveSpeed;
+
 			_view.SetVelocityX(targetX);
-			
+		
 		}
 		else
 		{

@@ -49,7 +49,7 @@ public class PlayerPresenter : MonoBehaviour
 		
 	}
 	/// <summary>
-	/// 이벤트 구독 함수
+	/// 이벤트 구독 함수(공격 제외)
 	/// </summary>
 	private void SubscribeEvent()
 	{
@@ -60,21 +60,27 @@ public class PlayerPresenter : MonoBehaviour
 			_view.OnDash += _moveController.TryDash;
 			_view.OnAttack += _attackController.TryAttack;
 
-			if(_view.PlayerAnimEventListener != null)
-			{
-				_view.PlayerAnimEventListener.OnAttackStart += _attackController.OnAttackStart;
-				_view.PlayerAnimEventListener.OnAttackEnd += _attackController.OnAttackEnd;
-
-			}
-			else
-			{
-				Debug.Log("PlayerAnimEventLitner null");
-			}
+			SubscribeAttackEvent();
 		}
 		
 	}
+	/// <summary>
+	/// 앞으로 공격에 관한 이벤트가 추가 될 수 있어서 Attack 관련 이벤트 등록 분리
+	/// </summary>
+	private void SubscribeAttackEvent()
+	{
+		if (_view.PlayerAnimEventListener != null)
+		{
+			_view.PlayerAnimEventListener.OnAttackStart += _attackController.OnAttackStart;
+			_view.PlayerAnimEventListener.OnAttackStart += _moveController.OnAttackDash;
+			_view.PlayerAnimEventListener.OnAttackEnd += _attackController.OnAttackEnd;
 
-
+		}
+		else
+		{
+			Debug.Log("PlayerAnimEventLitner null");
+		}
+	}
 
 	private void FixedUpdate()
 	{
@@ -87,6 +93,7 @@ public class PlayerPresenter : MonoBehaviour
 	{
 		Debug.Log(_fsm.CurrentState.ToString());
 		_fsm.CurrentState?.Execute();
+		_attackController.ComboCoolDown();
 		if(_fsm is PlayerFSMMachine playerFSM)
 		{
 			_animController.ChangeAnim(playerFSM.CurrentStateEnum, _attackController.AttackCount);

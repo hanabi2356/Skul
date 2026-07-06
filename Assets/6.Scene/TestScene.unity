@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1848d9830454349ba5de16a596e878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerView
+  _playerTransform: {fileID: 8852654875469036383}
 --- !u!4 &265440477
 Transform:
   m_ObjectHideFlags: 0
