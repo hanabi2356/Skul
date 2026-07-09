@@ -46,9 +46,12 @@
 # 수정사항 or 버그<br>
 - TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
 - 점프 후 OneWayPlatform에 걸쳤을 때 겹쳐져서 안내려 오는 현상<br>
-- AttackState에 고정되는 버그<br>
-- 뭔지 모를 버그
- - <img width="965" height="42" alt="image" src="https://github.com/user-attachments/assets/26e28207-3e76-423a-a364-9ba29893379e" />
+- 특정 상황에서 AttackState로 고정되는 버그(원인은 아직 모름)<br>
+
+
+# 해결된 버그
+- <img width="965" height="42" alt="image" src="https://github.com/user-attachments/assets/26e28207-3e76-423a-a364-9ba29893379e" /><br>
+  - 해결한 방법: OnDestory => OnDisable로 변경
   
 # 해야 할 일<br>
 **진행중:Player 리팩토링<br>**
