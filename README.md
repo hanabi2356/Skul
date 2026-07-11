@@ -46,6 +46,8 @@
 # 수정사항 or 버그<br>
 - TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
 - 점프 후 OneWayPlatform에 걸쳤을 때 겹쳐져서 안내려 오는 현상<br>
+  <img width="722" height="405" alt="image" src="https://github.com/user-attachments/assets/bab5a854-db86-44db-a74b-160302eff513" />
+
 - 특정 상황에서 AttackState로 고정되는 버그(원인은 아직 모름)<br>
 
 
