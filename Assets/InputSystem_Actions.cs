@@ -190,6 +190,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlatformIgnore"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce44e7d1-545a-452c-8b7d-61fea6b49b53"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -203,39 +212,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
-                    ""path"": ""Dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -258,6 +234,61 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""741857ef-e17e-47d2-881f-12cce54925af"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0e4f8238-3f13-4ff7-adc3-fb9766071233"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""13cc22a8-1772-4368-817b-dee4a88740e6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""811911b9-492f-47d4-86c4-2461ff25d7ae"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""36e8ba4d-2810-41bb-85ba-34cfed476fff"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -511,6 +542,39 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""SkillB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""a971fab2-fd96-45de-bf17-f0f54bbf5a60"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlatformIgnore"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""81371c22-739d-4a07-bbb7-16a3e98df748"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlatformIgnore"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""6b7a88cc-aef2-474f-9699-21c552f55ca9"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlatformIgnore"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1107,6 +1171,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_SkillA = m_Player.FindAction("SkillA", throwIfNotFound: true);
         m_Player_SkillB = m_Player.FindAction("SkillB", throwIfNotFound: true);
+        m_Player_PlatformIgnore = m_Player.FindAction("PlatformIgnore", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1211,6 +1276,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_SkillA;
     private readonly InputAction m_Player_SkillB;
+    private readonly InputAction m_Player_PlatformIgnore;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1266,6 +1332,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/SkillB".
         /// </summary>
         public InputAction @SkillB => m_Wrapper.m_Player_SkillB;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/PlatformIgnore".
+        /// </summary>
+        public InputAction @PlatformIgnore => m_Wrapper.m_Player_PlatformIgnore;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1325,6 +1395,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SkillB.started += instance.OnSkillB;
             @SkillB.performed += instance.OnSkillB;
             @SkillB.canceled += instance.OnSkillB;
+            @PlatformIgnore.started += instance.OnPlatformIgnore;
+            @PlatformIgnore.performed += instance.OnPlatformIgnore;
+            @PlatformIgnore.canceled += instance.OnPlatformIgnore;
         }
 
         /// <summary>
@@ -1369,6 +1442,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SkillB.started -= instance.OnSkillB;
             @SkillB.performed -= instance.OnSkillB;
             @SkillB.canceled -= instance.OnSkillB;
+            @PlatformIgnore.started -= instance.OnPlatformIgnore;
+            @PlatformIgnore.performed -= instance.OnPlatformIgnore;
+            @PlatformIgnore.canceled -= instance.OnPlatformIgnore;
         }
 
         /// <summary>
@@ -1746,6 +1822,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSkillB(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PlatformIgnore" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPlatformIgnore(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

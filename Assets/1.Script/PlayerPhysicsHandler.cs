@@ -4,15 +4,17 @@ using UnityEngine;
 public class PlayerPhysicsHandler : MonoBehaviour
 {
 	
-    [SerializeField, Label("바닥 Layer")] private LayerMask groundLayer;
-    [SerializeField] private Transform groundCheckObject;
+    [SerializeField, Label("바닥 Layer")] private LayerMask _groundLayer;
+    [SerializeField] private Transform _groundCheckObject;
     
 
-    private float rayDistance = 0.3f;
-    private float checkRadius = 0.2f;
+    private float _rayDistance = 0.3f;
+    private float _checkRadius = 0.2f;
 
-    private int oneWayPlatformLayer;
-    private int playerLayer;
+    private int _oneWayPlatformLayer;
+	public int OneWayPlatformLayer => _oneWayPlatformLayer;
+    private int _playerLayer;
+	public int PlayerLayer => _playerLayer;
 
 
     void Awake()
@@ -21,8 +23,8 @@ public class PlayerPhysicsHandler : MonoBehaviour
 
     private void Start()
     {
-        oneWayPlatformLayer = LayerMask.NameToLayer("OneWayPlatform");
-        playerLayer = LayerMask.NameToLayer("Player");
+        _oneWayPlatformLayer = LayerMask.NameToLayer("OneWayPlatform");
+        _playerLayer = LayerMask.NameToLayer("Player");
     }
 
     void Update()
@@ -37,17 +39,19 @@ public class PlayerPhysicsHandler : MonoBehaviour
     {
 		float lookDir = lookRight ? 1.0f : -1.0f;
 		Vector2 rayDir = new Vector2(lookDir, 0.0f);
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayDistance, groundLayer);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, _rayDistance, _groundLayer);
 
 		return hit.collider != null;
 	}
     public bool IsGround()
     {
-        return Physics2D.OverlapCircle(groundCheckObject.position, checkRadius, groundLayer);
+        return Physics2D.OverlapCircle(_groundCheckObject.position, _checkRadius, _groundLayer);
     }
 	public void SetOneWayPlatformIgnore(bool ignore)
 	{
-		Physics2D.IgnoreLayerCollision(playerLayer, oneWayPlatformLayer, ignore);
+		//parameter: 충돌을 제어할 오브젝트의 레이어, 무시할 오브젝트, 무시 여부에 대한 boolean값
+		Physics2D.IgnoreLayerCollision(_playerLayer, _oneWayPlatformLayer, ignore);
 	}
 	
+
 }
