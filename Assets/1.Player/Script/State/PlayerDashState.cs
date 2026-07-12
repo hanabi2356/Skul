@@ -41,7 +41,7 @@ public class PlayerDashState : PlayerBaseState
 		!_view.PhysicsHandler.IsGround()));
 
 		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
-		_moveController.MoveInput != Vector2.zero &&
+		_moveController.MoveInput.x != 0.0f &&
 		_view.PhysicsHandler.IsGround()&&
 		_moveController.IsDashing == false));
 	}

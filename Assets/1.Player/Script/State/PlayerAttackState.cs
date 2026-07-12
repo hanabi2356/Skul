@@ -33,7 +33,7 @@ public class PlayerAttackState : PlayerBaseState
 	{
 
 		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
-			_moveController.MoveInput != Vector2.zero &&
+			_moveController.MoveInput.x != 0.0f &&
 			_view.PhysicsHandler.IsGround() &&
 			_attackController.IsAttacking == false));
 

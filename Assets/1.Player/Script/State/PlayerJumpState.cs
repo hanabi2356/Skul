@@ -48,7 +48,7 @@ public class PlayerJumpState : PlayerBaseState
 
         transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move,
             () => _view.PhysicsHandler.IsGround() && 
-			_moveController.MoveInput != Vector2.zero));
+			_moveController.MoveInput.x != 0.0f));
     }
  
 }

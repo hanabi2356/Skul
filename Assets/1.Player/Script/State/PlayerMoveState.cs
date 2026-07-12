@@ -35,7 +35,7 @@ public class PlayerMoveState : PlayerBaseState
 	public override void SetupTransitions()
 	{
 		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle,
-			() => _moveController.MoveInput == Vector2.zero));
+			() => _moveController.MoveInput.x == 0.0f));
 
 		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump,
 			() => !_view.PhysicsHandler.IsGround()));
