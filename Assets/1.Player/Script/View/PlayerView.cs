@@ -17,6 +17,8 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	public event Action OnJump;
 	public event Action OnDash;
 	public event Action OnAttack;
+	public event Action OnPlatformIgnore;
+
 	public Rigidbody2D Rigidbody => _rigidbody;
 	
 	private float _originalGravityScale;
@@ -29,19 +31,23 @@ public class PlayerView : MonoBehaviour, IPlayerView
 
 	public bool CanAttackDash => _canAttackDash;
 
+	public Transform PlayerTransform => _playerTransform;
 	public PlayerAnimEventListener PlayerAnimEventListener
 	{
 		get
 		{
-			if(_playerAnimEventListener == null)
+			if (_playerTransform == null)
+			{
+				Debug.Log("_playerTransform is null");
+				return null;
+			}
+			if (_playerAnimEventListener == null)
 			{
 				_playerAnimEventListener = _playerTransform.GetComponentInChildren<PlayerAnimEventListener>();
 			}
 			return _playerAnimEventListener;
 		}
 	}
-
-	
 
 	
 
@@ -107,6 +113,14 @@ public class PlayerView : MonoBehaviour, IPlayerView
 			OnAttack?.Invoke();
 		}
 	}
+
+	public void InputPlatformIgnore(InputAction.CallbackContext context)
+	{
+		if(context.started)
+		{
+			OnPlatformIgnore?.Invoke();
+		}
+	}
 	public void SetVelocityX(float x)
 	{
 		Rigidbody.linearVelocity = new Vector2(x, Rigidbody.linearVelocity.y);
@@ -150,5 +164,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 		_playerTransform.position += new Vector3(force, 0.0f, 0.0f);
 	}
 
-	public void SetCanAttackDash(bool value) => _canAttackDash = value;	
+	public void SetCanAttackDash(bool value) => _canAttackDash = value;
+
+
 }

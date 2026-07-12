@@ -19,7 +19,9 @@ public class PlayerMoveController
 	private bool _isCoyoteTimeEnd;
 	private bool _canMove = true;
 	private bool _isDashCoolDown;
+	private bool _platformIgnore = false;
 	private bool _isAttackDashing = false;
+	
 	public Func<int> GetAttackCount { get; set; }
     
     public PlayerMoveController(IPlayerStatModel statModel, IPlayerView view)
@@ -30,11 +32,25 @@ public class PlayerMoveController
 
     public void TryJump()
 	{
-		if(_isJump && _jumpCount < _statModel.FinalJumpMaxCount)
+		if(_isJump && _jumpCount < _statModel.FinalJumpMaxCount && MoveInput.y >= 0.0f)
 		{
 			_view.SetVelocityY(_statModel.FinalJumpForce);
 			_jumpCount++;
 		}
+	}
+	public void TryPlatformIgnore()
+	{
+		if(MoveInput.y < 0.0f && _view.PhysicsHandler.IsGround())
+		{
+			_ = PlatformIgnore();
+		}
+	}
+
+	private async Task PlatformIgnore()
+	{
+		_platformIgnore = true;
+		await Task.Delay(TimeSpan.FromSeconds(0.3f));
+		_platformIgnore = false;
 	}
 	public void TryDash()
 	{
@@ -66,13 +82,19 @@ public class PlayerMoveController
 
 	public void OnAttackDash()
 	{
-		if(MoveInput != Vector2.zero)
+		if(MoveInput != Vector2.zero && _view.PhysicsHandler.IsGround())
 		{
-			_view.SetVelocity(0.5f, 0.0f);
+			_=AttackDash();
 
 		}
 	}
-
+	private async Task AttackDash()
+	{
+		_view.SetVelocityX(MoveInput.x);
+		await Task.Delay(TimeSpan.FromSeconds(0.06f));
+		
+		_view.Rigidbody.linearDamping = 10000.0f;
+	}
 	private async Task AsyncStartDashCoolDown()
 	{
 		_isDashCoolDown = true;
@@ -106,7 +128,13 @@ public class PlayerMoveController
 
 		if (IsDashing) return;
 
-		bool ignore = _view.CurrentVelocityY > 0.1f;
+
+		bool ignore = _view.CurrentVelocityY > 0.1f || _platformIgnore;
+		if(_platformIgnore)
+		{
+			_view.SetVelocityY(-_statModel.FinalJumpForce*0.5f);
+		}
+
 		_view.SetOneWayPlatformCollision(ignore);
 
 		bool lookRight = GazeVector.x >= 0.0f;
@@ -115,7 +143,7 @@ public class PlayerMoveController
 
 		if (!isWall)
 		{
-			float targetX = (_view.IsAttacking && _view.PhysicsHandler.IsGround()) ? 0.0f : MoveInput.x * _statModel.FinalMoveSpeed;
+			float targetX = (_view.IsAttacking && _view.PhysicsHandler.IsGround() && MoveInput == Vector2.zero) ? 0.0f : MoveInput.x * _statModel.FinalMoveSpeed;
 
 			_view.SetVelocityX(targetX);
 		

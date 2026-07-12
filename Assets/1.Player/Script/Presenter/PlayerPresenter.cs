@@ -57,6 +57,7 @@ public class PlayerPresenter : MonoBehaviour
 		{
 			_view.OnMove += _moveController.SetMoveInput;
 			_view.OnJump += _moveController.TryJump;
+			_view.OnPlatformIgnore += _moveController.TryPlatformIgnore;
 			_view.OnDash += _moveController.TryDash;
 			_view.OnAttack += _attackController.TryAttack;
 
@@ -100,12 +101,13 @@ public class PlayerPresenter : MonoBehaviour
 		}
 	}
 
-	private void OnDestroy()
+	private void OnDisable()
 	{
 		if (_view != null && _moveController != null && _attackController != null)
 		{
 			_view.OnMove -= _moveController.SetMoveInput;
 			_view.OnJump -= _moveController.TryJump;
+			_view.OnPlatformIgnore -= _moveController.TryPlatformIgnore;
 			_view.OnDash -= _moveController.TryDash;
 			_view.OnAttack -= _attackController.TryAttack;
 
@@ -113,5 +115,7 @@ public class PlayerPresenter : MonoBehaviour
 			_view.PlayerAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
 		}
 	}
+
+	
 }
 

@@ -11,11 +11,13 @@ public interface IPlayerView
 	public Rigidbody2D Rigidbody { get; }
 	public Animator Animator { get; }
 	public PlayerAnimEventListener PlayerAnimEventListener { get; }
+	public Transform PlayerTransform { get; }
 
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
 	public event Action OnDash;
 	public event Action OnAttack;
+	public event Action OnPlatformIgnore;
 	public float CurrentVelocityY { get; }
 	public bool IsAttacking { get; }
 	public bool CanAttackDash { get; }
@@ -63,6 +65,7 @@ public interface IPlayerView
 	public void InputJump(InputAction.CallbackContext context);
 	public void InputDash(InputAction.CallbackContext context);
 	public void InputAttack(InputAction.CallbackContext context);
+	public void InputPlatformIgnore(InputAction.CallbackContext context);
 	public void SetIsAttacking(bool value);
 	public void SetCanAttackDash(bool value);
 }
