@@ -47,9 +47,8 @@
 - TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
 - 점프 후 OneWayPlatform에 걸쳤을 때 겹쳐져서 안내려 오는 현상<br>
   <img width="722" height="405" alt="image" src="https://github.com/user-attachments/assets/bab5a854-db86-44db-a74b-160302eff513" />
-
 - 특정 상황에서 AttackState로 고정되는 버그(원인은 아직 모름)<br>
-
+- GazeVector의 x가 -1일 때 DownArrow를 누르면 GazeVector의 x가 +1로 변경됨
 
 # 해결된 버그
 - <img width="965" height="42" alt="image" src="https://github.com/user-attachments/assets/26e28207-3e76-423a-a364-9ba29893379e" /><br>
