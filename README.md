@@ -43,6 +43,11 @@
 - 원본 맵을 만드는 prefab의 레이어를 기능 별로 나누어서 맵에 대한 데이터가 단일 레이어로 묶이는 것을 방지하고 파일을 열였을 때의 가독성을 보장함<br>
 - 맵의 정보를 파일로 들고 있기 때문에 개발 파트를 거치지 않고 기획 파트에서 바로 추가 및 수정을 지원한다<br>
 
+**MVP 패턴**
+- mvp 패턴을 적용하여 데이터를 받아오는 view와 오브젝트에게 필요한 데이터는 model로 관리함으로 써 관심사를 분리해 model의 데이터 오염을 막는다<br>
+- presenter/controller라는 view와 model을 중개 하는 객체를 두어 view와 model이 서로 간섭하는 것을 방지한다<br>
+- controller는 순수 C# 클래스로 구성하여 불필요한 Component를 줄였다<br>
+
 # 수정사항 or 버그<br>
 - TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
 - 점프 후 OneWayPlatform에 걸쳤을 때 겹쳐져서 안내려 오는 현상<br>
@@ -56,9 +61,9 @@
   - 해결한 방법: OnDestory => OnDisable로 변경
   
 # 해야 할 일<br>
-**진행중:Player 리팩토링<br>**
+**진행중:Enemy 행동 로직 및 FSM<br>**
 
-- Player 리팩토링(6월29일 ~ 7월 5일)<br>
+~~- Player 리팩토링(6월29일 ~ 7월 5일)<br>~~ 7월 12일 완료
 - Enemy 행동 로직 및 FSM(7월 6일 ~ 7월 19일)<br>
 - 전투 시스템(7월 20일 ~ 7월 21일)<br>
 - 오브젝트 만들기(후순위)<br>
