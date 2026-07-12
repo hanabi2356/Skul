@@ -71,6 +71,8 @@ public class PlayerAttackController
 
 		ProcessInputBuffer();
 
+		_view.Rigidbody.linearDamping = 0.0f;
+
 	}
 	private void StartNewAttack()
 	{
