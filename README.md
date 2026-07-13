@@ -75,6 +75,9 @@
 - 실제 빌드 시 맵을 랜덤으로 불러 올 수 있는 맵 로더 로직(8월 7일 ~ 8월 9일)<br>
     1. 실제 맵 구성도 (일반 맵 => 일반 맵 => 상점 => 중간 보스 => 일반 맵 => 스테이지 최종 보스)<br>
 - QA용 Cheat/Debug Tool(맵 즉시 클리어, 스테이지 강제 이동, 재화 강제 추가...)(8월 10일 ~ 8월 19일)<br>
+
+# Class Diagram
+- [https://lucid.app/lucidchart/48678b1b-6ea4-42b7-8a84-4a580e97bc66/edit?viewport_loc=-1773%2C-916%2C2690%2C1357%2C8Fl9sWhwAIUX&invitationId=inv_3435e6d8-a0d4-40ea-a246-153f193e9eb5]
  
 # 피드백
 xml 적용
