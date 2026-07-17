@@ -7,7 +7,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Reflection;
 public class EnemyStatDataImporter : EditorWindow
 {
-	private string csvPath = "Assets/2. Enemy/Script/Data/EnemyStatData.csv";
+	private string csvPath = "Assets/2.Enemy/Data/EnemyStatData.cs";
 	[MenuItem("Tools/Stat Data Import/Enemy Stat Import")]
 	public static void ShowWindow()
 	{
