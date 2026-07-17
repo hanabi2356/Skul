@@ -16,21 +16,8 @@ public class PlayerAnimController
 		_view.Animator.SetInteger("State", ((int)state));
 		_view.Animator.SetInteger("AttackCount", attackCount);
 	}
+	
 
-	public void AttackAnimUpdate()
-    {
-        IsAttackAnimPlaying = true;
-    }
 
-    public void AttackAnimEnd()
-    {
-        IsAttackAnimPlaying = false;
-    }
-
-    private void OnDisable()
-    {
-        /*if( playerBase != null )
-            playerBase.attackController.onAttackStarted -= AttackAnimUpdate;*/
-    }
 
 }

@@ -16,13 +16,8 @@ public class PlayerMoveController
 	private bool _isJump = true;
 	private int _dashCount=0;
 	public bool IsDashing { get; private set; } = false;
-	private bool _isCoyoteTimeEnd;
-	private bool _canMove = true;
 	private bool _isDashCoolDown;
 	private bool _platformIgnore = false;
-	private bool _isAttackDashing = false;
-	
-	public Func<int> GetAttackCount { get; set; }
     
     public PlayerMoveController(IPlayerStatModel statModel, IPlayerView view)
 	{
@@ -42,11 +37,11 @@ public class PlayerMoveController
 	{
 		if(MoveInput.y < 0.0f && _view.PhysicsHandler.IsGround())
 		{
-			_ = PlatformIgnore();
+			_ = AsyncPlatformIgnore();
 		}
 	}
 
-	private async Task PlatformIgnore()
+	private async Task AsyncPlatformIgnore()
 	{
 		_platformIgnore = true;
 		await Task.Delay(TimeSpan.FromSeconds(0.3f));
@@ -84,11 +79,11 @@ public class PlayerMoveController
 	{
 		if(MoveInput != Vector2.zero && _view.PhysicsHandler.IsGround())
 		{
-			_=AttackDash();
+			_=AsyncAttackDash();
 
 		}
 	}
-	private async Task AttackDash()
+	private async Task AsyncAttackDash()
 	{
 		_view.SetVelocityX(MoveInput.x);
 		await Task.Delay(TimeSpan.FromSeconds(0.06f));

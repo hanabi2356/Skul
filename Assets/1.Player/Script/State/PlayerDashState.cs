@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerDashState : PlayerBaseState
 {
 
-	private float _originGravityScale;
 	private PlayerMoveController _moveController;
 	public PlayerDashState(PlayerMoveController moveController,
 		IPlayerView view,

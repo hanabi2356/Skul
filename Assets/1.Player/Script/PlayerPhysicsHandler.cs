@@ -12,9 +12,7 @@ public class PlayerPhysicsHandler : MonoBehaviour
     private float _checkRadius = 0.2f;
 
     private int _oneWayPlatformLayer;
-	public int OneWayPlatformLayer => _oneWayPlatformLayer;
     private int _playerLayer;
-	public int PlayerLayer => _playerLayer;
 
 
     void Awake()
