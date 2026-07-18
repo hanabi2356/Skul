@@ -36,17 +36,17 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void SetupTransitions()
     {
-        transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle,
+        transitions.Add(new PlayerTransition(_stateContext.IdleState, EPlayerState.Idle,
             () => _view.PhysicsHandler.IsGround()));
 
-        transitions.Add(new Transition(_stateContext.DashState, EPlayerState.Dash,
+        transitions.Add(new PlayerTransition(_stateContext.DashState, EPlayerState.Dash,
             () => _moveController.IsDashing == true));
 
-        transitions.Add(new Transition(_stateContext.AttackState, EPlayerState.Attack,
+        transitions.Add(new PlayerTransition(_stateContext.AttackState, EPlayerState.Attack,
             () => _attackController.IsAttacking == true && 
 			!_attackController.IsReset));
 
-        transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move,
+        transitions.Add(new PlayerTransition(_stateContext.MoveState, EPlayerState.Move,
             () => _view.PhysicsHandler.IsGround() && 
 			_moveController.MoveInput.x != 0.0f));
     }

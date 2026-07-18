@@ -32,17 +32,17 @@ public class PlayerAttackState : PlayerBaseState
 	public override void SetupTransitions()
 	{
 
-		transitions.Add(new Transition(_stateContext.MoveState, EPlayerState.Move, () =>
+		transitions.Add(new PlayerTransition(_stateContext.MoveState, EPlayerState.Move, () =>
 			_moveController.MoveInput.x != 0.0f &&
 			_view.PhysicsHandler.IsGround() &&
 			_attackController.IsAttacking == false));
 
-		transitions.Add(new Transition(_stateContext.IdleState, EPlayerState.Idle, () =>
+		transitions.Add(new PlayerTransition(_stateContext.IdleState, EPlayerState.Idle, () =>
 			_moveController.MoveInput == Vector2.zero &&
 			_attackController.IsAttacking == false &&
 			_view.PhysicsHandler.IsGround()));
 
-		transitions.Add(new Transition(_stateContext.JumpState, EPlayerState.Jump, () =>
+		transitions.Add(new PlayerTransition(_stateContext.JumpState, EPlayerState.Jump, () =>
 			!_view.PhysicsHandler.IsGround() &&
 			_attackController.IsAttacking == false));
 	}
