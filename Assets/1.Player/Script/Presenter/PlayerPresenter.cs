@@ -43,6 +43,7 @@ public class PlayerPresenter : MonoBehaviour
 		}
 
 		_isInitialized = true;
+		PlayerTransformProvider.Resgister(_view.PlayerTransform);
 	}
 	private void Awake()
 	{
@@ -113,6 +114,8 @@ public class PlayerPresenter : MonoBehaviour
 
 			_view.PlayerAnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
 			_view.PlayerAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
+
+			PlayerTransformProvider.Unregister();
 		}
 	}
 
