@@ -3,7 +3,7 @@ using Zenject;
 
 public class NormalEnemyPresenter : MonoBehaviour
 {
-	private INormalEnemyStatModel _normalEnemyModel;
+	private INormalEnemyStatModel _normalEnemyStatModel;
 	private INormalEnemyView _view;
 
 	[Inject]
@@ -11,7 +11,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 		INormalEnemyStatModel normalEnemyModel,
 		INormalEnemyView view)
 	{
-		_normalEnemyModel = normalEnemyModel;
+		_normalEnemyStatModel = normalEnemyModel;
 		_view = view;
 		SubscribeEvent();
 	}
