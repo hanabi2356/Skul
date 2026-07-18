@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface ITransition  
+public interface IPlayerTransition  
 {
     /// <summary>
     /// 조건이 맞을 때 Delegate를 Invoke한다
