@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerTransition : ITransition
+public class PlayerTransition : IPlayerTransition
 {
     //bool 값을 반환하는 delegate
     private Func<bool> _condition;

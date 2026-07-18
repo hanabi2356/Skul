@@ -17,7 +17,7 @@ public abstract class PlayerBaseState : IState
 	protected IPlayerStatModel _statModel;
 	protected IPlayerStateContext _stateContext;
     //전이 조건을 담는 List
-    protected List<ITransition> transitions = new List<ITransition>();
+    protected List<IPlayerTransition> transitions = new List<IPlayerTransition>();
 
 
     protected PlayerBaseState(IPlayerView view,
