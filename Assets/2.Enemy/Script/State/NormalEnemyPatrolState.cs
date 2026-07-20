@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class NormalEnemyPatrolState : NormalEnemyBaseState
 {
-	public NormalEnemyPatrolState(INormalEnemyStatModel normalEnemyStatModel, INormalEnemyView view, INormalEnemyStateContext stateContext) : base(normalEnemyStatModel, view, stateContext)
+	public NormalEnemyPatrolState(INormalEnemyStatModel normalEnemyStatModel, 
+		INormalEnemyView view, 
+		INormalEnemyStateContext stateContext) : base(normalEnemyStatModel, view, stateContext)
 	{
 	}
 

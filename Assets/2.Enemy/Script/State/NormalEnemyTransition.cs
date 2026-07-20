@@ -4,13 +4,13 @@ using UnityEngine;
 public class NormalEnemyTransition : INormalEnemyTransition
 {
 	private Func<bool> _condition;
-	public IState TargetState { get; }
+	public IState TargetState { get; private set; }
 
-	public ENormalState TargetStateEnum { get; }
+	public ENormalEnemyState TargetStateEnum { get; private set; }
 
 	public NormalEnemyTransition(Func<bool> condition, 
 		IState targetState, 
-		ENormalState targetStateEnum)
+		ENormalEnemyState targetStateEnum)
 	{
 		_condition = condition;
 		TargetState = targetState;
