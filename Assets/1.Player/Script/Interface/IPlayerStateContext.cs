@@ -1,5 +1,14 @@
 using UnityEngine;
-
+public enum EPlayerState
+{
+	Idle = 0,
+	Move = 1,
+	Jump = 2,
+	Attack = 3,
+	Dash = 4,
+	Hit = 5,
+	Dead = 6
+}
 public interface IPlayerStateContext 
 {
 	EPlayerState CurrentStateEnum { get; }
