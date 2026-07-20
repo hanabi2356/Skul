@@ -1,14 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-public enum ENormalState
-{
-	Idle = 0,
-	Patrol = 1,
-	Trace = 2,
-	Attack = 3,
-	Hit = 4,
-	Dead = 5
-}
+
 
 public abstract class NormalEnemyBaseState : IState
 {
@@ -16,7 +8,7 @@ public abstract class NormalEnemyBaseState : IState
 	protected INormalEnemyView _view;
 	protected INormalEnemyStateContext _stateContext;
 
-	protected List<IPlayerTransition> _transitions = new List<IPlayerTransition>();
+	protected List<INormalEnemyTransition> _transitions = new List<INormalEnemyTransition>();
 
 	protected NormalEnemyBaseState(INormalEnemyStatModel normalEnemyStatModel, 
 		INormalEnemyView view, 
@@ -32,7 +24,13 @@ public abstract class NormalEnemyBaseState : IState
 
 	public virtual void Execute()
 	{
-
+		foreach (var transition in _transitions)
+		{
+			if(transition.InConditionMet())
+			{
+				_stateContext.ChangeState(transition.TargetState, transition.TargetStateEnum);
+			}
+		}
 	}
 
 
