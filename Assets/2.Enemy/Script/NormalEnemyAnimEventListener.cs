@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class NormalEnemyyAnimEventListener : MonoBehaviour, IAnimEventListener
+public class NormalEnemyAnimEventListener : MonoBehaviour, IAnimEventListener
 {
 	public event Action OnAttackStart;
 	public event Action OnAttackEnd;
