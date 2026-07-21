@@ -29,5 +29,11 @@ public class NormalEnemyStatModel : INormalEnemyStatModel
 		OnHPChanged?.Invoke(CurrentHP);
 
 	}
-	
+
+	public void UpdateFinalStat(EnemyStatData data)
+	{
+		CurrentHP = data.MaxHP;
+
+
+	}
 }

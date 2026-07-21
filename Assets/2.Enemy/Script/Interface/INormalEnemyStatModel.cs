@@ -12,6 +12,7 @@ public interface INormalEnemyStatModel
 	public float FinalMoveSpeed { get; }
 	public event Action<float> OnHPChanged;
 	public void TakeDamage(int damage);
+	public void UpdateFinalStat(EnemyStatData data);
 	
 
 }
