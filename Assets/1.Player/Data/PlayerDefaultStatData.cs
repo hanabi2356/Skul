@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DefaultStatData", menuName = "Create Default Stat Data/DefaultStatData")]
+[CreateAssetMenu(fileName = "DefaultStatData", menuName = "Create Player Default Stat Data/DefaultStatData")]
 public class DefaultStatData : ScriptableObject
 {
     
