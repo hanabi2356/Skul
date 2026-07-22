@@ -17,11 +17,9 @@ public class NormalEnemyFSMMachine : IFSMMachine, INormalEnemyStateContext
 	public NormalEnemyHitState HitState { get; private set; }
 
 	public NormalEnemyDeadState DeadState { get; private set; }
-	public NormalEnemyFSMMachine(INormalEnemyStatModel statModel,
-		INormalEnemyView view,
-		INormalEnemyStateContext stateContext)
+	public NormalEnemyFSMMachine(INormalEnemyStatModel statModel, INormalEnemyView view)
 	{
-		InitState(statModel, view, stateContext);
+		InitState(statModel, view, this);
 	}
 
 	public void ChangeState(IState state, ENormalEnemyState stateEnum)
