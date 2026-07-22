@@ -21,7 +21,7 @@ public class EnemyStatData : ScriptableObject
     [SerializeField] private EnemyRarity _enemyRarity;
 
     [Header("Stat Data")]
-    [SerializeField] private float _maxHP;
+    [SerializeField] private int _maxHP;
 
     [Header("Attack Data")]
     [SerializeField] private AttackType _attackType;
@@ -43,7 +43,7 @@ public class EnemyStatData : ScriptableObject
     public AttackType AttackType => _attackType;
 
     //stat data
-    public float MaxHP => _maxHP;
+    public int MaxHP => _maxHP;
 
     //attack data
     public float AttackPower => _attackPower;
