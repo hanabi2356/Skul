@@ -33,7 +33,12 @@ public class NormalEnemyStatModel : INormalEnemyStatModel
 	public void UpdateFinalStat(EnemyStatData data)
 	{
 		CurrentHP = data.MaxHP;
-
+		FinalAttackRange = data.AttackRange;
+		FinalAttackSpeed = data.AttackSpeed;
+		FinalAttackCoolTime = data.AttackCoolTime;
+		FinalTraceRange = data.DetectedRange;
+		FinalDamage = (int)data.AttackPower;
+		FinalMoveSpeed = data.MoveSpeed;
 
 	}
 }
