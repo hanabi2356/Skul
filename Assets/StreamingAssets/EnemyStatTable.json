@@ -1,0 +1,69 @@
+{
+    "EnemyStatDataList": [
+        {
+            "EnemyID": "101",
+            "EnemyName": "Archer",
+            "EnemyRarity": "Common",
+            "MaxHP": 30,
+            "AttackType": "Range",
+            "AttackPower": 5.0,
+            "AttackSpeed": 1.0,
+            "AttackCoolTime": 0.0,
+            "AttackRange": 15.0,
+            "DetectedRange": 15.0,
+            "MoveSpeed": 3.0
+        },
+        {
+            "EnemyID": "111",
+            "EnemyName": "BringerOfDeath",
+            "EnemyRarity": "Elite",
+            "MaxHP": 300,
+            "AttackType": "Melee",
+            "AttackPower": 5.0,
+            "AttackSpeed": 1.0,
+            "AttackCoolTime": 0.0,
+            "AttackRange": 25.0,
+            "DetectedRange": 25.0,
+            "MoveSpeed": 5.0
+        },
+        {
+            "EnemyID": "104",
+            "EnemyName": "Ent",
+            "EnemyRarity": "Common",
+            "MaxHP": 60,
+            "AttackType": "Melee",
+            "AttackPower": 7.0,
+            "AttackSpeed": 1.0,
+            "AttackCoolTime": 0.0,
+            "AttackRange": 5.0,
+            "DetectedRange": 5.0,
+            "MoveSpeed": 3.0
+        },
+        {
+            "EnemyID": "103",
+            "EnemyName": "FlameWizard",
+            "EnemyRarity": "Common",
+            "MaxHP": 40,
+            "AttackType": "Range",
+            "AttackPower": 12.0,
+            "AttackSpeed": 1.0,
+            "AttackCoolTime": 0.0,
+            "AttackRange": 20.0,
+            "DetectedRange": 20.0,
+            "MoveSpeed": 0.0
+        },
+        {
+            "EnemyID": "102",
+            "EnemyName": "Recruit",
+            "EnemyRarity": "Common",
+            "MaxHP": 50,
+            "AttackType": "Melee",
+            "AttackPower": 10.0,
+            "AttackSpeed": 1.0,
+            "AttackCoolTime": 0.0,
+            "AttackRange": 3.0,
+            "DetectedRange": 3.0,
+            "MoveSpeed": 5.0
+        }
+    ]
+}
