@@ -3,7 +3,7 @@ using System.Collections.Generic;
 [Serializable]
 public class EnemyStatDataDTO
 {
-    public int EnemyID;
+    public string EnemyID;
 	public string EnemyName;
     public string EnemyRarity;
     public int MaxHP;
@@ -12,7 +12,7 @@ public class EnemyStatDataDTO
     public float AttackSpeed;
     public float AttackCoolTime;
     public float AttackRange;
-    public float DetectionRange;
+    public float DetectedRange;
     public float MoveSpeed;
 
         
