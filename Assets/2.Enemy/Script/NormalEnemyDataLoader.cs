@@ -10,7 +10,7 @@ public class NormalEnemyDataLoader
 	{
 		if(_statData.Count > 0) return;
 
-		string filePath = Path.Combine(Application.streamingAssetsPath, "EnemyStatData.json");
+		string filePath = Path.Combine(Application.streamingAssetsPath, "EnemyStatTable.json");
 		if(!File.Exists(filePath))		
 		{
 			Debug.LogError($"Json 파일 로드 실패 : {filePath}");
