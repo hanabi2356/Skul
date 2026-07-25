@@ -30,7 +30,7 @@ public class NormalEnemyStatModel : INormalEnemyStatModel
 
 	}
 
-	public void UpdateFinalStat(EnemyStatData data)
+	public void UpdateFinalStat(EnemyStatDataDTO data)
 	{
 		CurrentHP = data.MaxHP;
 		FinalAttackRange = data.AttackRange;
