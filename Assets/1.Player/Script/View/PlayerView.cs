@@ -38,7 +38,6 @@ public class PlayerView : MonoBehaviour, IPlayerView
 		{
 			if (_playerTransform == null)
 			{
-				Debug.Log("_playerTransform is null");
 				return null;
 			}
 			if (_playerAnimEventListener == null)
@@ -123,19 +122,19 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	}
 	public void SetVelocityX(float x)
 	{
-		Rigidbody.linearVelocity = new Vector2(x, Rigidbody.linearVelocity.y);
+		_rigidbody.linearVelocity = new Vector2(x, _rigidbody.linearVelocity.y);
 	}
 	public void SetVelocityY(float y)
 	{
-		Rigidbody.linearVelocity = new Vector2(Rigidbody.linearVelocity.x, y);
+		_rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, y);
 	}
 	public void SetVelocity(float x, float y)
 	{
-		Rigidbody.linearVelocity = new Vector2(x, y);
+		_rigidbody.linearVelocity = new Vector2(x, y);
 	}
 	public void SetGravityScale(bool isDash)
 	{
-		Rigidbody.gravityScale = isDash ? 0.0f:_originalGravityScale;
+		_rigidbody.gravityScale = isDash ? 0.0f:_originalGravityScale;
 	}
 	public void SetRotation(bool lookRight)
 	{
@@ -154,7 +153,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	}
 	public void SetOneWayPlatformCollision(bool ignore)
 	{
-		PhysicsHandler.SetOneWayPlatformIgnore(ignore);
+		_physicsHandler.SetOneWayPlatformIgnore(ignore);
 	}
 
 	public void SetIsAttacking(bool value) => _isAttacking = value;
