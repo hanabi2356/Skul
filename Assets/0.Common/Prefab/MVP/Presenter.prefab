@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9130989545755871862}
   - component: {fileID: 2207963203715354231}
-  - component: {fileID: 2501067460610714496}
   m_Layer: 0
   m_Name: Presenter
   m_TagString: Untagged
@@ -46,15 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPresenter
   _defaultStatData: {fileID: 11400000, guid: 6c04aa58c8a635147a038bfb7b62a2d7, type: 2}
---- !u!114 &2501067460610714496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2162925399334681015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f2f95494767cc47b54852fbe0ed1b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPresenter
