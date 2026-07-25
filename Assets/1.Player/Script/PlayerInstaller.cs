@@ -15,7 +15,9 @@ public class PlayerInstaller : MonoInstaller
 		Container.Bind<PlayerAttackController>().AsSingle();
 		Container.Bind<PlayerAnimController>().AsSingle();
 
-		Container.Bind<IFSMMachine>().To<PlayerFSMMachine>().AsSingle();
+		// IFSMMachine을 SceneContext에서 Player/Enemy가 동시에 Bind하면 충돌한다.
+		// Presenter는 구체 FSM만 주입받는다.
+		Container.Bind<PlayerFSMMachine>().AsSingle();
 
 		Container.QueueForInject(FindAnyObjectByType<PlayerPresenter>());
 	}
