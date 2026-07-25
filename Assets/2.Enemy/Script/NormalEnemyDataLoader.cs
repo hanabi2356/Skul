@@ -31,12 +31,13 @@ public class NormalEnemyDataLoader
 				Debug.LogWarning($"EnemyID가 비어있는 데이터 건너뜁니다 : {data.EnemyID}");
 				continue;
 			}
-			if(_statData.ContainsKey(data.EnemyID)) //중복 키 검사
+			if (_statData.ContainsKey(data.EnemyID))
 			{
 				Debug.LogWarning($"이미 존재하는 EnemyID 데이터 건너뜁니다 : {data.EnemyID}");
+				continue;
 			}
-			_statData.Add(data.EnemyID, data);
 
+			_statData.Add(data.EnemyID, data);
 			Debug.Log($"EnemyID: {data.EnemyID} 데이터 로드 완료");
 		}
 	}
