@@ -11,7 +11,7 @@ public class PlayerPresenter : MonoBehaviour
 	private PlayerAttackController _attackController;
 	private PlayerAnimController _animController;
 
-	private IFSMMachine _fsm;
+	private PlayerFSMMachine _fsm;
 	[SerializeField] private DefaultStatData _defaultStatData;
 
 	private bool _isInitialized = false;
@@ -22,7 +22,7 @@ public class PlayerPresenter : MonoBehaviour
 		PlayerMoveController moveController,
 		PlayerAttackController attackController,
 		PlayerAnimController animController,
-		IFSMMachine fsm)
+		PlayerFSMMachine fsm)
 	{
 		
 		_statModel = statModel;
@@ -37,10 +37,7 @@ public class PlayerPresenter : MonoBehaviour
 		SubscribeEvent();
 		_statModel.UpdateFinalStat(_defaultStatData, loadData);
 
-		if(_fsm is PlayerFSMMachine playerFSM)
-		{
-			playerFSM.BootUp();
-		}
+		_fsm.BootUp();
 
 		_isInitialized = true;
 		PlayerTransformProvider.Resgister(_view.PlayerTransform);
@@ -49,9 +46,7 @@ public class PlayerPresenter : MonoBehaviour
 	{
 		
 	}
-	/// <summary>
-	/// 이벤트 구독 함수(공격 제외)
-	/// </summary>
+	
 	private void SubscribeEvent()
 	{
 		if (_view != null && _moveController != null && _attackController != null)
@@ -66,9 +61,7 @@ public class PlayerPresenter : MonoBehaviour
 		}
 		
 	}
-	/// <summary>
-	/// 앞으로 공격에 관한 이벤트가 추가 될 수 있어서 Attack 관련 이벤트 등록 분리
-	/// </summary>
+	
 	private void SubscribeAttackEvent()
 	{
 		if (_view.PlayerAnimEventListener != null)
@@ -93,30 +86,32 @@ public class PlayerPresenter : MonoBehaviour
 
 	private void Update()
 	{
-		Debug.Log(_fsm.CurrentState.ToString());
+		if (_isInitialized == false) return;
+
 		_fsm.CurrentState?.Execute();
 		_attackController.ComboCoolDown();
-		if(_fsm is PlayerFSMMachine playerFSM)
-		{
-			_animController.ChangeAnim(playerFSM.CurrentStateEnum, _attackController.AttackCount);
-		}
+		_animController.ChangeAnim(_fsm.CurrentStateEnum, _attackController.AttackCount);
 	}
 
 	private void OnDisable()
 	{
-		if (_view != null && _moveController != null && _attackController != null)
+		if (_isInitialized == false) return;
+		if (_view == null || _moveController == null || _attackController == null) return;
+
+		_view.OnMove -= _moveController.SetMoveInput;
+		_view.OnJump -= _moveController.TryJump;
+		_view.OnPlatformIgnore -= _moveController.TryPlatformIgnore;
+		_view.OnDash -= _moveController.TryDash;
+		_view.OnAttack -= _attackController.TryAttack;
+
+		if (_view.PlayerAnimEventListener != null)
 		{
-			_view.OnMove -= _moveController.SetMoveInput;
-			_view.OnJump -= _moveController.TryJump;
-			_view.OnPlatformIgnore -= _moveController.TryPlatformIgnore;
-			_view.OnDash -= _moveController.TryDash;
-			_view.OnAttack -= _attackController.TryAttack;
-
 			_view.PlayerAnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
+			_view.PlayerAnimEventListener.OnAttackStart -= _moveController.OnAttackDash;
 			_view.PlayerAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
-
-			PlayerTransformProvider.Unregister();
 		}
+
+		PlayerTransformProvider.Unregister();
 	}
 
 	
