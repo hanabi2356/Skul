@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 243358067341663648}
   - component: {fileID: 2857215193436218118}
   - component: {fileID: 926853970283203040}
+  - component: {fileID: 8772047632636084400}
+  - component: {fileID: 5859548244554215446}
+  - component: {fileID: 5899012930586843786}
+  - component: {fileID: 6231397323961495104}
   m_Layer: 11
   m_Name: Recruit
   m_TagString: Untagged
@@ -60,7 +64,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &926853970283203040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107,6 +111,64 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &8772047632636084400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502180862201265752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zenject::Zenject.GameObjectContext
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 5859548244554215446}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &5859548244554215446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502180862201265752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74122a87357978f4d82e6277704c38c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyInstaller
+  _view: {fileID: 5899012930586843786}
+  _presenter: {fileID: 6231397323961495104}
+--- !u!114 &5899012930586843786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502180862201265752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba53943cf9bff354e91c215938f15abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyView
+  _normalEnemyTransform: {fileID: 243358067341663648}
+--- !u!114 &6231397323961495104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502180862201265752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f2f95494767cc47b54852fbe0ed1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPresenter
+  _enemyID: 101
 --- !u!1 &7539921493934138855
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +182,7 @@ GameObject:
   - component: {fileID: 2839460954825720315}
   - component: {fileID: 7561930723918986145}
   m_Layer: 0
-  m_Name: RecruitSprite_IDLE_0
+  m_Name: RecruitSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
