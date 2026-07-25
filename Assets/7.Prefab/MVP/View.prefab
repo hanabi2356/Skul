@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 57688626091677590}
   - component: {fileID: 3839502186963295195}
-  - component: {fileID: 7455735185460532792}
+  - component: {fileID: 8352218217992725174}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerView
   _playerTransform: {fileID: 0}
---- !u!114 &7455735185460532792
+--- !u!114 &8352218217992725174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,3 +58,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba53943cf9bff354e91c215938f15abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyView
+  _normalEnemyTransform: {fileID: 0}
