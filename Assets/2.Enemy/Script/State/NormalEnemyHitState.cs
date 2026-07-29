@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class NormalEnemyHitState : NormalEnemyBaseState
 {
-	public NormalEnemyHitState(INormalEnemyStatModel normalEnemyStatModel, 
-		INormalEnemyView view, 
+	public NormalEnemyHitState(INormalEnemyStatModel normalEnemyStatModel,
+		INormalEnemyView view,
 		INormalEnemyStateContext stateContext) : base(normalEnemyStatModel, view, stateContext)
 	{
 	}
 
 	public override void Enter()
 	{
-		throw new System.NotImplementedException();
 	}
 
 	public override void Execute()
@@ -20,11 +19,9 @@ public class NormalEnemyHitState : NormalEnemyBaseState
 
 	public override void Exit()
 	{
-		throw new System.NotImplementedException();
 	}
 
 	public override void SetupTransitions()
 	{
-		throw new System.NotImplementedException();
 	}
 }
