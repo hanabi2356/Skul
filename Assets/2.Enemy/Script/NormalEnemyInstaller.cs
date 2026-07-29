@@ -25,8 +25,11 @@ public class NormalEnemyInstaller : MonoInstaller
 		Container.Bind<INormalEnemyView>().FromInstance(_view).AsSingle();
 		Container.Bind<INormalEnemyStatModel>().To<NormalEnemyStatModel>().AsSingle();
 		Container.Bind<NormalEnemyFSMMachine>().AsSingle();
+
 		Container.Bind<NormalEnemyMoveController>().AsSingle();
 		Container.Bind<NormalEnemyAnimController>().AsSingle();
+		Container.Bind<NormalEnemyAnimController>().AsSingle();
+		Container.Bind<NormalEnemyRangeDetectionController>().AsSingle();
 
 		// DataLoader는 SceneContext(EnemySharedInstaller)에서 상속받아 Resolve
 		Container.QueueForInject(_presenter);
