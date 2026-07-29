@@ -45,7 +45,7 @@ public class EnemyStatExporter : EditorWindow
         var filePath = Path.Combine(folderPath, "EnemyStatTable.json");
         File.WriteAllText(filePath, JsonUtility.ToJson(table,true));
         AssetDatabase.Refresh();
-        EditorUtility.DisplayDialog("Success", "Enemy Stat Exported", "OK");
+        EditorUtility.DisplayDialog("성공", "JSON 파일 갱신 성공", "OK");
     }
     
    
