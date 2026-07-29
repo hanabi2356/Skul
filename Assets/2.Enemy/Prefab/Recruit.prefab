@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2f95494767cc47b54852fbe0ed1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPresenter
-  _enemyID: 101
+  _enemyID: 102
 --- !u!114 &2523958448524834878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8773100116968853367}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
