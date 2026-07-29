@@ -21,5 +21,5 @@ MonoBehaviour:
   _attackSpeed: 1
   _attackCoolTime: 2.5
   _attackRange: 3
-  _detectedRange: 3
+  _detectedRange: 10
   _moveSpeed: 5
