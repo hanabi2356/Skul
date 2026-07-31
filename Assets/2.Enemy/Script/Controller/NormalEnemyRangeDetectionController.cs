@@ -11,17 +11,19 @@ public class NormalEnemyRangeDetectionController
 		_view = view;
 		_statModel = statModel;
 	}
-	public bool IsInAttackRange(Vector2 currentPosition, Vector2 targetPosition, float attackRange)
+	private float SqrDistanceToTarget => (_view.TargetPosition - 
+		(Vector2)_view.NormalEnemyTransform.position).sqrMagnitude;
+	public bool IsInAttackRange()
 	{
-		float sqrDistance = (targetPosition - currentPosition).sqrMagnitude;
+		float range = _statModel.FinalAttackRange;
 
-		return sqrDistance <= (attackRange * attackRange);
+
+		return SqrDistanceToTarget <= (range * range);
 	}
-	public bool IsInDetectedRange(Vector2 currentPosition, Vector2 targetPosition, float detectedRange)
+	public bool IsInTraceRange()
 	{
-		float sqrDistance = (targetPosition - currentPosition).sqrMagnitude;
-
-		return sqrDistance <= (detectedRange * detectedRange);
+		float range = _statModel.FinalTraceRange;
+		return SqrDistanceToTarget <= (range * range);
 	}
-
+	public bool CanMove => _statModel.FinalMoveSpeed > 0.0f;
 }
