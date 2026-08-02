@@ -28,7 +28,7 @@ public class NormalEnemyInstaller : MonoInstaller
 
 		Container.Bind<NormalEnemyMoveController>().AsSingle();
 		Container.Bind<NormalEnemyAnimController>().AsSingle();
-		Container.Bind<NormalEnemyAnimController>().AsSingle();
+		Container.Bind<NormalEnemyAttackController>().AsSingle();
 		Container.Bind<NormalEnemyRangeDetectionController>().AsSingle();
 
 		// DataLoader는 SceneContext(EnemySharedInstaller)에서 상속받아 Resolve
