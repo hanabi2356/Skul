@@ -1,18 +1,16 @@
 using System;
-using UnityEngine;
 
 public interface INormalEnemyStatModel
 {
-    public int CurrentHP { get; }
-	public float FinalAttackRange { get; }
-	public float FinalAttackSpeed { get; }
-	public float FinalAttackCoolTime { get; }
-	public float FinalTraceRange { get; }
-	public int FinalDamage { get; }
-	public float FinalMoveSpeed { get; }
-	public event Action<float> OnHPChanged;
-	public void TakeDamage(int damage);
-	public void UpdateFinalStat(EnemyStatDataDTO data);
-	
-
+	int CurrentHP { get; }
+	bool IsDead { get; }
+	float FinalAttackRange { get; }
+	float FinalAttackSpeed { get; }
+	float FinalAttackCoolTime { get; }
+	float FinalTraceRange { get; }
+	int FinalDamage { get; }
+	float FinalMoveSpeed { get; }
+	event Action<int> OnHPChanged;
+	void TakeDamage(int damage);
+	void UpdateFinalStat(EnemyStatDataDTO data);
 }

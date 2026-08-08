@@ -5,25 +5,28 @@ public class NormalEnemyPresenter : MonoBehaviour
 {
 	[SerializeField] private string _enemyID = "101";
 
-	private INormalEnemyStatModel _normalEnemyStatModel;
+	private INormalEnemyStatModel _statModel;
 	private INormalEnemyView _view;
 	private NormalEnemyDataLoader _dataLoader;
 	private NormalEnemyFSMMachine _fsm;
 	private NormalEnemyAnimController _animController;
+	private NormalEnemyAttackController _attackController;
 	private bool _isInitialized;
 
 	[Inject]
-	public void Initialize(INormalEnemyStatModel normalEnemyModel,
+	public void Initialize(INormalEnemyStatModel statModel,
 		INormalEnemyView view,
 		NormalEnemyDataLoader dataLoader,
 		NormalEnemyFSMMachine fsm,
-		NormalEnemyAnimController animController)
+		NormalEnemyAnimController animController,
+		NormalEnemyAttackController attackController)
 	{
-		_normalEnemyStatModel = normalEnemyModel;
+		_statModel = statModel;
 		_view = view;
 		_dataLoader = dataLoader;
 		_fsm = fsm;
 		_animController = animController;
+		_attackController = attackController;
 
 		if (_view == null)
 		{
@@ -36,7 +39,12 @@ public class NormalEnemyPresenter : MonoBehaviour
 		EnemyStatDataDTO data = _dataLoader.Get(_enemyID);
 		if (data != null)
 		{
-			_normalEnemyStatModel.UpdateFinalStat(data);
+			_statModel.UpdateFinalStat(data);
+		}
+		else
+		{
+			Debug.LogError($"EnemyStat 로드 실패 [ID: {_enemyID}]");
+			return;
 		}
 
 		_fsm.BootUp();
@@ -47,17 +55,69 @@ public class NormalEnemyPresenter : MonoBehaviour
 	void Update()
 	{
 		if (_isInitialized == false || _view == null) return;
+		if (_fsm.CurrentStateEnum == ENormalEnemyState.Dead) return;
 
-		if (PlayerTransformProvider.PlayerTransform != null)
-		{
-			_view.UpdateTargetPosition(PlayerTransformProvider.PlayerTransform.position);
-		}
+		var playerTransform = PlayerTransformProvider.PlayerTransform;
+		if (playerTransform == null) return;
+		
 
+		_view.UpdateTargetPosition(playerTransform.position);
 		_fsm.CurrentState?.Execute();
 		_animController?.UpdateAnimation(_fsm.CurrentStateEnum);
 	}
 
+	/// <summary>
+	/// 외부(플레이어 공격 등)에서 호출
+	/// </summary>
+	public void ApplyDamage(int damage)
+	{
+		if (_isInitialized == false || _statModel.IsDead) return;
+		_statModel.TakeDamage(damage);
+	}
+
 	private void SubscribeEvent()
 	{
+		_statModel.OnHPChanged += OnHPChanged;
+
+		if (_view.NormalEnemyAnimEventListener != null)
+		{
+			_view.NormalEnemyAnimEventListener.OnAttackStart += _attackController.OnAttackStart;
+			_view.NormalEnemyAnimEventListener.OnAttackEnd += _attackController.OnAttackEnd;
+		}
+		else
+		{
+			Debug.LogWarning("NormalEnemyAnimEventListener가 없습니다. 공격 애니 이벤트를 연결하세요.", this);
+		}
+	}
+
+	private void OnHPChanged(int currentHP)
+	{
+		if (currentHP <= 0)
+		{
+			_fsm.ChangeState(_fsm.DeadState, ENormalEnemyState.Dead);
+			return;
+		}
+
+		if (_fsm.CurrentStateEnum != ENormalEnemyState.Hit
+			&& _fsm.CurrentStateEnum != ENormalEnemyState.Dead)
+		{
+			_fsm.ChangeState(_fsm.HitState, ENormalEnemyState.Hit);
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (_isInitialized == false) return;
+
+		if (_statModel != null)
+		{
+			_statModel.OnHPChanged -= OnHPChanged;
+		}
+
+		if (_view?.NormalEnemyAnimEventListener != null && _attackController != null)
+		{
+			_view.NormalEnemyAnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
+			_view.NormalEnemyAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
+		}
 	}
 }

@@ -1,19 +1,21 @@
 using System;
 using UnityEngine;
 
-public interface INormalEnemyView 
+public interface INormalEnemyView
 {
-	public Transform NormalEnemyTransform { get; }
-	public event Action OnAttack;
-	public Rigidbody2D Rigidbody { get; }
-	public Animator Animator { get; }
-	public bool IsAttacking { get; }
-	public NormalEnemyAnimEventListener NormalEnemyAnimEventListener { get; }
-    public Vector2 TargetPosition { get; }
-	public void UpdateTargetPosition(Vector2 targetPosition);
-	public void SetVelocity(float x, float y);
-	public void SetVelocityX(float x);
-	public void SetVelocityY(float y);
-	public void SetIsAttacking(bool value);
-	public void SetRotation(bool lookRight);
+	Transform NormalEnemyTransform { get; }
+	event Action OnAttack;
+	Rigidbody2D Rigidbody { get; }
+	Animator Animator { get; }
+	bool IsAttacking { get; }
+	NormalEnemyAnimEventListener NormalEnemyAnimEventListener { get; }
+	NormalEnemyPhysicsHandler PhysicsHandler { get; }
+	Vector2 TargetPosition { get; }
+	Vector2 Velocity { get; }
+	void UpdateTargetPosition(Vector2 targetPosition);
+	void SetVelocity(float x, float y);
+	void SetVelocityX(float x);
+	void SetVelocityY(float y);
+	void SetIsAttacking(bool value);
+	void SetRotation(bool lookRight);
 }
