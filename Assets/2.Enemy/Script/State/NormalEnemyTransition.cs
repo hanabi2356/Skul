@@ -8,9 +8,9 @@ public class NormalEnemyTransition : INormalEnemyTransition
 
 	public ENormalEnemyState TargetStateEnum { get; private set; }
 
-	public NormalEnemyTransition(Func<bool> condition, 
-		IState targetState, 
-		ENormalEnemyState targetStateEnum)
+	public NormalEnemyTransition(IState targetState,
+		ENormalEnemyState targetStateEnum,
+		Func<bool> condition)
 	{
 		_condition = condition;
 		TargetState = targetState;
