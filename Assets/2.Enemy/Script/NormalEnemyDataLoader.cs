@@ -38,7 +38,7 @@ public class NormalEnemyDataLoader
 			}
 
 			_statData.Add(data.EnemyID, data);
-			Debug.Log($"EnemyID: {data.EnemyID} 데이터 로드 완료");
+			Debug.Log($"EnemyID: {data.EnemyID},{data.EnemyName} 데이터 로드 완료");
 		}
 	}
 	public EnemyStatDataDTO Get(string enemyID)
