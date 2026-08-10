@@ -171,7 +171,7 @@ Animator:
   m_GameObject: {fileID: 7072231948272878249}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92f3f747430bf1946ba06102c3e78c0f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -381,4 +381,4 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 264
-  _groundChekcObejct: {fileID: 5187788587472790549}
+  _groundCheckObject: {fileID: 5187788587472790549}
