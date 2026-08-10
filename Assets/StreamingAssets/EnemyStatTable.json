@@ -35,7 +35,7 @@
             "AttackPower": 10.0,
             "AttackSpeed": 1.0,
             "AttackCoolTime": 2.5,
-            "AttackRange": 3.0,
+            "AttackRange": 1.0,
             "DetectedRange": 10.0,
             "MoveSpeed": 5.0
         }

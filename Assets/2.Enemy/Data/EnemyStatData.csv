@@ -1,4 +1,4 @@
 ﻿enemyID,name,enemyRarity,maxHP,attackType,attackPower,attackSpeed,attackCoolTime,attackRange,detectedRange,moveSpeed
 101,Archer,Common,30,Range,5,1,2.5,10,15,3
-102,Recruit,Common,50,Melee,10,1,2.5,3,10,5
+102,Recruit,Common,50,Melee,10,1,2.5,1,10,5
 103,FlameWizard,Common,40,Range,12,1,2.5,20,0,0
