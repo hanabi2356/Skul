@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerAttackController 
 {
-	
 
     private IPlayerStatModel _statModel;
 	private IPlayerView _view;
@@ -16,11 +15,15 @@ public class PlayerAttackController
 
 	private Queue<float> _inputBuffer = new Queue<float>();
 
+	private readonly NormalEnemyRegistry _enemyRegistry;
+
 	public PlayerAttackController(IPlayerStatModel statModel, 
-		IPlayerView view)
+		IPlayerView view,
+		NormalEnemyRegistry enemyRegistry)
 	{
 		_statModel = statModel;
 		_view = view;
+		_enemyRegistry = enemyRegistry;
 	}
 
 	public void TryAttack()
@@ -61,6 +64,12 @@ public class PlayerAttackController
 	public void OnAttackStart()
 	{
 		
+		foreach(var enemy in _enemyRegistry.Enemies)
+		{
+			if (enemy == null) continue;
+
+			enemy.ApplyDamage((int)_statModel.FinalPhysicsAttack);
+		}
 		
 	}
 	
