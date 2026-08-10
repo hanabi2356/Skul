@@ -8,5 +8,6 @@ public class EnemySharedInstaller : MonoInstaller
 	public override void InstallBindings()
 	{
 		Container.Bind<NormalEnemyDataLoader>().AsSingle();
+		Container.Bind<NormalEnemyRegistry>().AsSingle();
 	}
 }

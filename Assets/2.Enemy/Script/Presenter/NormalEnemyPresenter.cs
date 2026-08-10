@@ -11,6 +11,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 	private NormalEnemyFSMMachine _fsm;
 	private NormalEnemyAnimController _animController;
 	private NormalEnemyAttackController _attackController;
+	private NormalEnemyRegistry _enemyRegistry;
 	private bool _isInitialized;
 
 	[Inject]
@@ -19,7 +20,8 @@ public class NormalEnemyPresenter : MonoBehaviour
 		NormalEnemyDataLoader dataLoader,
 		NormalEnemyFSMMachine fsm,
 		NormalEnemyAnimController animController,
-		NormalEnemyAttackController attackController)
+		NormalEnemyAttackController attackController,
+		NormalEnemyRegistry enemyRegistry)
 	{
 		_statModel = statModel;
 		_view = view;
@@ -27,6 +29,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 		_fsm = fsm;
 		_animController = animController;
 		_attackController = attackController;
+		_enemyRegistry = enemyRegistry;
 
 		if (_view == null)
 		{
@@ -50,6 +53,11 @@ public class NormalEnemyPresenter : MonoBehaviour
 		_fsm.BootUp();
 		SubscribeEvent();
 		_isInitialized = true;
+		
+		if(_enemyRegistry != null)
+		{
+			_enemyRegistry.Registry(this);
+		}
 	}
 
 	void Update()
@@ -118,6 +126,11 @@ public class NormalEnemyPresenter : MonoBehaviour
 		{
 			_view.NormalEnemyAnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
 			_view.NormalEnemyAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
+		}
+
+		if (_enemyRegistry != null)
+		{
+			_enemyRegistry.Unregistry(this);
 		}
 	}
 }
