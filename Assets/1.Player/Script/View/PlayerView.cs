@@ -12,6 +12,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 
 	private bool _isAttacking;
 	private bool _canAttackDash;
+	private bool _isHit;
 
 	public event Action<Vector2> OnMove;
 	public event Action OnJump;
@@ -30,6 +31,8 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	public bool IsAttacking => _isAttacking;
 
 	public bool CanAttackDash => _canAttackDash;
+	public bool IsHit => _isHit;
+	
 
 	public Transform PlayerTransform => _playerTransform;
 	public PlayerAnimEventListener PlayerAnimEventListener
@@ -48,7 +51,6 @@ public class PlayerView : MonoBehaviour, IPlayerView
 		}
 	}
 
-	
 
 	void Start()
     {
@@ -165,5 +167,8 @@ public class PlayerView : MonoBehaviour, IPlayerView
 
 	public void SetCanAttackDash(bool value) => _canAttackDash = value;
 
-
+	public void SetIsHit(bool value)
+	{
+		_isHit = value;
+	}
 }

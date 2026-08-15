@@ -8,7 +8,7 @@ public abstract class PlayerBaseState : IState
 	protected IPlayerStatModel _statModel;
 	protected IPlayerStateContext _stateContext;
     //전이 조건을 담는 List
-    protected List<IPlayerTransition> transitions = new List<IPlayerTransition>();
+    protected List<IPlayerTransition> _transitions = new List<IPlayerTransition>();
 
 
     protected PlayerBaseState(IPlayerView view,
@@ -28,7 +28,7 @@ public abstract class PlayerBaseState : IState
     public virtual void Execute()
     {
         //transitions List를 순회 하면서 상태 변경 조건이 충족 되었는지 확인 하고 맞다면 변경
-        foreach (var transition in transitions)
+        foreach (var transition in _transitions)
         {
             if (transition.InConditionMet())
             {

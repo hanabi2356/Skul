@@ -48,7 +48,7 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 		AttackState = new PlayerAttackState(moveController, attackController, view, statModel, stateContext);
 		DashState = new PlayerDashState(moveController, view, statModel, stateContext);
 		JumpState = new PlayerJumpState(moveController, attackController, view, statModel, stateContext);
-		HitState = new PlayerHitState(moveController, view, statModel, stateContext);
+		HitState = new PlayerHitState(moveController, view, statModel, stateContext, attackController);
 		DeadState = new PlayerDeadState(moveController, view, statModel, stateContext);
 	}
 	public void ChangeState(IState state, EPlayerState stateEnum)

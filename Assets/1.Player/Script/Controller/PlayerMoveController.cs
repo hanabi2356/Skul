@@ -103,7 +103,7 @@ public class PlayerMoveController
 		_isDashCoolDown = false;
 	}
 
-
+	
 
 	public void SetMoveInput(Vector2 moveInput)
 	{
@@ -164,5 +164,9 @@ public class PlayerMoveController
 		}
 	}
 
+	public void MoveStop()
+	{
+		_view.SetVelocity(0.0f, 0.0f);
+	}
 	
 }

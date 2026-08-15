@@ -34,19 +34,21 @@ public class PlayerMoveState : PlayerBaseState
 	}
 	public override void SetupTransitions()
 	{
-		transitions.Add(new PlayerTransition(_stateContext.IdleState, EPlayerState.Idle,
+		_transitions.Add(new PlayerTransition(_stateContext.IdleState, EPlayerState.Idle,
 			() => _moveController.MoveInput.x == 0.0f));
 
-		transitions.Add(new PlayerTransition(_stateContext.JumpState, EPlayerState.Jump,
+		_transitions.Add(new PlayerTransition(_stateContext.JumpState, EPlayerState.Jump,
 			() => !_view.PhysicsHandler.IsGround()));
 
-		transitions.Add(new PlayerTransition(_stateContext.DashState, EPlayerState.Dash,
+		_transitions.Add(new PlayerTransition(_stateContext.DashState, EPlayerState.Dash,
 			() => _moveController.IsDashing == true));
 
-		transitions.Add(new PlayerTransition(_stateContext.AttackState, EPlayerState.Attack,
+		_transitions.Add(new PlayerTransition(_stateContext.AttackState, EPlayerState.Attack,
 			() => _attackController.IsAttacking == true && 
 			!_attackController.IsReset));
 
+		_transitions.Add(new PlayerTransition(_stateContext.HitState, EPlayerState.Hit, () =>
+		_view.IsHit == true));
 
 	}
 }

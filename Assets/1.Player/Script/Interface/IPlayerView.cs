@@ -21,7 +21,7 @@ public interface IPlayerView
 	public float CurrentVelocityY { get; }
 	public bool IsAttacking { get; }
 	public bool CanAttackDash { get; }
-
+	public bool IsHit { get; }
 	/// <summary>
 	/// player의 linearVelocity.x 값 변경
 	/// </summary>
@@ -68,4 +68,5 @@ public interface IPlayerView
 	public void InputPlatformIgnore(InputAction.CallbackContext context);
 	public void SetIsAttacking(bool value);
 	public void SetCanAttackDash(bool value);
+	public void SetIsHit(bool value);
 }
