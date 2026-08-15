@@ -2,14 +2,16 @@ using System;
 
 public interface INormalEnemyStatModel
 {
-	int CurrentHP { get; }
-	bool IsDead { get; }
-	float FinalAttackRange { get; }
-	float FinalAttackSpeed { get; }
-	float FinalAttackCoolTime { get; }
-	float FinalTraceRange { get; }
-	int FinalDamage { get; }
-	float FinalMoveSpeed { get; }
+	public int CurrentHP { get; }
+	public bool IsDead { get; }
+	public float FinalAttackRange { get; }
+	public float FinalAttackSpeed { get; }
+	public float FinalAttackCoolTime { get; }
+	public float FinalTraceRange { get; }
+	public int FinalDamage { get; }
+	public float FinalMoveSpeed { get; }
+	public AttackType FinalAttackType { get; }
+
 	event Action<int> OnHPChanged;
 	void TakeDamage(int damage);
 	void UpdateFinalStat(EnemyStatDataDTO data);

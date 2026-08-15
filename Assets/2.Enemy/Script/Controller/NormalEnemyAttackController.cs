@@ -52,16 +52,21 @@ public class NormalEnemyAttackController
 		if (IsAttacking == false || _damageApplied) return;
 		if (_rangeController.IsInAttackRange() == false) return;
 
-		var player = PlayerTransformProvider.PlayerTransform;
+		if(_statModel.FinalAttackType == AttackType.Melee)
+		{
+			var player = PlayerTransformProvider.PlayerTransform;
 		
-		if(player == null) return;
+			if(player == null) return;
 
-		var playerPresenter = player.GetComponentInChildren<PlayerPresenter>();
-		if (playerPresenter == null) return;
+			var playerPresenter = player.GetComponentInChildren<PlayerPresenter>();
+			if (playerPresenter == null) return;
 
-		playerPresenter.ApplyDamage(_statModel.FinalDamage);
+			playerPresenter.ApplyDamage(_statModel.FinalDamage);
+			_damageApplied = true;
+			return;
+		}
+
 		_damageApplied = true;
-
 	}
 
 	public void OnAttackEnd()
