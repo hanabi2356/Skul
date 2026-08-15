@@ -7,7 +7,7 @@ public class NormalEnemyAttackController
 	private float _lastAttackEndTime = -999.0f;
 	private float _attackStartTime;
 	private bool _damageApplied;
-
+	private readonly NormalEnemyRangeDetectionController _rangeController;
 	public bool IsAttacking { get; private set; }
 
 	public bool IsOnCoolDown =>
@@ -17,10 +17,13 @@ public class NormalEnemyAttackController
 
 	private float MaxAttackDuration => _statModel.FinalAttackSpeed > 0.0f ? _statModel.FinalAttackSpeed : 1.0f;
 
-	public NormalEnemyAttackController(INormalEnemyView view, INormalEnemyStatModel statModel)
+	public NormalEnemyAttackController(INormalEnemyView view, 
+		INormalEnemyStatModel statModel,
+		NormalEnemyRangeDetectionController rangeController)
 	{
 		_view = view;
 		_statModel = statModel;
+		_rangeController = rangeController;
 	}
 
 	public void TryAttack()
@@ -47,15 +50,18 @@ public class NormalEnemyAttackController
 	public void OnAttackStart()
 	{
 		if (IsAttacking == false || _damageApplied) return;
+		if (_rangeController.IsInAttackRange() == false) return;
 
 		var player = PlayerTransformProvider.PlayerTransform;
+		
 		if(player == null) return;
 
-		var playerPresenter = player.GetComponentInParent<PlayerPresenter>();
+		var playerPresenter = player.GetComponentInChildren<PlayerPresenter>();
 		if (playerPresenter == null) return;
 
-
+		playerPresenter.ApplyDamage(_statModel.FinalDamage);
 		_damageApplied = true;
+
 	}
 
 	public void OnAttackEnd()
