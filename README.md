@@ -48,6 +48,18 @@
 - presenter/controller라는 view와 model을 중개 하는 객체를 두어 view와 model이 서로 간섭하는 것을 방지한다<br>
 - controller는 순수 C# 클래스로 구성하여 불필요한 Component를 줄였다<br>
 
+**Zenject**
+- Zenject를 도입한 이유는 크게 3가지 이다.
+  -  1. 싱글톤의 한계 극복이다. 싱글톤은 Static으로 선언하여 어디에서든 접근이 가능하여 오염될 가능성이 있고 코드 또한 스파게티 코드가 될 우려가 있기 때문이다.
+  -  2. Find 계열 함수에 대한 비용 문제이다. FindAnyObject 함수가 추가되면서 기존보다는 비용 문제가 개선되었다고 할지라도 작동 원리는 Scene에 배치되어 있는 모든 Object를 검사하는 것이기 때문에 시간 복잡도는 O(N)이 나오지만 Zenject를 활용해 의존성을 주입하면 탐색에 대한 비용이 0에 가깝기 때문이다.
+  -  3. 초기화 순서를 보장하기 위해서 이다. Unity에서는 Awake/Start 호출 순서 문제로 NullReferenceException을 방지하기 위함이다. Zenject에는 Initialize함수를 별도로 제공하는데 이 함수는 Unity의 Awake보다 먼저 호출되어 초기화에 대한 순서를 보장할 수 있다.
+- 사용 함으로써 얻는 이득
+  
+**Addressables**
+- Addressables 사용 이유
+- AssetBundle 대신 사용한 이유
+- 사용 시 얻는 이점 
+
 # 수정사항 or 버그<br>
 - TraceCamera 이동시 Player에 잔상이 생기는 현상 수정하기<br>
 - 점프 후 OneWayPlatform에 걸쳤을 때 겹쳐져서 안내려 오는 현상<br>
@@ -66,7 +78,7 @@
 ~~- Player 리팩토링(6월29일 ~ 7월 5일)<br>~~ 7월 12일 완료
 - Enemy 행동 로직 및 FSM(7월 6일 ~ 7월 19일)<br>
 - 전투 시스템(7월 20일 ~ 7월 21일)<br>
-- 오브젝트 만들기(후순위)<br>
+- 오브젝트 만들기(후 순위)<br>
 - UI 만들기(7월 22일 ~ 7월 28일)<br>
 - 재화 시스템(7월 29일 ~ 7월 30일)<br>
 - 아이템 시스템(7월 31일 ~ 8월 1일)<br>
@@ -82,5 +94,6 @@
 # 피드백
 xml 적용
 
-# 사용된 외부 툴
+# 사용된 외부 툴 및 Unity Package
 - zenject
+- Addressables
