@@ -64,25 +64,6 @@ public class PlayerPresenter : MonoBehaviour
 		
 	}
 	
-	public void ApplyDamage(int damage)
-	{
-		if (_isInitialized == false || _statModel.CurrentHP <= 0) return;
-		_statModel.TakeDamage(damage);
-	}
-
-	public void OnHPChanged(int currentHP)
-	{
-		if(currentHP <=0 )
-		{
-			_fsm.ChangeState(_fsm.DeadState, EPlayerState.Dead);
-			return;
-		}
-
-		if(_fsm.CurrentStateEnum != EPlayerState.Hit && _fsm.CurrentStateEnum != EPlayerState.Dead)
-		{
-			_fsm.ChangeState(_fsm.HitState, EPlayerState.Hit);
-		}
-	}
 	private void SubscribeAttackEvent()
 	{
 		if (_view.PlayerAnimEventListener != null)
@@ -97,7 +78,25 @@ public class PlayerPresenter : MonoBehaviour
 			Debug.Log("PlayerAnimEventLitner null");
 		}
 	}
+	public void ApplyDamage(int damage)
+	{
+		if (_isInitialized == false || _statModel.CurrentHP <= 0) return;
+		_statModel.TakeDamage(damage);
+	}
 
+	private void OnHPChanged(int currentHP)
+	{
+		if (currentHP <= 0)
+		{
+			_fsm.ChangeState(_fsm.DeadState, EPlayerState.Dead);
+			return;
+		}
+
+		if (_fsm.CurrentStateEnum != EPlayerState.Hit && _fsm.CurrentStateEnum != EPlayerState.Dead)
+		{
+			_fsm.ChangeState(_fsm.HitState, EPlayerState.Hit);
+		}
+	}
 	private void FixedUpdate()
 	{
 		if (_isInitialized == false) return;
