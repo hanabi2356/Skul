@@ -8,6 +8,7 @@ public class NormalEnemyAttackController
 	private float _attackStartTime;
 	private bool _damageApplied;
 	private readonly NormalEnemyRangeDetectionController _rangeController;
+	private readonly NormalEnemyProjectilePool _projectilePool;
 	public bool IsAttacking { get; private set; }
 
 	public bool IsOnCoolDown =>
@@ -19,11 +20,13 @@ public class NormalEnemyAttackController
 
 	public NormalEnemyAttackController(INormalEnemyView view, 
 		INormalEnemyStatModel statModel,
-		NormalEnemyRangeDetectionController rangeController)
+		NormalEnemyRangeDetectionController rangeController,
+		NormalEnemyProjectilePool projectilePool)
 	{
 		_view = view;
 		_statModel = statModel;
 		_rangeController = rangeController;
+		_projectilePool = projectilePool;
 	}
 
 	public void TryAttack()
@@ -66,7 +69,17 @@ public class NormalEnemyAttackController
 			return;
 		}
 
-		_damageApplied = true;
+		if(_statModel.FinalAttackType == AttackType.Range)
+		{
+			Vector2 spawnPosition = _view.ProjectileSpawnTransform != null ? _view.ProjectileSpawnTransform.position : (Vector2)_view.NormalEnemyTransform.position;
+			Vector2 direction = _view.NormalEnemyTransform.right;
+
+			var projectile = _projectilePool.Get(_view.ProjectileAddress);
+			if(projectile == null) return;
+
+			projectile.Initialize(_statModel.FinalDamage, direction, spawnPosition);
+			_damageApplied = true;
+		}
 	}
 
 	public void OnAttackEnd()

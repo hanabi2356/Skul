@@ -5,7 +5,7 @@ public class NormalEnemyRangeDetectionController
 	private INormalEnemyView _view;
 	private INormalEnemyStatModel _statModel;
 	public bool CanMove => _statModel.FinalMoveSpeed > 0.0f;
-	private float _sqrDistanceToTarget => (_view.TargetPosition -
+	private float SqrDistanceToTarget => (_view.TargetPosition -
 		(Vector2)_view.NormalEnemyTransform.position).sqrMagnitude;
 	public NormalEnemyRangeDetectionController(INormalEnemyView view,
 		INormalEnemyStatModel statModel)
@@ -19,11 +19,11 @@ public class NormalEnemyRangeDetectionController
 		float range = _statModel.FinalAttackRange;
 
 
-		return _sqrDistanceToTarget <= (range * range);
+		return SqrDistanceToTarget <= (range * range);
 	}
 	public bool IsInTraceRange()
 	{
 		float range = _statModel.FinalTraceRange;
-		return _sqrDistanceToTarget <= (range * range);
+		return SqrDistanceToTarget <= (range * range);
 	}
 }

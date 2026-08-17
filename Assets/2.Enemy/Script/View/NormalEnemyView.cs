@@ -4,7 +4,8 @@ using UnityEngine;
 public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 {
 	[SerializeField] private Transform _normalEnemyTransform;
-
+	[SerializeField, Label("발사체 소환 위치"),Tooltip("AttackType이 Range인 경우에만 할당")] private Transform _projectileSpanwTransform;
+	[SerializeField, Label("발사체 Addressables 이름"),Tooltip("AttackType이 Range인 경우에만 할당")] private string _projectileAddress;
 	private Rigidbody2D _rigidbody;
 	private Vector2 _targetPosition;
 	private Animator _animator;
@@ -33,6 +34,9 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 			return _normalEnemyAnimEventListener;
 		}
 	}
+
+	public string ProjectileAddress => _projectileAddress;
+	public Transform ProjectileSpawnTransform => _projectileSpanwTransform;
 
 	public event Action OnAttack;
 

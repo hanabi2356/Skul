@@ -9,5 +9,6 @@ public class EnemySharedInstaller : MonoInstaller
 	{
 		Container.Bind<NormalEnemyDataLoader>().AsSingle();
 		Container.Bind<NormalEnemyRegistry>().AsSingle();
+		Container.Bind<NormalEnemyProjectilePool>().AsSingle();
 	}
 }

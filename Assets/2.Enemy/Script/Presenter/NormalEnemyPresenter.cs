@@ -74,15 +74,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 		_animController?.UpdateAnimation(_fsm.CurrentStateEnum);
 	}
 
-	/// <summary>
-	/// 외부(플레이어 공격 등)에서 호출
-	/// </summary>
-	public void ApplyDamage(int damage)
-	{
-		if (_isInitialized == false || _statModel.IsDead) return;
-		_statModel.TakeDamage(damage);
-	}
-
+	
 	private void SubscribeEvent()
 	{
 		_statModel.OnHPChanged += OnHPChanged;
@@ -96,6 +88,15 @@ public class NormalEnemyPresenter : MonoBehaviour
 		{
 			Debug.LogWarning("NormalEnemyAnimEventListener가 없습니다. 공격 애니 이벤트를 연결하세요.", this);
 		}
+	}
+
+	/// <summary>
+	/// 외부(플레이어 공격 등)에서 호출
+	/// </summary>
+	public void ApplyDamage(int damage)
+	{
+		if (_isInitialized == false || _statModel.IsDead) return;
+		_statModel.TakeDamage(damage);
 	}
 
 	private void OnHPChanged(int currentHP)

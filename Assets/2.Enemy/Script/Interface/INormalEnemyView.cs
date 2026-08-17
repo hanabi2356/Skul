@@ -12,6 +12,8 @@ public interface INormalEnemyView
 	NormalEnemyPhysicsHandler PhysicsHandler { get; }
 	Vector2 TargetPosition { get; }
 	Vector2 Velocity { get; }
+	string ProjectileAddress { get; }
+	Transform ProjectileSpawnTransform { get; }
 	void UpdateTargetPosition(Vector2 targetPosition);
 	void SetVelocity(float x, float y);
 	void SetVelocityX(float x);
