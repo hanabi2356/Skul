@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerBaseState
 {
-	private PlayerMoveController _moveController;
-	private PlayerAttackController _attackController;
+	private readonly PlayerMoveController _moveController;
+	private readonly PlayerAttackController _attackController;
 	public PlayerMoveState(PlayerMoveController moveController,
 		PlayerAttackController attackController,
 		IPlayerView view,

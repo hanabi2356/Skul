@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class PlayerBaseState : IState
 {
-	protected IPlayerView _view;
-	protected IPlayerStatModel _statModel;
-	protected IPlayerStateContext _stateContext;
+	protected readonly IPlayerView _view;
+	protected readonly IPlayerStatModel _statModel;
+	protected readonly IPlayerStateContext _stateContext;
     //전이 조건을 담는 List
     protected List<IPlayerTransition> _transitions = new List<IPlayerTransition>();
 

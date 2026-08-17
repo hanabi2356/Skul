@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerDashState : PlayerBaseState
 {
 
-	private PlayerMoveController _moveController;
+	private readonly PlayerMoveController _moveController;
 	public PlayerDashState(PlayerMoveController moveController,
 		IPlayerView view,
 		IPlayerStatModel statModel,

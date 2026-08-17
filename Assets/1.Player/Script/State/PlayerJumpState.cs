@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerBaseState
 {
-	private PlayerMoveController _moveController;
-	private PlayerAttackController _attackController;
+	private readonly PlayerMoveController _moveController;
+	private readonly PlayerAttackController _attackController;
 	
     public PlayerJumpState(PlayerMoveController moveController,
 		PlayerAttackController attackController,
