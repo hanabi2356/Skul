@@ -28,15 +28,21 @@ public class NormalEnemyProjectilePool
 	{
 		if(string.IsNullOrEmpty(address)) return null;
 
+		INormalEnemyAttackProjectile projectile;
 		if (_inactive.TryGetValue(address, out var queue) && queue.Count > 0)
 		{
-			var pooled = queue.Dequeue();
-			pooled.Root.SetActive(true);
-			return pooled;
+			projectile = queue.Dequeue();
+			projectile.Root.SetActive(true);
 		}
-		
-		
-		return Create(address);
+		else
+		{
+			projectile = Create(address);
+		}
+
+		if (projectile == null) return null;
+
+		projectile.BindPool(this);
+		return projectile;
 	}
 	public void Release(INormalEnemyAttackProjectile projectile)
 	{
@@ -58,11 +64,11 @@ public class NormalEnemyProjectilePool
 	private INormalEnemyAttackProjectile Create(string address)
 	{
 		GameObject prefab = LoadPrefab(address);
+		
 		if (prefab == null) return null;
 		
 		GameObject instance = Object.Instantiate(prefab, Root);
 		var projectile = instance.GetComponent<INormalEnemyAttackProjectile>();
-
 		if (projectile == null)
 		{
 			Object.Destroy(instance);
@@ -76,7 +82,7 @@ public class NormalEnemyProjectilePool
 
 	private GameObject LoadPrefab(string address)
 	{
-		if (_prefabs.TryGetValue(address, out var prefab) && prefab == null) return prefab;
+		if (_prefabs.TryGetValue(address, out var prefab) && prefab != null) return prefab;
 
 		var handle = Addressables.LoadAssetAsync<GameObject>(address);
 		prefab = handle.WaitForCompletion();

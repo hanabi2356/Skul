@@ -6,7 +6,7 @@ public class NormalEnemyHitState : NormalEnemyBaseState
 	private readonly NormalEnemyAttackController _attackController;
 	private readonly NormalEnemyRangeDetectionController _rangeController;
 	private float _enterTime;
-	private const float HitDuration = 0.3f;
+	private const float _hitDuration = 0.3f;
 
 	public NormalEnemyHitState(INormalEnemyStatModel normalEnemyStatModel,
 		INormalEnemyView view,
@@ -61,5 +61,5 @@ public class NormalEnemyHitState : NormalEnemyBaseState
 			IsHitFinished()));
 	}
 
-	private bool IsHitFinished() => Time.time - _enterTime >= HitDuration;
+	private bool IsHitFinished() => Time.time - _enterTime >= _hitDuration;
 }

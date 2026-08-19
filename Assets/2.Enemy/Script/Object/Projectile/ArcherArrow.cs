@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
 {
@@ -14,6 +15,15 @@ public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
 
 	public GameObject Root => gameObject;
 
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if(_isActive == false) return;
+		if(other.CompareTag("Player")==false) return;
+
+		var playerPresenter = other.GetComponentInChildren<PlayerPresenter>();
+		playerPresenter.ApplyDamage( _damage );
+		Despawn();
+	}
 
 	void Awake()
     {
@@ -23,10 +33,10 @@ public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
     void Update()
     {
 		if (_isActive == false) return;
-		transform.Translate(_direction * _projectileVelocity *  Time.deltaTime);
+		transform.Translate(_direction * _projectileVelocity *  Time.deltaTime, Space.World);
 
 		_elpased += Time.deltaTime;
-		while(_elpased >= _lifeTime)
+		if(_elpased >= _lifeTime)
 		{
 			Despawn();
 		}
@@ -35,6 +45,7 @@ public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
 	{
 		_damage = damage;
 		_direction = direction;
+		_elpased = 0.0f;
 		transform.position = spawnPosition;
 		_isActive = true;
 		transform.position = spawnPosition;
