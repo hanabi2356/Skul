@@ -25,7 +25,7 @@ public class PlayerHitState : PlayerBaseState
 		_moveController.MoveStop();
 		_attackController.ResetCombo();
 		_view.SetIsHit(true);
-
+		Debug.Log($"Player Current HP: {_statModel.CurrentHP}");
 	}
 
 	public override void Execute()
@@ -35,6 +35,7 @@ public class PlayerHitState : PlayerBaseState
 
     public override void Exit()
     {
+		_view.SetIsHit(false);
     }
 
     public override void SetupTransitions()
