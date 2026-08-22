@@ -6,13 +6,17 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 	[SerializeField] private Transform _normalEnemyTransform;
 	[SerializeField, Label("발사체 소환 위치"),Tooltip("AttackType이 Range인 경우에만 할당")] private Transform _projectileSpanwTransform;
 	[SerializeField, Label("발사체 Addressables 이름"),Tooltip("AttackType이 Range인 경우에만 할당")] private string _projectileAddress;
+	[SerializeField, Label("발사체 수")] private int _projectileCount = 1;
+
+	[SerializeField, Label("플레이어 조준"), Tooltip("Range 타입의 몬스터가 직선 이외에 공격을 할 시 체크")]
+	private bool _aimAtTarget;
+	
 	private Rigidbody2D _rigidbody;
 	private Vector2 _targetPosition;
 	private Animator _animator;
 	private bool _isAttacking;
 	private NormalEnemyAnimEventListener _normalEnemyAnimEventListener;
 	private NormalEnemyPhysicsHandler _physicsHandler;
-
 	public Transform NormalEnemyTransform => _normalEnemyTransform;
 	public Vector2 TargetPosition => _targetPosition;
 	public Rigidbody2D Rigidbody => _rigidbody;
@@ -37,6 +41,10 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 
 	public string ProjectileAddress => _projectileAddress;
 	public Transform ProjectileSpawnTransform => _projectileSpanwTransform;
+
+	public int ProjectileCount => Mathf.Max(1, _projectileCount);
+
+	public bool AimAtTarget => _aimAtTarget;
 
 	public event Action OnAttack;
 

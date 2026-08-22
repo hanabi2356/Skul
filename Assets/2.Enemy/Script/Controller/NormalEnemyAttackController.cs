@@ -4,11 +4,10 @@ public class NormalEnemyAttackController
 {
 	private readonly INormalEnemyStatModel _statModel;
 	private readonly INormalEnemyView _view;
+	private readonly MeleeAttackAction _meleeAttackAction;
+	private readonly RangeAttackAction _rangeAttackAction;
 	private float _lastAttackEndTime = -999.0f;
 	private float _attackStartTime;
-	private bool _damageApplied;
-	private readonly NormalEnemyRangeDetectionController _rangeController;
-	private readonly NormalEnemyProjectilePool _projectilePool;
 	public bool IsAttacking { get; private set; }
 
 	public bool IsOnCoolDown =>
@@ -17,16 +16,18 @@ public class NormalEnemyAttackController
 	public bool CanAttack => IsAttacking == false && IsOnCoolDown == false;
 
 	private float MaxAttackDuration => _statModel.FinalAttackSpeed > 0.0f ? _statModel.FinalAttackSpeed : 1.0f;
+	private INormalEnemyAttackAction _currentAction => 
+		_statModel.FinalAttackType == AttackType.Melee ? _meleeAttackAction : _rangeAttackAction;
 
 	public NormalEnemyAttackController(INormalEnemyView view, 
 		INormalEnemyStatModel statModel,
-		NormalEnemyRangeDetectionController rangeController,
-		NormalEnemyProjectilePool projectilePool)
+		MeleeAttackAction meleeAttackAction,
+		RangeAttackAction rangeAttackAction)
 	{
 		_view = view;
 		_statModel = statModel;
-		_rangeController = rangeController;
-		_projectilePool = projectilePool;
+		_meleeAttackAction = meleeAttackAction;
+		_rangeAttackAction = rangeAttackAction;
 	}
 
 	public void TryAttack()
@@ -34,7 +35,7 @@ public class NormalEnemyAttackController
 		if (CanAttack == false) return;
 
 		IsAttacking = true;
-		_damageApplied = false;
+		_currentAction.Reset();
 		_view.SetIsAttacking(true);
 		_attackStartTime = Time.time;
 	}
@@ -52,34 +53,8 @@ public class NormalEnemyAttackController
 
 	public void OnAttackStart()
 	{
-		if (IsAttacking == false || _damageApplied) return;
-		if (_rangeController.IsInAttackRange() == false) return;
-
-		if(_statModel.FinalAttackType == AttackType.Melee)
-		{
-			var player = PlayerTransformProvider.PlayerTransform;
-		
-			if(player == null) return;
-
-			var playerPresenter = player.GetComponentInChildren<PlayerPresenter>();
-			if (playerPresenter == null) return;
-
-			playerPresenter.ApplyDamage(_statModel.FinalDamage);
-			_damageApplied = true;
-			return;
-		}
-
-		if(_statModel.FinalAttackType == AttackType.Range)
-		{
-			Vector2 spawnPosition = _view.ProjectileSpawnTransform != null ? _view.ProjectileSpawnTransform.position : (Vector2)_view.NormalEnemyTransform.position;
-			Vector2 direction = _view.NormalEnemyTransform.right;
-
-			var projectile = _projectilePool.Get(_view.ProjectileAddress);
-			if(projectile == null) return;
-
-			projectile.Initialize(_statModel.FinalDamage, direction, spawnPosition);
-			_damageApplied = true;
-		}
+		if (IsAttacking == false ) return;
+		_currentAction.Execute();
 	}
 
 	public void OnAttackEnd()
@@ -97,4 +72,6 @@ public class NormalEnemyAttackController
 		//피격 시 취소 로직 추가
 		_view.SetIsAttacking(false);
 	}
+
+	
 }

@@ -14,6 +14,8 @@ public interface INormalEnemyView
 	Vector2 Velocity { get; }
 	string ProjectileAddress { get; }
 	Transform ProjectileSpawnTransform { get; }
+	public int ProjectileCount { get; }
+	public bool AimAtTarget { get; }
 	void UpdateTargetPosition(Vector2 targetPosition);
 	void SetVelocity(float x, float y);
 	void SetVelocityX(float x);
