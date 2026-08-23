@@ -28,6 +28,8 @@ public class NormalEnemyInstaller : MonoInstaller
 
 		Container.Bind<NormalEnemyMoveController>().AsSingle();
 		Container.Bind<NormalEnemyAnimController>().AsSingle();
+		Container.Bind<MeleeAttackAction>().AsSingle();
+		Container.Bind<RangeAttackAction>().AsSingle();
 		Container.Bind<NormalEnemyAttackController>().AsSingle();
 		Container.Bind<NormalEnemyRangeDetectionController>().AsSingle();
 

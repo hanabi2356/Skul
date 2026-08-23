@@ -65,7 +65,8 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 
 	public void SetRotation(bool lookRight)
 	{
-		if (_isAttacking || _normalEnemyTransform == null) return;
+		if (_normalEnemyTransform == null) return;
+		if (_isAttacking && _aimAtTarget == false) return;
 
 		_normalEnemyTransform.rotation = lookRight
 			? Quaternion.identity
