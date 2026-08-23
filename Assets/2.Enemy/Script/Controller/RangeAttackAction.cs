@@ -26,8 +26,6 @@ public class RangeAttackAction : INormalEnemyAttackAction
 
 	public void Reset()
 	{
-		
-		
 		_projectileShotCount = 0;
 	}
 
