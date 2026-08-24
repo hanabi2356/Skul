@@ -1,0 +1,16 @@
+#PlayerHPBar .unity-progress-bar__background {
+    background-color: rgb(40, 40, 40);
+}
+
+#PlayerHPBar .unity-progress-bar__progress {
+    background-image: none;
+    background-color: rgb(160, 32, 240);
+}
+
+#PlayerHPBar .unity-progress-bar__title {
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    font-size: 12px;
+}
+
+
