@@ -4,6 +4,7 @@ using UnityEngine;
 public interface IPlayerStatModel
 {
 	//기본 정보
+	public int MaxHP { get; }
 	public int CurrentHP { get; }
 	public float FinalTakeDamageMultiply { get; }
 	//공격력
@@ -42,6 +43,8 @@ public interface IPlayerStatModel
 	/// stat 업데이트가 완료 되었을 때 통지할 이벤트
 	/// </summary>
 	public event Action OnStatCaculated;
+
+
 	/// <summary>
 	/// stat 업데이트 함수
 	/// </summary>

@@ -10,8 +10,8 @@ public class PlayerPresenter : MonoBehaviour
 	private PlayerMoveController _moveController;
 	private PlayerAttackController _attackController;
 	private PlayerAnimController _animController;
-
 	private PlayerFSMMachine _fsm;
+	private IPlayerHudView _hudView;
 	[SerializeField] private DefaultStatData _defaultStatData;
 
 	private bool _isInitialized = false;
@@ -22,7 +22,8 @@ public class PlayerPresenter : MonoBehaviour
 		PlayerMoveController moveController,
 		PlayerAttackController attackController,
 		PlayerAnimController animController,
-		PlayerFSMMachine fsm)
+		PlayerFSMMachine fsm,
+		IPlayerHudView hudView)
 	{
 		
 		_statModel = statModel;
@@ -32,6 +33,8 @@ public class PlayerPresenter : MonoBehaviour
 		_attackController = attackController;
 		_animController = animController;
 		_fsm = fsm;
+		_hudView = hudView;
+
 
 		SkulStatData loadData = _dataLoader.SkulStatDataLoad("LittleBorn");
 		SubscribeEvent();
@@ -44,9 +47,14 @@ public class PlayerPresenter : MonoBehaviour
 	}
 	private void Awake()
 	{
-		
 	}
-	
+
+	private void Start()
+	{
+		_hudView.Initialize();
+
+		_hudView.SetHP(_statModel.CurrentHP, _statModel.MaxHP);
+	}
 	private void SubscribeEvent()
 	{
 		if (_view != null && _moveController != null && _attackController != null)
@@ -57,6 +65,7 @@ public class PlayerPresenter : MonoBehaviour
 			_view.OnDash += _moveController.TryDash;
 			_view.OnAttack += _attackController.TryAttack;
 			_statModel.OnChangeHp += OnHPChanged;
+			_statModel.OnStatCaculated += OnStatCaculated;
 
 			SubscribeAttackEvent();
 			
@@ -86,6 +95,8 @@ public class PlayerPresenter : MonoBehaviour
 
 	private void OnHPChanged(int currentHP)
 	{
+		_hudView.SetHP(currentHP, _statModel.MaxHP);
+
 		if (currentHP <= 0)
 		{
 			_fsm.ChangeState(_fsm.DeadState, EPlayerState.Dead);
@@ -96,6 +107,11 @@ public class PlayerPresenter : MonoBehaviour
 		{
 			_fsm.ChangeState(_fsm.HitState, EPlayerState.Hit);
 		}
+	}
+
+	private void OnStatCaculated()
+	{
+		_hudView.SetHP(_statModel.CurrentHP, _statModel.MaxHP);
 	}
 	private void FixedUpdate()
 	{
@@ -123,6 +139,8 @@ public class PlayerPresenter : MonoBehaviour
 		_view.OnPlatformIgnore -= _moveController.TryPlatformIgnore;
 		_view.OnDash -= _moveController.TryDash;
 		_view.OnAttack -= _attackController.TryAttack;
+		_statModel.OnChangeHp -= OnHPChanged;
+		_statModel.OnStatCaculated -= OnStatCaculated;
 
 		if (_view.PlayerAnimEventListener != null)
 		{

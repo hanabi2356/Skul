@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerStatModel : IPlayerStatModel
 {
+	public int MaxHP { get; private set; }
+
 	public int CurrentHP { get; private set; }
 
 	public float FinalTakeDamageMultiply { get; private set; }
@@ -47,6 +49,7 @@ public class PlayerStatModel : IPlayerStatModel
 
 	public float FinalInputBufferTime { get; private set; }
 
+
 	public event Action<int> OnChangeHp;
 	public event Action OnStatCaculated;
 
@@ -55,11 +58,22 @@ public class PlayerStatModel : IPlayerStatModel
 
 	public void SetDefaultStatData(DefaultStatData defaultStatData)=> _defaultStatData = defaultStatData;
 	
+
+	
 	public void UpdateFinalStat(DefaultStatData defaultStatData, SkulStatData currentSkulStatData)
 	{
 		if (defaultStatData == null || currentSkulStatData == null) return;
-		
-		CurrentHP = defaultStatData.HP;
+
+		MaxHP = defaultStatData.HP;
+		if(CurrentHP <= 0 )
+		{
+			CurrentHP = MaxHP;
+		}
+		else
+		{
+			CurrentHP = Mathf.Min(CurrentHP, MaxHP);
+		}
+
 		FinalTakeDamageMultiply = defaultStatData.TakeDamageMultyply * currentSkulStatData.TakeDamageMultiply;
 
 		FinalPhysicsAttack = defaultStatData.PhysicsAttack * currentSkulStatData.PhysicalAttack;
