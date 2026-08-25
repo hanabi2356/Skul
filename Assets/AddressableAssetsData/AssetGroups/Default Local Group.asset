@@ -20,6 +20,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f565164db04bff4e97edeb88c605cb9
+    m_Address: NormalEnemy/Archer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1afea5070d8e82f4ab0fed0b7f14aab0
+    m_Address: NormalEnemy/Recruit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ea373160a0372f4f95bf2ea68b2bd6b
+    m_Address: NormalEnemy/FlameWizard
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e49f8447e1200794d9ba2033ac9e0d8b
     m_Address: Object/FlameWizardFireball
     m_ReadOnly: 0
