@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 8323757654363531721}
   - component: {fileID: 3212346227737053227}
   - component: {fileID: 4310428217336306098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlameWizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
