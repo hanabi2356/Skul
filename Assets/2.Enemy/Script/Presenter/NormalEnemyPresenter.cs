@@ -5,6 +5,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 {
 	[SerializeField] private string _enemyID = "101";
 
+
 	private INormalEnemyStatModel _statModel;
 	private INormalEnemyView _view;
 	private NormalEnemyDataLoader _dataLoader;
@@ -71,6 +72,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 
 		_view.UpdateTargetPosition(playerTransform.position);
 		_fsm.CurrentState?.Execute();
+		Debug.Log($"Current State: {_fsm.CurrentState}");
 		_animController?.UpdateAnimation(_fsm.CurrentStateEnum);
 	}
 

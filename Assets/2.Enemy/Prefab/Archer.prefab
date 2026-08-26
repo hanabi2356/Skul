@@ -389,6 +389,7 @@ MonoBehaviour:
   _projectileAddress: Object/ArcherArrow
   _projectileCount: 1
   _aimAtTarget: 0
+  _useHorizontialRangeOnly: 1
 --- !u!114 &475333504048607337
 MonoBehaviour:
   m_ObjectHideFlags: 0

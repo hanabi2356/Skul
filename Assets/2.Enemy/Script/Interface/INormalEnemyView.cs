@@ -16,6 +16,7 @@ public interface INormalEnemyView
 	public Transform ProjectileSpawnTransform { get; }
 	public int ProjectileCount { get; }
 	public bool AimAtTarget { get; }
+	public bool UseHorizontialRangeOnly { get; }
 	public void UpdateTargetPosition(Vector2 targetPosition);
 	public void SetVelocity(float x, float y);
 	public void SetVelocityX(float x);

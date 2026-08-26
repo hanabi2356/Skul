@@ -10,7 +10,7 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 
 	[SerializeField, Label("플레이어 조준"), Tooltip("Range 타입의 몬스터가 직선 이외에 공격을 할 시 체크")]
 	private bool _aimAtTarget;
-	
+	[SerializeField, Label("x 축만 탐지")] private bool _useHorizontialRangeOnly;
 	private Rigidbody2D _rigidbody;
 	private Vector2 _targetPosition;
 	private Animator _animator;
@@ -45,6 +45,8 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 	public int ProjectileCount => Mathf.Max(1, _projectileCount);
 
 	public bool AimAtTarget => _aimAtTarget;
+
+	public bool UseHorizontialRangeOnly => _useHorizontialRangeOnly;
 
 	public event Action OnAttack;
 
