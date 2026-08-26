@@ -1,0 +1,4 @@
+- Player가 Enemy 보다 아래에 있어도 탐지해서 공격 하는 현상 수정 
+- Pause UI 만들기
+- NormalEnemy Dead 상태 진입 시 Addressables ReleaseInstance추가
+- Player 상태 전이에 따른 애니메이션 병목 현상 발생 수정
