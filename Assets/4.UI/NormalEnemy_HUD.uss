@@ -1,0 +1,16 @@
+#NormalEnemyHPBar .unity-progress-bar__background {
+	background-color: rgb(40, 40, 40);
+}
+
+#NormalEnemyHPBar .unity-progress-bar__progress {
+	background-image: none;
+	background-color: rgb(255, 0, 0);
+}
+
+#NormalEnemyHPBar .unity-progress-bar {
+	height: 15px;
+	min-height: 15px;
+	width: 150px;
+	min-width: 150px;
+
+}
