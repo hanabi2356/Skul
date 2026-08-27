@@ -72,7 +72,6 @@ public class NormalEnemyPresenter : MonoBehaviour
 
 		_view.UpdateTargetPosition(playerTransform.position);
 		_fsm.CurrentState?.Execute();
-		Debug.Log($"Current State: {_fsm.CurrentState}");
 		_animController?.UpdateAnimation(_fsm.CurrentStateEnum);
 	}
 
