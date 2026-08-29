@@ -9,6 +9,7 @@ public class NormalEnemyInstaller : MonoInstaller
 {
 	[SerializeField] private NormalEnemyView _view;
 	[SerializeField] private NormalEnemyPresenter _presenter;
+	[SerializeField] private NormalEnemyHudView _hudView;
 
 	public override void InstallBindings()
 	{
@@ -32,6 +33,8 @@ public class NormalEnemyInstaller : MonoInstaller
 		Container.Bind<RangeAttackAction>().AsSingle();
 		Container.Bind<NormalEnemyAttackController>().AsSingle();
 		Container.Bind<NormalEnemyRangeDetectionController>().AsSingle();
+
+		Container.Bind<INormalEnemyHudView>().FromInstance(_hudView).AsSingle();
 
 		// DataLoader는 SceneContext(EnemySharedInstaller)에서 상속받아 Resolve
 		Container.QueueForInject(_presenter);

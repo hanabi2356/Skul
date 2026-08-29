@@ -2,6 +2,7 @@ using System;
 
 public interface INormalEnemyStatModel
 {
+	public int MaxHP { get; }
 	public int CurrentHP { get; }
 	public bool IsDead { get; }
 	public float FinalAttackRange { get; }

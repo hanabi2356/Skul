@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class NormalEnemyStatModel : INormalEnemyStatModel
 {
+	public int MaxHP { get; private set; }
 	public int CurrentHP { get; private set; }
 	public bool IsDead => CurrentHP <= 0;
 
@@ -26,7 +27,16 @@ public class NormalEnemyStatModel : INormalEnemyStatModel
 
 	public void UpdateFinalStat(EnemyStatDataDTO data)
 	{
-		CurrentHP = data.MaxHP;
+		MaxHP = data.MaxHP;
+		if(CurrentHP <= 0)
+		{
+			CurrentHP = MaxHP;
+		}
+		else
+		{
+			CurrentHP = Mathf.Min(CurrentHP, MaxHP);
+		}
+		
 		FinalAttackRange = data.AttackRange;
 		FinalAttackSpeed = data.AttackSpeed;
 		FinalAttackCoolTime = data.AttackCoolTime;

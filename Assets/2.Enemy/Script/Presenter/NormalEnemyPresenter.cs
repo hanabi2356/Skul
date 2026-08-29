@@ -13,6 +13,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 	private NormalEnemyAnimController _animController;
 	private NormalEnemyAttackController _attackController;
 	private NormalEnemyRegistry _enemyRegistry;
+	private INormalEnemyHudView _hudView;
 	private bool _isInitialized;
 
 	[Inject]
@@ -22,7 +23,8 @@ public class NormalEnemyPresenter : MonoBehaviour
 		NormalEnemyFSMMachine fsm,
 		NormalEnemyAnimController animController,
 		NormalEnemyAttackController attackController,
-		NormalEnemyRegistry enemyRegistry)
+		NormalEnemyRegistry enemyRegistry,
+		INormalEnemyHudView hudview)
 	{
 		_statModel = statModel;
 		_view = view;
@@ -31,6 +33,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 		_animController = animController;
 		_attackController = attackController;
 		_enemyRegistry = enemyRegistry;
+		_hudView = hudview;
 
 		if (_view == null)
 		{
@@ -60,7 +63,14 @@ public class NormalEnemyPresenter : MonoBehaviour
 			_enemyRegistry.Registry(this);
 		}
 	}
+	private void Start()
+	{
+		if (_hudView == null) return;
 
+		_hudView.Initialize();
+		_hudView.Hide();
+		
+	}
 	void Update()
 	{
 		if (_isInitialized == false || _view == null) return;
@@ -79,6 +89,8 @@ public class NormalEnemyPresenter : MonoBehaviour
 	private void SubscribeEvent()
 	{
 		_statModel.OnHPChanged += OnHPChanged;
+
+		
 
 		if (_view.NormalEnemyAnimEventListener != null)
 		{
@@ -102,11 +114,15 @@ public class NormalEnemyPresenter : MonoBehaviour
 
 	private void OnHPChanged(int currentHP)
 	{
+
 		if (currentHP <= 0)
 		{
+			_hudView?.Hide();
 			_fsm.ChangeState(_fsm.DeadState, ENormalEnemyState.Dead);
 			return;
 		}
+
+		_hudView?.Show(currentHP, _statModel.MaxHP);
 
 		if (_fsm.CurrentStateEnum != ENormalEnemyState.Hit
 			&& _fsm.CurrentStateEnum != ENormalEnemyState.Dead)
@@ -118,6 +134,8 @@ public class NormalEnemyPresenter : MonoBehaviour
 	private void OnDisable()
 	{
 		if (_isInitialized == false) return;
+
+		_hudView?.Hide();
 
 		if (_statModel != null)
 		{
