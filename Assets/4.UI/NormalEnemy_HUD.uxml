@@ -1,4 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/4.UI/NormalEnemy_HUD.uss?fileID=7433441132597879392&amp;guid=4e866d3b8df4a634d9ff59ba93558d4b&amp;type=3#NormalEnemy_HUD"/>
-    <ui:ProgressBar value="22" title="0 / 0" name="NormalEnemyHPBar" style="width: 149px; height: 30px; left: auto; right: auto; top: auto;"/>
+    <ui:ProgressBar value="22" title="" name="NormalEnemyHPBar" style="width: 149px; height: 30px; left: auto; right: auto; top: auto;"/>
 </ui:UXML>
