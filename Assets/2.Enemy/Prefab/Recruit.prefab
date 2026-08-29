@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyInstaller
   _view: {fileID: 5899012930586843786}
   _presenter: {fileID: 6231397323961495104}
-  _hudView: {fileID: 0}
+  _hudView: {fileID: -7297466296724968329}
 --- !u!114 &5899012930586843786
 MonoBehaviour:
   m_ObjectHideFlags: 0
