@@ -7,6 +7,8 @@ public class PlayerHudView : MonoBehaviour, IPlayerHudView
 	private ProgressBar _hpBar;
 	public void Initialize()
 	{
+		if (_uiDocument == null || _uiDocument.rootVisualElement == null) return;
+
 		_hpBar = _uiDocument.rootVisualElement.Q<ProgressBar>("PlayerHPBar");
 
 	}
