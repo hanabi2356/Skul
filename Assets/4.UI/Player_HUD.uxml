@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/4.UI/Player_HUD.uss?fileID=7433441132597879392&amp;guid=d1cb2ff855af33b40a057d7c1fae2ccf&amp;type=3#Player_HUD"/>
     <ui:Image name="CoinImage" source="project://database/Assets/4.UI/Sprite/CoinSprite.png?fileID=1483268659738890104&amp;guid=03fec3435b3aa1d4b991c4e93ea8e5fa&amp;type=3#CoinSprite_0" enabled="true" picking-mode="Ignore" style="width: 27px; height: 21px; bottom: -394px; left: auto; right: -751px; position: relative; aspect-ratio: 1;"/>
-    <ui:ProgressBar value="47.7" title="0/0" name="PlayerHPBar" style="flex-direction: column; justify-content: flex-end; height: 21px; width: 250px; left: 0; bottom: -376px;"/>
+    <ui:ProgressBar value="0" title="0/0" name="PlayerHPBar" style="flex-direction: column; justify-content: flex-end; height: 21px; width: 250px; left: 0; bottom: -376px;"/>
 </ui:UXML>
