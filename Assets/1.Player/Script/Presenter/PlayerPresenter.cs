@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
@@ -49,8 +50,15 @@ public class PlayerPresenter : MonoBehaviour
 	{
 	}
 
-	private void Start()
+	/// <summary>
+	/// UI 초기화 시 오류가 나는걸 막기 위해 한 프레임 대기 후 실행 하기위한 코루틴
+	/// </summary>
+	/// <returns></returns>
+	private IEnumerator Start()
 	{
+		yield return null;
+		if (_hudView == null) yield break;
+
 		_hudView.Initialize();
 
 		_hudView.SetHP(_statModel.CurrentHP, _statModel.MaxHP);
