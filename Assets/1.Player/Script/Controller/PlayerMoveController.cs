@@ -110,7 +110,7 @@ public class PlayerMoveController
 		
 		MoveInput = moveInput;
 
-		if (MoveInput != Vector2.zero)
+		if (MoveInput.x != 0.0f)
 		{
 			GazeVector = MoveInput;
 		}
