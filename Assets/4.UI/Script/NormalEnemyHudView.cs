@@ -12,12 +12,12 @@ public class NormalEnemyHudView : MonoBehaviour, INormalEnemyHudView
 	private Coroutine _hideCo;
 	private WaitForSeconds _progressBarWait;
 
-	private Transform _rotationTarget => _uiDocument != null ? _uiDocument.transform : null;
+	private Transform RotationTarget => _uiDocument != null ? _uiDocument.transform : null;
 	private void LateUpdate()
 	{
 		if (_rotationRoot == null) return;
 
-		_rotationTarget.rotation = Quaternion.identity;
+		RotationTarget.rotation = Quaternion.identity;
 	}
 	public void Initialize()
 	{
