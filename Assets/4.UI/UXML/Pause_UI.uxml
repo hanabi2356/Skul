@@ -2,6 +2,17 @@
     <Style src="project://database/Assets/4.UI/USS/Pause_UI.uss?fileID=7433441132597879392&amp;guid=dd804bf285356fc4cbef6c530d6fa057&amp;type=3#Pause_UI"/>
     <ui:VisualElement name="PauseRoot">
         <ui:VisualElement name="BackGround" picking-mode="Position"/>
-        <ui:VisualElement name="MenuPanel"/>
+        <ui:VisualElement name="MenuPanel">
+            <ui:VisualElement name="MenuFrame">
+                <ui:Image name="MenuBackGround" source="project://database/Assets/ExternalAssets/Dark%20UI/Free/64%20Light%202.png?fileID=2800000&amp;guid=91db8970c28d4a344beff5618f7a0ca3&amp;type=3#64 Light 2"/>
+                <ui:VisualElement name="MenuContent">
+                    <ui:Label text="Pause" name="PauseText"/>
+                    <ui:Button text="Continue" name="BackToGame"/>
+                    <ui:Button text="Controll" name="Controll"/>
+                    <ui:Button text="Settings" name="Settings"/>
+                    <ui:Button text="Quit" name="GameEnd"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

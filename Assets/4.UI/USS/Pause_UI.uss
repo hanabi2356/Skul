@@ -20,3 +20,49 @@
 	justify-content: center;
 	align-items: center;
 }
+
+#MenuFrame{
+	width: 405px;
+	height: 520px;
+	position: relative;
+}
+
+#MenuBackGround{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#MenuContent{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+#MenuContent > .unity-button{
+	background-color: rgba(0,0,0,0);
+	color: rgb(255,255,255);
+	border-width: 0;
+	background-image: none;
+}
+
+#MenuContent > .unity-button:hover{
+	-unity-font-style: bold;
+	font-size: 15px;
+	background-color: rgba(0,0,0,0);
+}
+#MenuContent > .unity-button:active{
+	background-color: rgba(0,0,0,0);
+}
+
+#PauseText{
+	color: rgb(255, 255, 255);
+	-unity-font-style: bold;
+	font-size: 20px;
+}
