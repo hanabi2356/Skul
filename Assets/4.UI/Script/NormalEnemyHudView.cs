@@ -7,12 +7,12 @@ public class NormalEnemyHudView : MonoBehaviour, INormalEnemyHudView
 	[SerializeField] private UIDocument _uiDocument;
 	[SerializeField, Label("Progress Bar 출력 시간")] private float _progressBarActivateTime = 2.0f;
 	[SerializeField] private Transform _rotationRoot;
-	private Transform _rotationTarget => _uiDocument != null ? _uiDocument.transform : null;
 	private ProgressBar _hpBar;
 
 	private Coroutine _hideCo;
 	private WaitForSeconds _progressBarWait;
 
+	private Transform _rotationTarget => _uiDocument != null ? _uiDocument.transform : null;
 	private void LateUpdate()
 	{
 		if (_rotationRoot == null) return;
