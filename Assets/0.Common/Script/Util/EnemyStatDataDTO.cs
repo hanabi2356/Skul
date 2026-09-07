@@ -14,7 +14,7 @@ public class EnemyStatDataDTO
     public float AttackRange;
     public float DetectedRange;
     public float MoveSpeed;
-
+	public int DropGold;
         
 
 }

@@ -48,7 +48,7 @@ public class EnemyStatExporter : EditorWindow
         EditorUtility.DisplayDialog("성공", "JSON 파일 갱신 성공", "OK");
     }
     
-   
+	
 	static EnemyStatDataDTO ToDTO(EnemyStatData data) => new EnemyStatDataDTO
 	{
 		EnemyID = data.EnemyID,
@@ -61,7 +61,8 @@ public class EnemyStatExporter : EditorWindow
 		AttackCoolTime = data.AttackCoolTime,
 		AttackRange = data.AttackRange,
 		DetectedRange = data.DetectedRange,
-		MoveSpeed = data.MoveSpeed
+		MoveSpeed = data.MoveSpeed,
+		DropGold = data.DropGold
 	};
 }
 #endif

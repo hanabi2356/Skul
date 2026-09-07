@@ -11,7 +11,8 @@
             "AttackCoolTime": 2.5,
             "AttackRange": 10.0,
             "DetectedRange": 15.0,
-            "MoveSpeed": 3.0
+            "MoveSpeed": 3.0,
+            "DropGold": 6
         },
         {
             "EnemyID": "103",
@@ -24,7 +25,8 @@
             "AttackCoolTime": 2.5,
             "AttackRange": 20.0,
             "DetectedRange": 0.0,
-            "MoveSpeed": 0.0
+            "MoveSpeed": 0.0,
+            "DropGold": 13
         },
         {
             "EnemyID": "102",
@@ -37,7 +39,8 @@
             "AttackCoolTime": 2.5,
             "AttackRange": 1.0,
             "DetectedRange": 10.0,
-            "MoveSpeed": 5.0
+            "MoveSpeed": 5.0,
+            "DropGold": 8
         }
     ]
 }

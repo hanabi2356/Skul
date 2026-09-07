@@ -35,6 +35,9 @@ public class EnemyStatData : ScriptableObject
     [Header("Move Data")]
     [SerializeField] private float _moveSpeed;
 
+	[Header("Drop")]
+	[SerializeField] private int _dropGold;
+
 
     //general data
     public string EnemyID => _enemyID;
@@ -55,5 +58,7 @@ public class EnemyStatData : ScriptableObject
     //move data
     public float MoveSpeed => _moveSpeed;
 
+	//drop
+	public int DropGold => _dropGold;
 
 }

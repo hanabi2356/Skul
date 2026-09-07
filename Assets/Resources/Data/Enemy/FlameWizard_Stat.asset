@@ -23,3 +23,4 @@ MonoBehaviour:
   _attackRange: 20
   _detectedRange: 0
   _moveSpeed: 0
+  _dropGold: 13
