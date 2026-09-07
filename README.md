@@ -93,7 +93,7 @@
 - **런타임 중 혹은 플레이 종료 시 Presenter Object가 파괴되는 버그<br>**
   
 # 해야 할 일<br>
-**진행중:재화 시스템(7월 29일 ~ 7월 30일)<br>**
+**진행중:재화 시스템, 상점 시스템(9월 8일 ~ 9월 12일)<br>**
 
 ~~- Player 리팩토링(6월29일 ~ 7월 5일)~~ 7월 12일 완료<br>
 ~~- Enemy 행동 로직 및 FSM(7월 6일 ~ 7월 19일)~~ 8월 17일 완료<br>
@@ -101,6 +101,7 @@
 - 오브젝트 만들기(후 순위)<br>
 - UI 만들기(7월 22일 ~ 7월 28일)<br>
   - Pause UI버튼에 기능 바인딩 하기<br>
+  - 장비 장착 UI 만들기<br>
 - 재화 시스템(7월 29일 ~ 7월 30일)<br>
 - 아이템 시스템(7월 31일 ~ 8월 1일)<br>
 - 스테이지 시스템(스폰 위치, 클리어 여부)(8월 4일 ~ 8월 6일)<br>
@@ -112,8 +113,8 @@
 - [https://lucid.app/lucidchart/48678b1b-6ea4-42b7-8a84-4a580e97bc66/edit?viewport_loc=-1773%2C-916%2C2690%2C1357%2C8Fl9sWhwAIUX&invitationId=inv_3435e6d8-a0d4-40ea-a246-153f193e9eb5]
  
 # 피드백
-xml 적용
-NormalEnemy load시 맵에 배치를 하되 플레이어를 기준으로 영역 밖에 있는 NormalEnemy의 Active를 false로 설정하여 연산부하를 줄인다
+xml 적용<br>
+NormalEnemy load시 맵에 배치를 하되 플레이어를 기준으로 영역 밖에 있는 NormalEnemy의 Active를 false로 설정하여 연산부하를 줄인다<br>
 # 사용된 외부 툴 및 Unity Package
 - zenject
 - Addressables
