@@ -74,7 +74,7 @@ public class PlayerStatModel : IPlayerStatModel
 			CurrentHP = Mathf.Min(CurrentHP, MaxHP);
 		}
 
-		FinalTakeDamageMultiply = defaultStatData.TakeDamageMultyply * currentSkulStatData.TakeDamageMultiply;
+		FinalTakeDamageMultiply = defaultStatData.TakeDamageMultiply * currentSkulStatData.TakeDamageMultiply;
 
 		FinalPhysicsAttack = defaultStatData.PhysicsAttack * currentSkulStatData.PhysicalAttack;
 		FinalMagicAttack = defaultStatData.MagicAttack * currentSkulStatData.MagicAttack;

@@ -6,7 +6,7 @@ public class DefaultStatData : ScriptableObject
 {
     
     [SerializeField, Label("체력")] private int _hp;
-    [SerializeField,Label("받는 데미지 ")] private float _takeDamageMultyply;
+    [SerializeField,Label("받는 데미지 ")] private float _takeDamageMultiply;
 
     [SerializeField,Label("물리 데미지")] private float _physicsAttack;
     [SerializeField, Label("마법 데미지")] private float _magicAttack;
@@ -35,7 +35,7 @@ public class DefaultStatData : ScriptableObject
 	[SerializeField, Label("공격 입력 지연시간")]private float _inputBufferTime = 0.2f;
 
 	public int HP => _hp;
-    public float TakeDamageMultyply => _takeDamageMultyply;
+    public float TakeDamageMultiply => _takeDamageMultiply;
     public float PhysicsAttack => _physicsAttack;
     public float MagicAttack => _magicAttack;
     public float AttackSpeed => _attackSpeed;
