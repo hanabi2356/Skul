@@ -15,7 +15,22 @@ public class PlayerHudView : MonoBehaviour, IPlayerHudView
 		_goldLabel = _uiDocument.rootVisualElement.Q<UnityEngine.UIElements.Label>("GoldValue");
 	}
 
-	public void SetGold(int currentGold)
+
+
+	public void SetCurrency(ECurrencyType type, int currenyAmount)
+	{
+		switch (type)
+		{
+			case ECurrencyType.Gold:
+				SetGold(currenyAmount);
+				break;
+			default:
+				break;
+		}
+
+	}
+
+	private void SetGold(int currentGold)
 	{
 		if (_goldLabel == null) return;
 
