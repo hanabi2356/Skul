@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PlayerPresenter : MonoBehaviour
 	private PlayerAnimController _animController;
 	private PlayerFSMMachine _fsm;
 	private IPlayerHudView _hudView;
+	private ICurrencyModel _currencyModel;
 	[SerializeField] private DefaultStatData _defaultStatData;
 
 	private bool _isInitialized = false;
@@ -24,7 +26,8 @@ public class PlayerPresenter : MonoBehaviour
 		PlayerAttackController attackController,
 		PlayerAnimController animController,
 		PlayerFSMMachine fsm,
-		IPlayerHudView hudView)
+		IPlayerHudView hudView,
+		ICurrencyModel currencyModel)
 	{
 		
 		_statModel = statModel;
@@ -35,6 +38,7 @@ public class PlayerPresenter : MonoBehaviour
 		_animController = animController;
 		_fsm = fsm;
 		_hudView = hudView;
+		_currencyModel = currencyModel;
 
 
 		SkulStatData loadData = _dataLoader.SkulStatDataLoad("LittleBorn");
@@ -61,7 +65,8 @@ public class PlayerPresenter : MonoBehaviour
 
 		_hudView.Initialize();
 
-		_hudView.SetHP(_statModel.CurrentHP, _statModel.MaxHP);
+		SetInitUI();
+
 	}
 	private void SubscribeEvent()
 	{
@@ -78,9 +83,16 @@ public class PlayerPresenter : MonoBehaviour
 			SubscribeAttackEvent();
 			
 		}
-		
+
+		if(_currencyModel != null)
+		{
+			_currencyModel.OnChangeCurrency += OnCurrencyChanged;
+		}
+
 	}
+
 	
+
 	private void SubscribeAttackEvent()
 	{
 		if (_view.PlayerAnimEventListener != null)
@@ -117,6 +129,22 @@ public class PlayerPresenter : MonoBehaviour
 		}
 	}
 
+	private void OnCurrencyChanged(ECurrencyType type, int currentAmount)
+	{
+		_hudView?.SetCurrency(type, currentAmount);
+	}
+
+	private void SetInitUI()
+	{
+		_hudView.SetHP(_statModel.CurrentHP, _statModel.MaxHP);
+		
+		foreach(ECurrencyType type in Enum.GetValues(typeof(ECurrencyType)))
+		{
+			_currencyModel.SetAmount(type, 100);
+			_hudView.SetCurrency(type, _currencyModel.GetCurrency(type));
+		}
+	}
+
 	private void OnStatCaculated()
 	{
 		_hudView.SetHP(_statModel.CurrentHP, _statModel.MaxHP);
@@ -149,6 +177,11 @@ public class PlayerPresenter : MonoBehaviour
 		_view.OnAttack -= _attackController.TryAttack;
 		_statModel.OnChangeHp -= OnHPChanged;
 		_statModel.OnStatCaculated -= OnStatCaculated;
+
+		if(_currencyModel != null)
+		{
+			_currencyModel.OnChangeCurrency -= OnCurrencyChanged;
+		}
 
 		if (_view.PlayerAnimEventListener != null)
 		{
