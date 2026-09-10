@@ -21,9 +21,10 @@ public class CurrencyModel : ICurrencyModel
 		if (amount <= 0) return;
 
 		_currencyAmounts[type] = (int)Mathf.Min((long)_currencyAmounts[type] + amount, int.MaxValue);
+		OnChangeCurrency?.Invoke(type, _currencyAmounts[type]);
 	}
 
-	public int GetAmount(ECurrencyType type) => _currencyAmounts[type];
+	public int GetCurrency(ECurrencyType type) => _currencyAmounts[type];
 	
 
 	public bool TrySpend(ECurrencyType type, int amount)

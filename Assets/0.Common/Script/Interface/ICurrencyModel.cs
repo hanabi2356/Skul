@@ -21,7 +21,7 @@ public interface ICurrencyModel
 	/// </summary>
 	/// <param name="type">재화 타입</param>
 	/// <returns></returns>
-	public int GetAmount(ECurrencyType type);
+	public int GetCurrency(ECurrencyType type);
 
 
 	/// <summary>
