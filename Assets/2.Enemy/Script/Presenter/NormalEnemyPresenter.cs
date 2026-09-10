@@ -15,6 +15,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 	private NormalEnemyRegistry _enemyRegistry;
 	private INormalEnemyHudView _hudView;
 	private bool _isInitialized;
+	private ICurrencyModel _currencyModel;
 
 	[Inject]
 	public void Initialize(INormalEnemyStatModel statModel,
@@ -24,7 +25,8 @@ public class NormalEnemyPresenter : MonoBehaviour
 		NormalEnemyAnimController animController,
 		NormalEnemyAttackController attackController,
 		NormalEnemyRegistry enemyRegistry,
-		INormalEnemyHudView hudview)
+		INormalEnemyHudView hudview,
+		ICurrencyModel currencyModel)
 	{
 		_statModel = statModel;
 		_view = view;
@@ -34,6 +36,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 		_attackController = attackController;
 		_enemyRegistry = enemyRegistry;
 		_hudView = hudview;
+		_currencyModel = currencyModel;
 
 		if (_view == null)
 		{
@@ -119,6 +122,7 @@ public class NormalEnemyPresenter : MonoBehaviour
 		{
 			_hudView?.Hide();
 			_fsm.ChangeState(_fsm.DeadState, ENormalEnemyState.Dead);
+			_currencyModel.CurrencyAdd(ECurrencyType.Gold, _statModel.FinalDropGold);
 			return;
 		}
 

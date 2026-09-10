@@ -15,6 +15,8 @@ public class NormalEnemyStatModel : INormalEnemyStatModel
 	public float FinalMoveSpeed { get; private set; }
 	public AttackType FinalAttackType {get; private set; }
 
+	public int FinalDropGold {get; private set; }
+
 	public event Action<int> OnHPChanged;
 
 	public void TakeDamage(int damage)
@@ -43,9 +45,9 @@ public class NormalEnemyStatModel : INormalEnemyStatModel
 		FinalTraceRange = data.DetectedRange;
 		FinalDamage = (int)data.AttackPower;
 		FinalMoveSpeed = data.MoveSpeed;
-		
+		FinalDropGold = data.DropGold;
 		//Parameter: 파싱할 데이터, 대소문자 무시 여부, 리턴할 값
-		if(Enum.TryParse(data.AttackType, true, out AttackType attackType))
+		if (Enum.TryParse(data.AttackType, true, out AttackType attackType))
 		{
 			FinalAttackType = attackType;
 		}

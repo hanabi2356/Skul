@@ -12,6 +12,7 @@ public interface INormalEnemyStatModel
 	public int FinalDamage { get; }
 	public float FinalMoveSpeed { get; }
 	public AttackType FinalAttackType { get; }
+	public int FinalDropGold { get; }	
 
 	event Action<int> OnHPChanged;
 	void TakeDamage(int damage);
