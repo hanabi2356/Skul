@@ -115,6 +115,7 @@
 # 피드백
 xml 적용<br>
 NormalEnemy load시 맵에 배치를 하되 플레이어를 기준으로 영역 밖에 있는 NormalEnemy의 Active를 false로 설정하여 연산부하를 줄인다<br>
+AI를 이용한 TileMap 제작 툴 만들기<br>
 # 사용된 외부 툴 및 Unity Package
 - zenject
 - Addressables
