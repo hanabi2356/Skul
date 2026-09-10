@@ -13,4 +13,25 @@
     font-size: 12px;
 }
 
+#GoldGroup {
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+#GoldGroup #GoldImage{
+    width: 27px;
+    height: 21px;
+    flex-shrink: 0;
+}
+
+#GoldGroup #GoldValue{
+    margin-right: 6px;
+    -unity-text-align: middle-right;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
 
