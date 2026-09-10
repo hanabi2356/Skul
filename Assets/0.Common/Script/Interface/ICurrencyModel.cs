@@ -12,16 +12,17 @@ public enum ECurrencyType
 public interface ICurrencyModel 
 {
 	/// <summary>
+	/// 재화 변화를 통지할 이벤트 
+	/// </summary>
+	public event Action<ECurrencyType, int> OnChangeCurrency;
+
+	/// <summary>
 	/// 현재 보유한 재화의 수를 반환
 	/// </summary>
 	/// <param name="type">재화 타입</param>
 	/// <returns></returns>
 	public int GetAmount(ECurrencyType type);
 
-	/// <summary>
-	/// 재화 변화를 통지할 이벤트 
-	/// </summary>
-	public event Action<ECurrencyType, int> OnChangeCurrency;
 
 	/// <summary>
 	/// 재화를 얻을 때 재화를 추가하는 함수
