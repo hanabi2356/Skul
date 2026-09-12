@@ -59,7 +59,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3839502186963295195, guid: d9e49e0c201127b4eac6d431f22772c3, type: 3}
         m_TargetAssemblyTypeName: PlayerView, Assembly-CSharp
         m_MethodName: InputMoveVector
         m_Mode: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta,/Touchscreen/delta]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3839502186963295195, guid: d9e49e0c201127b4eac6d431f22772c3, type: 3}
         m_TargetAssemblyTypeName: PlayerView, Assembly-CSharp
         m_MethodName: InputAttack
         m_Mode: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3839502186963295195, guid: d9e49e0c201127b4eac6d431f22772c3, type: 3}
         m_TargetAssemblyTypeName: PlayerView, Assembly-CSharp
         m_MethodName: InputJump
         m_Mode: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3839502186963295195, guid: d9e49e0c201127b4eac6d431f22772c3, type: 3}
         m_TargetAssemblyTypeName: PlayerView, Assembly-CSharp
         m_MethodName: InputDash
         m_Mode: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
     m_ActionName: 'Player/SkillB[/Keyboard/s]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3839502186963295195, guid: d9e49e0c201127b4eac6d431f22772c3, type: 3}
         m_TargetAssemblyTypeName: PlayerView, Assembly-CSharp
         m_MethodName: InputPlatformIgnore
         m_Mode: 0
