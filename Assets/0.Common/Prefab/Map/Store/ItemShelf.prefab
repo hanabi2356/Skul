@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 368235664365860529}
   - component: {fileID: 808375978924069667}
   - component: {fileID: 6135430945049820779}
+  - component: {fileID: -3443616151987189373}
   m_Layer: 0
   m_Name: ItemShelf
   m_TagString: Untagged
@@ -139,6 +140,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-3443616151987189373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002287898068979003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4737c5c3ebc11429673a23ad13c032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemShelf
+  _itemSpawnPosition: {fileID: 315050642717661101}
 --- !u!1 &7287678195068753168
 GameObject:
   m_ObjectHideFlags: 0
