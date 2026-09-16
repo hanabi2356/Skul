@@ -12,6 +12,7 @@ public enum ItemRarity
 public class ItemData : ScriptableObject
 {
 	[SerializeField] private Sprite _itemSprite;
+	[SerializeField] private GameObject _itemPrefab;
 	[SerializeField] private string _itemID;
 	[SerializeField] private string _itemName;
 	[SerializeField] private ItemRarity _itemRarity;
@@ -20,6 +21,7 @@ public class ItemData : ScriptableObject
 
 
 	public Sprite ItemSprite => _itemSprite;
+	public GameObject ItemPrefab => _itemPrefab;
 	public string ItemID => _itemID;
 	public string ItemName => _itemName;
 	public ItemRarity ItemRarity => _itemRarity;
