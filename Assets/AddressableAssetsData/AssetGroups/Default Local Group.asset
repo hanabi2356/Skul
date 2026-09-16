@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: b87aee9664888aa418bb5528b29c6e90
   m_SerializeEntries:
+  - m_GUID: 00b5814e0472a9c47a0daea296fdae47
+    m_Address: Item/Equipment/Sword
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Equipment
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 043d3cc5c324b9541a0e6a683855765a
     m_Address: Object/ArcherArrow
     m_ReadOnly: 0
@@ -30,6 +36,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39a0cbd65fe729a46b1d3623c6cc5638
+    m_Address: Item/Equipment/Rosario
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Equipment
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f060bbb0da2f9c43855fe3c26054ee1
+    m_Address: Item/Equipment/Axe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Equipment
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ea373160a0372f4f95bf2ea68b2bd6b
     m_Address: NormalEnemy/FlameWizard
     m_ReadOnly: 0
@@ -39,6 +57,24 @@ MonoBehaviour:
     m_Address: Object/FlameWizardFireball
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4d78f99db3806c4bbf3f23b2e3ddc9c
+    m_Address: Item/Equipment/Bible
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Equipment
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb8f8274a9cb53c4bbb6b93ec321773b
+    m_Address: Item/Equipment/Suriken
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Equipment
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f207f605e25211c438fc5274d3262b09
+    m_Address: Item/Equipment/Shield
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Equipment
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3450895ce395f574ca7254edb015785d, type: 2}
