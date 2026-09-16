@@ -113,7 +113,7 @@ public class MapExporter : EditorWindow
         //문이 최대 개수 이하 0개 이상 배치 되어있는지 검사
         if(doorCount > _doorMaxCount)
         {
-            EditorUtility.DisplayDialog("맵 추출 실패", "사유: Door 과배치, Door 배치 수: {doorCount}", "확인");
+            EditorUtility.DisplayDialog("맵 추출 실패", $"사유: Door 과배치, Door 배치 수: {doorCount}", "확인");
             return;
         }
         else if(doorCount == 0)
