@@ -1160,6 +1160,26 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[22].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1327038739}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputMoveVector
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputPlatformIgnore
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

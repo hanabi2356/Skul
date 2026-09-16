@@ -397,6 +397,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalInputManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1899312146}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1899312146}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1899312146}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1899312146}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1899312146}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputMoveVector
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002115894824690568, guid: 97fb2c120ccc38e428ce3149ad7d6d49, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InputPlatformIgnore
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -526,6 +566,10 @@ PrefabInstance:
     - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
       propertyPath: m_Name
       value: ItemShelf (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -666,6 +710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemShelf (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -804,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
       propertyPath: m_Name
       value: ItemShelf (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2361,6 +2413,10 @@ PrefabInstance:
     - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
       propertyPath: m_Name
       value: ItemShelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002287898068979003, guid: c482d7156cc357b40b0fd5b0ab139bc5, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
