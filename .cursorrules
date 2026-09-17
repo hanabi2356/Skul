@@ -1,0 +1,9 @@
+# Archify Skill Rule
+
+When the user asks to "archify", "show project structure", or "analyze architecture", generate an updated directory tree and structural overview.
+
+Rules:
+1. Ignore common build/dependency folders (e.g., node_modules, .git, Library, Temp, Logs, obj, bin, Build, .vs).
+2. Format directory structure using clean ASCII/Markdown tree syntax.
+3. Group core modules by their structural role (e.g., Core, Systems, Managers, UI, Utilities).
+4. Briefly list key entry points and component responsibilities alongside the tree layout.

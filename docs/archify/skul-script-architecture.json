@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Skul 스크립트 아키텍처",
+    "output": "skul-script-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/hanabi2356/Skul",
+      "provider": "github",
+      "revision": "3f1a3e2f0404d45cc7f31f1df75b91ee5ab5d336"
+    },
+    "viewBox": [1280, 780],
+    "views": [
+      {
+        "id": "runtime-compose",
+        "label": "런타임 조립",
+        "focus": ["zenject", "player", "enemy-shared", "enemy"],
+        "note": "SceneContext와 Prefab GameObjectContext가 MVP·FSM을 주입한다."
+      },
+      {
+        "id": "combat-loop",
+        "label": "전투 루프",
+        "focus": ["player", "enemy", "ui", "currency"],
+        "note": "Player↔Enemy 상호작용과 HUD·재화 흐름을 따른다."
+      },
+      {
+        "id": "presentation",
+        "label": "프레젠테이션",
+        "focus": ["player", "camera", "ui", "store"],
+        "note": "카메라·HUD·상점 UI가 Player Domain에 연결된다."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "data-assets",
+      "type": "database",
+      "label": "Data Assets",
+      "sublabel": "SO / JSON / Addressables",
+      "tag": "Resources·StreamingAssets",
+      "pos": [56, 72],
+      "size": [176, 72],
+      "sources": [
+        { "path": "Assets/0.Common/Script/Util/DataManager.cs", "line": 4, "label": "DataManager" },
+        { "path": "Assets/2.Enemy/Script/NormalEnemyDataLoader.cs", "line": 5, "label": "Enemy JSON" },
+        { "path": "Assets/6.Item/Script/StoreManager.cs", "line": 14, "label": "Addressables" }
+      ]
+    },
+    {
+      "id": "zenject",
+      "type": "cloud",
+      "label": "Zenject DI",
+      "sublabel": "Scene / GameObjectContext",
+      "tag": "Installer 조립",
+      "pos": [400, 72],
+      "size": [188, 72],
+      "sources": [
+        { "path": "Assets/1.Player/Script/PlayerInstaller.cs", "line": 4, "label": "PlayerInstaller" },
+        { "path": "Assets/2.Enemy/Script/EnemySharedInstaller.cs", "line": 6, "label": "EnemyShared" },
+        { "path": "Assets/6.Item/Script/Installer/StoreInstaller.cs", "line": 3, "label": "StoreInstaller" }
+      ]
+    },
+    {
+      "id": "currency",
+      "type": "backend",
+      "label": "Currency",
+      "sublabel": "ICurrencyModel",
+      "pos": [56, 420],
+      "size": [176, 64],
+      "sources": [
+        { "path": "Assets/0.Common/Script/Currency/CurrencyInstaller.cs", "line": 3, "label": "Installer" },
+        { "path": "Assets/0.Common/Script/Currency/CurrencyModel.cs", "line": 6, "label": "Model" }
+      ]
+    },
+    {
+      "id": "player",
+      "type": "backend",
+      "label": "Player Domain",
+      "sublabel": "MVP + PlayerFSM",
+      "tag": "SceneContext",
+      "pos": [300, 280],
+      "size": [176, 80],
+      "sources": [
+        { "path": "Assets/1.Player/Script/Presenter/PlayerPresenter.cs", "line": 7, "label": "Presenter" },
+        { "path": "Assets/1.Player/Script/State/PlayerFSMMachine.cs", "line": 3, "label": "FSM" },
+        { "path": "Assets/1.Player/Script/PlayerInstaller.cs", "line": 8, "label": "Bindings" }
+      ]
+    },
+    {
+      "id": "enemy-shared",
+      "type": "backend",
+      "label": "Enemy Shared",
+      "sublabel": "Loader / Registry / Pool",
+      "tag": "Scene 공유",
+      "pos": [560, 280],
+      "size": [176, 80],
+      "sources": [
+        { "path": "Assets/2.Enemy/Script/EnemySharedInstaller.cs", "line": 8, "label": "Bindings" },
+        { "path": "Assets/2.Enemy/Script/NormalEnemyRegistry.cs", "line": 4, "label": "Registry" },
+        { "path": "Assets/3.Object/Script/NormalEnemyProjectilePool.cs", "line": 7, "label": "Pool" }
+      ]
+    },
+    {
+      "id": "enemy",
+      "type": "backend",
+      "label": "NormalEnemy",
+      "sublabel": "MVP + EnemyFSM",
+      "tag": "Prefab Context",
+      "pos": [820, 280],
+      "size": [176, 80],
+      "sources": [
+        { "path": "Assets/2.Enemy/Script/Presenter/NormalEnemyPresenter.cs", "line": 4, "label": "Presenter" },
+        { "path": "Assets/2.Enemy/Script/State/NormalEnemyFSMMachine.cs", "line": 1, "label": "FSM" },
+        { "path": "Assets/2.Enemy/Script/NormalEnemyInstaller.cs", "line": 14, "label": "Bindings" }
+      ]
+    },
+    {
+      "id": "camera",
+      "type": "frontend",
+      "label": "TraceCamera",
+      "sublabel": "Player follow",
+      "pos": [300, 500],
+      "size": [176, 64],
+      "sources": [
+        { "path": "Assets/0.Common/Script/Camera/TraceCamera.cs", "line": 3, "label": "TraceCamera" }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "UI HUD",
+      "sublabel": "Player / Enemy / Pause",
+      "pos": [560, 500],
+      "size": [176, 64],
+      "sources": [
+        { "path": "Assets/4.UI/Script/PlayerHudView.cs", "line": 4, "label": "PlayerHud" },
+        { "path": "Assets/4.UI/Script/NormalEnemyHudView.cs", "line": 5, "label": "EnemyHud" },
+        { "path": "Assets/4.UI/Script/PauseUIView.cs", "line": 6, "label": "Pause" }
+      ]
+    },
+    {
+      "id": "store",
+      "type": "frontend",
+      "label": "Store / Items",
+      "sublabel": "Shelf · Reroll · Interact",
+      "pos": [820, 500],
+      "size": [176, 64],
+      "sources": [
+        { "path": "Assets/6.Item/Script/Installer/StoreInstaller.cs", "line": 3, "label": "Installer" },
+        { "path": "Assets/6.Item/Script/StoreRoot.cs", "line": 4, "label": "StoreRoot" },
+        { "path": "Assets/6.Item/Script/ItemShelf.cs", "line": 3, "label": "ItemShelf" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "SceneContext 바인딩",
+      "wraps": ["zenject", "player", "enemy-shared", "currency", "store"]
+    },
+    {
+      "kind": "region",
+      "label": "Prefab GameObjectContext",
+      "wraps": ["enemy"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "data-to-zenject",
+      "from": "data-assets",
+      "to": "zenject",
+      "label": "에셋 로드",
+      "variant": "emphasis"
+    },
+    {
+      "id": "zenject-to-player",
+      "from": "zenject",
+      "to": "player",
+      "label": "PlayerInstaller",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "zenject-to-enemy-shared",
+      "from": "zenject",
+      "to": "enemy-shared",
+      "label": "공유 서비스",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "currency-to-player",
+      "from": "currency",
+      "to": "player",
+      "label": "주입",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "shared-to-enemy",
+      "from": "enemy-shared",
+      "to": "enemy",
+      "label": "상속 Resolve",
+      "variant": "emphasis"
+    },
+    {
+      "id": "player-to-enemy",
+      "from": "player",
+      "to": "enemy",
+      "label": "전투",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "bottom"
+    },
+    {
+      "id": "player-to-store",
+      "from": "player",
+      "to": "store",
+      "label": "IInteractable",
+      "variant": "dashed",
+      "fromSide": "left",
+      "toSide": "bottom",
+      "via": [[240, 320], [240, 600], [908, 600]],
+      "labelAt": [540, 585]
+    },
+    {
+      "id": "player-to-ui",
+      "from": "player",
+      "to": "ui",
+      "label": "PlayerHud",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "enemy-to-ui",
+      "from": "enemy",
+      "to": "ui",
+      "label": "EnemyHud",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "camera-follows-player",
+      "from": "camera",
+      "to": "player",
+      "label": "추적",
+      "fromSide": "top",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "구성 패턴",
+      "items": [
+        "Zenject Installer로 Scene·Prefab 범위를 분리",
+        "Player / Enemy 모두 Presenter 중심 MVP + FSM"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "공유 서비스",
+      "items": [
+        "ICurrencyModel은 Scene 단일 바인딩",
+        "Enemy Shared는 DataLoader·Registry·ProjectilePool"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "콘텐츠·상점",
+      "items": [
+        "플레이어 SO · 적 StreamingAssets JSON",
+        "StoreManager가 Addressables ItemData로 선반 채움"
+      ]
+    }
+  ]
+}
