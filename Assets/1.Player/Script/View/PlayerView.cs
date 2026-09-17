@@ -19,6 +19,7 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	public event Action OnDash;
 	public event Action OnAttack;
 	public event Action OnPlatformIgnore;
+	public event Action OnInteract;
 
 	public Rigidbody2D Rigidbody => _rigidbody;
 	
@@ -125,7 +126,11 @@ public class PlayerView : MonoBehaviour, IPlayerView
 
 	public void InputInteract(InputAction.CallbackContext context)
 	{
-		throw new NotImplementedException();
+		if(context.started)
+		{
+			OnInteract?.Invoke();
+		}
+		
 	}
 
 	public void SetVelocityX(float x)

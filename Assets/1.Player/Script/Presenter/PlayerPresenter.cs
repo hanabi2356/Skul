@@ -15,6 +15,7 @@ public class PlayerPresenter : MonoBehaviour
 	private PlayerFSMMachine _fsm;
 	private IPlayerHudView _hudView;
 	private ICurrencyModel _currencyModel;
+	private PlayerInteractController _interactController;
 	[SerializeField] private DefaultStatData _defaultStatData;
 
 	private bool _isInitialized = false;
@@ -27,7 +28,8 @@ public class PlayerPresenter : MonoBehaviour
 		PlayerAnimController animController,
 		PlayerFSMMachine fsm,
 		IPlayerHudView hudView,
-		ICurrencyModel currencyModel)
+		ICurrencyModel currencyModel,
+		PlayerInteractController playerInteractController)
 	{
 		
 		_statModel = statModel;
@@ -39,6 +41,7 @@ public class PlayerPresenter : MonoBehaviour
 		_fsm = fsm;
 		_hudView = hudView;
 		_currencyModel = currencyModel;
+		_interactController = playerInteractController;
 
 
 		SkulStatData loadData = _dataLoader.SkulStatDataLoad("LittleBorn");
@@ -70,18 +73,32 @@ public class PlayerPresenter : MonoBehaviour
 	}
 	private void SubscribeEvent()
 	{
-		if (_view != null && _moveController != null && _attackController != null)
+		if (_view == null) return;
+		
+		if (_moveController != null)
 		{
 			_view.OnMove += _moveController.SetMoveInput;
 			_view.OnJump += _moveController.TryJump;
 			_view.OnPlatformIgnore += _moveController.TryPlatformIgnore;
 			_view.OnDash += _moveController.TryDash;
-			_view.OnAttack += _attackController.TryAttack;
+		}
+
+		if(_statModel != null)
+		{
 			_statModel.OnChangeHp += OnHPChanged;
 			_statModel.OnStatCaculated += OnStatCaculated;
+		}
 
+		if(_attackController != null)
+		{
+			_view.OnAttack += _attackController.TryAttack;
 			SubscribeAttackEvent();
-			
+		}
+
+
+		if(_interactController != null)
+		{
+			_view.OnInteract += _interactController.TryInteract;
 		}
 
 		if(_currencyModel != null)

@@ -18,6 +18,7 @@ public interface IPlayerView
 	public event Action OnDash;
 	public event Action OnAttack;
 	public event Action OnPlatformIgnore;
+	public event Action OnInteract;
 	public float CurrentVelocityY { get; }
 	public bool IsAttacking { get; }
 	public bool CanAttackDash { get; }
