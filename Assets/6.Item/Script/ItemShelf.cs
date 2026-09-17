@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class ItemShelf : MonoBehaviour
+public class ItemShelf : MonoBehaviour, IInteractable
 {
 	[SerializeField, Label("Item 소환 위치")] private Transform _itemSpawnPosition;
 
 	private ItemData _itemData;
 	private GameObject _spawnedItem;
-
+	[SerializeField]private bool _isInteractable = false;
 	public ItemData ItemData => _itemData;
+	public bool IsInteractable => _isInteractable;
 
 	public void SetItem(ItemData data)
 	{
@@ -30,5 +31,13 @@ public class ItemShelf : MonoBehaviour
 			_spawnedItem = null;
 		}
 	}
-   
+
+	public void Interact()
+	{
+		if (_isInteractable) return;
+		//재화 소비 및 구매 가능 여부 검사 호출
+		_isInteractable = true;
+		
+		Clear();
+	}
 }

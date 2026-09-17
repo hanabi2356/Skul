@@ -39,6 +39,8 @@ public class StoreManager
 		List<ItemData> picks = PickUniqueRandom(shelves.Count);
 		for (int i = 0; i < shelves.Count; i++)
 		{
+			if (shelves[i].IsInteractable == true) continue;
+
 			if(i<picks.Count)
 			{
 				shelves[i].SetItem(picks[i]);

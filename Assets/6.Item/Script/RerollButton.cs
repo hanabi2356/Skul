@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class RerollButton : MonoBehaviour
+public class RerollButton : MonoBehaviour, IInteractable
 {
 
 	[SerializeField] private List<ItemShelf> _itemShelves;
@@ -18,5 +18,10 @@ public class RerollButton : MonoBehaviour
 	public void Reroll()
 	{
 		_storeManager.StockShelves(_itemShelves);
+	}
+
+	public void Interact()
+	{
+		Reroll();
 	}
 }
