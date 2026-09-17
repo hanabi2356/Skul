@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemShelf : MonoBehaviour, IInteractable
 {
 	[SerializeField, Label("Item 소환 위치")] private Transform _itemSpawnPosition;
+	[SerializeField] private ItemShelfHudView _hudView;
 
 	private ItemData _itemData;
 	private GameObject _spawnedItem;
@@ -20,6 +21,11 @@ public class ItemShelf : MonoBehaviour, IInteractable
 		{
 			_spawnedItem = Instantiate(data.ItemPrefab, _itemSpawnPosition);
 		}
+
+		if(_hudView != null)
+		{
+			_hudView.SetPrice(data.ItemPrice);
+		}
 	}
 
 	public void Clear()
@@ -29,6 +35,11 @@ public class ItemShelf : MonoBehaviour, IInteractable
 		{
 			Destroy(_spawnedItem);
 			_spawnedItem = null;
+		}
+
+		if(_hudView != null)
+		{
+			_hudView.Hide();
 		}
 	}
 
