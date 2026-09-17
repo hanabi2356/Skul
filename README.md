@@ -116,6 +116,7 @@
 xml 적용<br>
 NormalEnemy load시 맵에 배치를 하되 플레이어를 기준으로 영역 밖에 있는 NormalEnemy의 Active를 false로 설정하여 연산부하를 줄인다<br>
 AI를 이용한 TileMap 제작 툴 만들기<br>
+보스 제작 시 제작된 패턴을 가지고 AI에게 학습을 시키고 새로운 패턴 1가지를 생성 시키기<br>
 # 사용된 외부 툴 및 Unity Package
 - zenject
 - Addressables
