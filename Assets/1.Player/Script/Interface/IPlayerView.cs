@@ -66,6 +66,7 @@ public interface IPlayerView
 	public void InputDash(InputAction.CallbackContext context);
 	public void InputAttack(InputAction.CallbackContext context);
 	public void InputPlatformIgnore(InputAction.CallbackContext context);
+	public void InputInteract(InputAction.CallbackContext context);
 	public void SetIsAttacking(bool value);
 	public void SetCanAttackDash(bool value);
 	public void SetIsHit(bool value);

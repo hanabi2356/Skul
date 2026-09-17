@@ -122,6 +122,12 @@ public class PlayerView : MonoBehaviour, IPlayerView
 			OnPlatformIgnore?.Invoke();
 		}
 	}
+
+	public void InputInteract(InputAction.CallbackContext context)
+	{
+		throw new NotImplementedException();
+	}
+
 	public void SetVelocityX(float x)
 	{
 		_rigidbody.linearVelocity = new Vector2(x, _rigidbody.linearVelocity.y);
@@ -171,4 +177,6 @@ public class PlayerView : MonoBehaviour, IPlayerView
 	{
 		_isHit = value;
 	}
+
+	
 }
