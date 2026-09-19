@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class ItemShelf : MonoBehaviour, IInteractable
 {
@@ -11,6 +12,13 @@ public class ItemShelf : MonoBehaviour, IInteractable
 	public ItemData ItemData => _itemData;
 	public bool IsInteractable => _isInteractable;
 
+	private  ICurrencyModel _currencyModel;
+
+	[Inject]
+	public void Construct(ICurrencyModel currencyModel)
+	{
+		_currencyModel = currencyModel;
+	}
 	public void SetItem(ItemData data)
 	{
 		Clear();
@@ -46,9 +54,11 @@ public class ItemShelf : MonoBehaviour, IInteractable
 	public void Interact()
 	{
 		if (_isInteractable) return;
-		//재화 소비 및 구매 가능 여부 검사 호출
+		if (_itemData == null) return;
+
+		if (_currencyModel.TrySpend(ECurrencyType.Gold, _itemData.ItemPrice) == false) return;
+
 		_isInteractable = true;
-		
 		Clear();
 	}
 }

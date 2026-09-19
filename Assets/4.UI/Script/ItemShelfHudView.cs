@@ -15,7 +15,7 @@ public class ItemShelfHudView : MonoBehaviour
 	public void Initialize()
 	{
 		if(_uiDocument == null || _uiDocument.rootVisualElement == null) return;
-		_priceLabel = _uiDocument.rootVisualElement.Q<UnityEngine.UIElements.Label>("PriceLabel");
+		_priceLabel = _uiDocument.rootVisualElement.Q<UnityEngine.UIElements.Label>("ItemPrice");
 	}
 	public void SetPrice(int price)
 	{

@@ -46,10 +46,13 @@ public class ItemDataImproter : EditorWindow
 			if (values.Length < headers.Length) continue;
 
 			string itemName = values[1];
-			string folderPath = "Assets/Resources/Data/Item";
+			string folderPath = "Assets/6.Item/Data/SO";
 			string assetPath = $"{folderPath}/{itemName}_stat.asset";
 
-			Directory.CreateDirectory(folderPath);
+			if(AssetDatabase.IsValidFolder(folderPath) == false)
+			{
+				Directory.CreateDirectory(folderPath);
+			}
 
 			ItemData asset = AssetDatabase.LoadAssetAtPath<ItemData>(assetPath);
 
