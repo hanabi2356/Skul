@@ -1,0 +1,21 @@
+.price-badge {
+    position: relative;
+    width: 64px;
+    height: 30px;
+}
+.price-badge__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+}
+.price-badge__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -unity-text-align: middle-center;
+}

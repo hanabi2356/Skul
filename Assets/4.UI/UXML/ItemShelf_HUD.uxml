@@ -1,6 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1;">
-        <ui:Label text="Price&#10;" name="ItemPrice"/>
-        <ui:Image name="Image"/>
+    <Style src="project://database/Assets/4.UI/USS/ItemShelf_HUD.uss?fileID=7433441132597879392&amp;guid=1f3b431f7d86bbb408b607c75105c15c&amp;type=3#ItemShelf_HUD"/>
+    <ui:VisualElement class="price-badge">
+        <ui:Image name="Image" class="price-badge__bg"/>
+        <ui:Label text="Price&#10;" name="ItemPrice" class="price-badge__label"/>
     </ui:VisualElement>
 </ui:UXML>
