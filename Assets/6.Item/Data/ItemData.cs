@@ -11,14 +11,17 @@ public enum ItemRarity
 [CreateAssetMenu(fileName = "ItemData", menuName = "Create Scriptable Objects/Create ItemData")]
 public class ItemData : ScriptableObject
 {
-	[SerializeField] private Sprite _itemSprite;
-	[SerializeField] private GameObject _itemPrefab;
+	/// <summary>
+	/// CSV에 존재하는 데이터
+	/// </summary>
 	[SerializeField] private string _itemID;
 	[SerializeField] private string _itemName;
 	[SerializeField] private ItemRarity _itemRarity;
-
 	[SerializeField] private int _itemPrice;
 
+
+	[SerializeField] private Sprite _itemSprite;
+	[SerializeField] private GameObject _itemPrefab;
 
 	public Sprite ItemSprite => _itemSprite;
 	public GameObject ItemPrefab => _itemPrefab;
