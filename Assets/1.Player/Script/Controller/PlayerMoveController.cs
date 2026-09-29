@@ -18,6 +18,12 @@ public class PlayerMoveController
 	public bool IsDashing { get; private set; } = false;
 	private bool _isDashCoolDown;
 	private bool _platformIgnore = false;
+
+	/// <summary>
+	/// 아래로 통과 중일 때만 true.
+	/// vy 기반 ignore와 묶으면 OneWay 위에서 쿼리가 꺼져 Jump에 고정됨.
+	/// </summary>
+	public bool IsPassingOneWay => _platformIgnore;
     
     public PlayerMoveController(IPlayerStatModel statModel, IPlayerView view)
 	{
