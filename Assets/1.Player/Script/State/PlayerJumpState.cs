@@ -36,8 +36,11 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void SetupTransitions()
     {
+		// 상승 중 OneWay와 겹쳐 IsGround가 잠깐 true여도 Idle로 안 가게 vy 가드
         _transitions.Add(new PlayerTransition(_stateContext.IdleState, EPlayerState.Idle,
-            () => _view.PhysicsHandler.IsGround()));
+            () => _view.PhysicsHandler.IsGround()
+			&& _moveController.IsPassingOneWay == false
+			&& _view.CurrentVelocityY <= 0.1f));
 
         _transitions.Add(new PlayerTransition(_stateContext.DashState, EPlayerState.Dash,
             () => _moveController.IsDashing == true));
@@ -47,8 +50,14 @@ public class PlayerJumpState : PlayerBaseState
 			!_attackController.IsReset));
 
         _transitions.Add(new PlayerTransition(_stateContext.MoveState, EPlayerState.Move,
-            () => _view.PhysicsHandler.IsGround() && 
-			_moveController.MoveInput.x != 0.0f));
+            () => _view.PhysicsHandler.IsGround()
+			&& _moveController.IsPassingOneWay == false
+			&& _moveController.MoveInput.x != 0.0f
+			&& _view.CurrentVelocityY <= 0.1f));
+
+		_transitions.Add(new PlayerTransition(_stateContext.FallState, EPlayerState.Fall, 
+			() => !_view.PhysicsHandler.IsGround()
+			&& _view.CurrentVelocityY <= 0.0f));
 
 		_transitions.Add(new PlayerTransition(_stateContext.HitState, EPlayerState.Hit, () =>
 		_view.IsHit == true));

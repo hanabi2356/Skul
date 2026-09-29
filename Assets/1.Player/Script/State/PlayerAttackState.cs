@@ -46,6 +46,9 @@ public class PlayerAttackState : PlayerBaseState
 			!_view.PhysicsHandler.IsGround() &&
 			_attackController.IsAttacking == false));
 
+		_transitions.Add(new PlayerTransition(_stateContext.FallState, EPlayerState.Fall,
+			() => _view.CurrentVelocityY < 0.0f));
+
 		_transitions.Add(new PlayerTransition(_stateContext.HitState, EPlayerState.Hit, () =>
 		_view.IsHit == true));
 	}

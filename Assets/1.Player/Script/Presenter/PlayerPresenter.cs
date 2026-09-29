@@ -157,7 +157,7 @@ public class PlayerPresenter : MonoBehaviour
 		
 		foreach(ECurrencyType type in Enum.GetValues(typeof(ECurrencyType)))
 		{
-			_currencyModel.SetAmount(type, 100);
+			_currencyModel.SetAmount(type, 10000);
 			_hudView.SetCurrency(type, _currencyModel.GetCurrency(type));
 		}
 	}

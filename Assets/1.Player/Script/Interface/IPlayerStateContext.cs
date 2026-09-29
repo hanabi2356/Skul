@@ -7,7 +7,8 @@ public enum EPlayerState
 	Attack = 3,
 	Dash = 4,
 	Hit = 5,
-	Dead = 6
+	Dead = 6,
+	Fall = 7
 }
 public interface IPlayerStateContext 
 {
@@ -21,6 +22,7 @@ public interface IPlayerStateContext
 	public PlayerAttackState AttackState { get; }
 	public PlayerDashState DashState { get; }
 	public PlayerJumpState JumpState { get; }
+	public PlayerFallState FallState { get; }
 	public PlayerHitState HitState { get; }
 	public PlayerDeadState DeadState { get; }
 

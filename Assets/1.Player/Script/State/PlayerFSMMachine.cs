@@ -20,6 +20,8 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 
 	public PlayerDeadState DeadState { get; private set; }
 
+	public PlayerFallState FallState {get; private set; }
+
 	public PlayerFSMMachine(PlayerMoveController moveController, 
 		PlayerAttackController attackController,
 		IPlayerView view, 
@@ -48,6 +50,7 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 		AttackState = new PlayerAttackState(moveController, attackController, view, statModel, stateContext);
 		DashState = new PlayerDashState(moveController, view, statModel, stateContext);
 		JumpState = new PlayerJumpState(moveController, attackController, view, statModel, stateContext);
+		FallState = new PlayerFallState(moveController, view, statModel,stateContext);
 		HitState = new PlayerHitState(moveController, view, statModel, stateContext, attackController);
 		DeadState = new PlayerDeadState(moveController, view, statModel, stateContext);
 	}
@@ -69,6 +72,7 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 		TrySetup(AttackState);
 		TrySetup(DashState);
 		TrySetup(JumpState);
+		TrySetup(FallState);
 		TrySetup(HitState);
 		TrySetup(DeadState);
 	}
