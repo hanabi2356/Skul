@@ -120,6 +120,7 @@ AI를 이용한 TileMap 제작 툴 만들기<br>
 FSM teplate화<br>
 Addressables 구글 드라이브 같은 곳에 올려놓고 로드하는 로직<br>
 stat data관리 csv=>json 보다는 csv 자체를 바로 로드 하도록하고 csv도 db혹은 구글 드라이브에 올려두고 로드 하는 방식으로 변경<br>
+ppt에 프로젝트별 목록 추가<br>
 # 사용된 외부 툴 및 Unity Package
 - zenject
 - Addressables
