@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
+public class PlayerFSMMachine : FSMMachine<EPlayerState>, IPlayerStateContext
 {
-	public IState CurrentState { get; private set; }
-	public EPlayerState CurrentStateEnum { get; private set; }
-
 
 	public PlayerIdleState IdleState { get; private set; }
 
@@ -32,13 +29,11 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 	}
 	public void BootUp()
 	{
-		SetupAllStateTrasitions();
-
-		CurrentState = IdleState;
-		CurrentStateEnum = EPlayerState.Idle;
-
-		CurrentState.Enter();
+		base.BootUp(IdleState, EPlayerState.Idle,
+			IdleState, MoveState, AttackState, DashState,
+			JumpState, FallState, HitState, DeadState);
 	}
+
 	private void InitState(PlayerMoveController moveController,
 		PlayerAttackController attackController,
 		IPlayerView view, 
@@ -54,33 +49,6 @@ public class PlayerFSMMachine : IFSMMachine, IPlayerStateContext
 		HitState = new PlayerHitState(moveController, view, statModel, stateContext, attackController);
 		DeadState = new PlayerDeadState(moveController, view, statModel, stateContext);
 	}
-	public void ChangeState(IState state, EPlayerState stateEnum)
-	{
-		if (state == null || CurrentState == state) return;
-
-		CurrentState.Exit();
-
-		CurrentState = state;
-		CurrentStateEnum = stateEnum;
-
-		CurrentState.Enter();
-	}
-	private void SetupAllStateTrasitions()
-	{
-		TrySetup(IdleState);
-		TrySetup(MoveState);
-		TrySetup(AttackState);
-		TrySetup(DashState);
-		TrySetup(JumpState);
-		TrySetup(FallState);
-		TrySetup(HitState);
-		TrySetup(DeadState);
-	}
-	private void TrySetup(IState state)
-	{
-		if(state is PlayerBaseState baseState)
-		{
-			baseState.SetupTransitions();
-		}
-	}
+	
+	
 }
