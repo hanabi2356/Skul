@@ -1,7 +1,5 @@
-public class NormalEnemyFSMMachine : IFSMMachine, INormalEnemyStateContext
+public class NormalEnemyFSMMachine : FSMMachine<ENormalEnemyState>, INormalEnemyStateContext
 {
-	public IState CurrentState { get; private set; }
-	public ENormalEnemyState CurrentStateEnum { get; private set; }
 
 	public NormalEnemyIdleState IdleState { get; private set; }
 	public NormalEnemyPatrolState PatrolState { get; private set; }
@@ -19,25 +17,11 @@ public class NormalEnemyFSMMachine : IFSMMachine, INormalEnemyStateContext
 		InitState(statModel, view, this, rangeController, moveController, attackController);
 	}
 
-	public void ChangeState(IState state, ENormalEnemyState stateEnum)
-	{
-		if (state == null || CurrentState == state) return;
-
-		CurrentState?.Exit();
-
-		CurrentState = state;
-		CurrentStateEnum = stateEnum;
-
-		CurrentState.Enter();
-	}
+	
 
 	public void BootUp()
 	{
-		SetupAllStateTransition();
-
-		CurrentState = IdleState;
-		CurrentStateEnum = ENormalEnemyState.Idle;
-		CurrentState.Enter();
+		base.BootUp(IdleState, ENormalEnemyState.Idle, IdleState, PatrolState, TraceState, AttackState, HitState, DeadState);
 	}
 
 	private void InitState(INormalEnemyStatModel statModel,
