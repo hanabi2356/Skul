@@ -2,7 +2,7 @@ public class NormalEnemyIdleState : NormalEnemyBaseState
 {
 	private readonly NormalEnemyRangeDetectionController _rangeController;
 	private readonly NormalEnemyAttackController _attackController;
-	public NormalEnemyIdleState(INormalEnemyStatModel normalEnemyStatModel,
+	public NormalEnemyIdleState(IEnemyStatModel normalEnemyStatModel,
 		INormalEnemyView view,
 		INormalEnemyStateContext stateContext,
 		NormalEnemyRangeDetectionController rangeController,
@@ -28,7 +28,7 @@ public class NormalEnemyIdleState : NormalEnemyBaseState
 	public override void SetupTransitions()
 	{
 		_transitions.Add(new NormalEnemyTransition(_stateContext.DeadState, ENormalEnemyState.Dead, () =>
-			_normalEnemyStatModel.IsDead));
+			_enemyStatModel.IsDead));
 
 		// 공격 사거리 안이면 즉시 공격 (정지형 적 포함)
 		_transitions.Add(new NormalEnemyTransition(_stateContext.AttackState, ENormalEnemyState.Attack, () =>

@@ -9,7 +9,7 @@ public interface INormalEnemyView
 	public Animator Animator { get; }
 	public bool IsAttacking { get; }
 	public NormalEnemyAnimEventListener NormalEnemyAnimEventListener { get; }
-	public NormalEnemyPhysicsHandler PhysicsHandler { get; }
+	public EnemyPhysicsHandler PhysicsHandler { get; }
 	public Vector2 TargetPosition { get; }
 	public Vector2 Velocity { get; }
 	public string ProjectileAddress { get; }

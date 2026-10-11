@@ -6,9 +6,9 @@ public class NormalEnemyPresenter : MonoBehaviour
 	[SerializeField] private string _enemyID = "101";
 
 
-	private INormalEnemyStatModel _statModel;
+	private IEnemyStatModel _statModel;
 	private INormalEnemyView _view;
-	private NormalEnemyDataLoader _dataLoader;
+	private EnemyDataLoader _dataLoader;
 	private NormalEnemyFSMMachine _fsm;
 	private NormalEnemyAnimController _animController;
 	private NormalEnemyAttackController _attackController;
@@ -18,9 +18,9 @@ public class NormalEnemyPresenter : MonoBehaviour
 	private ICurrencyModel _currencyModel;
 
 	[Inject]
-	public void Initialize(INormalEnemyStatModel statModel,
+	public void Initialize(IEnemyStatModel statModel,
 		INormalEnemyView view,
-		NormalEnemyDataLoader dataLoader,
+		EnemyDataLoader dataLoader,
 		NormalEnemyFSMMachine fsm,
 		NormalEnemyAnimController animController,
 		NormalEnemyAttackController attackController,

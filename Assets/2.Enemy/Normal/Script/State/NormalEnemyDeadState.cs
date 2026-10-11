@@ -3,7 +3,7 @@ public class NormalEnemyDeadState : NormalEnemyBaseState
 	private readonly NormalEnemyMoveController _moveController;
 	private readonly NormalEnemyAttackController _attackController;
 
-	public NormalEnemyDeadState(INormalEnemyStatModel normalEnemyStatModel,
+	public NormalEnemyDeadState(IEnemyStatModel normalEnemyStatModel,
 		INormalEnemyView view,
 		INormalEnemyStateContext stateContext,
 		NormalEnemyMoveController moveController,

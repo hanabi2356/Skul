@@ -3,12 +3,12 @@ using UnityEngine;
 public class RangeAttackAction : INormalEnemyAttackAction
 {
 	private readonly INormalEnemyView _view;
-	private readonly INormalEnemyStatModel _statModel;
+	private readonly IEnemyStatModel _statModel;
 	private readonly NormalEnemyProjectilePool _pool;
 	private int _projectileShotCount;
 
 	public RangeAttackAction(INormalEnemyView view, 
-		INormalEnemyStatModel statModel, 
+		IEnemyStatModel statModel, 
 		NormalEnemyProjectilePool pool)
 	{
 		_view = view;

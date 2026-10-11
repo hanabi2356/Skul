@@ -16,13 +16,13 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 	private Animator _animator;
 	private bool _isAttacking;
 	private NormalEnemyAnimEventListener _normalEnemyAnimEventListener;
-	private NormalEnemyPhysicsHandler _physicsHandler;
+	private EnemyPhysicsHandler _physicsHandler;
 	public Transform NormalEnemyTransform => _normalEnemyTransform;
 	public Vector2 TargetPosition => _targetPosition;
 	public Rigidbody2D Rigidbody => _rigidbody;
 	public Animator Animator => _animator;
 	public bool IsAttacking => _isAttacking;
-	public NormalEnemyPhysicsHandler PhysicsHandler => _physicsHandler;
+	public EnemyPhysicsHandler PhysicsHandler => _physicsHandler;
 	public Vector2 Velocity => _rigidbody != null ? _rigidbody.linearVelocity : Vector2.zero;
 
 	public NormalEnemyAnimEventListener NormalEnemyAnimEventListener
@@ -60,7 +60,7 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 
 		_rigidbody = _normalEnemyTransform.GetComponent<Rigidbody2D>();
 		_animator = _normalEnemyTransform.GetComponentInChildren<Animator>();
-		_physicsHandler = _normalEnemyTransform.GetComponent<NormalEnemyPhysicsHandler>();
+		_physicsHandler = _normalEnemyTransform.GetComponent<EnemyPhysicsHandler>();
 	}
 
 	public void SetIsAttacking(bool value) => _isAttacking = value;

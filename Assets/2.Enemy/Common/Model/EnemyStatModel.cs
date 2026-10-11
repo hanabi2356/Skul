@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class NormalEnemyStatModel : INormalEnemyStatModel
+public class EnemyStatModel : IEnemyStatModel
 {
 	public int MaxHP { get; private set; }
 	public int CurrentHP { get; private set; }

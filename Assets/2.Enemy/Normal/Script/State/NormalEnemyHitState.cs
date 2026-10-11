@@ -8,7 +8,7 @@ public class NormalEnemyHitState : NormalEnemyBaseState
 	private float _enterTime;
 	private const float _hitDuration = 0.3f;
 
-	public NormalEnemyHitState(INormalEnemyStatModel normalEnemyStatModel,
+	public NormalEnemyHitState(IEnemyStatModel normalEnemyStatModel,
 		INormalEnemyView view,
 		INormalEnemyStateContext stateContext,
 		NormalEnemyMoveController moveController,
@@ -39,7 +39,7 @@ public class NormalEnemyHitState : NormalEnemyBaseState
 	public override void SetupTransitions()
 	{
 		_transitions.Add(new NormalEnemyTransition(_stateContext.DeadState, ENormalEnemyState.Dead, () =>
-			_normalEnemyStatModel.IsDead));
+			_enemyStatModel.IsDead));
 
 		_transitions.Add(new NormalEnemyTransition(_stateContext.AttackState, ENormalEnemyState.Attack, () =>
 			IsHitFinished()

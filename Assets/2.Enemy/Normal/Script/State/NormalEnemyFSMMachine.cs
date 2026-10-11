@@ -8,7 +8,7 @@ public class NormalEnemyFSMMachine : FSMMachine<ENormalEnemyState>, INormalEnemy
 	public NormalEnemyHitState HitState { get; private set; }
 	public NormalEnemyDeadState DeadState { get; private set; }
 
-	public NormalEnemyFSMMachine(INormalEnemyStatModel statModel,
+	public NormalEnemyFSMMachine(IEnemyStatModel statModel,
 		INormalEnemyView view,
 		NormalEnemyRangeDetectionController rangeController,
 		NormalEnemyMoveController moveController,
@@ -24,7 +24,7 @@ public class NormalEnemyFSMMachine : FSMMachine<ENormalEnemyState>, INormalEnemy
 		base.BootUp(IdleState, ENormalEnemyState.Idle, IdleState, PatrolState, TraceState, AttackState, HitState, DeadState);
 	}
 
-	private void InitState(INormalEnemyStatModel statModel,
+	private void InitState(IEnemyStatModel statModel,
 		INormalEnemyView view,
 		INormalEnemyStateContext stateContext,
 		NormalEnemyRangeDetectionController rangeController,
@@ -39,21 +39,6 @@ public class NormalEnemyFSMMachine : FSMMachine<ENormalEnemyState>, INormalEnemy
 		DeadState = new NormalEnemyDeadState(statModel, view, stateContext, moveController, attackController);
 	}
 
-	private void SetupAllStateTransition()
-	{
-		TrySetup(IdleState);
-		TrySetup(PatrolState);
-		TrySetup(TraceState);
-		TrySetup(AttackState);
-		TrySetup(HitState);
-		TrySetup(DeadState);
-	}
 
-	private void TrySetup(IState state)
-	{
-		if (state is NormalEnemyBaseState baseState)
-		{
-			baseState.SetupTransitions();
-		}
-	}
+	
 }

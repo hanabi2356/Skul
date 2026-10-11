@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5859548244554215446}
   - component: {fileID: 5899012930586843786}
   - component: {fileID: 6231397323961495104}
-  - component: {fileID: 2523958448524834878}
   - component: {fileID: -7297466296724968329}
+  - component: {fileID: 6917299926161782701}
   m_Layer: 11
   m_Name: Recruit
   m_TagString: Untagged
@@ -179,22 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPresenter
   _enemyID: 102
---- !u!114 &2523958448524834878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502180862201265752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a56573268cdc54d8a68102f81cdf4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPhysicsHandler
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 264
-  _groundCheckObject: {fileID: 370873475932422245}
 --- !u!114 &-7297466296724968329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +194,22 @@ MonoBehaviour:
   _uiDocument: {fileID: 4054555279234614957}
   _progressBarActivateTime: 2
   _rotationRoot: {fileID: 243358067341663648}
+--- !u!114 &6917299926161782701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502180862201265752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671fbbf2eaf25e04396a50adc1cfa1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPhysicsHandler
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 264
+  _groundCheckObject: {fileID: 370873475932422245}
 --- !u!1 &7539921493934138855
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +376,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8773100116968853367}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

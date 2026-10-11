@@ -3,12 +3,12 @@ using UnityEngine;
 public class NormalEnemyMoveController
 {
 	private readonly INormalEnemyView _view;
-	private readonly INormalEnemyStatModel _statModel;
+	private readonly IEnemyStatModel _statModel;
 	private bool _lookRight = true;
 
 	public bool LookRight => _lookRight;
 
-	public NormalEnemyMoveController(INormalEnemyView view, INormalEnemyStatModel statModel)
+	public NormalEnemyMoveController(INormalEnemyView view, IEnemyStatModel statModel)
 	{
 		_view = view;
 		_statModel = statModel;

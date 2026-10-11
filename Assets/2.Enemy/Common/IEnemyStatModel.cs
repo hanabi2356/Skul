@@ -1,6 +1,6 @@
 using System;
 
-public interface INormalEnemyStatModel
+public interface IEnemyStatModel
 {
 	public int MaxHP { get; }
 	public int CurrentHP { get; }

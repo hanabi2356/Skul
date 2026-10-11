@@ -7,7 +7,7 @@ public class EnemySharedInstaller : MonoInstaller
 {
 	public override void InstallBindings()
 	{
-		Container.Bind<NormalEnemyDataLoader>().AsSingle();
+		Container.Bind<EnemyDataLoader>().AsSingle();
 		Container.Bind<NormalEnemyRegistry>().AsSingle();
 		Container.Bind<NormalEnemyProjectilePool>().AsSingle();
 	}

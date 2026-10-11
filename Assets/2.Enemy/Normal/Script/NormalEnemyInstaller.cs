@@ -24,7 +24,7 @@ public class NormalEnemyInstaller : MonoInstaller
 		}
 
 		Container.Bind<INormalEnemyView>().FromInstance(_view).AsSingle();
-		Container.Bind<INormalEnemyStatModel>().To<NormalEnemyStatModel>().AsSingle();
+		Container.Bind<IEnemyStatModel>().To<EnemyStatModel>().AsSingle();
 		Container.Bind<NormalEnemyFSMMachine>().AsSingle();
 
 		Container.Bind<NormalEnemyMoveController>().AsSingle();

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class NormalEnemyDataLoader
+public class EnemyDataLoader
 {
 	private Dictionary<string, EnemyStatDataDTO> _statData = new Dictionary<string, EnemyStatDataDTO>();
 

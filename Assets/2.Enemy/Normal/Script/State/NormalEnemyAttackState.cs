@@ -4,7 +4,7 @@ public class NormalEnemyAttackState : NormalEnemyBaseState
 	private readonly NormalEnemyMoveController _moveController;
 	private readonly NormalEnemyAttackController _attackController;
 
-	public NormalEnemyAttackState(INormalEnemyStatModel normalEnemyStatModel,
+	public NormalEnemyAttackState(IEnemyStatModel normalEnemyStatModel,
 		INormalEnemyView view,
 		INormalEnemyStateContext stateContext,
 		NormalEnemyRangeDetectionController rangeController,
@@ -45,7 +45,7 @@ public class NormalEnemyAttackState : NormalEnemyBaseState
 	public override void SetupTransitions()
 	{
 		_transitions.Add(new NormalEnemyTransition(_stateContext.DeadState, ENormalEnemyState.Dead, () =>
-			_normalEnemyStatModel.IsDead));
+			_enemyStatModel.IsDead));
 
 		_transitions.Add(new NormalEnemyTransition(_stateContext.IdleState, ENormalEnemyState.Idle, () =>
 		_attackController.IsAttacking == false

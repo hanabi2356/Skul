@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NormalEnemyAttackController
 {
-	private readonly INormalEnemyStatModel _statModel;
+	private readonly IEnemyStatModel _statModel;
 	private readonly INormalEnemyView _view;
 	private readonly MeleeAttackAction _meleeAttackAction;
 	private readonly RangeAttackAction _rangeAttackAction;
@@ -20,7 +20,7 @@ public class NormalEnemyAttackController
 		_statModel.FinalAttackType == AttackType.Melee ? _meleeAttackAction : _rangeAttackAction;
 
 	public NormalEnemyAttackController(INormalEnemyView view, 
-		INormalEnemyStatModel statModel,
+		IEnemyStatModel statModel,
 		MeleeAttackAction meleeAttackAction,
 		RangeAttackAction rangeAttackAction)
 	{

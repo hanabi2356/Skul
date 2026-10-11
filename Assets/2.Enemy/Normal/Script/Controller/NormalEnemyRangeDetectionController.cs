@@ -3,7 +3,7 @@ using UnityEngine;
 public class NormalEnemyRangeDetectionController
 {
 	private INormalEnemyView _view;
-	private INormalEnemyStatModel _statModel;
+	private IEnemyStatModel _statModel;
 	private const float _sameYThreshold = 0.5f;
 	public bool CanMove => _statModel.FinalMoveSpeed > 0.0f;
 
@@ -25,7 +25,7 @@ public class NormalEnemyRangeDetectionController
 	}
 
 	public NormalEnemyRangeDetectionController(INormalEnemyView view,
-		INormalEnemyStatModel statModel)
+		IEnemyStatModel statModel)
 	{
 		_view = view;
 		_statModel = statModel;

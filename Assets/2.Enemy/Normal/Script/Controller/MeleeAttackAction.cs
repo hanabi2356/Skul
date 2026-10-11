@@ -3,12 +3,12 @@ using UnityEngine;
 public class MeleeAttackAction : INormalEnemyAttackAction
 {
 
-	private readonly INormalEnemyStatModel _statModel;
+	private readonly IEnemyStatModel _statModel;
 	private readonly NormalEnemyRangeDetectionController _rangeController;
 
 	private bool _damageApplied;
 
-	public MeleeAttackAction(INormalEnemyStatModel statModel, 
+	public MeleeAttackAction(IEnemyStatModel statModel, 
 		NormalEnemyRangeDetectionController rangeController)
 	{
 		_statModel = statModel;

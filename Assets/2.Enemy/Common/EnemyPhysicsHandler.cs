@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class NormalEnemyPhysicsHandler : MonoBehaviour
+public class EnemyPhysicsHandler : MonoBehaviour
 {
 	[SerializeField] private LayerMask _groundLayer;
 	[FormerlySerializedAs("_groundChekcObejct")] //변수명이 변해도 인스펙터에 할당한 객체의 해제를 막아주는 Attribute

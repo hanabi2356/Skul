@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 public abstract class NormalEnemyBaseState : IState
 {
-	protected INormalEnemyStatModel _normalEnemyStatModel;
+	protected IEnemyStatModel _enemyStatModel;
 	protected INormalEnemyView _view;
 	protected INormalEnemyStateContext _stateContext;
 	protected List<INormalEnemyTransition> _transitions = new List<INormalEnemyTransition>();
 
-	protected NormalEnemyBaseState(INormalEnemyStatModel normalEnemyStatModel,
+	protected NormalEnemyBaseState(IEnemyStatModel enemyStatModel,
 		INormalEnemyView view,
 		INormalEnemyStateContext stateContext)
 	{
-		_normalEnemyStatModel = normalEnemyStatModel;
+		_enemyStatModel = enemyStatModel;
 		_view = view;
 		_stateContext = stateContext;
 	}

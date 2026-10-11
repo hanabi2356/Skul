@@ -83,8 +83,8 @@ GameObject:
   - component: {fileID: 152213448482794522}
   - component: {fileID: 8323757654363531721}
   - component: {fileID: 3212346227737053227}
-  - component: {fileID: 4310428217336306098}
   - component: {fileID: 963610480950251374}
+  - component: {fileID: -1931842813399945740}
   m_Layer: 11
   m_Name: FlameWizard
   m_TagString: Untagged
@@ -248,22 +248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPresenter
   _enemyID: 103
---- !u!114 &4310428217336306098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4636272135366323391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a56573268cdc54d8a68102f81cdf4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPhysicsHandler
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 264
-  _groundCheckObject: {fileID: 3546154698989494299}
 --- !u!114 &963610480950251374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +263,22 @@ MonoBehaviour:
   _uiDocument: {fileID: 1706926879437791676}
   _progressBarActivateTime: 2
   _rotationRoot: {fileID: 1792878448461116403}
+--- !u!114 &-1931842813399945740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636272135366323391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671fbbf2eaf25e04396a50adc1cfa1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPhysicsHandler
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 264
+  _groundCheckObject: {fileID: 3546154698989494299}
 --- !u!1 &5504569289422517549
 GameObject:
   m_ObjectHideFlags: 0

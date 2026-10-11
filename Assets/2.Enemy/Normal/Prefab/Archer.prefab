@@ -241,8 +241,8 @@ GameObject:
   - component: {fileID: 2162241093057072618}
   - component: {fileID: 5424212791611319813}
   - component: {fileID: 475333504048607337}
-  - component: {fileID: 5509716551901911750}
   - component: {fileID: 2739037702240351959}
+  - component: {fileID: 2005428193076009175}
   m_Layer: 11
   m_Name: Archer
   m_TagString: Untagged
@@ -406,22 +406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPresenter
   _enemyID: 101
---- !u!114 &5509716551901911750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128763787002509880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a56573268cdc54d8a68102f81cdf4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NormalEnemyPhysicsHandler
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 264
-  _groundCheckObject: {fileID: 5187788587472790549}
 --- !u!114 &2739037702240351959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +421,22 @@ MonoBehaviour:
   _uiDocument: {fileID: 7941053011167871321}
   _progressBarActivateTime: 2
   _rotationRoot: {fileID: 6288449974643043135}
+--- !u!114 &2005428193076009175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128763787002509880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671fbbf2eaf25e04396a50adc1cfa1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPhysicsHandler
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 264
+  _groundCheckObject: {fileID: 5187788587472790549}
 --- !u!1001 &2106213966048515202
 PrefabInstance:
   m_ObjectHideFlags: 0
