@@ -20,5 +20,11 @@ public class BossEnemyIdleState : BossEnemyBaseState
 
 	public override void SetupTransitions()
 	{
+		_trasitions.Add(new BossEnemyTrasition(_stateContext.AttackState, EBossEnemyState.Attack,
+			() => _view.UseSkill));
+
+		_trasitions.Add(new BossEnemyTrasition(_stateContext.DeadState, EBossEnemyState.Dead,
+			() => _statModel.IsDead));
+
 	}
 }
