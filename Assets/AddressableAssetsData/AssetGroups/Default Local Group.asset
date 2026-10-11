@@ -71,6 +71,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Equipment
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e32d25a1025b9b9499eed0ede6b07fc3
+    m_Address: BossEnemy/Boss
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e49f8447e1200794d9ba2033ac9e0d8b
     m_Address: Object/FlameWizardFireball
     m_ReadOnly: 0
