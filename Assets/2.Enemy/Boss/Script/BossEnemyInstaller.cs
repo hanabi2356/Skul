@@ -1,13 +1,15 @@
 using UnityEngine;
 using Zenject;
+
 public class BossEnemyInstaller : MonoInstaller
 {
 	[SerializeField] private BossEnemyView _view;
 	[SerializeField] private BossEnemyPresenter _presenter;
+
 	public override void InstallBindings()
 	{
 		if (_view == null)
-		{ 
+		{
 			_view = GetComponent<BossEnemyView>();
 		}
 
@@ -18,7 +20,12 @@ public class BossEnemyInstaller : MonoInstaller
 
 		Container.Bind<IBossEnemyView>().FromInstance(_view).AsSingle();
 		Container.Bind<IEnemyStatModel>().To<EnemyStatModel>().AsSingle();
+
+		Container.Bind<ISkillBase>().To<BossDummySkill>().AsCached();
+		Container.Bind<BossSkillController>().AsSingle();
+		Container.Bind<BossEnemyAnimController>().AsSingle();
 		Container.Bind<BossEnemyFSMMachine>().AsSingle();
+
 		Container.QueueForInject(_presenter);
 	}
 }

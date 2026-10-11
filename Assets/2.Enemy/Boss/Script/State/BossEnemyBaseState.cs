@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 
-
 public abstract class BossEnemyBaseState : IState
 {
 	protected IEnemyStatModel _statModel;
 	protected IBossEnemyView _view;
 	protected IBossEnemyStateContext _stateContext;
-	protected List<IBossEnemyTransition> _trasitions=new List<IBossEnemyTransition>();
+	protected List<IBossEnemyTransition> _transitions = new List<IBossEnemyTransition>();
 
 	public BossEnemyBaseState(IEnemyStatModel statModel, IBossEnemyView view, IBossEnemyStateContext stateContext)
 	{
@@ -16,14 +15,14 @@ public abstract class BossEnemyBaseState : IState
 	}
 
 	public abstract void Enter();
-	
+
 	public virtual void Execute()
 	{
-		foreach(var trasition in _trasitions)
+		foreach (var transition in _transitions)
 		{
-			if(trasition.InConditionMet())
+			if (transition.InConditionMet())
 			{
-				_stateContext.ChangeState(trasition.TargetState, trasition.TargetStateEnum);
+				_stateContext.ChangeState(transition.TargetState, transition.TargetStateEnum);
 				return;
 			}
 		}
@@ -31,6 +30,4 @@ public abstract class BossEnemyBaseState : IState
 
 	public abstract void Exit();
 	public abstract void SetupTransitions();
-
-	
 }
