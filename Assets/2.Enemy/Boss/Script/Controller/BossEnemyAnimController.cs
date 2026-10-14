@@ -10,8 +10,8 @@ public class BossEnemyAnimController
 
 	public void UpdateAnimation(EBossEnemyState state, int ? skillNumber=null)
 	{
-		skillNumber = skillNumber ?? 0;
 		if (_view.Animator == null) return;
 		_view.Animator.SetInteger("State", (int)state);
+		_view.Animator.SetInteger("SkillNumber", skillNumber ?? 0);
 	}
 }

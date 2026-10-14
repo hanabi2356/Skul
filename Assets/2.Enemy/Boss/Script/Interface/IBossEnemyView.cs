@@ -10,7 +10,8 @@ public interface IBossEnemyView
 	public bool UseSkill { get; }
 	public EnemyPhysicsHandler PhysicsHandler { get; }
 	public Vector2 TargetPosition { get; }
-
+	public BossEnemyAnimEventListener AnimEventListener { get; }
+	public LayerMask TargetLayer { get; }
 	public void SetUseSkill(bool useSkill);
 	public void SetRotation(bool lookRight);
 	public void UpdateTargetPosition(Vector2 targetPosition);

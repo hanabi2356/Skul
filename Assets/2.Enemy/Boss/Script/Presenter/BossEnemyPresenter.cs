@@ -12,19 +12,24 @@ public class BossEnemyPresenter : MonoBehaviour
 	private ICurrencyModel _currencyModel;
 	private bool _isInitialized;
 	private BossEnemyAnimController _animController;
+	private BossEnemySkillController _skillController;
 
 	[Inject]
 	public void Initialized(IEnemyStatModel statModel,
 		IBossEnemyView view,
 		EnemyDataLoader dataLoader,
 		BossEnemyFSMMachine fsm,
-		ICurrencyModel currencyModel)
+		ICurrencyModel currencyModel,
+		BossEnemyAnimController animController,
+		BossEnemySkillController skillController)
 	{
 		_statModel = statModel;
 		_view = view;
 		_dataLoader = dataLoader;
 		_fsm = fsm;
 		_currencyModel = currencyModel;
+		_animController = animController;
+		_skillController = skillController;
 		if (_view == null)
 		{
 			Debug.LogError("BossEnemyView가 주입되지 않았습니다.");
@@ -50,6 +55,14 @@ public class BossEnemyPresenter : MonoBehaviour
 		if (player == null) return;
 		_view.UpdateTargetPosition(player.position);
 		_fsm.CurrentState?.Execute();
+
+		if(_fsm.CurrentStateEnum == EBossEnemyState.Idle)
+		{
+			_skillController.TryUseSkill();
+		}
+
+		_skillController.Tick();
+
 		_animController?.UpdateAnimation(_fsm.CurrentStateEnum);
 	}
 	public void ApplyDamage(int damage)
@@ -60,7 +73,11 @@ public class BossEnemyPresenter : MonoBehaviour
 	private void SubscribeEvent()
 	{
 		_statModel.OnHPChanged += OnHPChanged;
-		// View.OnSkill / AnimEvent 연결은 컨트롤러 생긴 뒤
+		if (_view.AnimEventListener != null)
+		{
+			_view.AnimEventListener.OnAttackHit += _skillController.OnAttackHit;
+			_view.AnimEventListener.OnAttackEnd += _skillController.OnAttackEnd;
+		}
 	}
 	private void OnHPChanged(int currentHP)
 	{
@@ -68,6 +85,7 @@ public class BossEnemyPresenter : MonoBehaviour
 		{
 			_fsm.ChangeState(_fsm.DeadState, EBossEnemyState.Dead);
 			_currencyModel?.CurrencyAdd(ECurrencyType.Gold, _statModel.FinalDropGold);
+			_skillController.Cancel();
 			return;
 		}
 		// 보스 전용 분기 예시:
@@ -86,6 +104,14 @@ public class BossEnemyPresenter : MonoBehaviour
 	{
 		if (!_isInitialized) return;
 		if (_statModel != null)
+		{
 			_statModel.OnHPChanged -= OnHPChanged;
+		}
+		if (_view?.AnimEventListener != null && _skillController != null)
+		{
+			_view.AnimEventListener.OnAttackHit -= _skillController.OnAttackHit;
+			_view.AnimEventListener.OnAttackEnd -= _skillController.OnAttackEnd;
+		}
+
 	}
 }

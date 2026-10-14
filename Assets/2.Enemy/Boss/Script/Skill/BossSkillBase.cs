@@ -4,7 +4,7 @@ public abstract class BossSkillBase : ISkill
 {
 	protected readonly IBossEnemyView _view;
 	protected readonly IEnemyStatModel _statModel;
-
+	protected LayerMask _targetLayer;
 	private float _lastEndTime = -999.0f;
 	private bool _hitApplied;
 
@@ -12,6 +12,7 @@ public abstract class BossSkillBase : ISkill
 	{
 		_view = view;
 		_statModel = statModel;
+		_targetLayer = _view.TargetLayer;
 	}
 
 	public abstract int SkillNumber { get; }
@@ -20,7 +21,7 @@ public abstract class BossSkillBase : ISkill
 	public bool IsRunning {get; private set;}
 	public virtual bool CanUse => IsRunning == false && Time.time - _lastEndTime >= CoolTime;
 
-	
+	public virtual float MaxUseRange => 0.0f;
 
 	public void Enter()
 	{
@@ -64,9 +65,24 @@ public abstract class BossSkillBase : ISkill
 		_lastEndTime = Time.time;
 		_hitApplied = false;
 	}
+
+
 	protected virtual void OnEnter() { }
+
 	protected virtual void OnTick() { }
-	protected abstract bool OnApplyHit(); // 실제 데미지/스폰
+	/// <summary>
+	/// 데미지를 입히는 로직이 들어가는 함수
+	/// 원거리 탄환 소환도 이 함수에서 실행 
+	/// </summary>
+	/// <returns></returns>
+	protected abstract bool OnApplyHit(); 
 	protected virtual void OnExit() { }
 	protected virtual void OnCancel() { }
+
+	protected void FaceTarget()
+	{
+		if (_view.BossEnemyTransform == null) return;
+		bool lookRight = _view.TargetPosition.x >= _view.BossEnemyTransform.position.x;
+		_view.SetRotation(lookRight);
+	}
 }

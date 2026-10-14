@@ -1,16 +1,72 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class BossEnemySkillController : MonoBehaviour
+public class BossEnemySkillController
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+	private readonly IBossEnemyView _view;
+	private readonly List<ISkill> _skills;
+	private ISkill _current;
+	private float _skillStartTime;
+	private const float _maxSkillDuration = 2.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public bool IsUsingSkill => _current != null && _current.IsRunning;
+	public int? CurrentSkillNumber => _current?.SkillNumber;
+
+	public BossEnemySkillController(
+		IBossEnemyView view,
+		BossSkillMeleeAttack meleeAttack)
+	{
+		_view = view;
+		_skills = new List<ISkill> { meleeAttack };
+	}
+	public void TryUseSkill()
+	{
+		if (IsUsingSkill) return;
+		if (_view.BossEnemyTransform == null) return;
+
+		float dist = Vector2.Distance(_view.BossEnemyTransform.position, _view.TargetPosition);
+		ISkill skill = _skills
+			.Where(s => s.CanUse)
+			.Where(s => dist <= s.MaxUseRange)
+			.FirstOrDefault();
+
+		if (skill == null) return;
+
+		_current = skill;
+		_current.Enter();         
+		_view.SetUseSkill(true);  
+		_skillStartTime = Time.time;
+	}
+
+	public void Tick()
+	{
+		if (_current == null) return;
+
+		_current.Tick();
+
+		if (IsUsingSkill && Time.time - _skillStartTime >= _maxSkillDuration)
+			OnAttackEnd();
+	}
+
+	public void OnAttackHit()
+	{
+		_current?.OnHit();
+	}
+
+	public void OnAttackEnd()
+	{
+		if (_current == null) return;
+		_current.Exit();
+		_current = null;
+		_view.SetUseSkill(false);
+	}
+
+	public void Cancel()
+	{
+		if (_current == null) return;
+		_current.Cancle();
+		_current = null;
+		_view.SetUseSkill(false);
+	}
 }

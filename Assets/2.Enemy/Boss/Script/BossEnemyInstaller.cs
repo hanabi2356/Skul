@@ -19,6 +19,12 @@ public class BossEnemyInstaller : MonoInstaller
 		Container.Bind<IBossEnemyView>().FromInstance(_view).AsSingle();
 		Container.Bind<IEnemyStatModel>().To<EnemyStatModel>().AsSingle();
 		Container.Bind<BossEnemyFSMMachine>().AsSingle();
+
+		Container.Bind<BossSkillMeleeAttack>().AsSingle();
+		Container.Bind<BossEnemySkillController>().AsSingle();
+		Container.Bind<BossEnemyAnimController>().AsSingle();
+
+
 		Container.QueueForInject(_presenter);
 	}
 }
