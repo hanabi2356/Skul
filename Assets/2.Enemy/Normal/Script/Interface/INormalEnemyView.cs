@@ -8,7 +8,7 @@ public interface INormalEnemyView
 	public Rigidbody2D Rigidbody { get; }
 	public Animator Animator { get; }
 	public bool IsAttacking { get; }
-	public NormalEnemyAnimEventListener NormalEnemyAnimEventListener { get; }
+	public NormalEnemyAnimEventListener AnimEventListener { get; }
 	public EnemyPhysicsHandler PhysicsHandler { get; }
 	public Vector2 TargetPosition { get; }
 	public Vector2 Velocity { get; }

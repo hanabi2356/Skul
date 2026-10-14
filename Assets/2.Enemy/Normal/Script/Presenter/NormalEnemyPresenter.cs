@@ -95,10 +95,10 @@ public class NormalEnemyPresenter : MonoBehaviour
 
 		
 
-		if (_view.NormalEnemyAnimEventListener != null)
+		if (_view.AnimEventListener != null)
 		{
-			_view.NormalEnemyAnimEventListener.OnAttackStart += _attackController.OnAttackStart;
-			_view.NormalEnemyAnimEventListener.OnAttackEnd += _attackController.OnAttackEnd;
+			_view.AnimEventListener.OnAttackStart += _attackController.OnAttackStart;
+			_view.AnimEventListener.OnAttackEnd += _attackController.OnAttackEnd;
 		}
 		else
 		{
@@ -146,10 +146,10 @@ public class NormalEnemyPresenter : MonoBehaviour
 			_statModel.OnHPChanged -= OnHPChanged;
 		}
 
-		if (_view?.NormalEnemyAnimEventListener != null && _attackController != null)
+		if (_view?.AnimEventListener != null && _attackController != null)
 		{
-			_view.NormalEnemyAnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
-			_view.NormalEnemyAnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
+			_view.AnimEventListener.OnAttackStart -= _attackController.OnAttackStart;
+			_view.AnimEventListener.OnAttackEnd -= _attackController.OnAttackEnd;
 		}
 
 		if (_enemyRegistry != null)

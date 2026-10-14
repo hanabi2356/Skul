@@ -25,7 +25,7 @@ public class NormalEnemyView : MonoBehaviour, INormalEnemyView
 	public EnemyPhysicsHandler PhysicsHandler => _physicsHandler;
 	public Vector2 Velocity => _rigidbody != null ? _rigidbody.linearVelocity : Vector2.zero;
 
-	public NormalEnemyAnimEventListener NormalEnemyAnimEventListener
+	public NormalEnemyAnimEventListener AnimEventListener
 	{
 		get
 		{
