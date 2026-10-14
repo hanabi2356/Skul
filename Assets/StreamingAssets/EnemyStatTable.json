@@ -15,6 +15,20 @@
             "DropGold": 6
         },
         {
+            "EnemyID": "303",
+            "EnemyName": "Boss",
+            "EnemyRarity": "Boss",
+            "MaxHP": 200,
+            "AttackType": "Melee",
+            "AttackPower": 20.0,
+            "AttackSpeed": 1.0,
+            "AttackCoolTime": 1.0,
+            "AttackRange": 5.0,
+            "DetectedRange": 50.0,
+            "MoveSpeed": 5.0,
+            "DropGold": 0
+        },
+        {
             "EnemyID": "103",
             "EnemyName": "FlameWizard",
             "EnemyRarity": "Common",
