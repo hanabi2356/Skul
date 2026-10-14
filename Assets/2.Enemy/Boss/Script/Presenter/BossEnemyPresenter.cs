@@ -63,7 +63,7 @@ public class BossEnemyPresenter : MonoBehaviour
 
 		_skillController.Tick();
 
-		_animController?.UpdateAnimation(_fsm.CurrentStateEnum);
+		_animController?.UpdateAnimation(_fsm.CurrentStateEnum, _skillController.CurrentSkillNumber, _view.CurrentPhase);
 	}
 	public void ApplyDamage(int damage)
 	{
@@ -88,14 +88,24 @@ public class BossEnemyPresenter : MonoBehaviour
 			_skillController.Cancel();
 			return;
 		}
+
+		float hpRate = (float)currentHP / _statModel.MaxHP;
+		if (_view.CurrentPhase == 1 && hpRate <= 0.5f)
+		{
+			_skillController?.Cancel();
+			_view.SetPhase(2);
+			_fsm.ChangeState(_fsm.PhaseChangeState, EBossEnemyState.PhaseChange);
+			return;
+		}
+
 		// 보스 전용 분기 예시:
 		// if (페이즈 조건) → PhaseChange
 		// if (그로기 조건) → Groggy
 		// else Hit (Idle/Attack 중일 때만)
 		if (_fsm.CurrentStateEnum != EBossEnemyState.Hit
-			&& _fsm.CurrentStateEnum != EBossEnemyState.Dead
-			&& _fsm.CurrentStateEnum != EBossEnemyState.PhaseChange
-			&& _fsm.CurrentStateEnum != EBossEnemyState.groggy)
+		&& _fsm.CurrentStateEnum != EBossEnemyState.Dead
+		&& _fsm.CurrentStateEnum != EBossEnemyState.PhaseChange
+		&& _fsm.CurrentStateEnum != EBossEnemyState.groggy)
 		{
 			_fsm.ChangeState(_fsm.HitState, EBossEnemyState.Hit);
 		}

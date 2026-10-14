@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 	private EnemyPhysicsHandler _physicsHandler;
 	private Vector2 _targetPosition;
 	private BossEnemyAnimEventListener _bossAnimEventListener;
+	private int _phase = 1;
 
 	public Transform BossEnemyTransform => _bossEnemyTransform;
 
@@ -42,6 +44,8 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 
 	public LayerMask TargetLayer => _targetLayer;
 
+	public int CurrentPhase => _phase;
+
 	public void SetRotation(bool lookRight)
 	{
 		if (_bossEnemyTransform == null) return;
@@ -56,9 +60,13 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 	{
 		_useSkill = useSkill;
 	}
-
 	public void UpdateTargetPosition(Vector2 targetPosition)
 	{
 		_targetPosition = targetPosition;
+	}
+
+	public void SetPhase(int phase)
+	{
+		_phase = phase;
 	}
 }
