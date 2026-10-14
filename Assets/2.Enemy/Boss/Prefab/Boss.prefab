@@ -39,7 +39,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069107413862549421}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 4333839208169988702}
   - component: {fileID: 7027069537674159}
   - component: {fileID: 304935341672098008}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7747582098184381176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -353,6 +353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossEnemyView
   _bossEnemyTransform: {fileID: 8208082283915069191}
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &7027069537674159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b2fe0fa54ee8744ae5de0fa6de4c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossEnemyPresenter
-  _enemyID: 301
+  _enemyID: 303
 --- !u!114 &304935341672098008
 MonoBehaviour:
   m_ObjectHideFlags: 0
