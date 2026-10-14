@@ -20,7 +20,9 @@ public class BossEnemyInstaller : MonoInstaller
 		Container.Bind<IEnemyStatModel>().To<EnemyStatModel>().AsSingle();
 		Container.Bind<BossEnemyFSMMachine>().AsSingle();
 
-		Container.Bind<BossSkillMeleeAttack>().AsSingle();
+		Container.Bind<ISkill>().To<BossSkillMeleeAttack>().AsCached();
+
+
 		Container.Bind<BossEnemySkillController>().AsSingle();
 		Container.Bind<BossEnemyAnimController>().AsSingle();
 

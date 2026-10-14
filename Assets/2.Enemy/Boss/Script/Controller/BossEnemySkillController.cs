@@ -15,10 +15,10 @@ public class BossEnemySkillController
 
 	public BossEnemySkillController(
 		IBossEnemyView view,
-		BossSkillMeleeAttack meleeAttack)
+		List<ISkill> skills)
 	{
 		_view = view;
-		_skills = new List<ISkill> { meleeAttack };
+		_skills = skills ?? new List<ISkill>();
 	}
 	public void TryUseSkill()
 	{

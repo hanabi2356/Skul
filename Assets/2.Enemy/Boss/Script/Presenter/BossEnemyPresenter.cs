@@ -78,6 +78,10 @@ public class BossEnemyPresenter : MonoBehaviour
 			_view.AnimEventListener.OnAttackHit += _skillController.OnAttackHit;
 			_view.AnimEventListener.OnAttackEnd += _skillController.OnAttackEnd;
 		}
+		else
+		{
+			Debug.LogWarning("BossEnemyAnimEventListener가 없습니다. 공격 애니 이벤트를 연결하세요.", this);
+		}
 	}
 	private void OnHPChanged(int currentHP)
 	{
@@ -107,6 +111,7 @@ public class BossEnemyPresenter : MonoBehaviour
 		&& _fsm.CurrentStateEnum != EBossEnemyState.PhaseChange
 		&& _fsm.CurrentStateEnum != EBossEnemyState.groggy)
 		{
+			_skillController?.Cancel(); 
 			_fsm.ChangeState(_fsm.HitState, EBossEnemyState.Hit);
 		}
 	}
