@@ -8,7 +8,7 @@ public class BossEnemySkillController
 	private readonly List<ISkill> _skills;
 	private ISkill _current;
 	private float _skillStartTime;
-	private const float _maxSkillDuration = 2.0f;
+	private const float _maxSkillDuration = 5.0f;
 
 	public bool IsUsingSkill => _current != null && _current.IsRunning;
 	public int? CurrentSkillNumber => _current?.SkillNumber;
