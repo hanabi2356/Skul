@@ -25,18 +25,7 @@ public class BossSkillMeleeAttack : BossSkillBase
 		Vector2 origin = (Vector2)_view.BossEnemyTransform.position + offset;
 
 		Collider2D[] hits = Physics2D.OverlapBoxAll(origin, size, 0.0f, _targetLayer);
-		if(hits==null || hits.Length == 0) return false;
-
-		bool damaged = false;
-		for (int i = 0; i < hits.Length; i++)
-		{
-			var playerPresenter = hits[i].GetComponentInChildren<PlayerPresenter>();
-			if (playerPresenter == null) continue;
-			playerPresenter.ApplyDamage(_statModel.FinalDamage);
-			damaged = true;
-			break; 
-		}
-		return damaged;
+		return TryApplyDamage(hits);
 	}
 
 	protected override void OnEnter()

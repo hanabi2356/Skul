@@ -85,4 +85,22 @@ public abstract class BossSkillBase : ISkill
 		bool lookRight = _view.TargetPosition.x >= _view.BossEnemyTransform.position.x;
 		_view.SetRotation(lookRight);
 	}
+
+	protected bool TryApplyDamage(Collider2D[] hits)
+	{
+		if(hits == null || hits.Length == 0) return false;
+
+		for (int i = 0; i < hits.Length; i++)
+		{
+			if (hits[i]==null) continue;
+
+			var playerPresenter = hits[i].GetComponentInChildren<PlayerPresenter>();
+			if (playerPresenter == null) continue;
+
+			playerPresenter.ApplyDamage(_statModel.FinalDamage);
+			return true;
+		}
+
+		return false;
+	}
 }
