@@ -13,6 +13,8 @@ public interface IBossEnemyView
 	public BossEnemyAnimEventListener AnimEventListener { get; }
 	public LayerMask TargetLayer { get; }
 	public int CurrentPhase { get; }
+	public bool LookRight { get; }
+	public float LookDirection { get; }
 	public void SetUseSkill(bool useSkill);
 	public void SetRotation(bool lookRight);
 	public void UpdateTargetPosition(Vector2 targetPosition);

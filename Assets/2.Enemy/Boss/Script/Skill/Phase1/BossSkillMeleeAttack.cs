@@ -16,10 +16,8 @@ public class BossSkillMeleeAttack : BossSkillBase
 	{
 		if (_view.BossEnemyTransform == null) return false;
 
-		bool lookRight = _view.BossEnemyTransform.rotation.eulerAngles.y < 90f 
-			|| _view.BossEnemyTransform.rotation.eulerAngles.y > 270f;
 
-		float dir = lookRight ? 1.0f : -1.0f;
+		float dir = _view.LookDirection;
 		Vector2 size = new Vector2(2.0f, 1.5f);
 		Vector2 offset = new Vector2(size.x * 0.5f * dir, 0.5f);
 		Vector2 origin = (Vector2)_view.BossEnemyTransform.position + offset;
@@ -30,7 +28,7 @@ public class BossSkillMeleeAttack : BossSkillBase
 
 	protected override void OnEnter()
 	{
-		FaceTarget();
+		base.OnEnter();
 	}
 
 	protected override void OnExit()

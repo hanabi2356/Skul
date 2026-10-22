@@ -45,8 +45,15 @@ public class BossEnemySkillController
 
 		_current.Tick();
 
-		if (IsUsingSkill && Time.time - _skillStartTime >= _maxSkillDuration)
+		if(_current != null && _current.IsEndRequested)
+		{
 			OnAttackEnd();
+		}
+		else if (IsUsingSkill && Time.time - _skillStartTime >= _maxSkillDuration)
+		{
+			OnAttackEnd();
+		}
+		
 	}
 
 	public void OnAttackHit()

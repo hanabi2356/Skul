@@ -14,6 +14,7 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 	private Vector2 _targetPosition;
 	private BossEnemyAnimEventListener _bossAnimEventListener;
 	private int _phase = 1;
+	private bool _lookRight = true;
 
 	public Transform BossEnemyTransform => _bossEnemyTransform;
 
@@ -45,6 +46,11 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 	public LayerMask TargetLayer => _targetLayer;
 
 	public int CurrentPhase => _phase;
+
+	public bool LookRight => _lookRight;
+
+	public float LookDirection => _lookRight ? 1.0f : -1.0f;
+
 	private void Awake()
 	{
 		if (_bossEnemyTransform == null)
@@ -62,6 +68,7 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 		if (_bossEnemyTransform == null) return;
 		if (_useSkill) return;
 
+		_lookRight = lookRight;
 		_bossEnemyTransform.rotation = lookRight
 			? Quaternion.identity
 			: Quaternion.Euler(0.0f, 180.0f, 0.0f);
