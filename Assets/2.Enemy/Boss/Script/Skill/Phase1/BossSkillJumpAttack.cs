@@ -31,7 +31,7 @@ public class BossSkillJumpAttack : BossSkillBase
 
 	protected override void OnEnter()
 	{
-		FaceTarget();
+		base.OnEnter();
 		_originGravityScale = _view.Rigidbody.gravityScale;
 		BeginJump(3.0f);
 	}
@@ -53,6 +53,7 @@ public class BossSkillJumpAttack : BossSkillBase
 		{
 			_isJumping = false;
 			_view.Rigidbody.gravityScale = _originGravityScale;
+			RequestedEnd();
 		}
 	}
 

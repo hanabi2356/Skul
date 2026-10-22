@@ -7,7 +7,7 @@ public interface ISkill
 	public bool CanUse { get; }
 	public bool IsRunning { get; }
 	public float MaxUseRange { get; }
-
+	public bool IsEndRequested { get; }
 	public void Enter();
 	public void Tick();
 	public void Exit();

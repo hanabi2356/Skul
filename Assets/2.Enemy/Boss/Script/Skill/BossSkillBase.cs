@@ -23,9 +23,12 @@ public abstract class BossSkillBase : ISkill
 
 	public virtual float MaxUseRange => 0.0f;
 
+	public bool IsEndRequested { get; private set; }
+
 	public void Enter()
 	{
 		IsRunning = true;
+		IsEndRequested = false;
 		_hitApplied = false;
 		OnEnter();
 	}
@@ -62,12 +65,17 @@ public abstract class BossSkillBase : ISkill
 	private void Finish()
 	{
 		IsRunning = false;
+		IsEndRequested = false;
 		_lastEndTime = Time.time;
 		_hitApplied = false;
+		
 	}
+	
 
-
-	protected virtual void OnEnter() { }
+	protected virtual void OnEnter()
+	{ 
+		FaceTarget(); 
+	}
 
 	protected virtual void OnTick() { }
 	/// <summary>
@@ -103,4 +111,11 @@ public abstract class BossSkillBase : ISkill
 
 		return false;
 	}
+
+	protected void RequestedEnd()
+	{
+		IsEndRequested = true;
+	}
+
+	
 }
