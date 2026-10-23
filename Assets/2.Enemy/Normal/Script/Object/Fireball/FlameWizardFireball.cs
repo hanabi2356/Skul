@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class FlameWizardFireball : MonoBehaviour, INormalEnemyAttackProjectile
+public class FlameWizardFireball : MonoBehaviour, IEnemyProjectile
 {
 
 	[SerializeField, Label("발사체 속도")] private float _projectileVelocity = 1.0f;
@@ -12,11 +12,11 @@ public class FlameWizardFireball : MonoBehaviour, INormalEnemyAttackProjectile
 	private Vector2 _direction;
 	private bool _isActive;
 	private float _elpased;
-	private NormalEnemyProjectilePool _pool;
+	private IEnemyProjectilePool _pool;
 
 	public GameObject Root => gameObject;
 
-	public void BindPool(NormalEnemyProjectilePool pool)
+	public void BindPool(IEnemyProjectilePool pool)
 	{
 		_pool = pool;
 	}

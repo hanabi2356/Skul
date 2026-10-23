@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
+public class ArcherArrow : MonoBehaviour, IEnemyProjectile
 {
 	[SerializeField, Label("발사체 속도")] private float _projectileVelocity = 1.0f;
 	[SerializeField, Label("수명")] private float _lifeTime = 3.0f;
@@ -11,7 +11,7 @@ public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
 	private Vector2 _direction;
 	private bool _isActive;
 	private float _elpased;
-	private NormalEnemyProjectilePool _pool;
+	private IEnemyProjectilePool _pool;
 
 	public GameObject Root => gameObject;
 
@@ -52,13 +52,14 @@ public class ArcherArrow : MonoBehaviour, INormalEnemyAttackProjectile
 		transform.right = _direction;
 	}
 
-	public void BindPool(NormalEnemyProjectilePool pool)
-	{
-		_pool = pool;
-	}
 	private void Despawn()
 	{
 		_isActive = false;
 		_pool?.Release(this);
+	}
+
+	public void BindPool(IEnemyProjectilePool pool)
+	{
+		_pool = pool;
 	}
 }

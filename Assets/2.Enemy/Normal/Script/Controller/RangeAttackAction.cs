@@ -4,12 +4,13 @@ public class RangeAttackAction : INormalEnemyAttackAction
 {
 	private readonly INormalEnemyView _view;
 	private readonly IEnemyStatModel _statModel;
-	private readonly NormalEnemyProjectilePool _pool;
+	private readonly IEnemyProjectilePool _pool;
 	private int _projectileShotCount;
+
 
 	public RangeAttackAction(INormalEnemyView view, 
 		IEnemyStatModel statModel, 
-		NormalEnemyProjectilePool pool)
+		IEnemyProjectilePool pool)
 	{
 		_view = view;
 		_statModel = statModel;
