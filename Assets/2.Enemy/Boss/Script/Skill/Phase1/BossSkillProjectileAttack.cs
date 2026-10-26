@@ -2,18 +2,47 @@ using UnityEngine;
 
 public class BossSkillProjectileAttack : BossSkillBase
 {
-	public BossSkillProjectileAttack(IBossEnemyView view, IEnemyStatModel statModel) : base(view, statModel)
+	private const int _projectileCount = 3;
+	private const float _spread = 1.2f;
+	private const float _forwardOffset = 0.8f;
+	private const string _projectileAddress = "Object/BossProjectile";
+
+	private readonly IEnemyProjectilePool _pool;
+	public BossSkillProjectileAttack(IBossEnemyView view, IEnemyStatModel statModel, IEnemyProjectilePool pool) : base(view, statModel)
 	{
+		_pool = pool;
 	}
 
 	public override int SkillNumber => 4;
-
 	protected override float CoolTime => 8.0f;
 	public override float MaxUseRange => 10.0f;
-
+	
 	protected override bool OnApplyHit()
 	{
-		throw new System.NotImplementedException();
+		if (_view.BossEnemyTransform == null) return false;
+		
+		Vector2 origin = _view.BossEnemyTransform.position;
+		Vector2 target = _view.TargetPosition;
+		if(target.sqrMagnitude < 0.0001f) return false;
+
+		Vector2 forward = target.normalized;
+		Vector2 up = new Vector2(-forward.y, forward.x);
+		bool spawned = false;
+
+		for (int i = 0; i < _projectileCount; i++)
+		{
+			float offset = (i - (_projectileCount - 1) * 0.5f) * _spread;
+			Vector2 spawnPosition = origin + forward * _forwardOffset + up * offset;
+			Vector2 direction = (_view.TargetPosition - spawnPosition).normalized;
+			if (direction.sqrMagnitude <= 0.0001f) continue;
+
+			var projectile = _pool.Get(_projectileAddress);
+			if (projectile == null) continue;
+
+			projectile.Initialize(_statModel.FinalDamage, direction, spawnPosition);
+			spawned = true;
+		}
+		return spawned;
 	}
 
 	

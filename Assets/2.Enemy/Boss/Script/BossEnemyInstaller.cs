@@ -23,6 +23,7 @@ public class BossEnemyInstaller : MonoInstaller
 		Container.Bind<ISkill>().To<BossSkillMeleeAttack>().AsCached();
 		Container.Bind<ISkill>().To<BossSkillJumpAttack>().AsCached();
 		Container.Bind<ISkill>().To<BossSkillDashAttack>().AsCached();
+		Container.Bind<ISkill>().To<BossSkillProjectileAttack>().AsCached();
 
 		Container.Bind<BossEnemySkillController>().AsSingle();
 		Container.Bind<BossEnemyAnimController>().AsSingle();
