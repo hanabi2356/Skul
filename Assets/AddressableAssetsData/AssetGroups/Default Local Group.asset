@@ -48,6 +48,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Equipment
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74fca42efa7136649986fc1f0dc50f35
+    m_Address: Object/BossProjectile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ea373160a0372f4f95bf2ea68b2bd6b
     m_Address: NormalEnemy/FlameWizard
     m_ReadOnly: 0
