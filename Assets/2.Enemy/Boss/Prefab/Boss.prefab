@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 4333839208169988702}
   - component: {fileID: 7027069537674159}
   - component: {fileID: 304935341672098008}
+  - component: {fileID: 2262555005650047780}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Untagged
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossEnemyInstaller
   _view: {fileID: 4333839208169988702}
+  _skillView: {fileID: 2262555005650047780}
   _presenter: {fileID: 7027069537674159}
 --- !u!114 &4333839208169988702
 MonoBehaviour:
@@ -385,3 +387,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 264
   _groundCheckObject: {fileID: 8533359538995538189}
+--- !u!114 &2262555005650047780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8764568719550010672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103fa2dbdfc06294bb0478117d1da515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossSkillView
+  _magicSpell:
+    _spellPoint: {fileID: 0}

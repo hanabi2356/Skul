@@ -3,6 +3,7 @@ using Zenject;
 public class BossEnemyInstaller : MonoInstaller
 {
 	[SerializeField] private BossEnemyView _view;
+	[SerializeField] private BossSkillView _skillView;
 	[SerializeField] private BossEnemyPresenter _presenter;
 	public override void InstallBindings()
 	{
@@ -10,13 +11,17 @@ public class BossEnemyInstaller : MonoInstaller
 		{ 
 			_view = GetComponent<BossEnemyView>();
 		}
-
+		if (_skillView == null)
+		{
+			_skillView = GetComponent<BossSkillView>();
+		}
 		if (_presenter == null)
 		{
 			_presenter = GetComponent<BossEnemyPresenter>();
 		}
 
 		Container.Bind<IBossEnemyView>().FromInstance(_view).AsSingle();
+		Container.Bind<BossSkillView>().FromInstance(_skillView).AsSingle();
 		Container.Bind<IEnemyStatModel>().To<EnemyStatModel>().AsSingle();
 		Container.Bind<BossEnemyFSMMachine>().AsSingle();
 

@@ -7,6 +7,7 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 {
 	[SerializeField] private Transform _bossEnemyTransform;
 	[SerializeField] private LayerMask _targetLayer;
+
 	private Animator _animator;
 	private Rigidbody2D _rigidbody;
 	private bool _useSkill;
@@ -50,6 +51,7 @@ public class BossEnemyView : MonoBehaviour, IBossEnemyView
 	public bool LookRight => _lookRight;
 
 	public float LookDirection => _lookRight ? 1.0f : -1.0f;
+
 
 	private void Awake()
 	{
