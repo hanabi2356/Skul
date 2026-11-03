@@ -25,12 +25,14 @@ public class BossSkillMagicSpellAttack : BossSkillBase
 	private const float _moveDuration = 0.4f;
 	private const float _attackWaitTime = 1.0f;
 	private const float _laserLifeTime = 0.45f;
-
+	private const float _laserLength = 15.0f;
 	private int _wave;
 	private float _waveTimer;
 	private float _originGravityScale;
 	private bool _gravityChanged;
+	private bool _waitLastLaser;
 	private GameObject _center;
+
 	protected override bool OnApplyHit()
 	{
 		
@@ -107,6 +109,7 @@ public class BossSkillMagicSpellAttack : BossSkillBase
 		_center = Object.Instantiate(_skillView.MagicSpell.CenterPrefab, _movePosition, Quaternion.identity);
 		_wave = 0;
 		_waveTimer = 0f;
+		_waitLastLaser = false;
 		_isAttacking = true;
 	}
 
@@ -121,12 +124,20 @@ public class BossSkillMagicSpellAttack : BossSkillBase
 
 		_waveTimer -= Time.deltaTime;
 		if (_waveTimer > 0f) return;
-		FireWave();
-		_wave++;
-		if (_wave >= _attackCount && _view.PhysicsHandler.IsGround())
+
+		if(_waitLastLaser)
 		{
 			_isAttacking = false;
 			RequestedEnd();
+			return;
+		}
+
+		FireWave();
+		_wave++;
+		if (_wave >= _attackCount)
+		{
+			_waitLastLaser = true;
+			_waveTimer = _laserLifeTime;
 			return;
 		}
 
@@ -154,7 +165,7 @@ public class BossSkillMagicSpellAttack : BossSkillBase
 
 			if (laser == null) continue;
 
-			laser.Initialize(_statModel.FinalDamage, direction, origin, _attackPointRadius, _laserThickness, _targetLayer, _laserLifeTime);
+			laser.Initialize(_statModel.FinalDamage, direction, origin, _laserLength, _laserThickness, _targetLayer, _laserLifeTime);
 		}
 	}
 
