@@ -23,7 +23,7 @@ public class BossSkillMagicSpellAttack : BossSkillBase
 	private bool _isAttacking;
 	private float _moveElapsed;
 	private const float _moveDuration = 0.4f;
-	private const float _attackWaitTime = 0.5f;
+	private const float _attackWaitTime = 1.0f;
 	private const float _laserLifeTime = 0.45f;
 
 	private int _wave;
@@ -123,7 +123,7 @@ public class BossSkillMagicSpellAttack : BossSkillBase
 		if (_waveTimer > 0f) return;
 		FireWave();
 		_wave++;
-		if (_wave >= _attackCount)
+		if (_wave >= _attackCount && _view.PhysicsHandler.IsGround())
 		{
 			_isAttacking = false;
 			RequestedEnd();
