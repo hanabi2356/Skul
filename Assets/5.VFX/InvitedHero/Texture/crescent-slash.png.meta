@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 035f4640c0207cd418fef010bd0f3f4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7787871743669927994
+    second: crescent-slash_0
+  - first:
+      213: 5092843899883683017
+    second: crescent-slash_1
+  - first:
+      213: -3220674316656359634
+    second: crescent-slash_2
+  - first:
+      213: -869728292534221744
+    second: crescent-slash_3
+  - first:
+      213: 3843134722250037210
+    second: crescent-slash_4
+  - first:
+      213: -5165209308244648519
+    second: crescent-slash_5
+  - first:
+      213: 5368496415912959833
+    second: crescent-slash_6
+  - first:
+      213: -4851639688068075125
+    second: crescent-slash_7
+  - first:
+      213: 14661974946111018
+    second: crescent-slash_8
+  - first:
+      213: 7658591255476505233
+    second: crescent-slash_9
+  - first:
+      213: 3591542922313134500
+    second: crescent-slash_10
+  - first:
+      213: 8102745603722021885
+    second: crescent-slash_11
+  - first:
+      213: 8127024122389482196
+    second: crescent-slash_12
+  - first:
+      213: -2801690078124732532
+    second: crescent-slash_13
+  - first:
+      213: 2787590931324927609
+    second: crescent-slash_14
+  - first:
+      213: 6637942987340790471
+    second: crescent-slash_15
+  - first:
+      213: 9051689463850666195
+    second: crescent-slash_16
+  - first:
+      213: -685654908435513089
+    second: crescent-slash_17
+  - first:
+      213: -2360011624419281838
+    second: crescent-slash_18
+  - first:
+      213: -5872031340676313540
+    second: crescent-slash_19
+  - first:
+      213: -8813530480225996137
+    second: crescent-slash_20
+  - first:
+      213: -1676617271397792251
+    second: crescent-slash_21
+  - first:
+      213: -36567866819420253
+    second: crescent-slash_22
+  - first:
+      213: -6792135327371022101
+    second: crescent-slash_23
+  - first:
+      213: -8777550302565416400
+    second: crescent-slash_24
+  - first:
+      213: 8444935764852847194
+    second: crescent-slash_25
+  - first:
+      213: -734594774862871875
+    second: crescent-slash_26
+  - first:
+      213: 9048313141200507657
+    second: crescent-slash_27
+  - first:
+      213: 6671569848476597068
+    second: crescent-slash_28
+  - first:
+      213: 8589169446719257769
+    second: crescent-slash_29
+  - first:
+      213: -8704496033728966731
+    second: crescent-slash_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crescent-slash_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 300
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a308fb5c614141c60800000000000000
+      internalID: 7787871743669927994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 279
+        width: 33
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ccf41d3b8a6da640800000000000000
+      internalID: 5092843899883683017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_2
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 278
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27497ad5cddd43d0800000000000000
+      internalID: -3220674316656359634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 281
+        width: 33
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0540468d9ba1ee3f0800000000000000
+      internalID: -869728292534221744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 154
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7dea70bae855530800000000000000
+      internalID: 3843134722250037210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_5
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 156
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd5987208d7158b0800000000000000
+      internalID: -5165209308244648519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 215
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f1378fb0bb08a40800000000000000
+      internalID: 5368496415912959833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_7
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 216
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81f386a8638bacb0800000000000000
+      internalID: -4851639688068075125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_8
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 219
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e5e501df6143000800000000000000
+      internalID: 14661974946111018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 217
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a079e7b28c84a60800000000000000
+      internalID: 7658591255476505233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_10
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 201
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1fa005249b7d130800000000000000
+      internalID: 3591542922313134500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_11
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 203
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb8537423cb27070800000000000000
+      internalID: 8102745603722021885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_12
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 185
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da4e08616df8c070800000000000000
+      internalID: 8127024122389482196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_13
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 185
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f83aac7b56e19d0800000000000000
+      internalID: -2801690078124732532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_14
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 191
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ef8b8ce238fa620800000000000000
+      internalID: 2787590931324927609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_15
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 169
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca3eb74af5be1c50800000000000000
+      internalID: 6637942987340790471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_16
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 175
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d807f50c9f0e9d70800000000000000
+      internalID: 9051689463850666195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_17
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 168
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff0c2385e701c76f0800000000000000
+      internalID: -685654908435513089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_18
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 153
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25432b47eed8f3fd0800000000000000
+      internalID: -2360011624419281838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_19
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 158
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e07056b9a528ea0800000000000000
+      internalID: -5872031340676313540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_20
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 156
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7923d0d69bc00b580800000000000000
+      internalID: -8813530480225996137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_21
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 150
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506cc0a89757bb8e0800000000000000
+      internalID: -1676617271397792251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_22
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 90
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3afd80808b51e7ff0800000000000000
+      internalID: -36567866819420253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 79
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be03ba1f7ec7db1a0800000000000000
+      internalID: -6792135327371022101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_24
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 78
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03247795180ef2680800000000000000
+      internalID: -8777550302565416400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 57
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a52bb0fb550723570800000000000000
+      internalID: 8444935764852847194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_26
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2c07eb1f13ec5f0800000000000000
+      internalID: -734594774862871875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_27
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 44
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90351c5acd0129d70800000000000000
+      internalID: 9048313141200507657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_28
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 41
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b77a00e6d269c50800000000000000
+      internalID: 6671569848476597068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_29
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 27
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acf65bba1cd23770800000000000000
+      internalID: 8589169446719257769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crescent-slash_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfc9c8c9fa633780800000000000000
+      internalID: -8704496033728966731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      crescent-slash_0: 7787871743669927994
+      crescent-slash_1: 5092843899883683017
+      crescent-slash_10: 3591542922313134500
+      crescent-slash_11: 8102745603722021885
+      crescent-slash_12: 8127024122389482196
+      crescent-slash_13: -2801690078124732532
+      crescent-slash_14: 2787590931324927609
+      crescent-slash_15: 6637942987340790471
+      crescent-slash_16: 9051689463850666195
+      crescent-slash_17: -685654908435513089
+      crescent-slash_18: -2360011624419281838
+      crescent-slash_19: -5872031340676313540
+      crescent-slash_2: -3220674316656359634
+      crescent-slash_20: -8813530480225996137
+      crescent-slash_21: -1676617271397792251
+      crescent-slash_22: -36567866819420253
+      crescent-slash_23: -6792135327371022101
+      crescent-slash_24: -8777550302565416400
+      crescent-slash_25: 8444935764852847194
+      crescent-slash_26: -734594774862871875
+      crescent-slash_27: 9048313141200507657
+      crescent-slash_28: 6671569848476597068
+      crescent-slash_29: 8589169446719257769
+      crescent-slash_3: -869728292534221744
+      crescent-slash_30: -8704496033728966731
+      crescent-slash_4: 3843134722250037210
+      crescent-slash_5: -5165209308244648519
+      crescent-slash_6: 5368496415912959833
+      crescent-slash_7: -4851639688068075125
+      crescent-slash_8: 14661974946111018
+      crescent-slash_9: 7658591255476505233
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
