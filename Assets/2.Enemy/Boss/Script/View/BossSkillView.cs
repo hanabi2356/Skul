@@ -7,9 +7,9 @@ public struct MagicSpellSettings
 	[SerializeField] private Transform _spellPoint;
 	[SerializeField] private GameObject _laserPrefab;
 	[SerializeField] private GameObject _centerPrefab;
-	public Transform SpellPoint => _spellPoint;
-	public GameObject LaserPrefab => _laserPrefab;
-	public GameObject CenterPrefab => _centerPrefab;
+	public  readonly Transform SpellPoint => _spellPoint;
+	public readonly GameObject LaserPrefab => _laserPrefab;
+	public readonly GameObject CenterPrefab => _centerPrefab;
 
 }
 
